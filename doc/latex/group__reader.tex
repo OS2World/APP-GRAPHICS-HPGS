@@ -1,0 +1,542 @@
+\section{Reader}
+\label{group__reader}\index{Reader@{Reader}}
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf hpgs\_\-reader\_\-poly\_\-point\_\-st}
+\begin{CompactList}\small\item\em A point in hte HPGL polygon buffer. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-reader\_\-pcl\_\-palette\_\-st}
+\begin{CompactList}\small\item\em A PCL palette as used by PCL push/pop palette. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-reader\_\-st}
+\begin{CompactList}\small\item\em A HPGL interpreter. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef struct {\bf hpgs\_\-reader\_\-st} \textbf{hpgs\_\-reader}\label{group__reader_g9fe73110cf6f76ff88160a677e4a5c4e}
+
+\item 
+typedef struct {\bf hpgs\_\-reader\_\-poly\_\-point\_\-st} \textbf{hpgs\_\-reader\_\-poly\_\-point}\label{group__reader_g4233c42f8f157dfd34fbf704a9eefd11}
+
+\item 
+typedef struct {\bf hpgs\_\-reader\_\-pcl\_\-palette\_\-st} \textbf{hpgs\_\-reader\_\-pcl\_\-palette}\label{group__reader_g23384ae34cc53b73e033a90721614351}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-reader\_\-hpglcmd\_\-func\_\-t} )({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g40224d7369a3a297ff59fc5d3fb81f1c}
+
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+HPGS\_\-API {\bf hpgs\_\-reader} $\ast$ {\bf hpgs\_\-new\_\-reader} ({\bf hpgs\_\-istream} $\ast$in, {\bf hpgs\_\-device} $\ast$dev, hpgs\_\-bool multipage, int v)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-reader\_\-set\_\-lw\_\-factor} ({\bf hpgs\_\-reader} $\ast$reader, double lw\_\-factor)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-reader\_\-set\_\-fixed\_\-page} ({\bf hpgs\_\-reader} $\ast$reader, {\bf hpgs\_\-bbox} $\ast$bbox, double page\_\-width, double page\_\-height, double border, double angle)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-reader\_\-set\_\-dynamic\_\-page} ({\bf hpgs\_\-reader} $\ast$reader, {\bf hpgs\_\-bbox} $\ast$bbox, double max\_\-page\_\-width, double max\_\-page\_\-height, double border, double angle)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-reader\_\-set\_\-page\_\-asset\_\-func} ({\bf hpgs\_\-reader} $\ast$reader, void $\ast$ctxt, hpgs\_\-reader\_\-asset\_\-func\_\-t func)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-reader\_\-set\_\-frame\_\-asset\_\-func} ({\bf hpgs\_\-reader} $\ast$reader, void $\ast$ctxt, hpgs\_\-reader\_\-asset\_\-func\_\-t func)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-reader\_\-interrupt} ({\bf hpgs\_\-reader} $\ast$reader)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-reader\_\-get\_\-current\_\-pen} ({\bf hpgs\_\-reader} $\ast$reader)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-reader\_\-imbue} ({\bf hpgs\_\-reader} $\ast$reader, {\bf hpgs\_\-device} $\ast$dev)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-reader\_\-attach} ({\bf hpgs\_\-reader} $\ast$reader, {\bf hpgs\_\-istream} $\ast$in)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-reader\_\-stamp} ({\bf hpgs\_\-reader} $\ast$reader, const {\bf hpgs\_\-bbox} $\ast$bb, const char $\ast$stamp, const char $\ast$encoding, double stamp\_\-size)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-device\_\-stamp} ({\bf hpgs\_\-device} $\ast$dev, const {\bf hpgs\_\-bbox} $\ast$bb, const char $\ast$stamp, const char $\ast$encoding, double stamp\_\-size)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-reader\_\-set\_\-png\_\-dump} ({\bf hpgs\_\-reader} $\ast$reader, const char $\ast$filename)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-read} ({\bf hpgs\_\-reader} $\ast$reader, hpgs\_\-bool finish)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-destroy\_\-reader} ({\bf hpgs\_\-reader} $\ast$reader)
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-check\_\-param\_\-end} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gfd6d559ddde9821fdb9664ed9b350437}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-reader\_\-read\_\-pcl\_\-int} ({\bf hpgs\_\-reader} $\ast$reader, int $\ast$x, int $\ast$sign)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-reader\_\-read\_\-int} ({\bf hpgs\_\-reader} $\ast$reader, int $\ast$x)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-reader\_\-read\_\-double} ({\bf hpgs\_\-reader} $\ast$reader, double $\ast$x)
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-read\_\-point} ({\bf hpgs\_\-reader} $\ast$reader, {\bf hpgs\_\-point} $\ast$p, int xform)\label{group__reader_gf2f8dd795fe271aaa65b18b76411c74c}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-reader\_\-read\_\-new\_\-string} ({\bf hpgs\_\-reader} $\ast$reader, char $\ast$str)
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-read\_\-label\_\-string} ({\bf hpgs\_\-reader} $\ast$reader, char $\ast$str)\label{group__reader_g5f24e8cf1310c401bc7fc8881f9a0879}
+
+\item 
+HPGS\_\-INTERNAL\_\-API void \textbf{hpgs\_\-reader\_\-set\_\-page\_\-matrix} ({\bf hpgs\_\-reader} $\ast$reader, const {\bf hpgs\_\-bbox} $\ast$bb)\label{group__reader_g72c7fa4b8ac9145ebb61135d472bc9c9}
+
+\item 
+HPGS\_\-INTERNAL\_\-API void \textbf{hpgs\_\-reader\_\-set\_\-default\_\-transformation} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gf1fb3505e9053168ef9115846a28fec5}
+
+\item 
+HPGS\_\-INTERNAL\_\-API void \textbf{hpgs\_\-reader\_\-set\_\-default\_\-state} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gbfe55a98e961170ac6d21984de801f1b}
+
+\item 
+HPGS\_\-INTERNAL\_\-API void \textbf{hpgs\_\-reader\_\-set\_\-defaults} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g82d8ec9da507f8560f50120db8f2cc05}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-set\_\-plotsize} ({\bf hpgs\_\-reader} $\ast$reader, double xs, double ys)\label{group__reader_g7cc94f7b85f7a36aac505caf0a50b999}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-showpage} ({\bf hpgs\_\-reader} $\ast$reader, int ipage)\label{group__reader_g76c2b7dd212ad6e070a402292ad5122b}
+
+\item 
+HPGS\_\-INTERNAL\_\-API void \textbf{hpgs\_\-reader\_\-set\_\-std\_\-pen\_\-colors} ({\bf hpgs\_\-reader} $\ast$reader, int i0, int n)\label{group__reader_g483b4e78037cead23625259c92a529f2}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-checkpath} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gdf06a6ca3a27c7e4bc3dd88be6e31d70}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-moveto} ({\bf hpgs\_\-reader} $\ast$reader, {\bf hpgs\_\-point} $\ast$p)\label{group__reader_g6b513e1487735f80cc5c8ae95b81f8ec}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-lineto} ({\bf hpgs\_\-reader} $\ast$reader, {\bf hpgs\_\-point} $\ast$p)\label{group__reader_g09a8bc8661fdc23551f476a77397c567}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-curveto} ({\bf hpgs\_\-reader} $\ast$reader, {\bf hpgs\_\-point} $\ast$p1, {\bf hpgs\_\-point} $\ast$p2, {\bf hpgs\_\-point} $\ast$p3)\label{group__reader_g162d23e7cf5ce4651e71134865e85120}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-stroke} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g0b36071af0bf02444c2610401d59b3b9}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-fill} ({\bf hpgs\_\-reader} $\ast$reader, hpgs\_\-bool winding)\label{group__reader_gbb6d9e05bfbcf4b99ae389bc23f3e1c6}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-closepath} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g58959cd98027b41a3abc3a90920e6a88}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-setpen} ({\bf hpgs\_\-reader} $\ast$reader, int pen)\label{group__reader_gec59e9a64adea9ff35c300bdcdf71ede}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-device\_\-setrgb\_\-all} ({\bf hpgs\_\-device} $\ast$dev, const {\bf hpgs\_\-color} $\ast$rgb)
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-label} ({\bf hpgs\_\-reader} $\ast$reader, const char $\ast$str, int str\_\-len, int face, int encoding, int posture, int weight, const {\bf hpgs\_\-point} $\ast$left\_\-vec, const {\bf hpgs\_\-point} $\ast$up\_\-vec, const {\bf hpgs\_\-point} $\ast$space\_\-vec)\label{group__reader_gc6c23c56f2bee0cabc2492a6438abcda}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-device\_\-label} ({\bf hpgs\_\-device} $\ast$dev, {\bf hpgs\_\-point} $\ast$pos, const char $\ast$str, int str\_\-len, int face, const char $\ast$encoding, int posture, int weight, const {\bf hpgs\_\-point} $\ast$left\_\-vec, const {\bf hpgs\_\-point} $\ast$up\_\-vec, const {\bf hpgs\_\-point} $\ast$space\_\-vec)\label{group__reader_gfd1779b4aa12943dfa10be814af2e3dd}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-reader\_\-do\_\-PCL} ({\bf hpgs\_\-reader} $\ast$reader, hpgs\_\-bool take\_\-pos)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-reader\_\-do\_\-PJL} ({\bf hpgs\_\-reader} $\ast$reader)
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-push\_\-pcl\_\-palette} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g294cc9935b4d62e164171d27c0d81075}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-pop\_\-pcl\_\-palette} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_ge17b8b5957ffe80f51220b6efbe8e6f2}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-AA} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g9a0a45b19f07f96bef55ddee09cdeea2}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-AC} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g20467dca742ce723837376425e024f8d}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-AD} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g252127da0d20f8cd4e12a237b6ffd607}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-AR} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g86a3dddc71091bb81d539c66d24fc4c9}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-AT} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gfaf903cb7a0bee57742b36cf3bda84ef}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-BP} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g69c12a593041db66395999b17ff614f3}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-BR} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g9a5a78c77c1bbe343f0a54a035b3daee}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-BZ} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g14d74945da68ed7c713e2ba8b6deef16}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-CI} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g7dd9c64eff1ea790e1b43a81b2586af6}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-CO} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g010ac6b403b6ef801122e303784506e3}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-CP} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g59c9616bc0e3e63266eede7f0e40ab27}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-CR} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g6f9a3d39f1ec43f65de23f39cbcc4bcd}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-DI} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gcb1099ab784c6f006f90a555e999d03c}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-DR} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g6fde6f8a776473acf6683ced91415743}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-DT} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g53fd0eac606f85f5a523f3b0e8eca709}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-DV} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g67a3da5778ba2345bcd7850ee1f3cf9c}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-EA} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g56f851fe681986c554fd9d7ecc922b46}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-EP} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g0bb9c47666480d821eee966fe07f8dee}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-ER} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_ga828610be5d48b3e772dfc7b271c45c8}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-ES} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gfed23058d33ebc96a782b855eb4f92e4}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-EW} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_ge28138f75961e023bcfd78e64fc5ceee}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-FP} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g12b7528135c3ec735ade1c16de31fc07}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-FR} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gb9a653b9eb8e015b7ebcb70f90a05910}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-FT} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_ga708b9b01fd1206552a0d29d2e0577a7}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-IN} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g90d43ae4088c31f4410741183d965473}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-IP} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gb6d0c05663530d5753aa01d5175fe812}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-IR} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g58b821f02eea2f09c87eae16d12a65cf}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-IW} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g7d959866078c4b03f7a59e12a23f4584}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-LA} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gc0dda452214e934618ee2c81006c0841}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-LB} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g7a3fa037ff8e75768e32bc8c6608c735}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-LO} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gf64432ba4e6d044698f624df106db95b}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-LT} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g82887bdfcf93658b4f7760cca796daf3}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-MC} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g1d5faab281e509d8f1ae6218e8e40667}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-MG} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g5e8e8febb5e02732d913ff5f4e1334c2}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-NP} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gfc2f2f2942ece9cdb6b78e77162ff769}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-PC} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g26e3abc89cd90afe394f3c4a400f9886}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-PA} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gb98375b63e2e33be791f57a3cba84c8c}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-PD} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g5a74597276b52026baea444c783f093f}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-PE} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gb89ccf2e907504a93092c06e6ff48c7f}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-PG} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_ga352b34763e04c84c81d154c592c5cd2}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-PM} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g1ccebaf839555816bb65f2f2547da7df}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-PP} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gbd7b5192dd787f46ff9fc8f688e9a4ff}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-PR} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g59dde778a90ffa3910b2f6586e30325d}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-PS} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g75c6bfe334f61695beaa66b3bfede120}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-PU} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gb80900542e36944aa5eb9f4608313968}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-PW} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gbbd62a9fd3ef05c0baaa4a0d87d912b0}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-RA} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g5dc2941db3a63239f3339281e332c6f4}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-RO} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gda03ea2ce58484b8b62c357e9049d914}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-RR} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g6f0e9b813af1d2525059e7ce16cf82b1}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-RT} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gf3dbd72002d495479a4eff8f3602cd0e}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-SA} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g7e0abf5b2426bd0e603828501bb36c9e}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-SC} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_ge3fbbafae8de8b6dea831b9bf24242d3}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-SD} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gc381a958a3fa32fd544c10c225986005}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-SI} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gdaad71bd774a907fde56590f017b1c3f}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-SL} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g3f43c65d53fa49d9928536e2340cc1e5}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-SM} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g141bb3fe1f17f7cdbddefef00990fd9d}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-SP} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gf6d8257afede41554e0ed06b30b8df8b}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-SR} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g4a24948f7c51bcd66eef03287ee32817}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-SS} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_gf1ec4288bbddaab160fbbd62087657ea}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-TR} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g1d1fef69731ae8b75b6e8888dc3d4e09}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-UL} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g9d7b05da59f6c4ffe747bfeba933f753}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-WG} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g5c79a4c2eeda221339afbd0b4d1e3007}
+
+\item 
+HPGS\_\-INTERNAL\_\-API int \textbf{hpgs\_\-reader\_\-do\_\-WU} ({\bf hpgs\_\-reader} $\ast$reader)\label{group__reader_g53cfcda314a1990582befe9a02ec2038}
+
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{reader@{reader}!hpgs\_\-destroy\_\-reader@{hpgs\_\-destroy\_\-reader}}
+\index{hpgs\_\-destroy\_\-reader@{hpgs\_\-destroy\_\-reader}!reader@{reader}}
+\subsubsection[hpgs\_\-destroy\_\-reader]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-destroy\_\-reader ({\bf hpgs\_\-reader} $\ast$ {\em reader})}\label{group__reader_gdc99632edbcca43571d2cb3b63ea653c}
+
+
+Destroys the given {\tt reader} structure and frees all allocated resources of the HPGL reader. 
+
+References hpgs\_\-reader\_\-st::device, hpgs\_\-device\_\-destroy(), hpgs\_\-image\_\-destroy(), hpgs\_\-istream\_\-close(), hpgs\_\-reader\_\-st::in, hpgs\_\-reader\_\-st::pcl\_\-i\_\-palette, hpgs\_\-reader\_\-st::pcl\_\-image, hpgs\_\-reader\_\-st::pcl\_\-palettes, hpgs\_\-reader\_\-st::pcl\_\-raster\_\-data, hpgs\_\-reader\_\-st::pen\_\-colors, hpgs\_\-reader\_\-st::pen\_\-widths, hpgs\_\-reader\_\-st::plotsize\_\-device, hpgs\_\-reader\_\-st::png\_\-dump\_\-filename, and hpgs\_\-reader\_\-st::poly\_\-buffer.\index{reader@{reader}!hpgs\_\-device\_\-setrgb\_\-all@{hpgs\_\-device\_\-setrgb\_\-all}}
+\index{hpgs\_\-device\_\-setrgb\_\-all@{hpgs\_\-device\_\-setrgb\_\-all}!reader@{reader}}
+\subsubsection[hpgs\_\-device\_\-setrgb\_\-all]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-device\_\-setrgb\_\-all ({\bf hpgs\_\-device} $\ast$ {\em dev}, \/  const {\bf hpgs\_\-color} $\ast$ {\em rgb})}\label{group__reader_gf3f4765363ec5bd181a77e9d0a0560ab}
+
+
+Simultaneously set the promary and the pattern color on a device. 
+
+References hpgs\_\-setpatcol(), and hpgs\_\-setrgbcolor().
+
+Referenced by hpgs\_\-device\_\-stamp().\index{reader@{reader}!hpgs\_\-device\_\-stamp@{hpgs\_\-device\_\-stamp}}
+\index{hpgs\_\-device\_\-stamp@{hpgs\_\-device\_\-stamp}!reader@{reader}}
+\subsubsection[hpgs\_\-device\_\-stamp]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-device\_\-stamp ({\bf hpgs\_\-device} $\ast$ {\em dev}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb}, \/  const char $\ast$ {\em stamp}, \/  const char $\ast$ {\em encoding}, \/  double {\em stamp\_\-size})}\label{group__reader_g18e32929d914d32985656335efeff251}
+
+
+This is a highlevel interface to stamp the device with a text prior to printing any data. This is used in order to print a 'draft' or 'obsoleted' mark to the paper.
+
+If encodeing is a null pointer 
+
+References hpgs\_\-color\_\-st::b, hpgs\_\-color\_\-st::g, hpgs\_\-device\_\-setrgb\_\-all(), hpgs\_\-utf8\_\-strlen(), hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-color\_\-st::r, hpgs\_\-bbox\_\-st::urx, hpgs\_\-bbox\_\-st::ury, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.
+
+Referenced by hpgs\_\-reader\_\-stamp().\index{reader@{reader}!hpgs\_\-new\_\-reader@{hpgs\_\-new\_\-reader}}
+\index{hpgs\_\-new\_\-reader@{hpgs\_\-new\_\-reader}!reader@{reader}}
+\subsubsection[hpgs\_\-new\_\-reader]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-reader}$\ast$ hpgs\_\-new\_\-reader ({\bf hpgs\_\-istream} $\ast$ {\em in}, \/  {\bf hpgs\_\-device} $\ast$ {\em dev}, \/  hpgs\_\-bool {\em multipage}, \/  int {\em v})}\label{group__reader_g811e1c0dfcdbbe94e597f10b1309e21d}
+
+
+Contructs a HPGL reader on the heap using the given input device {\tt in} and the given output vector drawing device {\tt dev}.
+
+The argument {\tt multipage} specifies, whether the reader processes more than one page.
+
+The argument {\tt v} specifies the verbosity of the HPGL reader. A value of 0 forces the reader to not report anything to {\tt \doxyref{hpgs\_\-log()}{p.}{group__base_g83a7705a988a839eb01f0aa704ceea3b}}. Value of 1 or 2 give diagnostics output to {\tt \doxyref{hpgs\_\-log()}{p.}{group__base_g83a7705a988a839eb01f0aa704ceea3b}} with increasing volume.
+
+You do not have to call neither {\tt hpgs\_\-close} on {\tt in} nor {\tt hpgs\_\-destroy} on {\tt dev}.
+
+In the case of an error, a null pointer is returned. This only happens, if the system is out of memory. 
+
+References hpgs\_\-reader\_\-st::content\_\-bbox, hpgs\_\-reader\_\-st::current\_\-page, hpgs\_\-reader\_\-st::device, hpgs\_\-reader\_\-st::frame\_\-asset\_\-ctxt, hpgs\_\-reader\_\-st::frame\_\-asset\_\-func, hpgs\_\-device\_\-destroy(), hpgs\_\-istream\_\-close(), hpgs\_\-matrix\_\-set\_\-identity(), hpgs\_\-reader\_\-st::in, hpgs\_\-reader\_\-st::interrupted, hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-reader\_\-st::lw\_\-factor, hpgs\_\-reader\_\-st::page\_\-angle, hpgs\_\-reader\_\-st::page\_\-asset\_\-ctxt, hpgs\_\-reader\_\-st::page\_\-asset\_\-func, hpgs\_\-reader\_\-st::page\_\-bbox, hpgs\_\-reader\_\-st::page\_\-border, hpgs\_\-reader\_\-st::page\_\-height, hpgs\_\-reader\_\-st::page\_\-matrix, hpgs\_\-reader\_\-st::page\_\-mode, hpgs\_\-reader\_\-st::page\_\-scale, hpgs\_\-reader\_\-st::page\_\-width, hpgs\_\-reader\_\-st::pcl\_\-i\_\-palette, hpgs\_\-reader\_\-st::pcl\_\-image, hpgs\_\-reader\_\-st::pcl\_\-n\_\-palettes, hpgs\_\-reader\_\-st::pcl\_\-palettes, hpgs\_\-reader\_\-st::pcl\_\-raster\_\-data, hpgs\_\-reader\_\-st::pen\_\-colors, hpgs\_\-reader\_\-st::pen\_\-widths, hpgs\_\-reader\_\-st::plotsize\_\-device, hpgs\_\-reader\_\-st::png\_\-dump\_\-count, hpgs\_\-reader\_\-st::png\_\-dump\_\-filename, hpgs\_\-reader\_\-st::poly\_\-buffer, hpgs\_\-bbox\_\-st::urx, hpgs\_\-bbox\_\-st::ury, and hpgs\_\-reader\_\-st::verbosity.\index{reader@{reader}!hpgs\_\-read@{hpgs\_\-read}}
+\index{hpgs\_\-read@{hpgs\_\-read}!reader@{reader}}
+\subsubsection[hpgs\_\-read]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-read ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  hpgs\_\-bool {\em finish})}\label{group__reader_gc311d4632dae3d22d237441530225b78}
+
+
+Interprets the input stream associated with {\tt reader} and passes the result to the associated vector device.
+
+The argument {\tt finish} specifies, whether this is the last file written to the underlying {\tt hpgs\_\-device}. If {\tt finish} is {\tt HPGS\_\-TRUE}, {\tt hpgs\_\-device\_\-finish} is called. Otherwise, another input stream may be attached using {\tt hpgs\_\-reader\_\-attach} and {\tt hpgs\_\-read} may be called again. This way, multiple input files may collated together in a single output file.
+
+The function return 0 upon success. A value of -1 is returned, when an error is encountered.
+
+You have to call {\tt hpgs\_\-reader\_\-get\_\-error} in order to retrieve the error message in the latter case. 
+
+References hpgs\_\-reader\_\-st::bytes\_\-ignored, hpgs\_\-reader\_\-st::clipsave\_\-depth, hpgs\_\-reader\_\-st::current\_\-page, hpgs\_\-reader\_\-st::device, hpgs\_\-reader\_\-st::eoc, hpgs\_\-clear\_\-error(), hpgs\_\-cliprestore(), HPGS\_\-DEVICE\_\-CAP\_\-MULTISIZE, hpgs\_\-device\_\-capabilities(), hpgs\_\-device\_\-finish(), hpgs\_\-error\_\-ctxt(), hpgs\_\-getc(), hpgs\_\-getplotsize(), hpgs\_\-have\_\-error(), hpgs\_\-istream\_\-iseof(), hpgs\_\-istream\_\-iserror(), hpgs\_\-istream\_\-seek(), hpgs\_\-istream\_\-tell(), hpgs\_\-log(), hpgs\_\-reader\_\-read\_\-double(), hpgs\_\-set\_\-error(), hpgs\_\-setplotsize(), hpgs\_\-ungetc(), hpgs\_\-reader\_\-st::in, hpgs\_\-reader\_\-st::interrupted, hpgs\_\-reader\_\-st::last\_\-byte, hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-reader\_\-st::page\_\-bbox, hpgs\_\-reader\_\-st::plotsize\_\-device, hpgs\_\-bbox\_\-st::urx, hpgs\_\-bbox\_\-st::ury, and hpgs\_\-reader\_\-st::verbosity.\index{reader@{reader}!hpgs\_\-reader\_\-attach@{hpgs\_\-reader\_\-attach}}
+\index{hpgs\_\-reader\_\-attach@{hpgs\_\-reader\_\-attach}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-attach]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-reader\_\-attach ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  {\bf hpgs\_\-istream} $\ast$ {\em in})}\label{group__reader_g0a749c96bbca69a80aef3b28c75cad81}
+
+
+Attach a new input stream to a HPGL reader. This is useful in multipage mode in order to collate multiple input files.
+
+The function return 0 in any case. 
+
+References hpgs\_\-istream\_\-close(), and hpgs\_\-reader\_\-st::in.\index{reader@{reader}!hpgs\_\-reader\_\-do\_\-PCL@{hpgs\_\-reader\_\-do\_\-PCL}}
+\index{hpgs\_\-reader\_\-do\_\-PCL@{hpgs\_\-reader\_\-do\_\-PCL}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-do\_\-PCL]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-reader\_\-do\_\-PCL ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  hpgs\_\-bool {\em take\_\-pos})}\label{group__reader_gdb7db099633993868391ee6fac65dfa8}
+
+
+Read a PCL block of the file.
+
+Return values: \begin{itemize}
+\item -1 Error, unexpected EOF. \item 0 Success, return to HPGL context. \item 1 Success, return to PJL context. \item 2 Success, EOF reached. \end{itemize}
+
+
+References hpgs\_\-reader\_\-st::bytes\_\-ignored, hpgs\_\-reader\_\-st::current\_\-point, hpgs\_\-reader\_\-st::eoc, hpgs\_\-error\_\-ctxt(), hpgs\_\-getc(), hpgs\_\-log(), hpgs\_\-matrix\_\-ixform(), hpgs\_\-reader\_\-read\_\-pcl\_\-int(), hpgs\_\-reader\_\-st::in, hpgs\_\-reader\_\-st::interrupted, hpgs\_\-reader\_\-st::last\_\-byte, hpgs\_\-reader\_\-st::page\_\-matrix, hpgs\_\-reader\_\-st::pcl\_\-image, hpgs\_\-reader\_\-st::pcl\_\-point, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{reader@{reader}!hpgs\_\-reader\_\-do\_\-PJL@{hpgs\_\-reader\_\-do\_\-PJL}}
+\index{hpgs\_\-reader\_\-do\_\-PJL@{hpgs\_\-reader\_\-do\_\-PJL}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-do\_\-PJL]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-reader\_\-do\_\-PJL ({\bf hpgs\_\-reader} $\ast$ {\em reader})}\label{group__reader_g5e154d546d32e3e64e448995b3eee136}
+
+
+Read a PJL block of the file.
+
+Return values: \begin{itemize}
+\item -1 Error, unexpected EOF. \item 0 Success, ESC found, continue with ESC evaluation. \item 1 Success, return to HPGL context. \item 2 Success, plotsize set, skip interpretation of file. \item 3 Success, go to PCL context. \end{itemize}
+
+
+References hpgs\_\-reader\_\-st::bytes\_\-ignored, hpgs\_\-reader\_\-st::eoc, hpgs\_\-getc(), hpgs\_\-istream\_\-seek(), hpgs\_\-istream\_\-tell(), hpgs\_\-log(), hpgs\_\-reader\_\-read\_\-pcl\_\-int(), hpgs\_\-set\_\-error(), hpgs\_\-ungetc(), hpgs\_\-reader\_\-st::in, hpgs\_\-reader\_\-st::last\_\-byte, hpgs\_\-reader\_\-st::pcl\_\-raster\_\-res, hpgs\_\-reader\_\-st::pcl\_\-scale, and hpgs\_\-reader\_\-st::verbosity.\index{reader@{reader}!hpgs\_\-reader\_\-get\_\-current\_\-pen@{hpgs\_\-reader\_\-get\_\-current\_\-pen}}
+\index{hpgs\_\-reader\_\-get\_\-current\_\-pen@{hpgs\_\-reader\_\-get\_\-current\_\-pen}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-get\_\-current\_\-pen]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-reader\_\-get\_\-current\_\-pen ({\bf hpgs\_\-reader} $\ast$ {\em reader})}\label{group__reader_g374e122e0b234f7ba28c7d41c03298a5}
+
+
+Returns the curent HPGL pen of the given {\tt reader} structure. This information might be used by page or frame asset functions. 
+
+References hpgs\_\-reader\_\-st::current\_\-pen.\index{reader@{reader}!hpgs\_\-reader\_\-imbue@{hpgs\_\-reader\_\-imbue}}
+\index{hpgs\_\-reader\_\-imbue@{hpgs\_\-reader\_\-imbue}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-imbue]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-reader\_\-imbue ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  {\bf hpgs\_\-device} $\ast$ {\em dev})}\label{group__reader_g09061ec5822be4f029a87bed1f4e0360}
+
+
+Sets a vector drawing device to a HPGL reader an resets the input stream.
+
+The function return 0 in any case. 
+
+References hpgs\_\-reader\_\-st::current\_\-page, hpgs\_\-reader\_\-st::device, HPGS\_\-DEVICE\_\-CAP\_\-PLOTSIZE, hpgs\_\-device\_\-capabilities(), hpgs\_\-device\_\-destroy(), hpgs\_\-istream\_\-seek(), hpgs\_\-reader\_\-st::in, and hpgs\_\-reader\_\-st::plotsize\_\-device.\index{reader@{reader}!hpgs\_\-reader\_\-interrupt@{hpgs\_\-reader\_\-interrupt}}
+\index{hpgs\_\-reader\_\-interrupt@{hpgs\_\-reader\_\-interrupt}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-interrupt]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-reader\_\-interrupt ({\bf hpgs\_\-reader} $\ast$ {\em reader})}\label{group__reader_g98cbb561cc7dc7963369b60d48da17ed}
+
+
+Interrupt a currently running call to {\tt hpgs\_\-reader\_\-read} from another thread. There's no guarantee when {\tt hpgs\_\-read} will terminate after calling {\tt hpgs\_\-reader\_\-interrupt}. If the reader is currently performing a time-consuming task like rendering a large imge to the device, {\tt hpgs\_\-read} may continue for several seconds after this call. 
+
+References hpgs\_\-reader\_\-st::interrupted.\index{reader@{reader}!hpgs\_\-reader\_\-read\_\-double@{hpgs\_\-reader\_\-read\_\-double}}
+\index{hpgs\_\-reader\_\-read\_\-double@{hpgs\_\-reader\_\-read\_\-double}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-read\_\-double]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-reader\_\-read\_\-double ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  double $\ast$ {\em x})}\label{group__reader_g22ee861d68d85317e991290be88cb34a}
+
+
+read a double argument from the stream. return values: \begin{itemize}
+\item -1 read error/EOF \item 0 success. \item 1 End of command. \end{itemize}
+
+
+References hpgs\_\-reader\_\-st::eoc, hpgs\_\-getc(), hpgs\_\-ungetc(), hpgs\_\-reader\_\-st::in, and hpgs\_\-reader\_\-st::last\_\-byte.
+
+Referenced by hpgs\_\-read().\index{reader@{reader}!hpgs\_\-reader\_\-read\_\-int@{hpgs\_\-reader\_\-read\_\-int}}
+\index{hpgs\_\-reader\_\-read\_\-int@{hpgs\_\-reader\_\-read\_\-int}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-read\_\-int]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-reader\_\-read\_\-int ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  int $\ast$ {\em x})}\label{group__reader_ga819bafe10b1e6bc13a2b9142e80aa75}
+
+
+read an integer argument from the stream . return values: \begin{itemize}
+\item -1 read error/EOF \item 0 success. \item 1 End of command. \end{itemize}
+
+
+References hpgs\_\-reader\_\-st::eoc, hpgs\_\-getc(), hpgs\_\-ungetc(), hpgs\_\-reader\_\-st::in, and hpgs\_\-reader\_\-st::last\_\-byte.\index{reader@{reader}!hpgs\_\-reader\_\-read\_\-new\_\-string@{hpgs\_\-reader\_\-read\_\-new\_\-string}}
+\index{hpgs\_\-reader\_\-read\_\-new\_\-string@{hpgs\_\-reader\_\-read\_\-new\_\-string}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-read\_\-new\_\-string]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-reader\_\-read\_\-new\_\-string ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  char $\ast$ {\em str})}\label{group__reader_gfde62555505fd66ac15dd84fc90cb6f2}
+
+
+read a new string argument from the stream return values: \begin{itemize}
+\item -1 read error/EOF \item 0 success. \item 1 End of command. \end{itemize}
+
+
+References hpgs\_\-reader\_\-st::eoc, hpgs\_\-getc(), hpgs\_\-reader\_\-st::in, and hpgs\_\-reader\_\-st::last\_\-byte.\index{reader@{reader}!hpgs\_\-reader\_\-read\_\-pcl\_\-int@{hpgs\_\-reader\_\-read\_\-pcl\_\-int}}
+\index{hpgs\_\-reader\_\-read\_\-pcl\_\-int@{hpgs\_\-reader\_\-read\_\-pcl\_\-int}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-read\_\-pcl\_\-int]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-reader\_\-read\_\-pcl\_\-int ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  int $\ast$ {\em x}, \/  int $\ast$ {\em sign})}\label{group__reader_g231c5cea6c7660f0dc33deab83e32a80}
+
+
+read an integer argument from the stream - PCL version. return values: \begin{itemize}
+\item -1 read error/EOF \item 0 no integer found. \item 1 integer found. \end{itemize}
+
+
+References hpgs\_\-getc(), hpgs\_\-ungetc(), hpgs\_\-reader\_\-st::in, and hpgs\_\-reader\_\-st::last\_\-byte.
+
+Referenced by hpgs\_\-reader\_\-do\_\-PCL(), and hpgs\_\-reader\_\-do\_\-PJL().\index{reader@{reader}!hpgs\_\-reader\_\-set\_\-dynamic\_\-page@{hpgs\_\-reader\_\-set\_\-dynamic\_\-page}}
+\index{hpgs\_\-reader\_\-set\_\-dynamic\_\-page@{hpgs\_\-reader\_\-set\_\-dynamic\_\-page}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-set\_\-dynamic\_\-page]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-reader\_\-set\_\-dynamic\_\-page ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  {\bf hpgs\_\-bbox} $\ast$ {\em bbox}, \/  double {\em max\_\-page\_\-width}, \/  double {\em max\_\-page\_\-height}, \/  double {\em border}, \/  double {\em angle})}\label{group__reader_g46d15f5e8a6dc0cf46e4cab05d012cb0}
+
+
+Force the placement of the content on a dynamically sized page. Call this subroutine after you determined the plot size using a plotsize device.
+
+{\tt max\_\-page\_\-width} and {\tt max\_\-page\_\-height} specifiy the maximal dimension of the page, which will be adjusted to the size of the HPGL content of each individual page. {\tt border} specifies the border from the page to the HPGL content.
+
+{\tt bbox} holds the bounding box of the HPGL content of the first page on input and on output, the bounding box of the whole page is returned. The returned bounding box should be used to set up your device, which will be passed to {\tt hpgs\_\-reader\_\-imbue} after issuing this call. 
+
+References hpgs\_\-reader\_\-st::page\_\-angle, hpgs\_\-reader\_\-st::page\_\-bbox, hpgs\_\-reader\_\-st::page\_\-border, hpgs\_\-reader\_\-st::page\_\-height, hpgs\_\-reader\_\-st::page\_\-mode, and hpgs\_\-reader\_\-st::page\_\-width.\index{reader@{reader}!hpgs\_\-reader\_\-set\_\-fixed\_\-page@{hpgs\_\-reader\_\-set\_\-fixed\_\-page}}
+\index{hpgs\_\-reader\_\-set\_\-fixed\_\-page@{hpgs\_\-reader\_\-set\_\-fixed\_\-page}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-set\_\-fixed\_\-page]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-reader\_\-set\_\-fixed\_\-page ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  {\bf hpgs\_\-bbox} $\ast$ {\em bbox}, \/  double {\em page\_\-width}, \/  double {\em page\_\-height}, \/  double {\em border}, \/  double {\em angle})}\label{group__reader_g4300aac25380284324e15056a6515c16}
+
+
+Force the placement of the content on a fixed page. Call this subroutine after you determined the plot size using a plotsize device.
+
+{\tt page\_\-width} and {\tt page\_\-height} specifiy the dimension of the page in point (1/72 inch). {\tt border} specifies the border from the page to the HPGL content.
+
+{\tt bbox} holds the bounding box of the HPGL content of the first page on input and on output, the bounding box of the whole page is returned. The returned bounding box should be used to set up your device, which will be passed to {\tt hpgs\_\-reader\_\-imbue} after issuing this call. 
+
+References hpgs\_\-reader\_\-st::page\_\-angle, hpgs\_\-reader\_\-st::page\_\-bbox, hpgs\_\-reader\_\-st::page\_\-border, hpgs\_\-reader\_\-st::page\_\-height, hpgs\_\-reader\_\-st::page\_\-mode, and hpgs\_\-reader\_\-st::page\_\-width.\index{reader@{reader}!hpgs\_\-reader\_\-set\_\-frame\_\-asset\_\-func@{hpgs\_\-reader\_\-set\_\-frame\_\-asset\_\-func}}
+\index{hpgs\_\-reader\_\-set\_\-frame\_\-asset\_\-func@{hpgs\_\-reader\_\-set\_\-frame\_\-asset\_\-func}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-set\_\-frame\_\-asset\_\-func]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-reader\_\-set\_\-frame\_\-asset\_\-func ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  void $\ast$ {\em ctxt}, \/  hpgs\_\-reader\_\-asset\_\-func\_\-t {\em func})}\label{group__reader_g45de6cf531acd40be419b1e5a6f56c28}
+
+
+Sets a callback function, which allows to render additional frame assets before a HPGL FR command becomes effective or the reader calls {\tt hpgs\_\-showpage}.
+
+The call back function is passed the given {\tt ctxt} pointer, the device on which the reader operates, the bounding box of the HPGL content and the transformation matrix from HPGL coordinates to page coordinates. 
+
+References hpgs\_\-reader\_\-st::frame\_\-asset\_\-ctxt, and hpgs\_\-reader\_\-st::frame\_\-asset\_\-func.\index{reader@{reader}!hpgs\_\-reader\_\-set\_\-lw\_\-factor@{hpgs\_\-reader\_\-set\_\-lw\_\-factor}}
+\index{hpgs\_\-reader\_\-set\_\-lw\_\-factor@{hpgs\_\-reader\_\-set\_\-lw\_\-factor}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-set\_\-lw\_\-factor]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-reader\_\-set\_\-lw\_\-factor ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  double {\em lw\_\-factor})}\label{group__reader_g90f1afc6ab1355099eb391c000448fc4}
+
+
+Set the factor {\tt lw\_\-factor} for scaling HPGL linewidths to output linewidths. Usually you set this factor to 1.0, although for rendering to pixel device with a low resolution a factor of 0.5 may be useful to enforce the creation of thin lines. 
+
+References hpgs\_\-reader\_\-st::lw\_\-factor.\index{reader@{reader}!hpgs\_\-reader\_\-set\_\-page\_\-asset\_\-func@{hpgs\_\-reader\_\-set\_\-page\_\-asset\_\-func}}
+\index{hpgs\_\-reader\_\-set\_\-page\_\-asset\_\-func@{hpgs\_\-reader\_\-set\_\-page\_\-asset\_\-func}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-set\_\-page\_\-asset\_\-func]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-reader\_\-set\_\-page\_\-asset\_\-func ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  void $\ast$ {\em ctxt}, \/  hpgs\_\-reader\_\-asset\_\-func\_\-t {\em func})}\label{group__reader_ge01c73158fb79134c0c6ecb868d2a712}
+
+
+Sets a callback function, which allows to render additional page assets before the reader calls {\tt hpgs\_\-showpage}.
+
+The call back function is passed the given {\tt ctxt} pointer, the device on which the reader operates, the bounding box of the HPGL content and the transformation matrix from HPGL coordinates to page coordinates. 
+
+References hpgs\_\-reader\_\-st::page\_\-asset\_\-ctxt, and hpgs\_\-reader\_\-st::page\_\-asset\_\-func.\index{reader@{reader}!hpgs\_\-reader\_\-set\_\-png\_\-dump@{hpgs\_\-reader\_\-set\_\-png\_\-dump}}
+\index{hpgs\_\-reader\_\-set\_\-png\_\-dump@{hpgs\_\-reader\_\-set\_\-png\_\-dump}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-set\_\-png\_\-dump]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-reader\_\-set\_\-png\_\-dump ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  const char $\ast$ {\em filename})}\label{group__reader_g621186dd5578cea83aa87ca78884f769}
+
+
+Sets a filename for dumping inline PCL images in PNG format. The actual filenames written are:\char`\"{} filename0001.png, filename0002.png, ..... If {\tt filename} contains an extension .png the counter is put between the basename and the .png extension. 
+
+References hpgs\_\-set\_\-error(), hpgs\_\-reader\_\-st::png\_\-dump\_\-count, and hpgs\_\-reader\_\-st::png\_\-dump\_\-filename.\index{reader@{reader}!hpgs\_\-reader\_\-stamp@{hpgs\_\-reader\_\-stamp}}
+\index{hpgs\_\-reader\_\-stamp@{hpgs\_\-reader\_\-stamp}!reader@{reader}}
+\subsubsection[hpgs\_\-reader\_\-stamp]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-reader\_\-stamp ({\bf hpgs\_\-reader} $\ast$ {\em reader}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb}, \/  const char $\ast$ {\em stamp}, \/  const char $\ast$ {\em encoding}, \/  double {\em stamp\_\-size})}\label{group__reader_geb28e297b1fdcf8cc9ee8f6c3932a029}
+
+
+This call is deprecated, use {\tt hpgs\_\-device\_\-stamp} instead. 
+
+References hpgs\_\-reader\_\-st::device, and hpgs\_\-device\_\-stamp().

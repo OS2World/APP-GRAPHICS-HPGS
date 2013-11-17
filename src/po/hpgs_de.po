@@ -1,0 +1,1259 @@
+# translation of hpgs_de.po to Deutsch
+# German translations for hpgs package
+# German messages for hpgs.
+# Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the hpgs package.
+#
+# $Id: hpgs_de.po 490 2009-02-11 14:13:16Z softadm $
+#
+# Wolfgang Glas <wolfgang.glas@ev-i.at>, 2006, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: hpgs_de\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-11 15:10+0100\n"
+"PO-Revision-Date: 2009-02-11 15:12+0100\n"
+"Last-Translator: Wolfgang Glas <wolfgang.glas@ev-i.at>\n"
+"Language-Team: German <de@ev-i.at>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);"
+
+#: ../hpgsglobal.c:509
+msgid "(no error)"
+msgstr "(kein Fehler)"
+
+#: ../hpgsfont.c:573 ../hpgsfont.c:593 ../hpgsfont.c:648
+#, c-format
+msgid "Out of memory reading font directory %s."
+msgstr "Speicherüberlauf beim Lesen des Font-Verzeichnisses %s."
+
+#: ../hpgsfont.c:581 ../hpgsfont.c:635
+#, c-format
+msgid "Cannot open font directory %s."
+msgstr "Das Font-Verzeichnis %s konnte nicht geöffnet werden."
+
+#: ../hpgsfont.c:750
+msgid "Out of memory scanning font directories."
+msgstr "Speicherüberlauf beim Untersuchen der Font-Verzeichnisse."
+
+#: ../hpgsfont.c:1606
+#, c-format
+msgid "Out of memory allocating font structure for font %s."
+msgstr "Speicherüberlauf beim Erzeugen der Font-Struktur für den Font %s."
+
+#: ../hpgsfont.c:1630
+#, c-format
+msgid "Cannot open font %s in file %s."
+msgstr "Der Font %s in Datei %s konnte nicht geöffnet werden."
+
+#: ../hpgsfont.c:1636
+#, c-format
+msgid "Error reading header of font %s."
+msgstr "Fehler beim Lesen des Headers des Fonts %s."
+
+#: ../hpgsfont.c:1642 ../hpgsfont.c:1648 ../hpgsfont.c:1654 ../hpgsfont.c:1660
+#: ../hpgsfont.c:1666 ../hpgsfont.c:1672 ../hpgsfont.c:1678 ../hpgsfont.c:1684
+#, c-format
+msgid "Error reading table %s of font %s."
+msgstr "Fehler Lesen der Tabelle %s des Fonts %s."
+
+#: ../hpgsfont.c:1751
+#, c-format
+msgid "Cannot find font %s."
+msgstr "Der Font %s konnte nicht gefunden werden."
+
+#: ../hpgsfont.c:1840 ../hpgsfont.c:1896 ../hpgsfont.c:2016
+#, c-format
+msgid "Error reading glyph number %d from file."
+msgstr "Fehler beim Lesen des Glyphs mit der Nummer %d."
+
+#: ../hpgsdevices.c:195 ../hpgsdevices.c:1140
+msgid "Out of memory expanding page size stack."
+msgstr "Speicherüberlauf beim Vergrößern des Stapels für Papiergrößen"
+
+#: ../hpgsdevices.c:287 ../hpgsdevices.c:838
+#, c-format
+msgid "Error opening file %s: %s"
+msgstr "Fehler beim Öffnen der Datei %s: %s"
+
+#: ../hpgsdevices.c:317 ../hpgsdevices.c:349 ../hpgsdevices.c:368
+#, c-format
+msgid "Error writing header of file %s: %s"
+msgstr "Fehler beim Schreiben des Headers der Datei %s: %s"
+
+#: ../hpgsdevices.c:768
+#, c-format
+msgid "Error moving file %s to %.*s%4.4d%s.eps: %s"
+msgstr "Fehler beim Umbenennen der Datei %s in %.*s%4.4d%s.eps: %s"
+
+#: ../hpgsdevices.c:826
+#, c-format
+msgid "Error removing file %s: %s"
+msgstr "Fehler beim Löschen der Datei %s: %s"
+
+#: ../hpgsdevices.c:843
+msgid "Error getting page stream data"
+msgstr "Fehler beim Holen der Daten der Seitenbeschreibung"
+
+#: ../hpgsdevices.c:903
+#, c-format
+msgid "Error writing file %s: %s"
+msgstr "Fehler beim Schreiben der Datei %s: %s"
+
+#: ../hpgsdevices.c:1305
+#, c-format
+msgid "Maximum clip depth %d exceeded."
+msgstr "Maximale Anzahl %d der Clip-Ebenen überschritten."
+
+#: ../hpgsdevices.c:1623
+#, c-format
+msgid "hpgs_new_plugin_device: too much plugins registered (max %u).\n"
+msgstr ""
+"hpgs_new_plugin_device: Es wurden zu viele Plugins registriert (max %u).\n"
+
+#: ../hpgsdevices.c:1642
+#, c-format
+msgid "hpgs_new_plugin_device: unable to open plugin %s.\n"
+msgstr "hpgs_new_plugin_device: Fehler beim Öffnen des Plugins %s.\n"
+
+#: ../hpgsdevices.c:1660
+#, c-format
+msgid "hpgs_new_plugin_device: unable to open plugin %s: %s.\n"
+msgstr "hpgs_new_plugin_device: Fehler beim Öffnen des Plugins %s: %s.\n"
+
+#: ../hpgsdevices.c:1686
+msgid ""
+"hpgs_new_plugin_device: unable to resolve function hpgs_plugin_version.\n"
+msgstr ""
+"hpgs_new_plugin_device: Die Funktion hpgs_plugin_version konnte nicht im "
+"Plugin gefunden werden.\n"
+
+#: ../hpgsdevices.c:1696
+#, c-format
+msgid ""
+"hpgs_new_plugin_device: unable to resolve function hpgs_plugin_version: %s.\n"
+msgstr ""
+"hpgs_new_plugin_device: Die Funktion hpgs_plugin_version konnte nicht im "
+"Plugin gefunden werden: %s.\n"
+
+#: ../hpgsdevices.c:1708
+#, c-format
+msgid ""
+"hpgs_new_plugin_device: Plugin version %d.%d does not match application "
+"version %d.%d.\n"
+msgstr ""
+"hpgs_new_plugin_device: Die Version %d.%d des Plugins stimmt nicht mit der "
+"Version %d.%d der Applikation überein.\n"
+
+#: ../hpgsdevices.c:1743
+msgid ""
+"hpgs_new_plugin_device: unable to resolve function hpgs_plugin_new_device.\n"
+msgstr ""
+"hpgs_new_plugin_device: Die Funktion hpgs_plugin_new_device konnte nicht im "
+"Plugin gefunden werden.\n"
+
+#: ../hpgsdevices.c:1754
+#, c-format
+msgid ""
+"hpgs_new_plugin_device: unable to resolve function hpgs_plugin_new_device: %"
+"s.\n"
+msgstr ""
+"hpgs_new_plugin_device: Die Funktion hpgs_plugin_new_device konnte nicht im "
+"Plugin gefunden werden: %s.\n"
+
+#: ../hpgsreader.c:341
+#, c-format
+msgid "EOF during recovery from malformed HPGL command at file position %lu."
+msgstr ""
+"Ende der Datei beim Erholen von einem ungültigen HPGL-Kommando an der "
+"Dateiposition %lu."
+
+#: ../hpgsreader.c:347
+#, c-format
+msgid ""
+"No semicolon in the next 256 bytes during recovery from malformed HPGL "
+"command at file position %lu."
+msgstr ""
+"Kein Strichpunkt in den nächsten 256 Bytes beim Erholen von einem ungültigen "
+"HPGL-Kommando an der Dateiposition %lu."
+
+#: ../hpgsreader.c:502
+msgid "Unexpected EOF after BEGMF;."
+msgstr "Unerwartetes Dateiende nach BEGMF;."
+
+#: ../hpgsreader.c:507 ../hpgsreader.c:531
+msgid "I/O Error rewinding input stream."
+msgstr "E/A Fehler beim Zurücksetzen der Eingabedatei."
+
+#: ../hpgsreader.c:524
+msgid "Unexpected EOF after *OceJobBegin."
+msgstr "Unerwartetes Dateiende nach *OceJobBegin."
+
+#: ../hpgsreader.c:574
+msgid "Invalid *-command after *OceJobData."
+msgstr "Unerwartetes *-Kommando nach *OceJobData gefunden."
+
+#: ../hpgsreader.c:602
+msgid "Unexpected EOF between commands."
+msgstr "Unerwartetes Dateiende zwischen zwei HPGL-Kommandos."
+
+#: ../hpgsreader.c:685
+#, c-format
+msgid "Unknown command %c%c found at file position %lu.\n"
+msgstr "Unbekanntes HPGL-Kommando %c%c an der Dateiposition %lu gefunden.\n"
+
+#: ../hpgsreader.c:710
+#, c-format
+msgid "Trailing garbage in command %c%c at file position %lu."
+msgstr ""
+"Nichtinterpretierbare Daten am Ende des HPGL-Kommandos %c%c an der "
+"Dateiposition %lu."
+
+#: ../hpgsreader.c:752
+#, c-format
+msgid "command %c%c"
+msgstr "HPGL-Kommando %c%c"
+
+#: ../hpgsreader.c:755
+msgid "PCL command"
+msgstr "PCL-Kommando"
+
+#: ../hpgsreader.c:758
+#, c-format
+msgid "The HPGL interpreter has been interrupted in %s at file position %lu."
+msgstr ""
+"Der HPGL-Interpreter wurde im %s an der Dateiposition %lu zum Abbruch "
+"gezwungen."
+
+#: ../hpgsreader.c:761
+#, c-format
+msgid "Read error in %s at file position %lu."
+msgstr "Lesefehler im %s an der Dateiposition %lu."
+
+#: ../hpgsreader.c:764
+#, c-format
+msgid "Error in %s at file position %lu."
+msgstr "Fehler im %s an der Dateiposition %lu"
+
+#: ../hpgsreader.c:767
+#, c-format
+msgid "Unexpected EOF in %s at file position %lu."
+msgstr "Unerwartetes Dateiende im %s an der Dateiposition %lu."
+
+#: ../hpgsreader.c:770
+#, c-format
+msgid "Syntax error in %s at position %lu."
+msgstr "Syntaxfehler im %s an der Dateiposition %lu."
+
+#: ../hpgsreader.c:1010
+#, c-format
+msgid "Error allocating memory for png dump filename: %s"
+msgstr ""
+"Fehler bei der Allokation der Speichers für den Dateinamen der PNG Dump-"
+"Datei: %s"
+
+#: ../hpgscharacter.c:663
+#, c-format
+msgid "LB: Ignoring unknown control character <%d>.\n"
+msgstr "LB: Unbekanntes Steuerzeichen <%d> ignoriert.\n"
+
+#: ../hpgscharacter.c:683
+#, c-format
+msgid "Message <%.*s>.\n"
+msgstr "HPGL-Meldung <%.*s>.\n"
+
+#: ../hpgspen.c:47
+msgid "Out of memory growing pen width array."
+msgstr "Speicherüberlauf beim Vergrößern des Stiftbreiten-Liste."
+
+#: ../hpgspen.c:54
+msgid "Out of memory growing pen color array."
+msgstr "Speicherüberlauf beim Vergrößern des Stiftfarben-Liste."
+
+#: ../hpgspen.c:79
+#, c-format
+msgid "Illegal pen numer %d."
+msgstr "Ungültige Stiftnummer %d."
+
+#: ../hpgspen.c:91
+#, c-format
+msgid "Illegal pen number %d replaced by %d.\n"
+msgstr "Die ungültige Stiftnummer %d wurde durch %d ersetzt.\n"
+
+#: ../hpgspen.c:176
+#, c-format
+msgid "PC: Illegal pen number %d.\n"
+msgstr "PC: Ungültige Stiftnummer %d.\n"
+
+#: ../hpgspen.c:329
+#, c-format
+msgid "LT: Illegal linetype %d.\n"
+msgstr "LT: Ungültigen Linientyp %d.\n"
+
+#: ../hpgspen.c:376
+#, c-format
+msgid "PW: Illegal pen number %d.\n"
+msgstr "PW: Ungültige Stiftnummer %d.\n"
+
+#: ../hpgssetup.c:239
+msgid "Cannot grow palette stack."
+msgstr "Fehler beim Erweitern des Paletten-Stacks."
+
+#: ../hpgssetup.c:245
+#, c-format
+msgid "Growing palette stack size to %lu.\n"
+msgstr "Der Paletten-Stack wurde auf %lu Elemente vergrößert.\n"
+
+#: ../hpgssetup.c:257
+msgid "Out of memory pushing PCL palette."
+msgstr "Speicherüberlauf beim Erzeugen einer neuen PCL-Palette."
+
+#: ../hpgssetup.c:267
+msgid "PCL palette stack underflow."
+msgstr "Es wurden mehr PCL-Paletten gelöscht als erzeugt wurden."
+
+#: ../hpgssetup.c:403
+#, c-format
+msgid "Plot Title: %.*s\n"
+msgstr "Titel des Plots: %.*s\n"
+
+#: ../hpgssetup.c:431
+#, c-format
+msgid "Comment: %.*s\n"
+msgstr "Kommentar: %.*s\n"
+
+#: ../hpgssetup.c:543
+#, c-format
+msgid "Bounding Box of Page %d: %g %g %g %g.\n"
+msgstr "Bounding Box der Seite %d: %g %g %g %g.\n"
+
+#: ../hpgssetup.c:577
+#, c-format
+msgid "Illegal linetype %d given."
+msgstr "Ungültiger Linientyp %d."
+
+#: ../hpgstransform.c:547
+msgid "Empty x range."
+msgstr "Der angegebene Kooridnatenbreich in x-Richtung ist leer."
+
+#: ../hpgstransform.c:554
+msgid "Empty y range."
+msgstr "Der angegebene Kooridnatenbreich in y-Richtung ist leer."
+
+#: ../hpgspath.c:71
+msgid "out of memory in push_poly_point."
+msgstr "Speicherüberlauf in push_poly_point."
+
+#: ../hpgspath.c:156 ../hpgspath.c:169
+msgid "Missing moveto in do_polygon."
+msgstr "Fehlendes move_to in do_polygon."
+
+#: ../hpgspath.c:175
+msgid "curveto error in do_polygon."
+msgstr "Fehler bei curveto in do_polygon."
+
+#: ../hpgspath.c:190
+msgid "internal error in do_polygon."
+msgstr "Interner Fehler in do_polygon."
+
+#: ../hpgspath.c:999
+#, c-format
+msgid "PM: Illegal mode %d."
+msgstr "PM: Ungültige Modus %d."
+
+#: ../hpgslabel.c:143
+#, c-format
+msgid "unable to allocate %d bytes of temporary string data."
+msgstr "Speicherüberlauf beim Allokieren von %d bytes für temporäre Strings."
+
+#: ../hpgslabel.c:157
+#, c-format
+msgid "unable to convert string to encoding %s: %s."
+msgstr "Der String konnte nicht in die Kodierung %s umgewandelt werden: %s."
+
+#: ../hpgslabel.c:239 ../hpgslabel.c:267
+#, c-format
+msgid "unable to open encoding %s."
+msgstr "Die Kodierung %s konnte nicht geöffnet werden. "
+
+#: ../hpgspaint.c:66
+msgid "moveto error."
+msgstr "Fehler bei moveto."
+
+#: ../hpgspaint.c:76
+msgid "lineto error."
+msgstr "Fehler bei lineto."
+
+#: ../hpgspaint.c:87
+msgid "curveto error."
+msgstr "Fehler bei curveto."
+
+#: ../hpgspaint.c:105
+msgid "closepath error."
+msgstr "Fehler bei closepath."
+
+#: ../hpgspaint.c:131
+msgid "Out of memory cutting thin line."
+msgstr "Speicherüberlauf bei der Scanline-Segmentierung einer dünnen Linie."
+
+#: ../hpgspaint.c:138
+msgid "stroke: Image error"
+msgstr "Pixelbild-Fehler in stroke"
+
+#: ../hpgspaint.c:140
+msgid "stroke: Error emitting scanlines."
+msgstr "Fehler bei der Ausgabe der Scanline-Segmente in stroke."
+
+#: ../hpgspaint.c:151
+msgid "Out of memory creating stroke path."
+msgstr "Speicherüberlauf beim Erzeugen des Umrisses in stroke."
+
+#: ../hpgspaint.c:163
+msgid "Error filling stroke path."
+msgstr "Fehler beim Füllen des Umrisses in stroke."
+
+#: ../hpgspaint.c:202
+#, c-format
+msgid "Maximum clip depth of %d exceeded."
+msgstr "Die maximale Clip-Tiefe %d wurde überschritten."
+
+#: ../hpgspaint.c:234
+msgid "cliprestore: No valid clipper found."
+msgstr "Kein gültiger clipper in cliprestore."
+
+#: ../hpgspaint.c:259
+msgid "setdash: Out of memory."
+msgstr "Speicherüberlauf in setdash."
+
+#: ../hpgspaint.c:316
+#, c-format
+msgid "setrop3: Invalid ROP3 %d specified"
+msgstr "Ungültige ROP3-Operation %d in setrop3."
+
+#: ../hpgspaint.c:342
+msgid "drawimage: Null image specified."
+msgstr "Kein Bild in drawimage angegeben."
+
+#: ../hpgspaint.c:347
+msgid "drawimage error"
+msgstr "Fehler in drawimage"
+
+#: ../hpgspaint.c:349
+msgid "drawimage error."
+msgstr "Fehler in drawimage."
+
+#: ../hpgspaint.c:398
+msgid "setplotsize: The given bounding box result in a null image."
+msgstr ""
+"setplotsize: Die angegebene Bounding Box resultiert in einem leerem Bild."
+
+#: ../hpgspaint.c:401
+msgid "setplotsize: error resizing image"
+msgstr "setplotsize: Fehler beim Umdimensionieren des Pixelbildes"
+
+#: ../hpgspaint.c:410
+msgid "setplotsize: Out of memory allocating path clipper."
+msgstr "setplotsize: Speicherüberlauf beim Allokieren des Scanline-Trägers."
+
+#: ../hpgspaint.c:423
+msgid "setplotsize: Out of memory allocating clip clipper."
+msgstr "setplotsize: Speicherüberlauf beim Allokieren des Clip-Trägers."
+
+#: ../hpgspaint.c:426
+msgid "setplotsize: Out of memory initializing clip clipper."
+msgstr "setplotsize: Speicherüberlauf beim Initialisieren des Clip-Trägers."
+
+#: ../hpgspaint.c:634
+msgid "fill: Error cutting current path."
+msgstr "fill: Fehler bei der Scanline-Segmentierung der aktuellen Pfades."
+
+#: ../hpgspaint.c:641
+msgid "fill: Image error"
+msgstr "fill: Pixelbild-Fehler"
+
+#: ../hpgspaint.c:643
+msgid "fill: Error emitting scanlines."
+msgstr "fill: Fehler bei der Ausgabe der Scanline-Segmente."
+
+#: ../hpgspaint.c:672
+msgid "clip: Error cutting current path."
+msgstr "clip: Fehler bei der Scanline-Segmentierung der aktuellen Pfades."
+
+#: ../hpgspaint.c:678
+msgid "clip: Out of memory creating new clipper."
+msgstr "clip: Speicherübelauf beim Erzeugen eines neuen Clip-Trägers."
+
+#: ../hpgsimage.c:704
+#, c-format
+msgid "libpng warning: %s.\n"
+msgstr "Warnung der Bibliothek libpng: %s.\n"
+
+#: ../hpgsimage.c:722
+#, c-format
+msgid "Error opening file %s for writing: %s."
+msgstr "Fehler beim Öffnen der Datei %s zum Schreiben: %s."
+
+#: ../hpgsimage.c:730
+#, c-format
+msgid "libpng error creating write structure for file %s."
+msgstr ""
+"Fehler der Bibliothek libpng beim Erzeugen der write-Struktur für die Datei %"
+"s."
+
+#: ../hpgsimage.c:738
+#, c-format
+msgid "libpng error creating info structure for file %s."
+msgstr ""
+"Fehler der Bibliothek libpng beim Erzeugen der info-Struktur für die Datei %"
+"s."
+
+#: ../hpgsimage.c:746
+#, c-format
+msgid "libpng error writing file %s"
+msgstr "Fehler der Bibliothek libpng beim Schreiben der Datei %s"
+
+#: ../hpgsimage.c:1122
+#, c-format
+msgid "Invalid PNG compression %d specified."
+msgstr "Die ungültige PNG-Kompression %d wurde angegeben."
+
+#: ../hpgsimage.c:1150
+msgid "Exposure of image data is not implemented."
+msgstr "Der Zugriff auf die rohen Bilddaten ist nicht unterstützt."
+
+#: ../hpgsimage.c:1180
+msgid "Image resize is not implemented."
+msgstr "Redimensionierung des Pixelbildes ist nicht unterstützt."
+
+#: ../hpgsimage.c:1189
+msgid "Image clear is not implemented."
+msgstr "Löschen des Inhaltes des Pixelbildes ist nicht unterstützt."
+
+#: ../hpgsimage.c:1198
+msgid "Image write is not implemented."
+msgstr "Schreiben der Pixelbild-Datei ist nicht unterstützt."
+
+#: ../hpgsimage.c:1249
+msgid "Number of indexed colors exceeds 256."
+msgstr "Die Anzahl der indizierten Farben hat 256 überschritten."
+
+#: ../hpgsimage.c:1283
+msgid "Try to set a palette to a non-indexed image."
+msgstr ""
+"Es wurde versucht, einem nicht-indizierten Pixelbild eine Palette "
+"aufzuprägen."
+
+#: ../hpgsimage.c:1286
+#, c-format
+msgid "Invalid number %d of palette colors."
+msgstr "Ungültige Palettengröße %d."
+
+#: ../hpgsimagerop.c:86
+msgid "hpgs_image_rop3_clip: Out of memory growing temporary storage."
+msgstr ""
+"hpgs_image_rop3_clip: Speicherüberlauf beim Vergrößern der temporären "
+"Datenstrukturen."
+
+#: ../hpgsimagerop.c:150
+msgid "hpgs_image_rop3_clip: Out of memory allocating temporary storage."
+msgstr ""
+"hpgs_image_rop3_clip: Speicherüberlauf beim Anlegen der temporären "
+"Datenstrukturen."
+
+#: ../hpgspcl.c:925
+#, c-format
+msgid "Estimated PCL src width = %d.\n"
+msgstr "Geschätze PCL Quell-Breite = %d.\n"
+
+#: ../hpgspcl.c:941
+#, c-format
+msgid "Estimated PCL src height = %d.\n"
+msgstr "Geschätze PCL Quell-Höhe = %d.\n"
+
+#: ../hpgspcl.c:955
+#, c-format
+msgid "Incompatible CID encoding %d for compression mode 10."
+msgstr "Inkompatible CID-Kodierung %d für den Kompressionmodus 10."
+
+#: ../hpgspcl.c:964
+#, c-format
+msgid "Out of memory allocating %d bytes of raster bata buffer."
+msgstr ""
+"Speicherüberlauf beim Allokieren von %d bytes für temporäre Rasterdaten."
+
+#: ../hpgspcl.c:1033
+msgid "No PCL source raster width specified."
+msgstr "Keine PCL Quell-Breite angegeben."
+
+#: ../hpgspcl.c:1036
+msgid "No PCL source raster height specified."
+msgstr "Keine PCL Quell-Höhe angegeben."
+
+#: ../hpgspcl.c:1039
+#, c-format
+msgid "Creating %dx%d PCL image.\n"
+msgstr "Erzeuge %dx%d PCL-Pixelbild.\n"
+
+#: ../hpgspcl.c:1099 ../hpgspcl.c:1303
+#, c-format
+msgid "Invalid PCL Pixel Encoding Mode %d."
+msgstr "Ungültige PCL-Pixelcodierung %d."
+
+#: ../hpgspcl.c:1104
+msgid "Out of memory creating PCL image."
+msgstr "Speicherüberlauf beim Anlegen des PCL-Pixelbildes."
+
+#: ../hpgspcl.c:1117
+#, c-format
+msgid "PCL raster line %d is out of range (%dx%d).\n"
+msgstr "Die PCL Rasterlinie %d ist außerhalb des gültigen Bereichs (%dx%d).\n"
+
+#: ../hpgspcl.c:1162 ../hpgspcl.c:1259 ../hpgspcl.c:1287
+msgid "No raster data."
+msgstr "Keine Rasterdaten vorhanden."
+
+#: ../hpgspcl.c:1250
+#, c-format
+msgid "Invalid bpi %d."
+msgstr "Ungültige bpi (Bits pro Pixel) %d."
+
+#: ../hpgspcl.c:1329
+msgid "Error downsizing PCL image."
+msgstr "Fehler beim Verkleinern des PCL-Rasterbildes."
+
+#: ../hpgspcl.c:1449
+#, c-format
+msgid "Dumping inline PCL image to file <%s>.\n"
+msgstr "Das PCL-Pixelbild wird als Datei <%s> exportiert.\n"
+
+#: ../hpgspcl.c:1505
+#, c-format
+msgid "PCL command %c%c%d%c found.\n"
+msgstr "Das PCL-Kommando %c%c%d%c wurde gefunden.\n"
+
+#: ../hpgspcl.c:1566
+#, c-format
+msgid "Warning: Invalid pattern %d specified setting pattern to 50%% grey.\n"
+msgstr "Warnung: Ungültiges Muster %d; 50%% Grau wird als Muster verwendet.\n"
+
+#: ../hpgspcl.c:1585
+#, c-format
+msgid "PCL push/pop palette arg %d invalid."
+msgstr "Das Argument %d für den PCL-Befehl push/pop palette ist ungültig."
+
+#: ../hpgspcl.c:1663
+msgid "PCL CID command after image data."
+msgstr "Das PCL CID-Kommando wurde nach den Bilddaten gefunden."
+
+#: ../hpgspcl.c:1688
+msgid ""
+"PCL CID command with arg==18 and non-trivial colorspace is unimplemented."
+msgstr ""
+"Das PCL CID-Kommando mit 18 Argumenten und nicht-trivialen Frbraum ist nicht "
+"implementiert."
+
+#: ../hpgspcl.c:1691
+msgid "PCL CID command with arg!=6 and arg !=18 is unimplemented."
+msgstr ""
+"Das PCL CID-Kommando ist nur mit 6 Argumenten oder 18 Argumenten "
+"implementiert."
+
+#: ../hpgspcl.c:1705
+#, c-format
+msgid "Invalid bits per index %d for PCL CID encoding 0."
+msgstr "Ungültige bits pro index %d für die PCL CID-Kodierung 0."
+
+#: ../hpgspcl.c:1712
+#, c-format
+msgid "Inavlid bits per index %d for PCL CID encoding 1."
+msgstr "Ungültige bits pro index %d für die PCL CID-Kodierung 1."
+
+#: ../hpgspcl.c:1741
+#, c-format
+msgid "PCL Color index %d is out of bounds."
+msgstr "Der PCL-Farbindex %d ist außerhalb des gültigen Bereichs."
+
+#: ../hpgspcl.c:1761
+#, c-format
+msgid "PCL Raster Presentation Mode %d is invalid."
+msgstr "Der PCL Raster-Präsentations-Modus %d ist ungültig."
+
+#: ../hpgspcl.c:1769
+#, c-format
+msgid "PCL Raster Resolution %d is out of bounds."
+msgstr "Die PCL-Raster-Auflösung %d ist außerhalb des gültigen Bereichs."
+
+#: ../hpgspcl.c:1778
+msgid "PCL Source raster width command after image data."
+msgstr "Die PCL Quell-Breite wurde nach den Bilddaten gefunden."
+
+#: ../hpgspcl.c:1784
+#, c-format
+msgid "PCL Source raster width %d is out of bounds."
+msgstr "Die PCL Quell-Breite %d ist außerhalb es gültigen Bereichs."
+
+#: ../hpgspcl.c:1793
+msgid "PCL Source raster height command after image data."
+msgstr "Die PCL Quell-Höhe wurde nach den Bilddaten gefunden."
+
+#: ../hpgspcl.c:1799
+#, c-format
+msgid "PCL Source raster height %d is out of bounds."
+msgstr "Die PCL Quell-Höhe %d ist außerhalb es gültigen Bereichs."
+
+#: ../hpgspcl.c:1810
+#, c-format
+msgid ""
+"Warning: PCL Destination raster width %d is out of range and will be clamped "
+"to 65535.\n"
+msgstr "Warnung: Die PCL Ziel-Breite %d ist außerhalb es gültigen Bereichs und wird auf 65535 beschränkt.\n"
+
+#: ../hpgspcl.c:1816
+#, c-format
+msgid "PCL Destination raster width %d is out of bounds."
+msgstr "Die PCL Ziel-Breite %d ist außerhalb es gültigen Bereichs."
+
+#: ../hpgspcl.c:1827
+#, c-format
+msgid ""
+"Warning: PCL Destination raster height %d is out of range and will be "
+"clamped to 65535.\n"
+msgstr "Warnung: Die PCL Ziel-Höhe %d ist außerhalb es gültigen Bereichs wird auf 65535 beschränkt.\n"
+
+#: ../hpgspcl.c:1833
+#, c-format
+msgid "PCL Destination raster height %d is out of bounds."
+msgstr "Die PCL Ziel-Höhe %d ist außerhalb es gültigen Bereichs."
+
+#: ../hpgspcl.c:1847
+#, c-format
+msgid "Warning: Ignoring image data in PCL Raster Compression Mode %d.\n"
+msgstr "Warnung: PCL Rasterdaten im Kompressionsmodus %d werden ignoriert.\n"
+
+#: ../hpgspcl.c:1855 ../hpgspcl.c:1864
+#, c-format
+msgid "PCL Raster Row length %d is invalid."
+msgstr "Die PCL Rasterzeilen-Länge %d ist ungültig."
+
+#: ../hpgspcl.c:1870
+msgid ""
+"Raster compression mode 4 data block among other raster data is unsupported."
+msgstr ""
+"Komprimierte Rasterdaten im Modus 4 in der Mitte anderer Rasterdaten sind "
+"nicht unterstützt."
+
+#: ../hpgspcl.c:1949
+#, c-format
+msgid "Unknown PCL command %c%c%d%c found.\n"
+msgstr "Das ungültige PCL-Kommando %c%c%d%c wurde gefunden.\n"
+
+#: ../hpgspjl.c:129
+#, c-format
+msgid "Setting PJL papersize %dx%d.\n"
+msgstr "Die PJL-Papiergröße %dx%d wurde übernommen.\n"
+
+#: ../hpgspjl.c:147
+#, c-format
+msgid "Illegal line heading <%s> in PJL."
+msgstr "Ungültiger Zeilenanfang <%s> im PJL-Kontext."
+
+#: ../hpgspjl.c:165
+msgid "Missing number in PJL SET PAPERLENGTH."
+msgstr "Keine Zahl nach PJL SET PAPERLENGTH."
+
+#: ../hpgspjl.c:179
+msgid "Missing number in PJL SET PAPERWIDTH."
+msgstr "Keine Zahl nach PJL SET PAPERWIDTH."
+
+#: ../hpgspjl.c:193
+msgid "Missing number in PJL SET RESOLUTION."
+msgstr "Keine Zahl nach PJL SET RESOLUTION."
+
+#: ../hpgspjl.c:217
+#, c-format
+msgid "Setting PJL papersize %dx%d\n"
+msgstr "Die PJL-Papiergröße %dx%d wurde übernommen.\n"
+
+#: ../hpgspjl.c:247
+#, c-format
+msgid "Invalid language <%s> in PJL ENTER LANGUAGE."
+msgstr "Ungültige Plottersprache <%s> nach PJL ENTER LANGUAGE."
+
+#: ../hpgspjl.c:257
+msgid "Cannot get file position in PJL interpretation."
+msgstr ""
+"Bei der PJL-Interpretation konnte die Dateiposition nicht bestimmt werden."
+
+#: ../hpgs.c:133
+#, c-format
+msgid ""
+"\n"
+" hpgs v%s - HPGl Script, a hpgl/2 interpreter/renderer.\n"
+"\n"
+" (C) 2004-2009 ev-i Informationstechnologie GmbH (http://www.ev-i.at)\n"
+"     published under the LGPL (http://www.fsf.org/licenses/lgpl.html).\n"
+"\n"
+"Type `hpgs --help' for a detailed description of cmd line options.\n"
+msgstr ""
+"\n"
+" hpgs v%s - HPGl Script, ein hpgl/2 Interpreter/Renderer.\n"
+"\n"
+" (C) 2004-2009 ev-i Informationstechnologie GmbH (http://www.ev-i.at)\n"
+"     veröffentlicht unter der LGPL (http://www.fsf.org/licenses/lgpl.html).\n"
+"\n"
+"Tippen Sie `hpgs --help' um eine detaillierte Beschreibung der "
+"Kommandozeilenparameter zu erhalten.\n"
+
+#: ../hpgs.c:150
+#, c-format
+msgid ""
+"\n"
+" hpgs v%s - HPGl Script, a hpgl/2 interpreter/renderer.\n"
+"\n"
+" (C) 2004-2009 ev-i Informationstechnologie GmbH (http://www.ev-i.at)\n"
+"     published under the LGPL (http://www.fsf.org/licenses/lgpl.html).\n"
+"\n"
+"usage: hpgs [-i] [-v] [-q] [-d <dev>] [options...] [-o <out>] <in1> "
+"<in2>...\n"
+"       -i ... Ignore plotsize from PS and determine\n"
+"              the plotsize from the file content.\n"
+"       --linewidth-size ... Account for linewidths in the plotsize\n"
+"              calculation for -i (default behaviour).\n"
+"       --no-linewidth-size ... Ignore linewidths in the plotsize\n"
+"              calculation for -i.\n"
+"       -v ... Increase verbosity.\n"
+"       -q ... Decrease verbosity, be quiet.\n"
+"       -o <out> ... specifiy the output filename. If not specified, write\n"
+"                    to stdout.\n"
+"       -m ... Switch to multipage mode, if a single file is given on the.\n"
+"              command line. If not specified, only the first page of the "
+"input\n"
+"              file is processed.\n"
+"       -w ... Correct linewidth by given factor (default: 1).\n"
+"       -d ... Specifiy the output device. The default is the\n"
+"              native 'eps' device, which writes a simple eps file.\n"
+"              See section `Supported devices' below.\n"
+"       -a ... Use antialiasing when rendering to a png image.\n"
+"       --thin-alpha=<a>\n"
+"              Specifiy the minimal alpha value for thin lines.\n"
+"              allowed values lie in the interval [0.001,1.0] (default: "
+"0.25).\n"
+"       -I ... Specifiy image interpolation.\n"
+"       --rop3 ... Use ROP3 raster operations for rendering on devices\n"
+"              with ROP3 capabilities (default).\n"
+"       --no-rop3 ... Suppress usage of ROP3 raster operations.\n"
+"       -c ... Specifiy the compression level for png writing.\n"
+"       -r ... Specifiy the device resolution in dpi.\n"
+"              If no y-resolution is given, the y-resolution\n"
+"              is set to the same value as the x-resolution.\n"
+"       -p ... Specifiy the maximum pixel size of the device.\n"
+"              This is in fact an alternate method to specify the\n"
+"              resolution of the device. If -p is given, the device\n"
+"              resolution is caclulated in a way, that the plot fits\n"
+"              into the given rectangle.\n"
+"              If no y-size is given, the size y-size\n"
+"              is set to the same value as the x-size.\n"
+"       -s<papersize> ... Specifiy the plot size in pt (1/72 inch).\n"
+"              If -s is not given, the size is calculated from\n"
+"              the contents of the hpgl file.\n"
+"              The <papersize> may be either one of the standard\n"
+"              paper sizes A0,A1,A2,A3 or A4, their landscape versions\n"
+"              A0l,A1l,A2l,A3l or A4l or a size in the format "
+"<width>x<height>\n"
+"              where <width> and <height> specify a physical length in one of "
+"the\n"
+"              formats <l>,<l>mm,<l>cm,<l>inch or <l>pt. <l> is a floating "
+"point\n"
+"              number, the default unit is PostScript pt (1/72 inch).\n"
+"       --origin=<origin> ... Specifiy the origin of the displayed content.\n"
+"              If -s is not given, the origin is calculated from\n"
+"              the contents of the hpgl file.\n"
+"              The <origin> may be in the format <width>x<height>\n"
+"              as described above for the option -s.\n"
+"       --paper=<papersize>\n"
+"              Specify a paper size of the output device. All plots\n"
+"              are scaled to this paper size respecting the given border.\n"
+"              If no fixed paper size is given, each page in the output\n"
+"              file has an individual size adapted to the size of the HPGL\n"
+"              content of the page.\n"
+"              The format of <papersize> is decribed above for -s.\n"
+"       --border=<border>\n"
+"              Specify a border for placing plots on output pages.\n"
+"       --rotation=<angle>\n"
+"              Specify an angle for placing plots on output pages.\n"
+"       --stamp=<stamp>\n"
+"              Specify a string, which is printed in the background.\n"
+"       --stamp-encoding=<enc>\n"
+"              Specify an the name of the encoding of the string, which\n"
+"              is given in --stamp. Default is iso-8859-1.\n"
+"       --stamp-size=<pt>\n"
+"              Specify the size of the stamp specified with --stamp\n"
+"              in point. Default value: 500pt.\n"
+"       --dump-png=<filename>\n"
+"              Specify a filename for dumping inline PCL images in.\n"
+"              PNG format. The actual filenames written are:\n"
+"                 <filename>0001.png\n"
+"                 <filename>0002.png\n"
+"                  .....\n"
+"              If <filename> contains an extension '.png' the counter\n"
+"              is put between the basename and the '.png' extension.\n"
+"       --help\n"
+"              Displays this usage information.\n"
+"       --version\n"
+"              Displays the version information.\n"
+"\n"
+"Supported devices (option -d):\n"
+"\n"
+"       bbox    ... writes a PostScript BoundingBox to stdout.\n"
+"       ps      ... writes a multipage PostScript file.\n"
+"       eps     ... writes an eps files.\n"
+"       png_256 ... writes an indexed 8bpp png image.\n"
+"       png_gray... writes a grayscale 8bpp png image.\n"
+"       png_rgb ... writes a rgb 24bpp png image.\n"
+"       png_gray_alpha ... writes a grayscale 16bpp png image\n"
+"                          with an alpha channel.\n"
+"       png_rgb_alpha ... writes a rgb 32bpp png image\n"
+"                         with an alpha channel.\n"
+"       cairo_png ... writes a rgb 32bpp png image using\n"
+"                     the cairo library (experimental).\n"
+msgstr ""
+"\n"
+" hpgs v%s - HPGl Script, ein hpgl/2 Interpreter/Renderer.\n"
+"\n"
+" (C) 2004-2009 ev-i Informationstechnologie GmbH (http://www.ev-i.at)\n"
+"     veröffentlicht unter der LGPL (http://www.fsf.org/licenses/lgpl.html).\n"
+"\n"
+"Verwendung: hpgs [-i] [-v] [-q] [-d <dev>] [options...] [-o <out>] <in1> "
+"<in2>...\n"
+"       -i ... Die HPGL-Plotgröße ignorieren und stattdessen die\n"
+"              Plotgröße aus dem Dateiinhalt bestimmen.\n"
+"       --linewidth-size ... Strichstärke in die Größenberechnung der\n"
+"              Option -i einbeziehen (Standardverhalten).\n"
+"       --no-linewidth-size ... Bei der Größenberechnung mit -i die\n"
+"              Strichstärke ignorieren.\n"
+"       -v ... Mehr Diagnosemeldungen ausgeben.\n"
+"       -q ... Weniger Diagnosemeldungen ausgeben, Stillschweigen.\n"
+"       -o <out> ... Dateinamen der Ausgabe angeben. Ansonsten wird\n"
+"                    auf die Standardausgabe geschrieben.\n"
+"       -m ... Mehrseitigen Modus anschalten, wenn nur eine Eingabedatei.\n"
+"              angegeben wurde. Ansonsten wird nur die erste Seite\n"
+"              ausgegeben.\n"
+"       -w ... Korrekturfaktor für Strichstärken (Standard: 1).\n"
+"       -d ... Den Ausgabetreiber angeben. Standard ist der eingebaute\n"
+"              'eps'-Treiber, der eine einfache eps-Datei schreibt.\n"
+"              Beachten Sie den Abschnitt `Unterstützte Treiber' im\n"
+"              Anschluss.\n"
+"       -a ... Antialiasing (Kantenglättung) des PNG-Renderers einschalten.\n"
+"       --thin-alpha=<a>\n"
+"              Den minimalen Alpha-Wert für dünne Linien angeben.\n"
+"              Wertebereich: [0.001,1.0] (Standard: 0.25).\n"
+"       -I ... Dargestellte Pixelbilder werden geglättet (interpoliert).\n"
+"       --rop3 ... ROP3 Rasteroperationen verwenden, soferene\n"
+"              diese von der Ausgabeeinheit unterstützt sind. (Standard).\n"
+"       --no-rop3 ... ROP3 Rasteroperationen ausschalten.\n"
+"       -c ... Kompressionsgrad für die PNG-Bildausgabe angeben.\n"
+"       -r ... Angabe der Auflösung in dpi.\n"
+"              Wenn keine y-Auflösung angegeben wird, wird die\n"
+"              eine angegebene Auflösung für x und y verwendet.\n"
+"       -p ... Angabe der maximalen Pixelgröße des ausgegebenen Bilds.\n"
+"              Dies ist eigentlich eine alternative Methode, um die\n"
+"              Auflösung anzugeben. Wenn -p angegeben wird, dann die\n"
+"              Auflösung so bestimmt, dass das Pixelbild die angegebene\n"
+"              Pixelgröße gereade nicht überschreitet.\n"
+"              Wenn keine y-Größe angegeben wird, wird die\n"
+"              eine angegebene Größe für x und y verwendet.\n"
+"       -s<papersize> ... Angabe der Plotgröße in pt (1/72 inch).\n"
+"              Wenn -s nicht angegeben ist, wird die Plotgröße\n"
+"              aus dem Inhalt der HPGL-Datei bestimmt.\n"
+"              <papersize> kann entweder eine der Standardpapiergrößen\n"
+"              A0,A1,A2,A3 or A4, eine Querformatversion\n"
+"              A0l,A1l,A2l,A3l or A4l derselben oder ein Größe der Form\n"
+"              <width>x<height> sein.\n"
+"              Dabei sind <width> und <height> seine physikalische\n"
+"              Länge bzw. Höhe im Format <l>,<l>mm,<l>cm,<l>inch or <l>pt.\n"
+"              <l> ist dabei ein Fließkommazahl. Die Standardeinheit ist\n"
+"              ein PostScript pt (1/72 inch).\n"
+"       --origin=<origin> ... Angabe des Ursprungs des dargestellten\n"
+"              Inhalts. Wenn --origin nicht angegeben wird, berechnet sich "
+"der\n"
+"              Ursprung aus dem Inhalt der HPGL Datei.\n"
+"              <origin> wird im Format <width>x<height>\n"
+"              analog zum Argument zu -s angegeben.\n"
+"       --paper=<papersize>\n"
+"              Angabe der Zielpapiergröße der Ausgabedatei.\n"
+"              Alle Daten werden so skaliert, dass diese inklusive der\n"
+"              benutzerdefinierten Ränder auf diese Seitegröße passen.\n"
+"              Wenn --paper nicht angegeben wird, hat jede ausgegebene.\n"
+"              Seite Ihre individuelle Größe, welche sich aus dem HPGL-\n"
+"              Inhalt ergibt.\n"
+"              Das format von <papersize> wird unter -s beschrieben.\n"
+"       --border=<border>\n"
+"              Angabe des Randes für die Platzierung der Inhalts auf einer\n"
+"              Seite.\n"
+"       --rotation=<angle>\n"
+"              Angabe des Rotationswinkels für die Platzierung der Inhalts "
+"auf einer\n"
+"       --stamp=<stamp>\n"
+"              Einen Wasserzeichen-String angeben.\n"
+"       --stamp-encoding=<enc>\n"
+"              Zeichensatzcodierung des Wasserzeichen-Strings angeben\n"
+"              Standard ist iso-8859-1.\n"
+"       --stamp-size=<pt>\n"
+"              Die Ausgabegröße des Wasserzeichens in pt angeben.\n"
+"              Standardwert: 500pt.\n"
+"       --dump-png=<filename>\n"
+"              Dateiname für die Ausgabe von eingebetteten PCL-Pixelbildern\n"
+"              im PNG-Format. The geschriebenen Dateien heißen:\n"
+"                 <filename>0001.png\n"
+"                 <filename>0002.png\n"
+"                  .....\n"
+"              Wenn <filename> die Endung'.png' enthält,\n"
+"              wird die fortlaufende Nummer vor der Dateiendung eingefügt.\n"
+"       --help\n"
+"              Diese Information anzeigen.\n"
+"       --version\n"
+"              Eine kurze Versionsinformation anzeigen.\n"
+"\n"
+"Unterstützte Treiber (option -d):\n"
+"\n"
+"       bbox    ... schreibt eine PostScript BoundingBox auf die "
+"Standardausgabe.\n"
+"       ps      ... schreibt eine mehrseitige PostScript-Datei.\n"
+"       eps     ... schreibt eine eps-Datei.\n"
+"       png_256 ... schreibt ein indiziertes 8bpp png-Pixelbild.\n"
+"       png_gray... schreibt ein 8bpp png-Pixelbild in Graustufen.\n"
+"       png_rgb ... schreibt ein 24bpp png-Pixelbild in Farbe.\n"
+"       png_gray_alpha ... schreibt ein 16bpp png-Pixelbild\n"
+"                          mit Alpha-Kanal.\n"
+"       png_rgb_alpha ... schreibt ein 32bpp png-Pixelbild in Farbe\n"
+"                         mit Alpha-Kanal.\n"
+"       cairo_png ... schreibt ein 32bpp png-Pixelbild mit Hilfe\n"
+"                     der cairo-Bibliothek (experimentell).\n"
+
+#: ../hpgs.c:373
+#, c-format
+msgid "Error getting installation path: %s.\n"
+msgstr "Fehler beim Bestimmen des Installationspfades: %s.\n"
+
+#: ../hpgs.c:420
+msgid "Error: Device options specified before -d argument.\n"
+msgstr ""
+"Fehler: Treiberspezifische Optionen wurden vor den Argument -d angegeben.\n"
+
+#: ../hpgs.c:436
+msgid "Error: --stamp-size= must be followed by a valid length.\n"
+msgstr ""
+"Fehler: --stamp-size= muss von einer gültigen Längenangabe gefolgt werden.\n"
+
+#: ../hpgs.c:442
+msgid "Error: stamp-size must lie in the interval [20,2000]pt.\n"
+msgstr "Fehler: stamp-size muss im Intervall [20,2000]pt liegen.\n"
+
+#: ../hpgs.c:464
+msgid "Error: -I must be followed by an integer number.\n"
+msgstr "Fehler -I muss von einer Ganzzahl gefolgt werden.\n"
+
+#: ../hpgs.c:476
+msgid "Error: The argument to -I must be 0 or 1.\n"
+msgstr "Fehler: Das Argument für -I muss 0 oder 1 sein.\n"
+
+#: ../hpgs.c:484
+msgid "Error: -c must be followed by an integer number.\n"
+msgstr "Fehler: -c muss von einer Ganzzahl gefolgt werden.\n"
+
+#: ../hpgs.c:490
+msgid "Error: compression factor must lie in the interval [1,9].\n"
+msgstr "Fehler: Der Kompressionsgrad muss im Intervall [1,9] liegen.\n"
+
+#: ../hpgs.c:498
+msgid "Error: -w must be followed by a floating point number.\n"
+msgstr "Fehler: -w muss von einer Fließkommazahl gefolgt werden.\n"
+
+#: ../hpgs.c:504
+msgid "Error: Linewidth factor must lie in the interval [0.0,10.0].\n"
+msgstr ""
+"Fehler: Der Strichstärken-Faktor muss im Intervall [0.0,10.0] liegen.\n"
+
+#: ../hpgs.c:512
+msgid "Error: --thin-alpha= must be followed by a floating point number.\n"
+msgstr "Fehler: --thin-alpha= muss von einer Fließkommazahl gefolgt werden.\n"
+
+#: ../hpgs.c:518
+msgid "Error: Thin alpha must lie in the interval [0.01,10.0].\n"
+msgstr ""
+"Fehler: Der Alpha-Wert für dünne Linien muss im Intervall [0,01,10,0] "
+"liegen.\n"
+
+#: ../hpgs.c:526
+msgid "Error: -r must be followed by <res> or <xres>x<yres>.\n"
+msgstr "Fehler: -r muss von <res> oder <xres>x<yres> gefolgt werden.\n"
+
+#: ../hpgs.c:532
+msgid "Error: Resolutions must be at least 5 dpi.\n"
+msgstr "Fehler: Auflösungen müssen mindestens 5 dpi betragen.\n"
+
+#: ../hpgs.c:540
+msgid "Error: -p must be followed by <sz> or <xsz>x<ysz>.\n"
+msgstr "Fehler: -p muss von <sz> oder <xsz>x<ysz> gefolgt werden.\n"
+
+#: ../hpgs.c:546
+msgid "Error: Pixel sizes must be at least 20px.\n"
+msgstr "Fehler: Die Pixelgröße muss mindestens 20px betragen.\n"
+
+#: ../hpgs.c:556
+msgid "Error: -s must be followed by a valid paper size.\n"
+msgstr "Fehler: -s muss von einer gültigen Papiergröße gefolgt werden.\n"
+
+#: ../hpgs.c:562
+msgid "Error: The plot size must be at least 72 pt.\n"
+msgstr "Fehler: Die Plotgröße muss mindestens 72pt betragen.\n"
+
+#: ../hpgs.c:575
+msgid ""
+"Error: --origin= must be followed by a valid pair of length specification.\n"
+msgstr ""
+"Fehler: --origin= muss von einem Paar gültiger Längenangaben gefolgt "
+"werden.\n"
+
+#: ../hpgs.c:590
+msgid "Error: --paper= must be followed by a valid paper size.\n"
+msgstr "Fehler: -paper= muss von einer gültigen Papiergröße gefolgt werden.\n"
+
+#: ../hpgs.c:596
+msgid "Error: The paper size must be at least 72 pt.\n"
+msgstr "Fehler: Die Papiergröße muss mindestens 72pt betragen.\n"
+
+#: ../hpgs.c:606
+msgid "Error: --border= must be followed by a valid length.\n"
+msgstr ""
+"Fehler: --border= muss von einer gültigen Längenangabe gefolgt werden.\n"
+
+#: ../hpgs.c:612
+msgid "Error: The page border must lie in the interval [0,144] pt.\n"
+msgstr "Fehler: Der Seitenrand muss im Intervall [0,144] pt liegen.\n"
+
+#: ../hpgs.c:622
+msgid "Error: --angle= must be followed by a valid angle.\n"
+msgstr "Fehler: --angle= muss von einem gültigen Winkel gefolgt werden.\n"
+
+#: ../hpgs.c:659
+#, c-format
+msgid "Error: Number of plugin-args exceeds maximum of %d.\n"
+msgstr "Fehler: Anzahl der Plugin-Argumente übersteigt das Maximum von %d.\n"
+
+#: ../hpgs.c:671
+#, c-format
+msgid "Error: Number of plugin-args exceed maximum of %d.\n"
+msgstr "Fehler: Anzahl der Plugin-Argumente übersteigt das Maximum von %d.\n"
+
+#: ../hpgs.c:686
+#, c-format
+msgid "Error: Unknown option %s given.\n"
+msgstr "Fehler: Unbekannte Kommandozeilenoption %s angegeben.\n"
+
+#: ../hpgs.c:699
+msgid "Error: No input file given.\n"
+msgstr "Fehler: Keine Eingabedatei angegeben.\n"
+
+#: ../hpgs.c:723
+msgid "Error: Cannot create plotsize device.\n"
+msgstr "Fehler: Die Plotgrößen-Ausgabeeinheit konnte nicht erzeugt werden.\n"
+
+#: ../hpgs.c:731 ../hpgs.c:765 ../hpgs.c:1060 ../hpgs.c:1081
+#, c-format
+msgid "Error: Cannot open input file %s: %s\n"
+msgstr "Fehler beim Öffnen der Eingabedatei %s: %s\n"
+
+#: ../hpgs.c:742
+#, c-format
+msgid "Error: Cannot create hpgl reader: %s\n"
+msgstr "Fehler: Der HPGL-Leser konnte nicht erzeugt werden: %s\n"
+
+#: ../hpgs.c:756 ../hpgs.c:775
+#, c-format
+msgid "Error: Cannot determine plot size of file %s: %s\n"
+msgstr "Fehler: Die Plotgröße der Datei %s konnte nicht bestimmt werden: %s\n"
+
+#: ../hpgs.c:784 ../hpgs.c:834
+#, c-format
+msgid "Error: Cannot determine plotsize: %s\n"
+msgstr "Fehler beim Bestimmen der Plotgröße: %s\n"
+
+#: ../hpgs.c:791
+#, c-format
+msgid "Error: Empty bounding:  %g %g %g %g.\n"
+msgstr "Fehler: leere Plotgröße: %g %g %g %g.\n"
+
+#: ../hpgs.c:824
+#, c-format
+msgid "Error: Cannot open output file <%s>.\n"
+msgstr "Fehler: Die Ausgabedatei <%s> konnte nicht geöffnet werden.\n"
+
+#: ../hpgs.c:871
+msgid "Error: Cannot create eps device.\n"
+msgstr "Fehler: Der eps-Treiber konnte nicht instantiiert werden.\n"
+
+#: ../hpgs.c:882
+msgid "Error: Cannot create postscript device.\n"
+msgstr "Fehler: Der PostScript-Treiber konnte nicht instantiiert werden.\n"
+
+#: ../hpgs.c:904
+#, c-format
+msgid "Error: png device %s in not supported.\n"
+msgstr "Fehler: Der PNG-Treiber kennt den Modus %s nicht.\n"
+
+#: ../hpgs.c:918 ../hpgs.c:986
+#, c-format
+msgid "Error: Cannot determine overall plotsize: %s\n"
+msgstr ""
+"Fehler: Die Vereinigung aller Seitengrößen konnte nicht bestimmt werden: %s\n"
+
+#: ../hpgs.c:948
+#, c-format
+msgid "Error creating %dx%dx%d sized png image: %s.\n"
+msgstr "Fehler beim Erzeugen eines PNG-Pixelbilds der Größe %dx%dx%d: %s.\n"
+
+#: ../hpgs.c:960
+msgid "Error: Cannot create paint device.\n"
+msgstr "Fehler: Der PNG-Treiber konnte nicht instantiiert werden.\n"
+
+#: ../hpgs.c:1014
+#, c-format
+msgid "Error: Cannot create plugin device: %s\n"
+msgstr "Fehler beim Instantiieren eines Plugins: %s\n"
+
+#: ../hpgs.c:1028
+#, c-format
+msgid "Error: invalid plot device name %s specified.\n"
+msgstr "Fehler: ungültiger Treibername %s angegeben.\n"
+
+#: ../hpgs.c:1034
+#, c-format
+msgid "Error: Cannot set png_dump filename to reader: %s\n"
+msgstr "Fehler beim Setzen des Dateinamens der PNG Dump-Datei: %s\n"
+
+#: ../hpgs.c:1041
+#, c-format
+msgid "Error: Cannot stamp plot: %s\n"
+msgstr "Fehler beim Erzeugen des Wasserzeichens: %s\n"
+
+#: ../hpgs.c:1048
+#, c-format
+msgid "Error: Cannot imbue plot device to reader: %s\n"
+msgstr "Fehler beim Setzen des Treibers: %s\n"
+
+#: ../hpgs.c:1072 ../hpgs.c:1091
+#, c-format
+msgid "Error: Cannot process plot file %s: %s\n"
+msgstr "Fehler beim Verarbeiten der Plot-Datei %s: %s\n"
+
+#: ../hpgs.c:1097
+msgid "Success.\n"
+msgstr "Erfolg.\n"
+
+#~ msgid "PCL palette stack overflow (maximal stack size = %d)."
+#~ msgstr ""
+#~ "Der Stapel für die PCL-Paletten ist übergelaufen (maximale Anzahl von PCL-"
+#~ "Paletten: %d)."

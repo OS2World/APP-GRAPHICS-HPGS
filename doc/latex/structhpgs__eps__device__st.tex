@@ -1,0 +1,98 @@
+\section{hpgs\_\-eps\_\-device\_\-st Struct Reference}
+\label{structhpgs__eps__device__st}\index{hpgs\_\-eps\_\-device\_\-st@{hpgs\_\-eps\_\-device\_\-st}}
+A vector graphics device for drawing to an eps file.  
+
+
+{\tt \#include $<$hpgsdevices.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+{\bf hpgs\_\-device} {\bf inherited}\label{structhpgs__eps__device__st_f985e290744ee409439ed1870b6f7003}
+
+\begin{CompactList}\small\item\em The base device structure. \item\end{CompactList}\item 
+{\bf hpgs\_\-bbox} \textbf{doc\_\-bb}\label{structhpgs__eps__device__st_86f192552c39e581d72aefb268c21cd1}
+
+\item 
+{\bf hpgs\_\-bbox} {\bf page\_\-bb}
+\item 
+int {\bf n\_\-pages}
+\item 
+char $\ast$ {\bf filename}
+\begin{CompactList}\small\item\em The output filename. \item\end{CompactList}\item 
+{\bf hpgs\_\-ostream} $\ast$ {\bf out}\label{structhpgs__eps__device__st_b89548e41f4befb13c7ce0aca6829f66}
+
+\begin{CompactList}\small\item\em The current page stream. \item\end{CompactList}\item 
+hpgs\_\-bool {\bf page\_\-setup}\label{structhpgs__eps__device__st_504b15d2a3068d155b9bbbc9b7eb983b}
+
+\begin{CompactList}\small\item\em Is the current page set up? \item\end{CompactList}\item 
+hpgs\_\-xrop3\_\-func\_\-t {\bf rop3}\label{structhpgs__eps__device__st_1480c62b7e21dfeb710a618951e02c5a}
+
+\begin{CompactList}\small\item\em The ROP3 transfer raster operation. \item\end{CompactList}\item 
+{\bf hpgs\_\-palette\_\-color} {\bf pattern\_\-color}\label{structhpgs__eps__device__st_dfb015c261644a5faa40a438efcefc2e}
+
+\begin{CompactList}\small\item\em The color of the ROP3 pattern. \item\end{CompactList}\item 
+{\bf hpgs\_\-color} {\bf color}\label{structhpgs__eps__device__st_ca327facc8998124ab6a9689ede14c14}
+
+\begin{CompactList}\small\item\em The current output color. \item\end{CompactList}\end{CompactItemize}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+{\bf hpgs\_\-ps\_\-media\_\-size} $\ast$ {\bf media\_\-sizes}
+\item 
+int {\bf n\_\-media\_\-sizes}
+\item 
+int \textbf{media\_\-sizes\_\-alloc\_\-size}\label{structhpgs__eps__device__st_72089500083511841858f7b6727b2799}
+
+\end{CompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+A vector graphics device for drawing to an eps file. 
+
+This structure implements a {\tt hpgs\_\-device} and is used to write a scenery to an eps file. 
+
+\subsection{Field Documentation}
+\index{hpgs\_\-eps\_\-device\_\-st@{hpgs\_\-eps\_\-device\_\-st}!page\_\-bb@{page\_\-bb}}
+\index{page\_\-bb@{page\_\-bb}!hpgs_eps_device_st@{hpgs\_\-eps\_\-device\_\-st}}
+\subsubsection[page\_\-bb]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-bbox} {\bf hpgs\_\-eps\_\-device\_\-st::page\_\-bb}}\label{structhpgs__eps__device__st_2c98ad0814627f9480f283aa2754a181}
+
+
+The document bounding box used for multipage postscript files. 
+
+Referenced by hpgs\_\-new\_\-eps\_\-device(), and hpgs\_\-new\_\-ps\_\-device().\index{hpgs\_\-eps\_\-device\_\-st@{hpgs\_\-eps\_\-device\_\-st}!n\_\-pages@{n\_\-pages}}
+\index{n\_\-pages@{n\_\-pages}!hpgs_eps_device_st@{hpgs\_\-eps\_\-device\_\-st}}
+\subsubsection[n\_\-pages]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-eps\_\-device\_\-st::n\_\-pages}}\label{structhpgs__eps__device__st_00716a164dab36095ca4daba2ff43fc4}
+
+
+The bounding box of the current page. 
+
+Referenced by hpgs\_\-new\_\-eps\_\-device(), and hpgs\_\-new\_\-ps\_\-device().\index{hpgs\_\-eps\_\-device\_\-st@{hpgs\_\-eps\_\-device\_\-st}!filename@{filename}}
+\index{filename@{filename}!hpgs_eps_device_st@{hpgs\_\-eps\_\-device\_\-st}}
+\subsubsection[filename]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf hpgs\_\-eps\_\-device\_\-st::filename}}\label{structhpgs__eps__device__st_9852d09a4f1530b05fb1bc4d64912f4b}
+
+
+The output filename. 
+
+The number of pages. -1...we are writing individual eps files. 
+
+Referenced by hpgs\_\-new\_\-eps\_\-device(), and hpgs\_\-new\_\-ps\_\-device().\index{hpgs\_\-eps\_\-device\_\-st@{hpgs\_\-eps\_\-device\_\-st}!media\_\-sizes@{media\_\-sizes}}
+\index{media\_\-sizes@{media\_\-sizes}!hpgs_eps_device_st@{hpgs\_\-eps\_\-device\_\-st}}
+\subsubsection[media\_\-sizes]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-ps\_\-media\_\-size}$\ast$ {\bf hpgs\_\-eps\_\-device\_\-st::media\_\-sizes}}\label{structhpgs__eps__device__st_578308a5c4ae9cec6a37d3e8c85ebc09}
+
+
+A stack of media sizes for multipage PostScript files. The media sizes are sorted by their hash value. 
+
+Referenced by hpgs\_\-new\_\-eps\_\-device(), and hpgs\_\-new\_\-ps\_\-device().\index{hpgs\_\-eps\_\-device\_\-st@{hpgs\_\-eps\_\-device\_\-st}!n\_\-media\_\-sizes@{n\_\-media\_\-sizes}}
+\index{n\_\-media\_\-sizes@{n\_\-media\_\-sizes}!hpgs_eps_device_st@{hpgs\_\-eps\_\-device\_\-st}}
+\subsubsection[n\_\-media\_\-sizes]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-eps\_\-device\_\-st::n\_\-media\_\-sizes}}\label{structhpgs__eps__device__st_5a86f397ff80fb7ce5b8548a8ae7ca3f}
+
+
+The currently calculated overall bounding box. 
+
+Referenced by hpgs\_\-new\_\-eps\_\-device(), and hpgs\_\-new\_\-ps\_\-device().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf hpgsdevices.h}\end{CompactItemize}

@@ -1,0 +1,21 @@
+Source: hpgs
+Priority: extra
+Section: utils
+Version: 1.1.5-492
+Maintainer: Wolfgang Glas <wolfgang.glas@ev-i.at>
+Build-Depends: cdbs, debhelper (>> 5), gettext, libpng12-dev, pkg-config
+
+Package: hpgs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: HPGS is an HPGL/2 interpreter, which renders HPGL/2 through a
+ Postscript-like API. Currently, it can render to eps and png files.
+ For rendering the scenery to pixel formats, a rendering engine has been coded,
+ which draws vector graphics into pixel buffers.
+
+Package: hpgs-dev
+Section: devel
+Architecture: any
+Depends: libpng12-dev, hpgs (= ${Source-Version})
+Description: This package contains files required to develop applications
+ using the hpgs libraries.

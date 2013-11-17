@@ -1,0 +1,160 @@
+\section{hpgs\_\-font\_\-st Struct Reference}
+\label{structhpgs__font__st}\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}}
+A truetype font.  
+
+
+{\tt \#include $<$hpgsfont.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+{\bf hpgs\_\-istream} $\ast$ {\bf is}
+\item 
+{\bf hpgs\_\-font\_\-header} \textbf{header}\label{structhpgs__font__st_a73c2cf94596cd81d8eba9e8dcbf56db}
+
+\item 
+hpgs\_\-font\_\-head\_\-data {\bf head\_\-data}
+\item 
+hpgs\_\-font\_\-hhea\_\-data {\bf hhea\_\-data}
+\item 
+hpgs\_\-font\_\-maxp\_\-data {\bf maxp\_\-data}
+\item 
+hpgs\_\-font\_\-longHorMetrics $\ast$ {\bf hmtx\_\-data}
+\item 
+uint32\_\-t $\ast$ {\bf loca\_\-data}
+\item 
+size\_\-t {\bf loca\_\-data\_\-sz}
+\item 
+hpgs\_\-font\_\-cmap\_\-data {\bf cmap\_\-data}
+\item 
+hpgs\_\-font\_\-post\_\-data {\bf post\_\-data}
+\item 
+{\bf hpgs\_\-font\_\-kern\_\-pair} $\ast$ \textbf{kern\_\-data}\label{structhpgs__font__st_252e4f0f49ac6a3f9fabf36456c68c6f}
+
+\item 
+size\_\-t {\bf kern\_\-data\_\-sz}
+\item 
+int $\ast$ {\bf glyph\_\-cache\_\-positions}
+\item 
+size\_\-t {\bf n\_\-cached\_\-glyphs}
+\item 
+hpgs\_\-font\_\-glyph\_\-data $\ast$ {\bf glyph\_\-cache}
+\item 
+hpgs\_\-mutex\_\-t {\bf mutex}
+\item 
+size\_\-t {\bf nref}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A truetype font. 
+
+This structure holds all details for operating on a truetype font file. The font file is kept open by the font object during it's lifetime, since we operate on the font file like on a database. 
+
+\subsection{Field Documentation}
+\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!is@{is}}
+\index{is@{is}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[is]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-istream}$\ast$ {\bf hpgs\_\-font\_\-st::is}}\label{structhpgs__font__st_778495b16d83becad5feea7c240e4b1a}
+
+
+The input stream to operate on. 
+
+Referenced by hpgs\_\-destroy\_\-font().\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!head\_\-data@{head\_\-data}}
+\index{head\_\-data@{head\_\-data}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[head\_\-data]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-font\_\-head\_\-data {\bf hpgs\_\-font\_\-st::head\_\-data}}\label{structhpgs__font__st_e44f21e47f3899aa4b93e29ac37b9c18}
+
+
+The head table. 
+
+Referenced by hpgs\_\-font\_\-decompose\_\-utf8(), hpgs\_\-font\_\-get\_\-ascent(), hpgs\_\-font\_\-get\_\-descent(), hpgs\_\-font\_\-get\_\-glyph\_\-metrics(), hpgs\_\-font\_\-get\_\-line\_\-gap(), and hpgs\_\-font\_\-get\_\-utf8\_\-metrics().\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!hhea\_\-data@{hhea\_\-data}}
+\index{hhea\_\-data@{hhea\_\-data}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[hhea\_\-data]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-font\_\-hhea\_\-data {\bf hpgs\_\-font\_\-st::hhea\_\-data}}\label{structhpgs__font__st_d99549398296db0897256d54cbbc13f3}
+
+
+The hhea table. 
+
+Referenced by hpgs\_\-font\_\-get\_\-ascent(), hpgs\_\-font\_\-get\_\-descent(), and hpgs\_\-font\_\-get\_\-line\_\-gap().\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!maxp\_\-data@{maxp\_\-data}}
+\index{maxp\_\-data@{maxp\_\-data}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[maxp\_\-data]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-font\_\-maxp\_\-data {\bf hpgs\_\-font\_\-st::maxp\_\-data}}\label{structhpgs__font__st_84b6da5894685a0b4f1732b6bfb96a9f}
+
+
+The maxp table. 
+
+Referenced by hpgs\_\-font\_\-get\_\-glyph\_\-count(), and hpgs\_\-font\_\-get\_\-glyph\_\-metrics().\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!hmtx\_\-data@{hmtx\_\-data}}
+\index{hmtx\_\-data@{hmtx\_\-data}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[hmtx\_\-data]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-font\_\-longHorMetrics$\ast$ {\bf hpgs\_\-font\_\-st::hmtx\_\-data}}\label{structhpgs__font__st_8ac77bb0e5f432ed7e32e994aac4dc6d}
+
+
+The hmtx table. This array has a dimension of maxp\_\-data.numGlyphs. 
+
+Referenced by hpgs\_\-destroy\_\-font(), hpgs\_\-font\_\-decompose\_\-utf8(), hpgs\_\-font\_\-get\_\-glyph\_\-metrics(), and hpgs\_\-font\_\-get\_\-utf8\_\-metrics().\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!loca\_\-data@{loca\_\-data}}
+\index{loca\_\-data@{loca\_\-data}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[loca\_\-data]{\setlength{\rightskip}{0pt plus 5cm}uint32\_\-t$\ast$ {\bf hpgs\_\-font\_\-st::loca\_\-data}}\label{structhpgs__font__st_cfa1cbe2a0f6c6b03fd04ceb088838d7}
+
+
+The loca table. 
+
+Referenced by hpgs\_\-destroy\_\-font().\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!loca\_\-data\_\-sz@{loca\_\-data\_\-sz}}
+\index{loca\_\-data\_\-sz@{loca\_\-data\_\-sz}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[loca\_\-data\_\-sz]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf hpgs\_\-font\_\-st::loca\_\-data\_\-sz}}\label{structhpgs__font__st_96a6c25b2363f35b7debfa0eb30c6ce1}
+
+
+The size of the loca table. \index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!cmap\_\-data@{cmap\_\-data}}
+\index{cmap\_\-data@{cmap\_\-data}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[cmap\_\-data]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-font\_\-cmap\_\-data {\bf hpgs\_\-font\_\-st::cmap\_\-data}}\label{structhpgs__font__st_b5dde9d6e746d6f1988c64f315a41090}
+
+
+The cmap table. 
+
+Referenced by hpgs\_\-destroy\_\-font().\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!post\_\-data@{post\_\-data}}
+\index{post\_\-data@{post\_\-data}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[post\_\-data]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-font\_\-post\_\-data {\bf hpgs\_\-font\_\-st::post\_\-data}}\label{structhpgs__font__st_e75403174e964ab5c13cbf25c351ab20}
+
+
+The post table. 
+
+Referenced by hpgs\_\-destroy\_\-font(), and hpgs\_\-font\_\-get\_\-glyph\_\-name().\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!kern\_\-data\_\-sz@{kern\_\-data\_\-sz}}
+\index{kern\_\-data\_\-sz@{kern\_\-data\_\-sz}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[kern\_\-data\_\-sz]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf hpgs\_\-font\_\-st::kern\_\-data\_\-sz}}\label{structhpgs__font__st_fe5520a8a87fc7c612951a5a0bba86f3}
+
+
+The size of the kern table. \index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!glyph\_\-cache\_\-positions@{glyph\_\-cache\_\-positions}}
+\index{glyph\_\-cache\_\-positions@{glyph\_\-cache\_\-positions}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[glyph\_\-cache\_\-positions]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf hpgs\_\-font\_\-st::glyph\_\-cache\_\-positions}}\label{structhpgs__font__st_26a6c7172b53abe1a34f150ad47c2410}
+
+
+The position of an individual glyph in {\tt glyph\_\-cache} or -1, if the glyph has not been cached yet. This array has a dimension of maxp\_\-data.numGlyphs 
+
+Referenced by hpgs\_\-destroy\_\-font().\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!n\_\-cached\_\-glyphs@{n\_\-cached\_\-glyphs}}
+\index{n\_\-cached\_\-glyphs@{n\_\-cached\_\-glyphs}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[n\_\-cached\_\-glyphs]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf hpgs\_\-font\_\-st::n\_\-cached\_\-glyphs}}\label{structhpgs__font__st_2d8d4de9fb54a237d12221e93da80ee8}
+
+
+The number of actually cached glyphs. 
+
+Referenced by hpgs\_\-destroy\_\-font().\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!glyph\_\-cache@{glyph\_\-cache}}
+\index{glyph\_\-cache@{glyph\_\-cache}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[glyph\_\-cache]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-font\_\-glyph\_\-data$\ast$ {\bf hpgs\_\-font\_\-st::glyph\_\-cache}}\label{structhpgs__font__st_91fa96300139ac68055d5381f21cd2f9}
+
+
+The cached glyphs. This array has a dimension of maxp\_\-data.numGlyphs. 
+
+Referenced by hpgs\_\-destroy\_\-font().\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!mutex@{mutex}}
+\index{mutex@{mutex}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[mutex]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-mutex\_\-t {\bf hpgs\_\-font\_\-st::mutex}}\label{structhpgs__font__st_c38d24f9286f4d3b46a38a5b1500e541}
+
+
+The mutex to protec glyph access and reference counting. 
+
+Referenced by hpgs\_\-destroy\_\-font(), and hpgs\_\-find\_\-font().\index{hpgs\_\-font\_\-st@{hpgs\_\-font\_\-st}!nref@{nref}}
+\index{nref@{nref}!hpgs_font_st@{hpgs\_\-font\_\-st}}
+\subsubsection[nref]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf hpgs\_\-font\_\-st::nref}}\label{structhpgs__font__st_62615189edb7935d10248a065caae62b}
+
+
+The reference count. 
+
+Referenced by hpgs\_\-destroy\_\-font(), and hpgs\_\-find\_\-font().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+hpgsfont.h\end{CompactItemize}

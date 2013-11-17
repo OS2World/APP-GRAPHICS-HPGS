@@ -1,0 +1,59 @@
+\section{hpgs\_\-image\_\-vtable\_\-st Struct Reference}
+\label{structhpgs__image__vtable__st}\index{hpgs\_\-image\_\-vtable\_\-st@{hpgs\_\-image\_\-vtable\_\-st}}
+A table of virtual function implementing {\tt hpgs\_\-image}.  
+
+
+{\tt \#include $<$hpgs.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+int($\ast$ \textbf{get\_\-pixel} )(const {\bf hpgs\_\-image} $\ast$\_\-this, int x, int y, {\bf hpgs\_\-paint\_\-color} $\ast$c, double $\ast$alpha)\label{structhpgs__image__vtable__st_24697076d67611f88835060e2f30884d}
+
+\item 
+int($\ast$ \textbf{put\_\-pixel} )({\bf hpgs\_\-image} $\ast$\_\-this, int x, int y, const {\bf hpgs\_\-paint\_\-color} $\ast$c, double alpha)\label{structhpgs__image__vtable__st_66e1b74c2607eb37f62167bb17e32b39}
+
+\item 
+int($\ast$ \textbf{put\_\-chunk} )({\bf hpgs\_\-image} $\ast$\_\-this, int x1, int x2, int y, const {\bf hpgs\_\-paint\_\-color} $\ast$c)\label{structhpgs__image__vtable__st_2f20abbb1d3ac9d59ff6068719a89c1c}
+
+\item 
+int($\ast$ \textbf{rop3\_\-pixel} )({\bf hpgs\_\-image} $\ast$\_\-this, int x, int y, const {\bf hpgs\_\-paint\_\-color} $\ast$c, double alpha)\label{structhpgs__image__vtable__st_f1ba1936b0a98b83080709f817f4934a}
+
+\item 
+int($\ast$ \textbf{rop3\_\-chunk} )({\bf hpgs\_\-image} $\ast$\_\-this, int x1, int x2, int y, const {\bf hpgs\_\-paint\_\-color} $\ast$c)\label{structhpgs__image__vtable__st_3b083af8bdb207c73d8a8a632be8a604}
+
+\item 
+int($\ast$ \textbf{setrop3} )({\bf hpgs\_\-image} $\ast$\_\-this, hpgs\_\-rop3\_\-func\_\-t rop3)\label{structhpgs__image__vtable__st_bd1080e2297c9d0debe6281186c2f003}
+
+\item 
+int($\ast$ \textbf{setpatcol} )({\bf hpgs\_\-image} $\ast$\_\-this, const {\bf hpgs\_\-palette\_\-color} $\ast$p)\label{structhpgs__image__vtable__st_b92201524525b754e22872a248a58958}
+
+\item 
+int($\ast$ \textbf{resize} )({\bf hpgs\_\-image} $\ast$\_\-this, int w, int h)\label{structhpgs__image__vtable__st_b1b3310531a2831373acb9459df372a4}
+
+\item 
+int($\ast$ \textbf{set\_\-resolution} )({\bf hpgs\_\-image} $\ast$pim, double x\_\-dpi, double y\_\-dpi)\label{structhpgs__image__vtable__st_d9613cc4a25ec8a2fe272ac8b380bbf0}
+
+\item 
+int($\ast$ \textbf{clear} )({\bf hpgs\_\-image} $\ast$\_\-this)\label{structhpgs__image__vtable__st_cccf9768631d2c6ded02d8f2633861bb}
+
+\item 
+int($\ast$ \textbf{write} )({\bf hpgs\_\-image} $\ast$\_\-this, const char $\ast$filename)\label{structhpgs__image__vtable__st_034a89fd29ab03949817321634dfe21e}
+
+\item 
+int($\ast$ \textbf{get\_\-data} )({\bf hpgs\_\-image} $\ast$\_\-this, unsigned char $\ast$$\ast$data, int $\ast$stride, int $\ast$depth)\label{structhpgs__image__vtable__st_61d55162ee7390120e268f9756f363ec}
+
+\item 
+void($\ast$ \textbf{destroy} )({\bf hpgs\_\-image} $\ast$\_\-this)\label{structhpgs__image__vtable__st_4ce669ffc871826e2481dff1e0aa8c4f}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A table of virtual function implementing {\tt hpgs\_\-image}. 
+
+This structure has a public alias {\tt hpgs\_\-image\_\-vtable} and represents a table of functions for a specific implementation of {\tt hpgs\_\-image}. 
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf hpgs.h}\end{CompactItemize}

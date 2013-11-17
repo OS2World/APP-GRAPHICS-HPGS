@@ -1,0 +1,36 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+DEB_INSTALL_DOCS_ALL := INSTALL README LICENSE TODO
+
+DEB_SHLIBDEPS_INCLUDE := debian/tmp/usr/bin/hpgs
+
+DEB_DH_ALWAYS_EXCLUDE := .svn
+
+package = hpgs
+docdir = debian/tmp/usr/share/doc/$(package)
+
+INSTALL_PROGRAM = install
+
+builddir = build/unix-shared
+
+common-build-arch::
+	cd $(builddir) && $(MAKE) COPT="-O2" prefix="/usr"
+	touch common-build-arch
+
+clean::
+	rm -f compile common-install-arch common-build-arch
+	rm -rf *~ debian/tmp debian/*~ debian/files* debian/substvars debian/compat
+	cd $(builddir) && make distclean
+
+common-install-arch::
+	rm -rf debian/tmp
+	install -d debian/tmp/DEBIAN $(docdir)
+	cp -pr doc/* $(docdir)
+	mkdir debian/tmp/usr/bin
+	mkdir debian/tmp/usr/include
+	mkdir debian/tmp/usr/lib
+	cd $(builddir) &&  $(MAKE) install-devel prefix=../../debian/tmp/usr
+	touch common-install-arch
+

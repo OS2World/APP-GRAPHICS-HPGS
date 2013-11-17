@@ -1,0 +1,48 @@
+*
+* $Id: TODO 447 2008-04-01 08:36:13Z softadm $
+*
+* Tasks, which are left to do.
+*
+* Status: As of hpgs-1.1.3
+*
+
+HPGL/2 interpereter:
+
+ - Handling of PP command.
+ - Allow the user to load a predefined color/linewidth palette
+   instead of using the palette from the HPGL file.
+ - Implement raster fill, screened vectors and generate extensive
+     test cases for all these ROP-related features.
+
+PCL interpreter:
+
+ - Handle ESC*g12W image setup. (Where's the doc for this on http://www.hp.com ?)
+ - Handle raster Y offset in the middle of a picture.
+ - Implement more PCL commands, even beyond image extraction. 
+ - Add a testsuite, which covers all PCL image compression modes.
+ - Merge PCL and HPGL/2 palettes.
+
+EPS device:
+ - Implement a better image data encoding like base64 or the like.
+
+Paint device:
+
+ - Optimize small bezier dash segments to lines.
+ - Add support for possibly splitting cut/emit into 2 seperate threads.
+ - Optimize image drawing for rotations of 0/90/180/270 degrees.
+ - Optimize image drawing for images, that are scaled up. (device res. > image res.)
+
+Cairo plugin:
+
+ - Implement pseudo-devices for other cairo backends than png.
+ - Discuss with the cairo developers about extending their display model
+   in order to allow the representation of PCL and-type ROPs.
+ - Activate cairo under Win32.
+
+Images:
+
+ - Handle more than 256 requested colors for indexed images.
+
+General improvements/extensions:
+
+ - Revise PCL/PJL/HPGL context switching code.

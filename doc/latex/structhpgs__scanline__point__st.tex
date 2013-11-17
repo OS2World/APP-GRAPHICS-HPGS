@@ -1,0 +1,41 @@
+\section{hpgs\_\-scanline\_\-point\_\-st Struct Reference}
+\label{structhpgs__scanline__point__st}\index{hpgs\_\-scanline\_\-point\_\-st@{hpgs\_\-scanline\_\-point\_\-st}}
+An intersection point of a path with a scanline.  
+
+
+{\tt \#include $<$hpgspaint.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+double {\bf x}
+\item 
+int {\bf order}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+An intersection point of a path with a scanline. 
+
+This structure has a public alias {\tt hpgs\_\-scanline\_\-point} and holds the information of an intersection point of a path with a scanline. 
+
+\subsection{Field Documentation}
+\index{hpgs\_\-scanline\_\-point\_\-st@{hpgs\_\-scanline\_\-point\_\-st}!x@{x}}
+\index{x@{x}!hpgs_scanline_point_st@{hpgs\_\-scanline\_\-point\_\-st}}
+\subsubsection[x]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-scanline\_\-point\_\-st::x}}\label{structhpgs__scanline__point__st_573f70a9bc32ab4c5bf6cb3d32cc2ce3}
+
+
+The x coordinate of the intersection point of the path with the scanline. 
+
+Referenced by hpgs\_\-paint\_\-clipper\_\-thin\_\-cut(), and hpgs\_\-paint\_\-device\_\-drawimage().\index{hpgs\_\-scanline\_\-point\_\-st@{hpgs\_\-scanline\_\-point\_\-st}!order@{order}}
+\index{order@{order}!hpgs_scanline_point_st@{hpgs\_\-scanline\_\-point\_\-st}}
+\subsubsection[order]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-scanline\_\-point\_\-st::order}}\label{structhpgs__scanline__point__st_dd5b602518f4cb82caa6f337ef2df81b}
+
+
+The order of the intersection. An {\tt order} of 1 means an upward intersection, -1 means a downward intersection. Horizontal intersection are stored as two distinct intersection points with the same x coordinate. If antialiasing is used, the order represents a delta of a broken down winding value. A order of 256 means that the scanline is intersected from the bottom to the top of a physical image row between the previous and the actual intersection point. if The order is smaller than 256, the physical row is not touched in its whole extent an a corresponding alpha value less than 1 is generated. 
+
+Referenced by hpgs\_\-paint\_\-clipper\_\-thin\_\-cut(), and hpgs\_\-paint\_\-device\_\-drawimage().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf hpgspaint.h}\end{CompactItemize}

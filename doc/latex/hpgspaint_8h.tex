@@ -1,0 +1,77 @@
+\section{hpgspaint.h File Reference}
+\label{hpgspaint_8h}\index{hpgspaint.h@{hpgspaint.h}}
+Internals of the pixel renderer. 
+
+{\tt \#include $<$hpgs.h$>$}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf hpgs\_\-paint\_\-device\_\-st}
+\begin{CompactList}\small\item\em The pixel rendering vector graphics device. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-bezier\_\-length\_\-st}
+\begin{CompactList}\small\item\em A structure for holding intermediate values for length calculations of a bezier spline. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-scanline\_\-point\_\-st}
+\begin{CompactList}\small\item\em An intersection point of a path with a scanline. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-paint\_\-scanline\_\-st}
+\begin{CompactList}\small\item\em A scanline of the pixel renderer. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-paint\_\-clipper\_\-st}
+\begin{CompactList}\small\item\em A collection of scanlines for mapping paths onto images. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \textbf{HPGS\_\-PAINT\_\-MAX\_\-CLIP\_\-DEPTH}~16\label{group__paint__device_gf6c109765736c6286c304392398ab3c5}
+
+\item 
+\#define \textbf{HPGS\_\-BEZIER\_\-NSEGS}~16\label{group__path_gc1e1b2309958cace37208a8072ac9f4f}
+
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef struct {\bf hpgs\_\-scanline\_\-point\_\-st} \textbf{hpgs\_\-scanline\_\-point}\label{hpgspaint_8h_e61f31089d3c7a3bc1ad9cf674dff46b}
+
+\item 
+typedef struct {\bf hpgs\_\-paint\_\-scanline\_\-st} \textbf{hpgs\_\-paint\_\-scanline}\label{hpgspaint_8h_8972dfb21805e2bc16c8e26e5af30d85}
+
+\item 
+typedef struct {\bf hpgs\_\-paint\_\-clipper\_\-st} \textbf{hpgs\_\-paint\_\-clipper}\label{hpgspaint_8h_1d21a9e2b67c4475ae1a5180fe718fdc}
+
+\item 
+typedef struct {\bf hpgs\_\-bezier\_\-length\_\-st} \textbf{hpgs\_\-bezier\_\-length}\label{group__path_g5e084a0203b2fc7fcbe94b5c2a7af9b0}
+
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-device\_\-fill} ({\bf hpgs\_\-paint\_\-device} $\ast$pdv, {\bf hpgs\_\-paint\_\-path} $\ast$path, hpgs\_\-bool winding, hpgs\_\-bool stroke)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-device\_\-clip} ({\bf hpgs\_\-paint\_\-device} $\ast$pdv, {\bf hpgs\_\-paint\_\-path} $\ast$path, hpgs\_\-bool winding)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-device\_\-drawimage} ({\bf hpgs\_\-paint\_\-device} $\ast$pdv, const {\bf hpgs\_\-image} $\ast$img, const {\bf hpgs\_\-point} $\ast$ll, const {\bf hpgs\_\-point} $\ast$lr, const {\bf hpgs\_\-point} $\ast$ur)
+\item 
+HPGS\_\-INTERNAL\_\-API void {\bf hpgs\_\-bezier\_\-length\_\-init} ({\bf hpgs\_\-bezier\_\-length} $\ast$b, const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i)
+\item 
+HPGS\_\-INTERNAL\_\-API double {\bf hpgs\_\-bezier\_\-length\_\-param} (const {\bf hpgs\_\-bezier\_\-length} $\ast$b, double l)
+\item 
+HPGS\_\-INTERNAL\_\-API {\bf hpgs\_\-paint\_\-clipper} $\ast$ {\bf hpgs\_\-new\_\-paint\_\-clipper} (const {\bf hpgs\_\-bbox} $\ast$bb, int height, int scanline\_\-msize, int overscan)
+\item 
+HPGS\_\-INTERNAL\_\-API {\bf hpgs\_\-paint\_\-clipper} $\ast$ {\bf hpgs\_\-paint\_\-clipper\_\-clip} (const {\bf hpgs\_\-paint\_\-clipper} $\ast$orig, const {\bf hpgs\_\-paint\_\-clipper} $\ast$clip, hpgs\_\-bool winding)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-clipper\_\-cut} ({\bf hpgs\_\-paint\_\-clipper} $\ast$c, {\bf hpgs\_\-paint\_\-path} $\ast$path)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-clipper\_\-thin\_\-cut} ({\bf hpgs\_\-paint\_\-clipper} $\ast$c, {\bf hpgs\_\-paint\_\-path} $\ast$path, const {\bf hpgs\_\-gstate} $\ast$gstate)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-clipper\_\-emit} ({\bf hpgs\_\-image} $\ast$image, const {\bf hpgs\_\-paint\_\-clipper} $\ast$img, const {\bf hpgs\_\-paint\_\-clipper} $\ast$clip, const {\bf hpgs\_\-paint\_\-color} $\ast$c, hpgs\_\-bool winding, hpgs\_\-bool stroke)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-clipper\_\-reset} ({\bf hpgs\_\-paint\_\-clipper} $\ast$c, double llx, double urx)
+\item 
+HPGS\_\-INTERNAL\_\-API void {\bf hpgs\_\-paint\_\-clipper\_\-clear} ({\bf hpgs\_\-paint\_\-clipper} $\ast$c)
+\item 
+HPGS\_\-INTERNAL\_\-API void {\bf hpgs\_\-paint\_\-clipper\_\-destroy} ({\bf hpgs\_\-paint\_\-clipper} $\ast$c)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Internals of the pixel renderer. 
+
+A header file, which declares the structures and functions internally used by {\tt hpgs\_\-paint\_\-device}. 

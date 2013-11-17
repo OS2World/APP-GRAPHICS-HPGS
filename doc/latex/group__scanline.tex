@@ -1,0 +1,151 @@
+\section{scanline handling.}
+\label{group__scanline}\index{scanline handling.@{scanline handling.}}
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf hpgs\_\-scanline\_\-point\_\-st}
+\begin{CompactList}\small\item\em An intersection point of a path with a scanline. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-paint\_\-scanline\_\-st}
+\begin{CompactList}\small\item\em A scanline of the pixel renderer. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-paint\_\-clipper\_\-st}
+\begin{CompactList}\small\item\em A collection of scanlines for mapping paths onto images. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+HPGS\_\-INTERNAL\_\-API {\bf hpgs\_\-paint\_\-clipper} $\ast$ {\bf hpgs\_\-new\_\-paint\_\-clipper} (const {\bf hpgs\_\-bbox} $\ast$bb, int height, int scanline\_\-msize, int overscan)
+\item 
+HPGS\_\-INTERNAL\_\-API {\bf hpgs\_\-paint\_\-clipper} $\ast$ {\bf hpgs\_\-paint\_\-clipper\_\-clip} (const {\bf hpgs\_\-paint\_\-clipper} $\ast$orig, const {\bf hpgs\_\-paint\_\-clipper} $\ast$clip, hpgs\_\-bool winding)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-clipper\_\-cut} ({\bf hpgs\_\-paint\_\-clipper} $\ast$c, {\bf hpgs\_\-paint\_\-path} $\ast$path)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-clipper\_\-thin\_\-cut} ({\bf hpgs\_\-paint\_\-clipper} $\ast$c, {\bf hpgs\_\-paint\_\-path} $\ast$path, const {\bf hpgs\_\-gstate} $\ast$gstate)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-clipper\_\-emit} ({\bf hpgs\_\-image} $\ast$image, const {\bf hpgs\_\-paint\_\-clipper} $\ast$img, const {\bf hpgs\_\-paint\_\-clipper} $\ast$clip, const {\bf hpgs\_\-paint\_\-color} $\ast$c, hpgs\_\-bool winding, hpgs\_\-bool stroke)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-clipper\_\-reset} ({\bf hpgs\_\-paint\_\-clipper} $\ast$c, double llx, double urx)
+\item 
+HPGS\_\-INTERNAL\_\-API void {\bf hpgs\_\-paint\_\-clipper\_\-clear} ({\bf hpgs\_\-paint\_\-clipper} $\ast$c)
+\item 
+HPGS\_\-INTERNAL\_\-API void {\bf hpgs\_\-paint\_\-clipper\_\-destroy} ({\bf hpgs\_\-paint\_\-clipper} $\ast$c)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains the documentation of the internals of the vector graphics renderer {\tt hpgs\_\-paint\_\-device}.
+
+The dcomumentation of {\tt \doxyref{hpgs\_\-paint\_\-clipper\_\-st}{p.}{structhpgs__paint__clipper__st}} explains the concepts used throughout the implementation of the objects in this module. 
+
+\subsection{Function Documentation}
+\index{scanline@{scanline}!hpgs\_\-new\_\-paint\_\-clipper@{hpgs\_\-new\_\-paint\_\-clipper}}
+\index{hpgs\_\-new\_\-paint\_\-clipper@{hpgs\_\-new\_\-paint\_\-clipper}!scanline@{scanline}}
+\subsubsection[hpgs\_\-new\_\-paint\_\-clipper]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API {\bf hpgs\_\-paint\_\-clipper}$\ast$ hpgs\_\-new\_\-paint\_\-clipper (const {\bf hpgs\_\-bbox} $\ast$ {\em bb}, \/  int {\em height}, \/  int {\em scanline\_\-msize}, \/  int {\em overscan})}\label{group__scanline_g2f50bbbb3760ab5355b01ae9cd7b4a45}
+
+
+Returns a new clipper on the heap, which covers the given bounding box an applies to an image with {\tt height} rows.
+
+{\tt scanline\_\-msize} determines the number of intersection points, for which memory is preallocated in each scanline.
+
+The value of {\tt overscan} determines the type of antialiasing applied as described under {\tt \doxyref{hpgs\_\-paint\_\-device\_\-st::overscan}{p.}{structhpgs__paint__device__st_233bef1702634fd2639856ba39c50794}}.
+
+Use {\tt hpgs\_\-paint\_\-clipper\_\-destroy} in order to destroy the returned {\tt hpgs\_\-paint\_\-clipper} from the heap.
+
+Returns a null pointer, if the system is out of memory. 
+
+References hpgs\_\-paint\_\-clipper\_\-st::bb, hpgs\_\-paint\_\-clipper\_\-st::height, hpgs\_\-paint\_\-clipper\_\-st::iscan0, hpgs\_\-paint\_\-clipper\_\-st::iscan1, hpgs\_\-bbox\_\-st::lly, hpgs\_\-paint\_\-clipper\_\-st::n\_\-scanlines, hpgs\_\-paint\_\-clipper\_\-st::overscan, hpgs\_\-paint\_\-clipper\_\-st::scanlines, hpgs\_\-bbox\_\-st::ury, hpgs\_\-paint\_\-clipper\_\-st::y0, and hpgs\_\-paint\_\-clipper\_\-st::yfac.
+
+Referenced by hpgs\_\-new\_\-paint\_\-device(), and hpgs\_\-paint\_\-clipper\_\-clip().\index{scanline@{scanline}!hpgs\_\-paint\_\-clipper\_\-clear@{hpgs\_\-paint\_\-clipper\_\-clear}}
+\index{hpgs\_\-paint\_\-clipper\_\-clear@{hpgs\_\-paint\_\-clipper\_\-clear}!scanline@{scanline}}
+\subsubsection[hpgs\_\-paint\_\-clipper\_\-clear]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API void hpgs\_\-paint\_\-clipper\_\-clear ({\bf hpgs\_\-paint\_\-clipper} $\ast$ {\em c})}\label{group__scanline_ga493cc69d52cf8570216f0d784209d9f}
+
+
+Resets a clipper to be completely empty .
+
+\begin{itemize}
+\item 0 Sucess. \item -1 The system is out of memory. \end{itemize}
+
+
+References hpgs\_\-paint\_\-clipper\_\-st::iscan0, hpgs\_\-paint\_\-clipper\_\-st::iscan1, hpgs\_\-paint\_\-scanline\_\-st::n\_\-points, hpgs\_\-paint\_\-clipper\_\-st::n\_\-scanlines, and hpgs\_\-paint\_\-clipper\_\-st::scanlines.
+
+Referenced by hpgs\_\-paint\_\-device\_\-clip(), and hpgs\_\-paint\_\-device\_\-fill().\index{scanline@{scanline}!hpgs\_\-paint\_\-clipper\_\-clip@{hpgs\_\-paint\_\-clipper\_\-clip}}
+\index{hpgs\_\-paint\_\-clipper\_\-clip@{hpgs\_\-paint\_\-clipper\_\-clip}!scanline@{scanline}}
+\subsubsection[hpgs\_\-paint\_\-clipper\_\-clip]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API {\bf hpgs\_\-paint\_\-clipper}$\ast$ hpgs\_\-paint\_\-clipper\_\-clip (const {\bf hpgs\_\-paint\_\-clipper} $\ast$ {\em orig}, \/  const {\bf hpgs\_\-paint\_\-clipper} $\ast$ {\em clip}, \/  hpgs\_\-bool {\em winding})}\label{group__scanline_g1da65c165d7f40645938850b1cd529f7}
+
+
+Returna a new clipper on the heap, which holds the intersection of the given path clipper with the current clip clipper.
+
+If {\tt winding} is {\tt HPGS\_\-TRUE}, the non-zero winding rule is used for the path intersection, otherwise the exclusive-or rule applies.
+
+Use {\tt hpgs\_\-paint\_\-clipper\_\-destroy} in order to destroy the returned {\tt hpgs\_\-paint\_\-clipper} from the heap.
+
+Returns a null pointer, if the system is out of memory. 
+
+References hpgs\_\-paint\_\-clipper\_\-st::bb, hpgs\_\-paint\_\-clipper\_\-st::height, hpgs\_\-log(), hpgs\_\-new\_\-paint\_\-clipper(), hpgs\_\-paint\_\-clipper\_\-destroy(), hpgs\_\-paint\_\-clipper\_\-st::iscan0, hpgs\_\-paint\_\-clipper\_\-st::iscan1, hpgs\_\-paint\_\-clipper\_\-st::n\_\-scanlines, hpgs\_\-paint\_\-clipper\_\-st::overscan, and hpgs\_\-paint\_\-clipper\_\-st::scanlines.
+
+Referenced by hpgs\_\-paint\_\-device\_\-clip().\index{scanline@{scanline}!hpgs\_\-paint\_\-clipper\_\-cut@{hpgs\_\-paint\_\-clipper\_\-cut}}
+\index{hpgs\_\-paint\_\-clipper\_\-cut@{hpgs\_\-paint\_\-clipper\_\-cut}!scanline@{scanline}}
+\subsubsection[hpgs\_\-paint\_\-clipper\_\-cut]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-paint\_\-clipper\_\-cut ({\bf hpgs\_\-paint\_\-clipper} $\ast$ {\em c}, \/  {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path})}\label{group__scanline_g57b375c2b6d3d0b377037a9a0250a74c}
+
+
+Cuts te given {\tt path} with the scanlines of the given clipper {\tt c}. If you emit the clipper afterwards, the interior of the given path is drawn to the image.
+
+If you want to stroke the path use either {\tt hpgs\_\-paint\_\-clipper\_\-thin\_\-cut} for thin lines or contruct the outline of a thick line using the line style of a graphics state with {\tt hpgs\_\-paint\_\-path\_\-stroke\_\-path}.
+
+Return value: \begin{itemize}
+\item 0 Success. \item -1 The system is out of memory. \end{itemize}
+
+
+References hpgs\_\-paint\_\-clipper\_\-st::overscan.
+
+Referenced by hpgs\_\-paint\_\-device\_\-clip(), and hpgs\_\-paint\_\-device\_\-fill().\index{scanline@{scanline}!hpgs\_\-paint\_\-clipper\_\-destroy@{hpgs\_\-paint\_\-clipper\_\-destroy}}
+\index{hpgs\_\-paint\_\-clipper\_\-destroy@{hpgs\_\-paint\_\-clipper\_\-destroy}!scanline@{scanline}}
+\subsubsection[hpgs\_\-paint\_\-clipper\_\-destroy]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API void hpgs\_\-paint\_\-clipper\_\-destroy ({\bf hpgs\_\-paint\_\-clipper} $\ast$ {\em c})}\label{group__scanline_gf6fc72b5bd4f6aee326a7ebc55654533}
+
+
+Destroys a clipper from the heap. 
+
+References hpgs\_\-paint\_\-clipper\_\-st::n\_\-scanlines, and hpgs\_\-paint\_\-clipper\_\-st::scanlines.
+
+Referenced by hpgs\_\-new\_\-paint\_\-device(), hpgs\_\-paint\_\-clipper\_\-clip(), and hpgs\_\-paint\_\-device\_\-clip().\index{scanline@{scanline}!hpgs\_\-paint\_\-clipper\_\-emit@{hpgs\_\-paint\_\-clipper\_\-emit}}
+\index{hpgs\_\-paint\_\-clipper\_\-emit@{hpgs\_\-paint\_\-clipper\_\-emit}!scanline@{scanline}}
+\subsubsection[hpgs\_\-paint\_\-clipper\_\-emit]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-paint\_\-clipper\_\-emit ({\bf hpgs\_\-image} $\ast$ {\em image}, \/  const {\bf hpgs\_\-paint\_\-clipper} $\ast$ {\em img}, \/  const {\bf hpgs\_\-paint\_\-clipper} $\ast$ {\em clip}, \/  const {\bf hpgs\_\-paint\_\-color} $\ast$ {\em c}, \/  hpgs\_\-bool {\em winding}, \/  hpgs\_\-bool {\em stroke})}\label{group__scanline_g7a18599ae05d5841426ef67f8851ea40}
+
+
+Emits the intersection of the visible segments of the given clippers {\tt img} and {\tt clip} to the given image {\tt img} using the given color {\tt c}.
+
+If {\tt stroke} is {\tt HPGS\_\-TRUE}, zero-width segments are also emitted, which is feasible for clippers retrieved through {\tt hpgs\_\-paint\_\-clipper\_\-thin\_\-cut}.
+
+If {\tt winding} is {\tt HPGS\_\-TRUE}, the non-zero winding rule is used for the segment intersection, otherwise the exclusive-or rule applies.
+
+Return values:
+
+\begin{itemize}
+\item 0 Sucess. \item -1 The system is out of memory or an error from the image has occurred. \end{itemize}
+
+
+References hpgs\_\-paint\_\-clipper\_\-st::bb, hpgs\_\-paint\_\-clipper\_\-st::height, hpgs\_\-image\_\-st::height, hpgs\_\-log(), hpgs\_\-paint\_\-clipper\_\-st::iscan0, hpgs\_\-paint\_\-clipper\_\-st::iscan1, hpgs\_\-bbox\_\-st::llx, hpgs\_\-paint\_\-clipper\_\-st::n\_\-scanlines, hpgs\_\-paint\_\-clipper\_\-st::overscan, hpgs\_\-paint\_\-clipper\_\-st::scanlines, and hpgs\_\-bbox\_\-st::urx.
+
+Referenced by hpgs\_\-paint\_\-device\_\-fill().\index{scanline@{scanline}!hpgs\_\-paint\_\-clipper\_\-reset@{hpgs\_\-paint\_\-clipper\_\-reset}}
+\index{hpgs\_\-paint\_\-clipper\_\-reset@{hpgs\_\-paint\_\-clipper\_\-reset}!scanline@{scanline}}
+\subsubsection[hpgs\_\-paint\_\-clipper\_\-reset]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-paint\_\-clipper\_\-reset ({\bf hpgs\_\-paint\_\-clipper} $\ast$ {\em c}, \/  double {\em llx}, \/  double {\em urx})}\label{group__scanline_gf506dccd0158c2aa5eb3dcbf9a00b78b}
+
+
+Resets a clipper to be empty and to cover the whole rectanlge of an image covering the {\tt x} coordinates in the range from {\tt llx} to {\tt urx}.
+
+\begin{itemize}
+\item 0 Sucess. \item -1 The system is out of memory. \end{itemize}
+
+
+References hpgs\_\-paint\_\-clipper\_\-st::iscan0, hpgs\_\-paint\_\-clipper\_\-st::iscan1, hpgs\_\-paint\_\-scanline\_\-st::n\_\-points, hpgs\_\-paint\_\-clipper\_\-st::n\_\-scanlines, hpgs\_\-paint\_\-clipper\_\-st::overscan, and hpgs\_\-paint\_\-clipper\_\-st::scanlines.
+
+Referenced by hpgs\_\-new\_\-paint\_\-device().\index{scanline@{scanline}!hpgs\_\-paint\_\-clipper\_\-thin\_\-cut@{hpgs\_\-paint\_\-clipper\_\-thin\_\-cut}}
+\index{hpgs\_\-paint\_\-clipper\_\-thin\_\-cut@{hpgs\_\-paint\_\-clipper\_\-thin\_\-cut}!scanline@{scanline}}
+\subsubsection[hpgs\_\-paint\_\-clipper\_\-thin\_\-cut]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-paint\_\-clipper\_\-thin\_\-cut ({\bf hpgs\_\-paint\_\-clipper} $\ast$ {\em c}, \/  {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  const {\bf hpgs\_\-gstate} $\ast$ {\em gstate})}\label{group__scanline_g03f09ded9177a9bdc6d50e534d4c39a2}
+
+
+Cuts the border of the given {\tt path} with the scanlines of the given clipper {\tt c}. The linewidth of the given {\tt gstate} is ignored and an optimized algorithm is used in order to retrieve the cut of the border of the path as if the linewidth has been exactly one pixel of the underlying image.
+
+Return value: \begin{itemize}
+\item 0 Success. \item -1 The system is out of memory. \end{itemize}
+
+
+References hpgs\_\-paint\_\-clipper\_\-st::bb, hpgs\_\-paint\_\-path\_\-st::bb, hpgs\_\-log(), hpgs\_\-paint\_\-clipper\_\-st::iscan0, hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-gstate\_\-st::n\_\-dashes, hpgs\_\-paint\_\-scanline\_\-st::n\_\-points, hpgs\_\-paint\_\-path\_\-st::n\_\-points, hpgs\_\-scanline\_\-point\_\-st::order, hpgs\_\-paint\_\-scanline\_\-st::points, hpgs\_\-paint\_\-clipper\_\-st::scanlines, hpgs\_\-bbox\_\-st::urx, hpgs\_\-bbox\_\-st::ury, and hpgs\_\-scanline\_\-point\_\-st::x.

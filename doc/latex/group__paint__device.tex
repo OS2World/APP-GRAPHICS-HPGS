@@ -1,0 +1,113 @@
+\section{Paint device.}
+\label{group__paint__device}\index{Paint device.@{Paint device.}}
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf hpgs\_\-paint\_\-device\_\-st}
+\begin{CompactList}\small\item\em The pixel rendering vector graphics device. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \textbf{HPGS\_\-PAINT\_\-MAX\_\-CLIP\_\-DEPTH}~16\label{group__paint__device_gf6c109765736c6286c304392398ab3c5}
+
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+HPGS\_\-API {\bf hpgs\_\-paint\_\-device} $\ast$ {\bf hpgs\_\-new\_\-paint\_\-device} ({\bf hpgs\_\-image} $\ast$image, const char $\ast$filename, const {\bf hpgs\_\-bbox} $\ast$bb, hpgs\_\-bool antialias)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-paint\_\-device\_\-set\_\-image\_\-interpolation} ({\bf hpgs\_\-paint\_\-device} $\ast$pdv, int i)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-paint\_\-device\_\-set\_\-thin\_\-alpha} ({\bf hpgs\_\-paint\_\-device} $\ast$pdv, double a)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-device\_\-fill} ({\bf hpgs\_\-paint\_\-device} $\ast$pdv, {\bf hpgs\_\-paint\_\-path} $\ast$path, hpgs\_\-bool winding, hpgs\_\-bool stroke)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-device\_\-clip} ({\bf hpgs\_\-paint\_\-device} $\ast$pdv, {\bf hpgs\_\-paint\_\-path} $\ast$path, hpgs\_\-bool winding)
+\item 
+HPGS\_\-INTERNAL\_\-API int {\bf hpgs\_\-paint\_\-device\_\-drawimage} ({\bf hpgs\_\-paint\_\-device} $\ast$pdv, const {\bf hpgs\_\-image} $\ast$img, const {\bf hpgs\_\-point} $\ast$ll, const {\bf hpgs\_\-point} $\ast$lr, const {\bf hpgs\_\-point} $\ast$ur)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains the workhorse for rendering a scenery to pixel graphics, {\tt hpgs\_\-paint\_\-device}.
+
+Most notably, you can call {\tt hpgs\_\-new\_\-paint\_\-device} in order to create a new paint device and perform the usual operations {\tt hpgs\_\-moveto}, {\tt hpgs\_\-lineto}, ... on it.
+
+Details about the implementation are explained in the documentation of {\tt \doxyref{hpgs\_\-paint\_\-device\_\-st}{p.}{structhpgs__paint__device__st}} and {\tt \doxyref{hpgs\_\-paint\_\-clipper\_\-st}{p.}{structhpgs__paint__clipper__st}} and the hpyerlinks therein. 
+
+\subsection{Function Documentation}
+\index{paint\_\-device@{paint\_\-device}!hpgs\_\-new\_\-paint\_\-device@{hpgs\_\-new\_\-paint\_\-device}}
+\index{hpgs\_\-new\_\-paint\_\-device@{hpgs\_\-new\_\-paint\_\-device}!paint_device@{paint\_\-device}}
+\subsubsection[hpgs\_\-new\_\-paint\_\-device]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-paint\_\-device}$\ast$ hpgs\_\-new\_\-paint\_\-device ({\bf hpgs\_\-image} $\ast$ {\em image}, \/  const char $\ast$ {\em filename}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb}, \/  hpgs\_\-bool {\em antialias})}\label{group__paint__device_g0b72fd8fa1fc6bce98e2b0085df20fd1}
+
+
+Creates a new paint device on the heap. Use {\tt hpgs\_\-destroy} in order to destroy the returned device pointer.
+
+The bounding box, which is mapped onto the given {\tt image} is passed in as well as the {\tt antialiasing} switch.
+
+A null pointer is returned, if the system is out of memory. 
+
+References hpgs\_\-palette\_\-color\_\-st::b, hpgs\_\-paint\_\-color\_\-st::b, hpgs\_\-paint\_\-device\_\-st::clip\_\-depth, hpgs\_\-paint\_\-device\_\-st::clippers, hpgs\_\-paint\_\-device\_\-st::color, hpgs\_\-paint\_\-device\_\-st::current\_\-clipper, hpgs\_\-paint\_\-device\_\-st::filename, hpgs\_\-palette\_\-color\_\-st::g, hpgs\_\-paint\_\-color\_\-st::g, hpgs\_\-paint\_\-device\_\-st::gstate, hpgs\_\-image\_\-st::height, hpgs\_\-gstate\_\-destroy(), hpgs\_\-image\_\-destroy(), hpgs\_\-image\_\-set\_\-resolution(), hpgs\_\-new\_\-gstate(), hpgs\_\-new\_\-paint\_\-clipper(), hpgs\_\-new\_\-paint\_\-path(), hpgs\_\-paint\_\-clipper\_\-destroy(), hpgs\_\-paint\_\-clipper\_\-reset(), hpgs\_\-paint\_\-path\_\-destroy(), hpgs\_\-paint\_\-device\_\-st::image, hpgs\_\-paint\_\-device\_\-st::image\_\-interpolation, hpgs\_\-paint\_\-color\_\-st::index, hpgs\_\-paint\_\-device\_\-st::inherited, hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-paint\_\-device\_\-st::overscan, hpgs\_\-paint\_\-device\_\-st::page\_\-bb, hpgs\_\-paint\_\-device\_\-st::patcol, hpgs\_\-paint\_\-device\_\-st::path, hpgs\_\-paint\_\-device\_\-st::path\_\-clipper, hpgs\_\-palette\_\-color\_\-st::r, hpgs\_\-paint\_\-color\_\-st::r, hpgs\_\-paint\_\-device\_\-st::thin\_\-alpha, hpgs\_\-bbox\_\-st::urx, hpgs\_\-bbox\_\-st::ury, hpgs\_\-device\_\-st::vtable, hpgs\_\-image\_\-st::width, hpgs\_\-paint\_\-device\_\-st::xres, and hpgs\_\-paint\_\-device\_\-st::yres.\index{paint\_\-device@{paint\_\-device}!hpgs\_\-paint\_\-device\_\-clip@{hpgs\_\-paint\_\-device\_\-clip}}
+\index{hpgs\_\-paint\_\-device\_\-clip@{hpgs\_\-paint\_\-device\_\-clip}!paint_device@{paint\_\-device}}
+\subsubsection[hpgs\_\-paint\_\-device\_\-clip]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-paint\_\-device\_\-clip ({\bf hpgs\_\-paint\_\-device} $\ast$ {\em pdv}, \/  {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  hpgs\_\-bool {\em winding})}\label{group__paint__device_g2c6ee490261c5a5349397cf56fe116e0}
+
+
+Sets the intersection of the given path with the current clip path of the paint device {\tt pdv} as the current clip path of {\tt pdv}.
+
+if {\tt winding} is {\tt HPGS\_\-TRUE}, the non-zero winding rule is used for the path intersection, otherwise the exclusive-or rule applies.
+
+Return values:
+
+\begin{itemize}
+\item 0 Sucess. \item -1 An error ocurred. Call {\tt hpgs\_\-device\_\-get\_\-error} in order to retrieve the error message. \end{itemize}
+
+
+References hpgs\_\-paint\_\-device\_\-st::clip\_\-depth, hpgs\_\-paint\_\-device\_\-st::clippers, hpgs\_\-paint\_\-device\_\-st::current\_\-clipper, hpgs\_\-paint\_\-clipper\_\-clear(), hpgs\_\-paint\_\-clipper\_\-clip(), hpgs\_\-paint\_\-clipper\_\-cut(), hpgs\_\-paint\_\-clipper\_\-destroy(), hpgs\_\-set\_\-error(), and hpgs\_\-paint\_\-device\_\-st::path\_\-clipper.\index{paint\_\-device@{paint\_\-device}!hpgs\_\-paint\_\-device\_\-drawimage@{hpgs\_\-paint\_\-device\_\-drawimage}}
+\index{hpgs\_\-paint\_\-device\_\-drawimage@{hpgs\_\-paint\_\-device\_\-drawimage}!paint_device@{paint\_\-device}}
+\subsubsection[hpgs\_\-paint\_\-device\_\-drawimage]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-paint\_\-device\_\-drawimage ({\bf hpgs\_\-paint\_\-device} $\ast$ {\em pdv}, \/  const {\bf hpgs\_\-image} $\ast$ {\em img}, \/  const {\bf hpgs\_\-point} $\ast$ {\em ll}, \/  const {\bf hpgs\_\-point} $\ast$ {\em lr}, \/  const {\bf hpgs\_\-point} $\ast$ {\em ur})}\label{group__paint__device_g588cff9707261b9d79f2153a3b1f2d88}
+
+
+Draws the intersection of the given image with the current clip path of the paint device {\tt pdv} to the destination image of {\tt pdv}.
+
+The arguments {\tt ll}, {\tt lr} and {\tt ur} are the lower left, lower right and upper right corner of the drawn image in world coordinates.
+
+Return values:
+
+\begin{itemize}
+\item 0 Sucess. \item -1 An error ocurred. Call {\tt hpgs\_\-device\_\-get\_\-error} in order to retrieve the error message. \end{itemize}
+
+
+References hpgs\_\-paint\_\-clipper\_\-st::bb, hpgs\_\-paint\_\-device\_\-st::clippers, hpgs\_\-paint\_\-device\_\-st::current\_\-clipper, hpgs\_\-log(), hpgs\_\-paint\_\-device\_\-st::image, hpgs\_\-paint\_\-device\_\-st::image\_\-interpolation, hpgs\_\-paint\_\-clipper\_\-st::iscan0, hpgs\_\-paint\_\-clipper\_\-st::iscan1, hpgs\_\-bbox\_\-st::llx, hpgs\_\-paint\_\-scanline\_\-st::n\_\-points, hpgs\_\-scanline\_\-point\_\-st::order, hpgs\_\-paint\_\-device\_\-st::overscan, hpgs\_\-paint\_\-scanline\_\-st::points, hpgs\_\-paint\_\-clipper\_\-st::scanlines, hpgs\_\-bbox\_\-st::urx, hpgs\_\-image\_\-st::width, hpgs\_\-scanline\_\-point\_\-st::x, hpgs\_\-point\_\-st::x, hpgs\_\-point\_\-st::y, hpgs\_\-paint\_\-clipper\_\-st::y0, and hpgs\_\-paint\_\-clipper\_\-st::yfac.\index{paint\_\-device@{paint\_\-device}!hpgs\_\-paint\_\-device\_\-fill@{hpgs\_\-paint\_\-device\_\-fill}}
+\index{hpgs\_\-paint\_\-device\_\-fill@{hpgs\_\-paint\_\-device\_\-fill}!paint_device@{paint\_\-device}}
+\subsubsection[hpgs\_\-paint\_\-device\_\-fill]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API int hpgs\_\-paint\_\-device\_\-fill ({\bf hpgs\_\-paint\_\-device} $\ast$ {\em pdv}, \/  {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  hpgs\_\-bool {\em winding}, \/  hpgs\_\-bool {\em stroke})}\label{group__paint__device_g2dda645e3672ab0330571fd939517929}
+
+
+Fills the intersection of the given path with the current clip path of the paint device {\tt pdv} using the current graphics state of {\tt pdv}.
+
+if {\tt winding} is {\tt HPGS\_\-TRUE}, the non-zero winding rule is used for filling, otherwise the exclusive-or rule applies.
+
+Return values:
+
+\begin{itemize}
+\item 0 Sucess. \item -1 An error ocurred. Call {\tt hpgs\_\-device\_\-get\_\-error} in order to retrieve the error message. \end{itemize}
+
+
+References hpgs\_\-paint\_\-device\_\-st::clippers, hpgs\_\-paint\_\-device\_\-st::color, hpgs\_\-paint\_\-device\_\-st::current\_\-clipper, hpgs\_\-error\_\-ctxt(), hpgs\_\-have\_\-error(), hpgs\_\-paint\_\-clipper\_\-clear(), hpgs\_\-paint\_\-clipper\_\-cut(), hpgs\_\-paint\_\-clipper\_\-emit(), hpgs\_\-set\_\-error(), hpgs\_\-paint\_\-device\_\-st::image, and hpgs\_\-paint\_\-device\_\-st::path\_\-clipper.\index{paint\_\-device@{paint\_\-device}!hpgs\_\-paint\_\-device\_\-set\_\-image\_\-interpolation@{hpgs\_\-paint\_\-device\_\-set\_\-image\_\-interpolation}}
+\index{hpgs\_\-paint\_\-device\_\-set\_\-image\_\-interpolation@{hpgs\_\-paint\_\-device\_\-set\_\-image\_\-interpolation}!paint_device@{paint\_\-device}}
+\subsubsection[hpgs\_\-paint\_\-device\_\-set\_\-image\_\-interpolation]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-paint\_\-device\_\-set\_\-image\_\-interpolation ({\bf hpgs\_\-paint\_\-device} $\ast$ {\em pdv}, \/  int {\em i})}\label{group__paint__device_g17b02dbca870100347eb115a2d1e1bfa}
+
+
+Sets the image interpolation value of the given paint device. Currently, the following values are supported:
+
+\begin{itemize}
+\item 0 no image iterpolation \item 1 linear image interpolation.\end{itemize}
+Other values specifiying square or cubic interpolation may be supported in the future. The default value is 0. 
+
+References hpgs\_\-paint\_\-device\_\-st::image\_\-interpolation.\index{paint\_\-device@{paint\_\-device}!hpgs\_\-paint\_\-device\_\-set\_\-thin\_\-alpha@{hpgs\_\-paint\_\-device\_\-set\_\-thin\_\-alpha}}
+\index{hpgs\_\-paint\_\-device\_\-set\_\-thin\_\-alpha@{hpgs\_\-paint\_\-device\_\-set\_\-thin\_\-alpha}!paint_device@{paint\_\-device}}
+\subsubsection[hpgs\_\-paint\_\-device\_\-set\_\-thin\_\-alpha]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-paint\_\-device\_\-set\_\-thin\_\-alpha ({\bf hpgs\_\-paint\_\-device} $\ast$ {\em pdv}, \/  double {\em a})}\label{group__paint__device_g7865aa167dcb1b303894a02d8b5829c6}
+
+
+Sets the minimal alpha value for thin lines, when antialiasing is in effect. The supplied value must be grater than or equal to 0.01 and lesser than or equal to 10.0. Other values are ignored. 
+
+References hpgs\_\-paint\_\-device\_\-st::thin\_\-alpha.

@@ -1,0 +1,23 @@
+Package: hpgs
+Version: HPGS_MAJOR_VERSION.HPGS_MINOR_VERSION.HPGS_PATCH_VERSION
+Revision: HPGS_EXTRA_VERSION
+Source: http://prdownload.berlios.de/hpgs/%n-%v.tar.gz
+Maintainer: Wolfgang Glas <wolfgang.glas@ev-i.at>
+HomePage: http://hpgs.berlios.de
+License: OSI-Approved
+Description: HPGl Script - a HPGL/2 interpreter/renderer
+Depends: libpng3
+Source-MD5: HPGS_SRC_MD5
+CompileScript: <<
+#! /bin/sh -ev
+cd build/macos-shared
+make prefix=%p COPT=-O2
+<<
+InstallScript: <<
+#! /bin/sh -ev
+mkdir -p %i/bin
+mkdir -p %i/lib
+mkdir -p %i/include
+cd build/macos-shared
+make install-devel prefix=%i
+<<

@@ -1,0 +1,5 @@
+debian/tmp/usr/bin/hpgs
+debian/tmp/usr/lib/libhpgs.so.1.1
+debian/tmp/usr/lib/libhpgs.so.1.1.5
+debian/tmp/usr/share/locale/de/LC_MESSAGES/hpgs.mo
+debian/tmp/usr/share/doc/hpgs

@@ -1,0 +1,3793 @@
+------------------------------------------------------------------------
+r490 | softadm | 2009-02-11 15:13:16 +0100 (Wed, 11 Feb 2009) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+i18n update in preparation for hpgs-1.1.5 release.
+------------------------------------------------------------------------
+r489 | softadm | 2009-02-11 15:10:30 +0100 (Wed, 11 Feb 2009) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsbase.c
+   M /trunk/hpgs/src/hpgsbbox.c
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgscharacter.c
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsdevices.h
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/hpgsfont.h
+   M /trunk/hpgs/src/hpgsglobal.c
+   M /trunk/hpgs/src/hpgsgstate.c
+   M /trunk/hpgs/src/hpgsi18n.c
+   M /trunk/hpgs/src/hpgsi18n.h
+   M /trunk/hpgs/src/hpgsimage.c
+   M /trunk/hpgs/src/hpgsimage.h
+   M /trunk/hpgs/src/hpgsimagerop.c
+   M /trunk/hpgs/src/hpgsistream.c
+   M /trunk/hpgs/src/hpgslabel.c
+   M /trunk/hpgs/src/hpgslexer.c
+   M /trunk/hpgs/src/hpgsmatrix.c
+   M /trunk/hpgs/src/hpgsmkrop.c
+   M /trunk/hpgs/src/hpgsmutex.h
+   M /trunk/hpgs/src/hpgsostream.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspaintimage.c
+   M /trunk/hpgs/src/hpgspaintpath.c
+   M /trunk/hpgs/src/hpgspath.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgspe.c
+   M /trunk/hpgs/src/hpgspen.c
+   M /trunk/hpgs/src/hpgspjl.c
+   M /trunk/hpgs/src/hpgsplugin.h
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgsscanline.c
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgstransform.c
+   M /trunk/hpgs/src/hpgszostream.c
+
+Update copyright to 2009.
+------------------------------------------------------------------------
+r488 | softadm | 2009-02-11 14:59:45 +0100 (Wed, 11 Feb 2009) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Warn if PCL destination raster width/height is out of range instead of issuing an error.
+
+------------------------------------------------------------------------
+r487 | softadm | 2009-02-10 17:03:21 +0100 (Tue, 10 Feb 2009) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+
+Bump version to 1.1.5 because of major advances with pattern color.
+
+------------------------------------------------------------------------
+r486 | softadm | 2009-02-10 17:02:31 +0100 (Tue, 10 Feb 2009) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspath.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgspen.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+
+Implement PCL Foreground color and clean up pattern color handling.
+------------------------------------------------------------------------
+r484 | softadm | 2009-02-09 14:49:35 +0100 (Mon, 09 Feb 2009) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Introduce a more consitent fix for the flipped image problem.
+
+------------------------------------------------------------------------
+r483 | softadm | 2009-02-09 14:42:27 +0100 (Mon, 09 Feb 2009) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Fix yet yet another fipped image in the testsuite.
+
+------------------------------------------------------------------------
+r482 | softadm | 2009-02-09 14:30:56 +0100 (Mon, 09 Feb 2009) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Fixe yet-another flipped image case discovered by the testsuite.
+
+------------------------------------------------------------------------
+r481 | softadm | 2009-02-09 14:00:36 +0100 (Mon, 09 Feb 2009) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Finally solve the flipped image problem.
+
+------------------------------------------------------------------------
+r476 | softadm | 2009-01-28 21:17:39 +0100 (Wed, 28 Jan 2009) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Implement some more robustness fixes for bezier cuts w/o antialiasing.
+
+------------------------------------------------------------------------
+r475 | softadm | 2009-01-27 10:26:10 +0100 (Tue, 27 Jan 2009) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsscanline.c
+
+An even more robust fix for the bezier alpha cut problem.
+
+------------------------------------------------------------------------
+r472 | softadm | 2009-01-10 16:53:48 +0100 (Sat, 10 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Fix bezier rendering problems in some cornercases unveiled by our consecutive circle example.
+------------------------------------------------------------------------
+r470 | softadm | 2009-01-08 16:21:08 +0100 (Thu, 08 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+i18n update before 1.1.4 release.
+------------------------------------------------------------------------
+r469 | softadm | 2009-01-08 16:18:38 +0100 (Thu, 08 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+Last update of ChangeLog before 1.1.4 release.
+------------------------------------------------------------------------
+r468 | softadm | 2009-01-08 16:18:23 +0100 (Thu, 08 Jan 2009) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspaint.h
+
+Fix typo in comment.
+------------------------------------------------------------------------
+r467 | softadm | 2009-01-08 15:05:47 +0100 (Thu, 08 Jan 2009) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspath.c
+
+Fix problems with two consecutive CI statements.
+
+------------------------------------------------------------------------
+r464 | softadm | 2008-11-05 17:27:55 +0100 (Wed, 05 Nov 2008) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbezier.c
+
+Make 3rd order bezier to quadratid bezier conversion really functional.
+
+------------------------------------------------------------------------
+r462 | softadm | 2008-11-03 22:38:14 +0100 (Mon, 03 Nov 2008) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Try harder to render raster_presenation=0, rotation=0 testcases.
+
+------------------------------------------------------------------------
+r461 | softadm | 2008-11-02 20:35:20 +0100 (Sun, 02 Nov 2008) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Simplify the code a bit and document the results of a testcase, which unveiled
+a potential transformation problem.
+
+------------------------------------------------------------------------
+r460 | softadm | 2008-11-02 19:18:45 +0100 (Sun, 02 Nov 2008) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgstransform.c
+
+Issue an error message, when an empty range is specified in SC.
+
+------------------------------------------------------------------------
+r459 | softadm | 2008-11-02 10:09:24 +0100 (Sun, 02 Nov 2008) | 1 line
+Changed paths:
+   D /trunk/hpgs/build/unix-shared/hpgsswf
+   M /trunk/hpgs/src/hpgs.h
+   D /trunk/hpgs/src/hpgsswf
+   A /trunk/hpgs-swf
+   A /trunk/hpgs-swf/LICENSE (from /trunk/hpgs-cairo/LICENSE:454)
+   A /trunk/hpgs-swf/build
+   A /trunk/hpgs-swf/build/unix
+   A /trunk/hpgs-swf/build/unix/Makefile
+   A /trunk/hpgs-swf/debian
+   A /trunk/hpgs-swf/debian/changelog.in
+   A /trunk/hpgs-swf/debian/compat
+   A /trunk/hpgs-swf/debian/control
+   A /trunk/hpgs-swf/debian/copyright
+   A /trunk/hpgs-swf/debian/devpkg.sh
+   A /trunk/hpgs-swf/debian/hpgs-swf-dev.install
+   A /trunk/hpgs-swf/debian/hpgs-swf.install.in
+   A /trunk/hpgs-swf/debian/rules
+   A /trunk/hpgs-swf/src
+   A /trunk/hpgs-swf/src/hpgsplugin.c (from /trunk/hpgs/src/hpgsswf/hpgsplugin.c:458)
+   A /trunk/hpgs-swf/src/hpgsswf.c (from /trunk/hpgs/src/hpgsswf/hpgsswf.c:458)
+   A /trunk/hpgs-swf/src/hpgsswf.h (from /trunk/hpgs/src/hpgsswf/hpgsswf.h:458)
+   A /trunk/hpgs-swf/src/hpgsswfglobal.c
+   A /trunk/hpgs-swf/src/hpgsswfprivate.h
+   A /trunk/hpgs-swf/src/include.mak (from /trunk/hpgs/src/hpgsswf/include.mak:458)
+   A /trunk/hpgs-swf/src/po
+   A /trunk/hpgs-swf/src/po/Makefile
+   A /trunk/hpgs-swf/src/po/hpgsswf.pot
+   A /trunk/hpgs-swf/src/po/hpgsswf_de.po
+
+Extract swf plugin to a standalone project, set main project's version to 1.1.4
+------------------------------------------------------------------------
+r450 | softadm | 2008-04-05 20:34:14 +0200 (Sat, 05 Apr 2008) | 1 line
+Changed paths:
+   D /trunk/hpgs/build/unix-shared/hpgscairo
+   D /trunk/hpgs/src/hpgscairo
+   A /trunk/hpgs-cairo
+   A /trunk/hpgs-cairo/build
+   A /trunk/hpgs-cairo/build/unix
+   A /trunk/hpgs-cairo/build/unix/Makefile (from /trunk/hpgs/build/unix-shared/hpgscairo/Makefile:446)
+   A /trunk/hpgs-cairo/src
+   A /trunk/hpgs-cairo/src/hpgscairo.c (from /trunk/hpgs/src/hpgscairo/hpgscairo.c:446)
+   A /trunk/hpgs-cairo/src/hpgscairo.h (from /trunk/hpgs/src/hpgscairo/hpgscairo.h:446)
+   A /trunk/hpgs-cairo/src/hpgscairoglobal.c
+   A /trunk/hpgs-cairo/src/hpgsplugin.c (from /trunk/hpgs/src/hpgscairo/hpgsplugin.c:446)
+   A /trunk/hpgs-cairo/src/include.mak (from /trunk/hpgs/src/hpgscairo/include.mak:446)
+
+Extract hpgscairo to a standalone project.
+------------------------------------------------------------------------
+r448 | softadm | 2008-04-01 11:35:18 +0200 (Tue, 01 Apr 2008) | 1 line
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+Last update of ChangeLog before 1.1.3 release.
+------------------------------------------------------------------------
+r447 | softadm | 2008-04-01 10:36:13 +0200 (Tue, 01 Apr 2008) | 1 line
+Changed paths:
+   M /trunk/hpgs/INSTALL
+   M /trunk/hpgs/TODO
+
+Update TODO and fix typos in INSTALL.
+------------------------------------------------------------------------
+r446 | softadm | 2008-03-31 22:41:16 +0200 (Mon, 31 Mar 2008) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+i18n update.
+------------------------------------------------------------------------
+r445 | softadm | 2008-03-31 17:28:06 +0200 (Mon, 31 Mar 2008) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Do a consistency check of CID encoding for compression mode 10.
+
+------------------------------------------------------------------------
+r444 | softadm | 2008-03-31 17:06:03 +0200 (Mon, 31 Mar 2008) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Fixe mode 10 premature end of interpretation.
+
+------------------------------------------------------------------------
+r443 | softadm | 2008-03-31 14:07:10 +0200 (Mon, 31 Mar 2008) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Implement compression mode 10, some corner cases are not fully functional now.
+------------------------------------------------------------------------
+r442 | softadm | 2008-03-29 09:41:27 +0100 (Sat, 29 Mar 2008) | 1 line
+Changed paths:
+   M /trunk/hpgs/.cproject
+   M /trunk/hpgs/.project
+   M /trunk/hpgs/.settings/org.eclipse.cdt.core.prefs
+   M /trunk/hpgs/build/unix-shared
+
+Optimized eclipse 3.4 aka CDT 5.0 integration.
+------------------------------------------------------------------------
+r441 | softadm | 2008-03-29 08:51:42 +0100 (Sat, 29 Mar 2008) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Fixed a typo in compression mode translation.
+
+------------------------------------------------------------------------
+r440 | softadm | 2008-01-20 18:49:01 +0100 (Sun, 20 Jan 2008) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+
+Set version of trunk to 1.1.3 after release.
+
+------------------------------------------------------------------------
+r438 | softadm | 2008-01-20 18:43:35 +0100 (Sun, 20 Jan 2008) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/hpgslabel.c
+
+Fixed font leaks within labels, use stat(2) for libraies, which don't set d_type in struct dirent.
+------------------------------------------------------------------------
+r436 | softadm | 2008-01-18 13:49:51 +0100 (Fri, 18 Jan 2008) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+
+Fixed an one-byte alloca-leak when duping the font path.
+
+------------------------------------------------------------------------
+r434 | softadm | 2008-01-16 09:47:40 +0100 (Wed, 16 Jan 2008) | 1 line
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+Last update of ChangeLog before 1.1.2 release.
+------------------------------------------------------------------------
+r433 | softadm | 2008-01-16 09:22:22 +0100 (Wed, 16 Jan 2008) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgssetup.c
+
+Fixed the palette growing mystery.
+
+------------------------------------------------------------------------
+r432 | softadm | 2008-01-16 09:11:22 +0100 (Wed, 16 Jan 2008) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsbase.c
+   M /trunk/hpgs/src/hpgsbbox.c
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgscharacter.c
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsdevices.h
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/hpgsfont.h
+   M /trunk/hpgs/src/hpgsglobal.c
+   M /trunk/hpgs/src/hpgsgstate.c
+   M /trunk/hpgs/src/hpgsi18n.c
+   M /trunk/hpgs/src/hpgsi18n.h
+   M /trunk/hpgs/src/hpgsimage.c
+   M /trunk/hpgs/src/hpgsimage.h
+   M /trunk/hpgs/src/hpgsimagerop.c
+   M /trunk/hpgs/src/hpgsistream.c
+   M /trunk/hpgs/src/hpgslabel.c
+   M /trunk/hpgs/src/hpgslexer.c
+   M /trunk/hpgs/src/hpgsmatrix.c
+   M /trunk/hpgs/src/hpgsmkrop.c
+   M /trunk/hpgs/src/hpgsmutex.h
+   M /trunk/hpgs/src/hpgsostream.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspaintimage.c
+   M /trunk/hpgs/src/hpgspaintpath.c
+   M /trunk/hpgs/src/hpgspath.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgspe.c
+   M /trunk/hpgs/src/hpgspen.c
+   M /trunk/hpgs/src/hpgspjl.c
+   M /trunk/hpgs/src/hpgsplugin.h
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgsscanline.c
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgstransform.c
+   M /trunk/hpgs/src/hpgszostream.c
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Update copyright to 2004-2008.
+------------------------------------------------------------------------
+r431 | softadm | 2008-01-16 08:58:26 +0100 (Wed, 16 Jan 2008) | 1 line
+Changed paths:
+   M /trunk/hpgs/TODO
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Pre-release i18n update, update TODO.
+------------------------------------------------------------------------
+r430 | softadm | 2008-01-15 20:59:29 +0100 (Tue, 15 Jan 2008) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgstransform.c
+
+Fixed a long standing typo in RO0 and RO180 handling.
+
+------------------------------------------------------------------------
+r429 | softadm | 2008-01-15 15:56:34 +0100 (Tue, 15 Jan 2008) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintpath.c
+
+Add the possibility to debug line joins.
+
+------------------------------------------------------------------------
+r428 | softadm | 2008-01-15 13:58:13 +0100 (Tue, 15 Jan 2008) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+
+Better verbosity 2 feedback.
+------------------------------------------------------------------------
+r427 | softadm | 2007-11-16 17:27:29 +0100 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Flag all translation as non-fuzzy, fixing --help.
+------------------------------------------------------------------------
+r426 | softadm | 2007-11-16 17:15:04 +0100 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+i18n update.
+------------------------------------------------------------------------
+r425 | softadm | 2007-11-16 17:06:45 +0100 (Fri, 16 Nov 2007) | 2 lines
+Changed paths:
+   M /trunk/hpgs/debian/control.in
+
+Correct the dependency of the hpgs-dev package on hpgs in order to include the package version.
+
+------------------------------------------------------------------------
+r424 | softadm | 2007-11-16 16:52:08 +0100 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/mingw-shared/Makefile
+   M /trunk/hpgs/build/mingw-shared/hpgs-setup.nsi
+
+Switch the Win32 build system to precompiled gnome libraries.
+------------------------------------------------------------------------
+r423 | softadm | 2007-11-16 16:51:33 +0100 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+
+Do recursive directory scn under UNIX.
+------------------------------------------------------------------------
+r422 | softadm | 2007-11-16 12:29:39 +0100 (Fri, 16 Nov 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Reorganized compression mode 4 in order to better fit into the existing infrastructure.
+------------------------------------------------------------------------
+r421 | softadm | 2007-11-14 17:49:13 +0100 (Wed, 14 Nov 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+image compression mode 4 patch by Rapha?\195?\171l Gaquer.
+------------------------------------------------------------------------
+r420 | softadm | 2007-11-08 11:40:10 +0100 (Thu, 08 Nov 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintpath.c
+
+Fixed extrusion of lines, which turn 180deg.
+------------------------------------------------------------------------
+r418 | softadm | 2007-10-01 14:42:00 +0200 (Mon, 01 Oct 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Fixed i18n typo.
+------------------------------------------------------------------------
+r416 | softadm | 2007-10-01 14:17:49 +0200 (Mon, 01 Oct 2007) | 1 line
+Changed paths:
+   A /trunk/hpgs/debian/copyright
+   M /trunk/scripts/release.sh
+
+Improved debian packaging.
+------------------------------------------------------------------------
+r414 | softadm | 2007-09-29 12:11:44 +0200 (Sat, 29 Sep 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgspcl.c
+
+Set version to 1.1.2 and commit experimental support for image compression 4/5.
+------------------------------------------------------------------------
+r412 | softadm | 2007-09-29 12:05:16 +0200 (Sat, 29 Sep 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+Last update on ChangeLog before 1.1.1 release.
+------------------------------------------------------------------------
+r411 | softadm | 2007-09-29 11:57:18 +0200 (Sat, 29 Sep 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Update copyright to 2007.
+------------------------------------------------------------------------
+r410 | softadm | 2007-09-29 11:54:01 +0200 (Sat, 29 Sep 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+i18n update.
+------------------------------------------------------------------------
+r409 | softadm | 2007-09-29 11:31:30 +0200 (Sat, 29 Sep 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintpath.c
+
+Further optimize joins on extruded path' in order to avoid degenerated bezier splines.
+------------------------------------------------------------------------
+r408 | softadm | 2007-09-29 11:04:28 +0200 (Sat, 29 Sep 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+
+Make the palette stack dynamically allocated, which solves problems with some PCL files.
+------------------------------------------------------------------------
+r407 | softadm | 2007-09-28 18:00:35 +0200 (Fri, 28 Sep 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Avoid nearly endless partitioning of horizontal splines.
+------------------------------------------------------------------------
+r406 | softadm | 2007-09-26 10:17:19 +0200 (Wed, 26 Sep 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspaint.c
+
+Optimize for small page bounding boxes.
+------------------------------------------------------------------------
+r405 | softadm | 2007-09-26 10:16:32 +0200 (Wed, 26 Sep 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs
+   M /trunk/hpgs/debian
+
+Add more stuff to svn:ignore
+------------------------------------------------------------------------
+r404 | softadm | 2007-09-26 10:10:13 +0200 (Wed, 26 Sep 2007) | 1 line
+Changed paths:
+   A /trunk/hpgs/.cproject
+   M /trunk/hpgs/.settings/org.eclipse.cdt.core.prefs
+
+Integration onto eclipse 3.3
+------------------------------------------------------------------------
+r403 | softadm | 2007-09-24 22:40:45 +0200 (Mon, 24 Sep 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgstransform.c
+
+Fixed wrong clipping with IW, if rotation angle is not a multiple of 90 degrees.
+------------------------------------------------------------------------
+r402 | softadm | 2007-09-14 17:24:38 +0200 (Fri, 14 Sep 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+
+Added support to set the origin of the displayed bounding box, too.
+------------------------------------------------------------------------
+r401 | softadm | 2007-09-14 17:07:54 +0200 (Fri, 14 Sep 2007) | 1 line
+Changed paths:
+   A /trunk/hpgs/debian/devpkg.sh
+   M /trunk/hpgs/debian/rules
+
+Optimized debian support including a script to build developer dpkg's.
+------------------------------------------------------------------------
+r400 | softadm | 2007-05-07 21:00:07 +0200 (Mon, 07 May 2007) | 1 line
+Changed paths:
+   D /releases/hpgs-1.1.0/debian/changelog
+   A /releases/hpgs-1.1.0/debian/changelog.in (from /releases/hpgs-1.1.0/debian/changelog:397)
+   D /trunk/hpgs/debian/changelog
+   A /trunk/hpgs/debian/changelog.in (from /trunk/hpgs/debian/changelog:399)
+   M /trunk/scripts/release.sh
+
+Make deb-packages really overtake my version number.
+------------------------------------------------------------------------
+r399 | softadm | 2007-05-04 10:46:49 +0200 (Fri, 04 May 2007) | 1 line
+Changed paths:
+   A /trunk/hpgs/debian (from /releases/hpgs-1.1.0/debian:397)
+
+Merged debian parts from 1.1.0 release.
+------------------------------------------------------------------------
+r396 | softadm | 2007-04-24 11:50:17 +0200 (Tue, 24 Apr 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+
+Set version to 1.1.1
+------------------------------------------------------------------------
+r392 | softadm | 2007-03-19 17:23:38 +0100 (Mon, 19 Mar 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/mingw-shared/hpgs-setup.nsi
+
+Fixed weird win32 installer Pb.
+------------------------------------------------------------------------
+r391 | softadm | 2007-03-19 17:04:21 +0100 (Mon, 19 Mar 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+Last update on ChangeLog before 1.1.0 release.
+------------------------------------------------------------------------
+r390 | softadm | 2007-03-19 16:56:42 +0100 (Mon, 19 Mar 2007) | 1 line
+Changed paths:
+   A /trunk/hpgs/build/mingw-shared/hpgs-setup.nsi
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/scripts/release.sh
+
+Win32 installation brush-up using an installer.
+------------------------------------------------------------------------
+r389 | softadm | 2007-03-19 11:53:12 +0100 (Mon, 19 Mar 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+   M /trunk/hpgs/INSTALL
+   M /trunk/hpgs/build/mingw-shared/Makefile
+
+Installation brush-up, update of ChangeLog file.
+------------------------------------------------------------------------
+r388 | softadm | 2007-03-18 21:26:46 +0100 (Sun, 18 Mar 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/INSTALL
+
+Update installation procedure.
+------------------------------------------------------------------------
+r387 | softadm | 2007-03-18 21:02:19 +0100 (Sun, 18 Mar 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/macos-shared/hpgs.info
+   M /trunk/hpgs/build/unix-shared/hpgs.spec
+
+Refinement of RPM and FINK packaging.
+------------------------------------------------------------------------
+r386 | softadm | 2007-03-18 19:33:10 +0100 (Sun, 18 Mar 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsimage.c
+
+Use libpng12/ prefix suitable for modern distributions.
+------------------------------------------------------------------------
+r385 | softadm | 2007-03-18 19:32:07 +0100 (Sun, 18 Mar 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+
+Use a default font path suitable for modern distributions.
+------------------------------------------------------------------------
+r384 | softadm | 2007-03-18 19:31:15 +0100 (Sun, 18 Mar 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspjl.c
+
+Add more language strings for detecting HPGL/2.
+------------------------------------------------------------------------
+r383 | softadm | 2007-03-18 19:29:22 +0100 (Sun, 18 Mar 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgscharacter.c
+
+Refinement of DT end of command intepretation.
+------------------------------------------------------------------------
+r382 | softadm | 2007-02-20 12:26:16 +0100 (Tue, 20 Feb 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+
+Correct stamp positions.
+------------------------------------------------------------------------
+r381 | softadm | 2007-02-20 10:06:38 +0100 (Tue, 20 Feb 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgslabel.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+
+Reorganized stamp and labels, so we can stamp a device.
+------------------------------------------------------------------------
+r379 | softadm | 2007-02-05 11:56:47 +0100 (Mon, 05 Feb 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/macos-shared/Makefile
+
+Use full path for -install_name.
+------------------------------------------------------------------------
+r378 | softadm | 2007-02-04 19:48:49 +0100 (Sun, 04 Feb 2007) | 1 line
+Changed paths:
+   A /trunk/hpgs/build/macos-shared/hpgs.info
+   M /trunk/scripts/release.sh
+
+Add macos to the release cycle.
+------------------------------------------------------------------------
+r377 | softadm | 2007-02-03 22:43:16 +0100 (Sat, 03 Feb 2007) | 1 line
+Changed paths:
+   A /trunk/hpgs/build/macos-shared
+   A /trunk/hpgs/build/macos-shared/Makefile
+
+Addedmacos build setup.
+------------------------------------------------------------------------
+r376 | softadm | 2007-01-29 14:26:15 +0100 (Mon, 29 Jan 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+i18n update.
+------------------------------------------------------------------------
+r375 | softadm | 2007-01-24 17:22:49 +0100 (Wed, 24 Jan 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgspaint.c
+
+Enable thin-alpha for non-antialiasing.
+------------------------------------------------------------------------
+r374 | softadm | 2007-01-24 16:57:52 +0100 (Wed, 24 Jan 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Better debugging, optimized minimal cut.
+------------------------------------------------------------------------
+r373 | softadm | 2007-01-24 14:43:04 +0100 (Wed, 24 Jan 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Correctly interpret printf return value for optimized images.
+------------------------------------------------------------------------
+r372 | softadm | 2007-01-14 19:16:03 +0100 (Sun, 14 Jan 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsimagerop.c
+
+Fixed typos in comments.
+------------------------------------------------------------------------
+r371 | softadm | 2007-01-14 12:35:19 +0100 (Sun, 14 Jan 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsimagerop.c
+
+Fixed clip_lines leakage.
+------------------------------------------------------------------------
+r370 | softadm | 2007-01-14 11:23:02 +0100 (Sun, 14 Jan 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Avoid crashes, when setting a dot outside the viewport.
+------------------------------------------------------------------------
+r369 | softadm | 2007-01-13 23:44:32 +0100 (Sat, 13 Jan 2007) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaintpath.c
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Handle singular dots inside the pixel renderer.
+------------------------------------------------------------------------
+r368 | softadm | 2006-12-31 16:18:08 +0100 (Sun, 31 Dec 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsostream.c
+   M /trunk/hpgs/src/hpgszostream.c
+
+Correctly obey the putc return value semantics.
+------------------------------------------------------------------------
+r367 | softadm | 2006-10-25 08:45:31 +0200 (Wed, 25 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Correct vertical motion command.
+------------------------------------------------------------------------
+r366 | softadm | 2006-10-24 15:28:00 +0200 (Tue, 24 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Implement compression mode 9.
+------------------------------------------------------------------------
+r365 | softadm | 2006-10-23 17:52:05 +0200 (Mon, 23 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+
+Correct #include's for alloca.
+------------------------------------------------------------------------
+r364 | softadm | 2006-10-22 20:42:41 +0200 (Sun, 22 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/.cdtproject
+
+Get rid of depned-file errors in CDT.
+------------------------------------------------------------------------
+r363 | softadm | 2006-10-20 21:44:44 +0200 (Fri, 20 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+
+Avoid a crash with --stamp without --stamp-encoding.
+------------------------------------------------------------------------
+r362 | softadm | 2006-10-16 16:13:48 +0200 (Mon, 16 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgstransform.c
+
+Fixed interaction of current point with page_matrix.
+------------------------------------------------------------------------
+r361 | softadm | 2006-10-14 22:05:33 +0200 (Sat, 14 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs.pot
+
+Added more hints in the pot header.
+------------------------------------------------------------------------
+r360 | softadm | 2006-10-14 22:00:42 +0200 (Sat, 14 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/hpgspaintpath.c
+
+Hide some funtion as static, fix minor doxygen Pbs.
+------------------------------------------------------------------------
+r359 | softadm | 2006-10-14 17:31:14 +0200 (Sat, 14 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+i18n update, don't use HPGS_SIZE_T_FMT inside hpgs_18n.
+------------------------------------------------------------------------
+r358 | softadm | 2006-10-14 16:36:13 +0200 (Sat, 14 Oct 2006) | 1 line
+Changed paths:
+   A /trunk/hpgs/.cdtproject
+   A /trunk/hpgs/.project
+   A /trunk/hpgs/.settings
+   A /trunk/hpgs/.settings/org.eclipse.cdt.core.prefs
+
+Share eclipse's CDT project.
+------------------------------------------------------------------------
+r357 | softadm | 2006-10-14 16:33:55 +0200 (Sat, 14 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/mingw
+   A /trunk/hpgs/build/mingw/test
+   A /trunk/hpgs/build/mingw/test/Makefile
+   M /trunk/hpgs/build/mingw-shared
+   M /trunk/hpgs/build/unix
+   M /trunk/hpgs/build/unix-shared
+   M /trunk/hpgs/build/unix-shared/hpgscairo
+   M /trunk/hpgs/build/unix-shared/hpgsswf
+   M /trunk/hpgs/build/unix-shared/test
+   M /trunk/hpgs/doc
+   M /trunk/hpgs/doc/images
+
+Brush-up svn:ignore properties and add som test files to subversion.
+------------------------------------------------------------------------
+r356 | softadm | 2006-10-14 16:24:45 +0200 (Sat, 14 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src
+   M /trunk/hpgs/src/hpgs.c
+
+Allow old device-specific cmdline options.
+------------------------------------------------------------------------
+r355 | softadm | 2006-10-14 16:22:36 +0200 (Sat, 14 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgstransform.c
+
+Beautify autmatic scales for the human user.
+------------------------------------------------------------------------
+r353 | softadm | 2006-10-11 08:09:04 +0200 (Wed, 11 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgstransform.c
+
+Scale the page bounding box, too, if we have to shrink the content to the page.
+------------------------------------------------------------------------
+r352 | softadm | 2006-10-10 22:58:26 +0200 (Tue, 10 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspath.c
+
+Add some output optimizations for filled paths.
+------------------------------------------------------------------------
+r351 | softadm | 2006-10-10 17:06:50 +0200 (Tue, 10 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspath.c
+
+Rewrite of polygon handling, 95% of the testsuite is now OK, further fixes are needed.
+------------------------------------------------------------------------
+r350 | softadm | 2006-10-10 12:26:50 +0200 (Tue, 10 Oct 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspath.c
+
+Best guess on PE semantics with pen up base on old have_current_point handling.
+------------------------------------------------------------------------
+r349 | softadm | 2006-09-21 21:57:51 +0200 (Thu, 21 Sep 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+
+Fixed a slight locking problem, which might cause a race.
+------------------------------------------------------------------------
+r348 | softadm | 2006-09-21 12:31:52 +0200 (Thu, 21 Sep 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+
+Fixed a potential mutex-lock problem.
+------------------------------------------------------------------------
+r347 | softadm | 2006-09-21 11:36:01 +0200 (Thu, 21 Sep 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspe.c
+
+Ignore control characters inside PE commands.
+------------------------------------------------------------------------
+r346 | softadm | 2006-09-21 09:49:45 +0200 (Thu, 21 Sep 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsswf/hpgsswf.c
+
+Added a switch for platform-specific size_t format string.
+------------------------------------------------------------------------
+r344 | softadm | 2006-09-12 22:44:58 +0200 (Tue, 12 Sep 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/hpgscairo/Makefile
+   M /trunk/hpgs/build/unix-shared/hpgsswf/Makefile
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Add plugin to the name of plugin shared files.
+------------------------------------------------------------------------
+r343 | softadm | 2006-08-18 18:48:09 +0200 (Fri, 18 Aug 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsistream.c
+
+Added hpgs_istream_seekend().
+------------------------------------------------------------------------
+r342 | softadm | 2006-06-21 09:02:16 +0200 (Wed, 21 Jun 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+Use ChangeLog directly from svn log -v.
+------------------------------------------------------------------------
+r341 | softadm | 2006-06-21 08:53:27 +0200 (Wed, 21 Jun 2006) | 1 line
+Changed paths:
+   M /branches/hpgs-1.0-branch/src/hpgspcl.c
+   M /trunk/hpgs/build/unix-shared/hpgs.spec
+   M /trunk/scripts/release.sh
+
+Added CID cmd with 18 args.
+------------------------------------------------------------------------
+r340 | softadm | 2006-06-17 11:20:15 +0200 (Sat, 17 Jun 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+
+Set the verion to hpgs 1.1.0 final.
+------------------------------------------------------------------------
+r339 | softadm | 2006-06-17 11:07:11 +0200 (Sat, 17 Jun 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Linguistic amandements, i18n update.
+------------------------------------------------------------------------
+r338 | softadm | 2006-06-17 10:33:36 +0200 (Sat, 17 Jun 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsglobal.c
+
+Make hpgs_array_safe_resize a non-inline function.
+------------------------------------------------------------------------
+r337 | softadm | 2006-05-19 09:21:10 +0200 (Fri, 19 May 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsglobal.c
+   M /trunk/hpgs/src/hpgsreader.c
+
+Added hpgs_utf8_strlen, correctl render utf-8 stamps.
+------------------------------------------------------------------------
+r336 | softadm | 2006-05-19 08:52:36 +0200 (Fri, 19 May 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgspcl.c
+
+Include basic support for CID setup command with 18 bytes.
+------------------------------------------------------------------------
+r335 | softadm | 2006-05-09 14:50:40 +0200 (Tue, 09 May 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/hpgs.spec
+
+Set libsfx and slibsfx in install rule, too.
+------------------------------------------------------------------------
+r334 | softadm | 2006-05-09 14:39:45 +0200 (Tue, 09 May 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/hpgs.spec
+
+Set slibsfx in specfile.
+------------------------------------------------------------------------
+r333 | softadm | 2006-05-09 14:28:13 +0200 (Tue, 09 May 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+
+Push version to rc2.
+------------------------------------------------------------------------
+r332 | softadm | 2006-05-09 14:27:38 +0200 (Tue, 09 May 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/Makefile
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Support compile-time LIBSFX configuration.
+------------------------------------------------------------------------
+r331 | softadm | 2006-05-09 14:07:03 +0200 (Tue, 09 May 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/Makefile
+
+Include -fPIC in dynamic compiler options.
+------------------------------------------------------------------------
+r330 | softadm | 2006-04-27 21:40:16 +0200 (Thu, 27 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/hpgs.spec
+
+Really make 64bit spec support working.
+------------------------------------------------------------------------
+r329 | softadm | 2006-04-27 21:28:21 +0200 (Thu, 27 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/Makefile
+   M /trunk/hpgs/build/unix-shared/hpgs.spec
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/include.mak
+   M /trunk/scripts/release.sh
+
+Prepare build system for rpm builds with lib64.
+------------------------------------------------------------------------
+r328 | softadm | 2006-04-27 20:45:44 +0200 (Thu, 27 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgstransform.c
+
+Pass the right context to the frame asset function.
+------------------------------------------------------------------------
+r327 | softadm | 2006-04-25 18:28:06 +0200 (Tue, 25 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgstransform.c
+
+Undo clipping upon frame advance, introduced hpgs_reader_get_current_pen.
+------------------------------------------------------------------------
+r325 | softadm | 2006-04-22 22:01:11 +0200 (Sat, 22 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsplugin.h
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgstransform.c
+
+Introduced frame asset rendering.
+------------------------------------------------------------------------
+r324 | softadm | 2006-04-21 21:43:26 +0200 (Fri, 21 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+
+Fied a threading issue when concurrently instantiating two fonts.
+------------------------------------------------------------------------
+r323 | softadm | 2006-04-16 15:44:16 +0200 (Sun, 16 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgssetup.c
+
+Fixed page assets for single page mode.
+------------------------------------------------------------------------
+r322 | softadm | 2006-04-13 21:47:36 +0200 (Thu, 13 Apr 2006) | 1 line
+Changed paths:
+   A /trunk/hpgs/build/unix-shared/hpgs.spec
+   M /trunk/hpgs/src/hpgsglobal.c
+   M /trunk/hpgs/src/include.mak
+
+Added support for a rpm package.
+------------------------------------------------------------------------
+r321 | softadm | 2006-04-13 20:31:25 +0200 (Thu, 13 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/Makefile
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgsglobal.c
+
+Allow make to override the default prefix.
+------------------------------------------------------------------------
+r320 | softadm | 2006-04-13 12:55:35 +0200 (Thu, 13 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspath.c
+
+Improved moveto handling, which fixes some corner cases.
+------------------------------------------------------------------------
+r319 | softadm | 2006-04-12 13:58:53 +0200 (Wed, 12 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsglobal.c
+
+More va_copy fixed for x86_64.
+------------------------------------------------------------------------
+r318 | softadm | 2006-04-05 12:18:00 +0200 (Wed, 05 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsglobal.c
+
+More va_copy fixes for x86_64.
+------------------------------------------------------------------------
+r317 | softadm | 2006-04-05 12:13:16 +0200 (Wed, 05 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsostream.c
+   M /trunk/hpgs/src/hpgszostream.c
+
+More va_copy fixes for x86_64.
+------------------------------------------------------------------------
+r316 | softadm | 2006-04-05 12:06:04 +0200 (Wed, 05 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsostream.c
+
+Use va_copy in hpgs_ostream_vprintf, which is portable to x86_64.
+------------------------------------------------------------------------
+r315 | softadm | 2006-04-05 11:44:04 +0200 (Wed, 05 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsostream.c
+
+More 64 bit fixes.
+------------------------------------------------------------------------
+r314 | softadm | 2006-04-05 10:36:15 +0200 (Wed, 05 Apr 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Get rid of gcc warning in 64 bit mode.
+------------------------------------------------------------------------
+r313 | softadm | 2006-03-15 10:33:16 +0100 (Wed, 15 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspaint.c
+
+Allow a non-writing paint device by passing an empty string as filename.
+------------------------------------------------------------------------
+r312 | softadm | 2006-03-10 22:31:30 +0100 (Fri, 10 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+
+Fixed font bugs.
+------------------------------------------------------------------------
+r311 | softadm | 2006-03-10 17:37:57 +0100 (Fri, 10 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsplugin.h
+
+Added init and cleanup callbacks for plugins.
+------------------------------------------------------------------------
+r310 | softadm | 2006-03-09 19:18:36 +0100 (Thu, 09 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Fixed PCL image positioning with non-identity page_matrix.
+------------------------------------------------------------------------
+r309 | softadm | 2006-03-09 19:18:16 +0100 (Thu, 09 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/include.mak
+
+Additionally install hpgsmutex.h in install-devel.
+------------------------------------------------------------------------
+r308 | softadm | 2006-03-07 16:24:01 +0100 (Tue, 07 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/test/font_test.c
+
+Additionally pass an utf8 strlen.
+------------------------------------------------------------------------
+r307 | softadm | 2006-03-07 09:45:04 +0100 (Tue, 07 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/hpgsfont.h
+   M /trunk/hpgs/src/test/font_test.c
+
+Added interpretation of postscript glyph names.
+------------------------------------------------------------------------
+r306 | softadm | 2006-03-06 23:06:56 +0100 (Mon, 06 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/hpgslabel.c
+   M /trunk/hpgs/src/test/font_test.c
+
+Completely switch font glpyh functions from unicode to glyph IDs.
+------------------------------------------------------------------------
+r305 | softadm | 2006-03-06 18:50:07 +0100 (Mon, 06 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsfont.c
+
+Expose glyph IDs and cap height of font to API.
+------------------------------------------------------------------------
+r304 | softadm | 2006-03-06 17:10:13 +0100 (Mon, 06 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsplugin.h
+
+Fix hpgsplugin.h
+------------------------------------------------------------------------
+r303 | softadm | 2006-03-06 14:30:58 +0100 (Mon, 06 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/include.mak
+
+Additionally install hpgsplugin.h with make install-devel.
+------------------------------------------------------------------------
+r302 | softadm | 2006-03-06 13:45:56 +0100 (Mon, 06 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsplugin.h
+
+Allow plugins to return a page_asset function.
+------------------------------------------------------------------------
+r301 | softadm | 2006-03-06 13:45:00 +0100 (Mon, 06 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgspaint.c
+
+Allow plugins to return a page_asset function.
+------------------------------------------------------------------------
+r300 | softadm | 2006-03-06 11:31:11 +0100 (Mon, 06 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgstransform.c
+
+Enable the use of a callback to render additional assets after the HPGL content.
+------------------------------------------------------------------------
+r299 | softadm | 2006-03-05 19:20:12 +0100 (Sun, 05 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgstransform.c
+
+Removed debug print.
+------------------------------------------------------------------------
+r298 | softadm | 2006-03-05 19:18:03 +0100 (Sun, 05 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/TODO
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsbbox.c
+   M /trunk/hpgs/src/hpgscharacter.c
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsdevices.h
+   M /trunk/hpgs/src/hpgslexer.c
+   M /trunk/hpgs/src/hpgsmatrix.c
+   M /trunk/hpgs/src/hpgspath.c
+   M /trunk/hpgs/src/hpgspe.c
+   M /trunk/hpgs/src/hpgspen.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgstransform.c
+
+Implement user-defined rotation and borders when placing HPGL content on page.
+------------------------------------------------------------------------
+r296 | softadm | 2006-03-05 13:48:03 +0100 (Sun, 05 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsmatrix.c
+
+Implement transformation of bounding boxes.
+------------------------------------------------------------------------
+r295 | softadm | 2006-03-05 11:59:51 +0100 (Sun, 05 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgslexer.c
+   M /trunk/hpgs/src/hpgsmatrix.c
+   M /trunk/hpgs/src/hpgspath.c
+   M /trunk/hpgs/src/hpgspe.c
+   M /trunk/hpgs/src/hpgspen.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgstransform.c
+
+Use hpgs_matrix in hpgs_reader.
+------------------------------------------------------------------------
+r294 | softadm | 2006-03-05 11:59:42 +0100 (Sun, 05 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+
+Minor correction in error message.
+------------------------------------------------------------------------
+r293 | softadm | 2006-03-04 21:55:39 +0100 (Sat, 04 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/hpgslabel.c
+   M /trunk/hpgs/src/test/font_test.c
+
+Export font kerning. Minor code optimizations.
+------------------------------------------------------------------------
+r292 | softadm | 2006-03-04 19:09:53 +0100 (Sat, 04 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/mingw/Makefile
+   M /trunk/hpgs/build/mingw-shared/Makefile
+   M /trunk/hpgs/build/unix/Makefile
+   M /trunk/hpgs/build/unix-shared/Makefile
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgscharacter.c
+   M /trunk/hpgs/src/hpgsfont.c
+   D /trunk/hpgs/src/hpgsfreetype.c
+   M /trunk/hpgs/src/hpgsglobal.c
+   A /trunk/hpgs/src/hpgslabel.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/include.mak
+   M /trunk/hpgs/src/test/font_test.c
+
+Completely dismantled freetype dependencies and use our own font engine.
+------------------------------------------------------------------------
+r291 | softadm | 2006-03-04 17:12:41 +0100 (Sat, 04 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/hpgsfont.h
+   M /trunk/hpgs/src/hpgsglobal.c
+   M /trunk/hpgs/src/test/font_test.c
+
+Implemented string output and kerning.
+------------------------------------------------------------------------
+r290 | softadm | 2006-03-04 11:15:49 +0100 (Sat, 04 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/test/Makefile
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/test/include.mak
+
+Implemented valgring tests. Fix font errors detected by valgrind.
+------------------------------------------------------------------------
+r289 | softadm | 2006-03-04 10:32:02 +0100 (Sat, 04 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/test/font_test.c
+
+Implemented font path support under unix.
+------------------------------------------------------------------------
+r288 | softadm | 2006-03-03 22:24:20 +0100 (Fri, 03 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+   A /trunk/hpgs/src/hpgsfont.h
+   M /trunk/hpgs/src/hpgsglobal.c
+
+Implemented a font cache and single font dir scan.
+------------------------------------------------------------------------
+r287 | softadm | 2006-03-03 18:23:15 +0100 (Fri, 03 Mar 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/test/font_test.c
+
+Implemented transformation in glyph decomposition.
+Split off hpgs_font_header strucutre.
+------------------------------------------------------------------------
+r286 | softadm | 2006-03-03 16:14:14 +0100 (Fri, 03 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsfreetype.c
+   A /trunk/hpgs/src/hpgsmutex.h
+
+Introduced a private header for mutex support.
+------------------------------------------------------------------------
+r285 | softadm | 2006-03-03 16:13:58 +0100 (Fri, 03 Mar 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgsfont.c
+
+Fixed glyph decomposition.
+------------------------------------------------------------------------
+r284 | softadm | 2006-02-27 19:19:33 +0100 (Mon, 27 Feb 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/test/font_test.c
+
+Implemented first, basic version of glyph decomposition.
+------------------------------------------------------------------------
+r283 | softadm | 2006-02-26 23:25:07 +0100 (Sun, 26 Feb 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/test/Makefile
+   M /trunk/hpgs/src/hpgs.h
+   A /trunk/hpgs/src/hpgsfont.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/include.mak
+   A /trunk/hpgs/src/test/font_test.c
+   M /trunk/hpgs/src/test/include.mak
+
+Starting point of my own font engine.
+------------------------------------------------------------------------
+r282 | softadm | 2006-02-26 10:28:10 +0100 (Sun, 26 Feb 2006) | 1 line
+Changed paths:
+   A /trunk/hpgs/build/unix-shared/test
+   A /trunk/hpgs/build/unix-shared/test/Makefile
+   A /trunk/hpgs/src/test
+   A /trunk/hpgs/src/test/include.mak
+   A /trunk/hpgs/src/test/matrix_test.c
+
+Added a test subdirectory for unit tests.
+------------------------------------------------------------------------
+r281 | softadm | 2006-02-25 20:40:31 +0100 (Sat, 25 Feb 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsmatrix.c
+   M /trunk/hpgs/src/hpgspaintimage.c
+
+Use hpgs_matrix for image painting.
+------------------------------------------------------------------------
+r280 | softadm | 2006-02-25 18:31:38 +0100 (Sat, 25 Feb 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   A /trunk/hpgs/src/hpgsmatrix.c
+   M /trunk/hpgs/src/include.mak
+
+Introduced HPGS_EXTRA_VERSION, switch to 1.1.0-pre1.
+Added hpgs_matrix to API.
+------------------------------------------------------------------------
+r277 | softadm | 2006-02-05 12:52:11 +0100 (Sun, 05 Feb 2006) | 1 line
+Changed paths:
+   M /branches/hpgs-1.0-branch/ChangeLog
+   M /trunk/hpgs/ChangeLog
+
+hpgs-1.0.0 released.
+------------------------------------------------------------------------
+r275 | softadm | 2006-02-05 12:16:27 +0100 (Sun, 05 Feb 2006) | 1 line
+Changed paths:
+   M /branches/hpgs-1.0-branch/INSTALL
+   M /branches/hpgs-1.0-branch/README
+   M /branches/hpgs-1.0-branch/TODO
+   M /trunk/hpgs/INSTALL
+   M /trunk/hpgs/README
+   M /trunk/hpgs/TODO
+
+Updated TODO,INSTALL anf README for the hpgs-1.0.0 release.
+------------------------------------------------------------------------
+r272 | softadm | 2006-02-05 11:48:22 +0100 (Sun, 05 Feb 2006) | 1 line
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+   D /trunk/put.sh
+   A /trunk/scripts
+   A /trunk/scripts/put.sh (from /trunk/put.sh:270)
+   A /trunk/scripts/sortcl.pl
+   A /trunk/scripts/updcl.sh
+
+Reorganized ChangeLog after our move to svn.
+------------------------------------------------------------------------
+r271 | softadm | 2006-02-02 11:59:49 +0100 (Thu, 02 Feb 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgscairo/hpgscairo.c
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsfreetype.c
+   M /trunk/hpgs/src/hpgsimagerop.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsscanline.c
+   M /trunk/hpgs/src/hpgsswf/hpgsswf.c
+   M /trunk/hpgs/src/hpgszostream.c
+
+- Introduce gcc attributes for hpgs_i18n.
+- Remove hpgs_alloca_free().
+------------------------------------------------------------------------
+r270 | softadm | 2006-01-29 22:12:23 +0100 (Sun, 29 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsbase.c
+   M /trunk/hpgs/src/hpgsbbox.c
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgscharacter.c
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsdevices.h
+   M /trunk/hpgs/src/hpgsfreetype.c
+   M /trunk/hpgs/src/hpgsglobal.c
+   M /trunk/hpgs/src/hpgsgstate.c
+   M /trunk/hpgs/src/hpgsi18n.c
+   M /trunk/hpgs/src/hpgsi18n.h
+   M /trunk/hpgs/src/hpgsimage.c
+   M /trunk/hpgs/src/hpgsimage.h
+   M /trunk/hpgs/src/hpgsimagerop.c
+   M /trunk/hpgs/src/hpgsistream.c
+   M /trunk/hpgs/src/hpgslexer.c
+   M /trunk/hpgs/src/hpgsmkrop.c
+   M /trunk/hpgs/src/hpgsostream.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspaintimage.c
+   M /trunk/hpgs/src/hpgspaintpath.c
+   M /trunk/hpgs/src/hpgspath.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgspe.c
+   M /trunk/hpgs/src/hpgspen.c
+   M /trunk/hpgs/src/hpgspjl.c
+   M /trunk/hpgs/src/hpgsplugin.h
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgsscanline.c
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgstransform.c
+   M /trunk/hpgs/src/hpgszostream.c
+
+Changed copyright to 2004-2006.
+
+------------------------------------------------------------------------
+r269 | softadm | 2006-01-29 21:50:32 +0100 (Sun, 29 Jan 2006) | 5 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsimage.c
+   M /trunk/hpgs/src/hpgsimage.h
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Augmented quality of png files by
+- Writing the software version to a tEXT chunk.
+- Writing the resolution to a pHYs chunk.
+- As a side effect, we had to introduce a method hpgs_image_set_resolution to the API.
+
+------------------------------------------------------------------------
+r268 | softadm | 2006-01-19 19:05:26 +0100 (Thu, 19 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Emit large PCL images in smaller portionsin order to economize memory.
+
+------------------------------------------------------------------------
+r267 | softadm | 2006-01-19 17:32:53 +0100 (Thu, 19 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsimagerop.c
+
+Corrected the comment on memory estimations.
+
+------------------------------------------------------------------------
+r266 | softadm | 2006-01-18 21:09:26 +0100 (Wed, 18 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Allow to interrupt hpgs_reader_read from another thread.
+
+------------------------------------------------------------------------
+r265 | softadm | 2006-01-16 10:19:55 +0100 (Mon, 16 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/Makefile
+
+Finally got CFLAGS right for gettext.
+
+------------------------------------------------------------------------
+r264 | softadm | 2006-01-16 09:23:10 +0100 (Mon, 16 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbase.c
+
+Removed unnecessary log print to stderr.
+
+------------------------------------------------------------------------
+r263 | softadm | 2006-01-16 09:18:34 +0100 (Mon, 16 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+
+Fixed get_int_pair and get_double_pair.
+
+------------------------------------------------------------------------
+r262 | softadm | 2006-01-15 22:11:20 +0100 (Sun, 15 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Fixed the size calculation of splines with large turning angles.
+
+------------------------------------------------------------------------
+r261 | softadm | 2006-01-14 23:14:21 +0100 (Sat, 14 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+i18n update for OceJob support.
+
+------------------------------------------------------------------------
+r260 | softadm | 2006-01-14 23:08:03 +0100 (Sat, 14 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+
+Added support of Oce Job-headers.
+
+------------------------------------------------------------------------
+r259 | softadm | 2006-01-10 18:13:03 +0100 (Tue, 10 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/include.mak
+
+Renamed languae de_DE to de.
+
+------------------------------------------------------------------------
+r258 | softadm | 2006-01-10 18:12:32 +0100 (Tue, 10 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/Makefile
+
+Use gettext library.
+
+------------------------------------------------------------------------
+r257 | softadm | 2006-01-10 13:47:43 +0100 (Tue, 10 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Fixed i18n typo.
+
+------------------------------------------------------------------------
+r256 | softadm | 2006-01-10 13:44:34 +0100 (Tue, 10 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsimage.c
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Removed the last API FIXME by making image->get_data virtual.
+
+------------------------------------------------------------------------
+r255 | softadm | 2006-01-10 13:25:05 +0100 (Tue, 10 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Fixed i18n typos.
+
+------------------------------------------------------------------------
+r254 | softadm | 2006-01-06 22:01:52 +0100 (Fri, 06 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsglobal.c
+   M /trunk/hpgs/src/hpgsreader.c
+
+Brush-up of error messages.
+
+------------------------------------------------------------------------
+r253 | softadm | 2006-01-05 11:53:15 +0100 (Thu, 05 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+i18n update.
+
+------------------------------------------------------------------------
+r252 | softadm | 2006-01-05 11:50:14 +0100 (Thu, 05 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+
+Do a more stringent number parsing. Set copyrigth to 2006.
+
+------------------------------------------------------------------------
+r251 | softadm | 2006-01-05 09:55:17 +0100 (Thu, 05 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbase.c
+
+Doa much more stringent parsing of lengths.
+
+------------------------------------------------------------------------
+r250 | softadm | 2006-01-04 22:08:37 +0100 (Wed, 04 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/po/hpgs.pot
+   M /trunk/hpgs/src/po/hpgs_de.po
+
+Completed i18n.
+
+------------------------------------------------------------------------
+r249 | softadm | 2006-01-04 19:36:00 +0100 (Wed, 04 Jan 2006) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/Makefile
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgscharacter.c
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsfreetype.c
+   M /trunk/hpgs/src/hpgsglobal.c
+   A /trunk/hpgs/src/hpgsi18n.c
+   A /trunk/hpgs/src/hpgsi18n.h
+   M /trunk/hpgs/src/hpgsimage.c
+   M /trunk/hpgs/src/hpgsimagerop.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaintimage.c
+   M /trunk/hpgs/src/hpgspaintpath.c
+   M /trunk/hpgs/src/hpgspath.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgspe.c
+   M /trunk/hpgs/src/hpgspen.c
+   M /trunk/hpgs/src/hpgspjl.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsscanline.c
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgstransform.c
+   M /trunk/hpgs/src/include.mak
+   A /trunk/hpgs/src/po
+   A /trunk/hpgs/src/po/Makefile
+   A /trunk/hpgs/src/po/hpgs.pot
+   A /trunk/hpgs/src/po/hpgs_de.po
+
+Added i18n support and freezed 1.0 API.
+
+------------------------------------------------------------------------
+r248 | softadm | 2005-11-18 21:42:02 +0100 (Fri, 18 Nov 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+hpgs-0.99.1 (1.0rc1) released.
+
+------------------------------------------------------------------------
+r247 | softadm | 2005-11-18 21:37:53 +0100 (Fri, 18 Nov 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintpath.c
+
+Now the miter join implementation is really tested.
+
+------------------------------------------------------------------------
+r246 | softadm | 2005-11-18 21:32:23 +0100 (Fri, 18 Nov 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/TODO
+
+Update to the status of hpgs-0.99.1
+
+------------------------------------------------------------------------
+r245 | softadm | 2005-11-18 20:34:32 +0100 (Fri, 18 Nov 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/unix/Makefile
+   M /trunk/hpgs/build/unix-shared/Makefile
+
+Correctly link ptread library.
+
+------------------------------------------------------------------------
+r244 | softadm | 2005-11-18 20:21:02 +0100 (Fri, 18 Nov 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsostream.c
+
+Get rid of gcc4 warnings.
+
+------------------------------------------------------------------------
+r243 | softadm | 2005-11-18 09:24:07 +0100 (Fri, 18 Nov 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+
+Allow <ESC>.( and <ESC>.Y initialization commands.
+
+------------------------------------------------------------------------
+r242 | softadm | 2005-11-18 09:06:26 +0100 (Fri, 18 Nov 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgssetup.c
+
+Set miter limit in device seetup.
+
+------------------------------------------------------------------------
+r241 | softadm | 2005-11-17 21:49:38 +0100 (Thu, 17 Nov 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintpath.c
+
+Corrected miter join.
+
+------------------------------------------------------------------------
+r240 | softadm | 2005-11-11 15:24:24 +0100 (Fri, 11 Nov 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsostream.c
+
+Fixed a typo in the copy_streams buffer, which is now of the right size.
+
+------------------------------------------------------------------------
+r239 | softadm | 2005-11-10 21:27:56 +0100 (Thu, 10 Nov 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsfreetype.c
+
+Add an extra mutex lock.
+
+------------------------------------------------------------------------
+r238 | softadm | 2005-10-28 14:55:35 +0200 (Fri, 28 Oct 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspen.c
+
+Auto-expand the palette inside the SP statement.
+Check for realloc errors in palette auto-expand.
+
+------------------------------------------------------------------------
+r237 | softadm | 2005-10-16 18:01:56 +0200 (Sun, 16 Oct 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsfreetype.c
+   M /trunk/hpgs/src/hpgsglobal.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+
+Use a mutex for protecting freetype resources.
+
+------------------------------------------------------------------------
+r236 | softadm | 2005-10-16 11:02:55 +0200 (Sun, 16 Oct 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsglobal.c
+
+Avoid memory leak of the error message of the main thread.
+
+------------------------------------------------------------------------
+r235 | softadm | 2005-10-16 11:02:21 +0200 (Sun, 16 Oct 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+
+Better reporting of errors during plugin device creation.
+
+------------------------------------------------------------------------
+r234 | softadm | 2005-10-16 10:53:19 +0200 (Sun, 16 Oct 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgsglobal.c
+
+Use agrv[0] as base for hpgs_get_arg_value in order to comply with
+the usage of hpgs_get_arg_value inside plugins.
+
+------------------------------------------------------------------------
+r233 | softadm | 2005-10-12 09:19:08 +0200 (Wed, 12 Oct 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgscairo/hpgscairo.c
+   M /trunk/hpgs/src/hpgscairo/hpgsplugin.c
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsglobal.c
+   M /trunk/hpgs/src/hpgsswf/hpgsplugin.c
+   M /trunk/hpgs/src/hpgsswf/hpgsswf.c
+
+Use hpgs_set_error throughout the plugins.
+Finally pull hpgs_get_arg_value into the core API.
+
+------------------------------------------------------------------------
+r232 | softadm | 2005-10-11 21:24:15 +0200 (Tue, 11 Oct 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/Makefile
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsfreetype.c
+   M /trunk/hpgs/src/hpgsglobal.c
+   M /trunk/hpgs/src/hpgsimage.c
+   M /trunk/hpgs/src/hpgsimagerop.c
+   M /trunk/hpgs/src/hpgslexer.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspath.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgspjl.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+
+Revised error handling using thread local storage.
+Set the version to 0.99.1 as we are heading towards 1.0rc1
+
+------------------------------------------------------------------------
+r231 | softadm | 2005-10-02 13:28:15 +0200 (Sun, 02 Oct 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+
+Switch patch version to 0.9.1
+Add some inlines and macros for array handling.
+
+------------------------------------------------------------------------
+r230 | softadm | 2005-08-15 12:23:33 +0200 (Mon, 15 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintimage.c
+
+Even more fixes with complex alpha clip paths.
+
+------------------------------------------------------------------------
+r229 | softadm | 2005-08-14 16:35:04 +0200 (Sun, 14 Aug 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintimage.c
+
+Fixed potnetila problem with complex clip path,
+which does not apply to HPGL images.
+
+------------------------------------------------------------------------
+r228 | softadm | 2005-08-13 22:25:06 +0200 (Sat, 13 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+hpgs-0.9.0 released.
+
+------------------------------------------------------------------------
+r227 | softadm | 2005-08-13 22:23:04 +0200 (Sat, 13 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/mingw/Makefile
+
+Fixed mingw non-dll build.
+
+------------------------------------------------------------------------
+r226 | softadm | 2005-08-13 22:00:56 +0200 (Sat, 13 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintimage.c
+
+Do a more thorough and correct caclulation of clip alphas for antialiasing.
+
+------------------------------------------------------------------------
+r225 | softadm | 2005-08-13 16:55:28 +0200 (Sat, 13 Aug 2005) | 4 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Implement a golden cut max/min finder for bezier alpha cut,
+which brings us more numerical stability in corner cases and
+saves us from infinite loops.
+
+------------------------------------------------------------------------
+r224 | softadm | 2005-08-13 13:57:42 +0200 (Sat, 13 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Fine-tuning of antialiasing. Introduced --thin-alpha.
+
+------------------------------------------------------------------------
+r223 | softadm | 2005-08-13 13:56:32 +0200 (Sat, 13 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintimage.c
+
+Fixed image painting with new antialiased paint engine.
+
+------------------------------------------------------------------------
+r222 | softadm | 2005-08-13 11:38:19 +0200 (Sat, 13 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Make antialiased clipping real functional.
+
+------------------------------------------------------------------------
+r221 | softadm | 2005-08-13 10:21:27 +0200 (Sat, 13 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsbase.c
+   M /trunk/hpgs/src/hpgsbbox.c
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgscairo/hpgscairo.c
+   M /trunk/hpgs/src/hpgscharacter.c
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsdevices.h
+   M /trunk/hpgs/src/hpgsfreetype.c
+   M /trunk/hpgs/src/hpgsglobal.c
+   M /trunk/hpgs/src/hpgsgstate.c
+   M /trunk/hpgs/src/hpgsimage.c
+   M /trunk/hpgs/src/hpgsimage.h
+   M /trunk/hpgs/src/hpgsimagerop.c
+   M /trunk/hpgs/src/hpgsistream.c
+   M /trunk/hpgs/src/hpgslexer.c
+   M /trunk/hpgs/src/hpgsmkrop.c
+   M /trunk/hpgs/src/hpgsostream.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspaintimage.c
+   M /trunk/hpgs/src/hpgspaintpath.c
+   M /trunk/hpgs/src/hpgspath.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgspe.c
+   M /trunk/hpgs/src/hpgspen.c
+   M /trunk/hpgs/src/hpgspjl.c
+   M /trunk/hpgs/src/hpgsplugin.h
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgsscanline.c
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgsswf/hpgsswf.c
+   M /trunk/hpgs/src/hpgstransform.c
+   M /trunk/hpgs/src/hpgszostream.c
+
+Added year 2005 to copyright.
+
+------------------------------------------------------------------------
+r220 | softadm | 2005-08-13 10:05:32 +0200 (Sat, 13 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+   M /trunk/hpgs/INSTALL
+   M /trunk/hpgs/TODO
+   M /trunk/hpgs/doc/images/scanline_0.fig
+   M /trunk/hpgs/doc/images/scanline_n.fig
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Documentation cleanup, code brush-up, heading up to a hpgs-0.9.0 release.
+
+------------------------------------------------------------------------
+r219 | softadm | 2005-08-12 12:12:45 +0200 (Fri, 12 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/mingw-shared/Makefile
+
+Adpat to compile with recent mingwPORT's.
+
+------------------------------------------------------------------------
+r218 | softadm | 2005-08-12 09:48:17 +0200 (Fri, 12 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsimagerop.c
+
+Do a better estimation of clip_lines_sz for small images.
+
+------------------------------------------------------------------------
+r217 | softadm | 2005-08-11 16:45:05 +0200 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Fixed direct by plane CID encoding, which produced an endless loop.
+
+------------------------------------------------------------------------
+r216 | softadm | 2005-08-11 13:28:39 +0200 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+
+Allow resolutions as low as 5 dpi.
+
+------------------------------------------------------------------------
+r215 | softadm | 2005-08-11 10:50:50 +0200 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Fixed bad performing bezier splines in alpha_cut.
+
+------------------------------------------------------------------------
+r214 | softadm | 2005-08-11 10:15:12 +0200 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Completely revised antialiased rendering. Needs more detail work.
+
+------------------------------------------------------------------------
+r213 | softadm | 2005-08-10 18:07:37 +0200 (Wed, 10 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Don't issue nested PCL start raster graphics error.
+
+------------------------------------------------------------------------
+r212 | softadm | 2005-08-10 17:53:06 +0200 (Wed, 10 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Try to use the whole canvas as PCL image for PCL only files.
+
+------------------------------------------------------------------------
+r211 | softadm | 2005-08-10 17:44:52 +0200 (Wed, 10 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsimagerop.c
+
+Dynamically grow clip_lines as needed.
+
+------------------------------------------------------------------------
+r210 | softadm | 2005-08-10 16:27:36 +0200 (Wed, 10 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsimage.c
+
+Fixed pim_resize.
+
+------------------------------------------------------------------------
+r209 | softadm | 2005-08-04 13:51:09 +0200 (Thu, 04 Aug 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsdevices.h
+   A /trunk/hpgs/src/hpgsglobal.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/include.mak
+
+- Added plugin cleanup to hpgs_cleanup().
+- Moved all global stuff to new file hpgsglobal.c
+
+------------------------------------------------------------------------
+r208 | softadm | 2005-08-04 13:46:56 +0200 (Thu, 04 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbase.c
+
+Fixed typos in the doxygen documentation.
+
+------------------------------------------------------------------------
+r207 | softadm | 2005-08-03 21:47:39 +0200 (Wed, 03 Aug 2005) | 7 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Finalization of new bezier cutting engine:
+- Made thin_cut for bezier splines finally working.
+- Remove hpgs_bezier_scanline_cut from internal API.
+- Remove ytol from clipper.
+- Resurrect dashed bezier spline processing, which recently has gone
+   due to a typo.
+
+------------------------------------------------------------------------
+r206 | softadm | 2005-08-03 18:28:43 +0200 (Wed, 03 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Use a handcrafted bezier spline bisection for cut and thin cut.
+
+------------------------------------------------------------------------
+r205 | softadm | 2005-08-01 11:15:18 +0200 (Mon, 01 Aug 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsistream.c
+
+Fixed mem_getc().
+
+------------------------------------------------------------------------
+r204 | softadm | 2005-07-25 15:52:19 +0200 (Mon, 25 Jul 2005) | 4 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspaintpath.c
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Completely revised scanline intersection code, which now uses curve bisection.
+Greatly simplified the bezier API.
+Bezier internals are no longer part of hpgs_paint_path structure.
+
+------------------------------------------------------------------------
+r203 | softadm | 2005-07-22 16:14:28 +0200 (Fri, 22 Jul 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsswf/hpgsswf.c
+   M /trunk/hpgs/src/hpgsswf/hpgsswf.h
+
+Implemented drawimage.
+
+------------------------------------------------------------------------
+r202 | softadm | 2005-07-22 16:13:58 +0200 (Fri, 22 Jul 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgszostream.c
+
+Added take_base argument to hpgs_new_z_ostream.
+
+------------------------------------------------------------------------
+r201 | softadm | 2005-07-22 14:27:08 +0200 (Fri, 22 Jul 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbezier.c
+
+Avoid even harder any division by zero.
+
+------------------------------------------------------------------------
+r200 | softadm | 2005-07-21 13:39:48 +0200 (Thu, 21 Jul 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsswf/hpgsswf.c
+   M /trunk/hpgs/src/hpgsswf/hpgsswf.h
+
+Optimized flash player loading time due to the concatenation of multiple path' to
+a single character.
+
+------------------------------------------------------------------------
+r199 | softadm | 2005-07-21 10:14:49 +0200 (Thu, 21 Jul 2005) | 4 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsbbox.c
+
+hpgs 0.9 API changes, part 5:
+- Added hpgs_bbox_distance.
+- Make hpgs_bbox_isnull argument const.
+
+------------------------------------------------------------------------
+r198 | softadm | 2005-07-20 23:15:50 +0200 (Wed, 20 Jul 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsswf/hpgsswf.c
+   M /trunk/hpgs/src/hpgsswf/hpgsswf.h
+
+Make clipping really functional, code simpifications.
+
+------------------------------------------------------------------------
+r197 | softadm | 2005-07-20 23:15:18 +0200 (Wed, 20 Jul 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbezier.c
+
+Fixed quadratic bezier approximation.
+
+------------------------------------------------------------------------
+r196 | softadm | 2005-07-20 17:49:11 +0200 (Wed, 20 Jul 2005) | 2 lines
+Changed paths:
+   A /trunk/hpgs/build/unix-shared/hpgsswf
+   A /trunk/hpgs/build/unix-shared/hpgsswf/Makefile
+   A /trunk/hpgs/src/hpgsswf
+   A /trunk/hpgs/src/hpgsswf/hpgsplugin.c
+   A /trunk/hpgs/src/hpgsswf/hpgsswf.c
+   A /trunk/hpgs/src/hpgsswf/hpgsswf.h
+   A /trunk/hpgs/src/hpgsswf/include.mak
+
+Added a shockwave flash plugin.
+
+------------------------------------------------------------------------
+r195 | softadm | 2005-07-20 17:47:57 +0200 (Wed, 20 Jul 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgszostream.c
+
+Fixed byte accounting and z_tell().
+
+------------------------------------------------------------------------
+r194 | softadm | 2005-07-20 17:47:30 +0200 (Wed, 20 Jul 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Reduced PCL coordinate seetup to the bare minimum.
+
+------------------------------------------------------------------------
+r193 | softadm | 2005-07-19 17:40:11 +0200 (Tue, 19 Jul 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Don't take the HPGL rotation into account for PCL coordinate setup.
+
+------------------------------------------------------------------------
+r192 | softadm | 2005-07-19 14:14:05 +0200 (Tue, 19 Jul 2005) | 6 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgsistream.c
+   M /trunk/hpgs/src/hpgsostream.c
+   M /trunk/hpgs/src/hpgspjl.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgszostream.c
+
+hpgs 0.9 API changes, part 4:
+- Use size_t in seek/tell methods and pass out parameters as pointers.
+- Added an argument layer to hpgs_ostream_tell in order to retrieve
+   compressed or uncompressed size of zstreams.
+- Make hpgs_z_ostream 100% compatible with other ostreams.
+
+------------------------------------------------------------------------
+r191 | softadm | 2005-07-18 15:57:53 +0200 (Mon, 18 Jul 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/Makefile
+
+Added -rpath to linker flags.
+
+------------------------------------------------------------------------
+r190 | softadm | 2005-07-18 15:57:27 +0200 (Mon, 18 Jul 2005) | 4 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgsostream.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgszostream.c
+
+hpgs 0.9 API changes, part 3:
+- Added hpgs_ostream_tell().
+- Revised singulrity finding fro bezier splines.
+
+------------------------------------------------------------------------
+r189 | softadm | 2005-07-16 22:55:44 +0200 (Sat, 16 Jul 2005) | 4 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgspaintpath.c
+   A /trunk/hpgs/src/hpgszostream.c
+   M /trunk/hpgs/src/include.mak
+
+hpgs 0.9 API changes, part 2:
+- Added a deflate output stream.
+- Added hpgs_paint_path_decompose_dashes().
+
+------------------------------------------------------------------------
+r188 | softadm | 2005-07-16 18:24:44 +0200 (Sat, 16 Jul 2005) | 4 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsistream.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspjl.c
+   M /trunk/hpgs/src/hpgsreader.c
+
+hpgs-0.9 API changes, part 1:
+- hpgs_paint_path functionality moved to public interface.
+- hpgs_istream_rewind is replaced by more versatile hpgs_istream_seek.
+
+------------------------------------------------------------------------
+r187 | softadm | 2005-07-04 11:43:44 +0200 (Mon, 04 Jul 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspjl.c
+
+Added a HPGL autodetection for non-conformant PJL headers.
+
+------------------------------------------------------------------------
+r186 | softadm | 2005-06-23 16:41:43 +0200 (Thu, 23 Jun 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+hpgs-0.8.1 released.
+
+------------------------------------------------------------------------
+r185 | softadm | 2005-06-23 16:34:28 +0200 (Thu, 23 Jun 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/TODO
+
+Stress antialiasing and single palette issues.
+
+------------------------------------------------------------------------
+r184 | softadm | 2005-06-21 18:32:56 +0200 (Tue, 21 Jun 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+
+Moved CID parameters in PCL palette.
+
+------------------------------------------------------------------------
+r183 | softadm | 2005-06-21 18:32:43 +0200 (Tue, 21 Jun 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgstransform.c
+
+Remove over-sophistication from FR command.
+
+------------------------------------------------------------------------
+r182 | softadm | 2005-06-16 16:24:32 +0200 (Thu, 16 Jun 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Do not reset rster graphics dimension when leaving PCL mode.
+
+------------------------------------------------------------------------
+r181 | softadm | 2005-06-13 11:28:15 +0200 (Mon, 13 Jun 2005) | 4 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgstransform.c
+
+Completely revised coordinate setup:
+ - HPGL coordinate setup is now much simpler and conformant.
+ - PCL setup is now based on my extensive testsuite.
+
+------------------------------------------------------------------------
+r180 | softadm | 2005-06-04 22:37:23 +0200 (Sat, 04 Jun 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsdevices.h
+   M /trunk/hpgs/src/hpgsimagerop.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgsscanline.c
+
+- Finally solved the ROP3 mystery for all transparency modes,
+- Added an image to filled outline optimization for vector output devices.
+
+------------------------------------------------------------------------
+r179 | softadm | 2005-05-25 11:21:38 +0200 (Wed, 25 May 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+hpgs-0.8.0 released.
+
+------------------------------------------------------------------------
+r178 | softadm | 2005-05-25 11:19:09 +0200 (Wed, 25 May 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/TODO
+
+Update version to 0.8.0
+
+------------------------------------------------------------------------
+r177 | softadm | 2005-05-25 11:11:01 +0200 (Wed, 25 May 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgsimage.c
+   M /trunk/hpgs/src/hpgsreader.h
+
+Minor code brush-up.
+
+------------------------------------------------------------------------
+r176 | softadm | 2005-05-25 10:12:48 +0200 (Wed, 25 May 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+
+Use default linewidth factor 1.
+For rendering to png w/o anitaliasing use default lw factor of 0.5
+
+------------------------------------------------------------------------
+r175 | softadm | 2005-05-25 09:50:59 +0200 (Wed, 25 May 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/hpgscairo/Makefile
+
+Adjuct cairo path to /usr/local.
+
+------------------------------------------------------------------------
+r174 | softadm | 2005-05-24 22:26:13 +0200 (Tue, 24 May 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+
+Fixed typos set default overscan to 2.
+
+------------------------------------------------------------------------
+r173 | softadm | 2005-05-24 22:05:54 +0200 (Tue, 24 May 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+
+Add const to hpgs_ostream_write arg.
+
+------------------------------------------------------------------------
+r172 | softadm | 2005-05-24 21:53:23 +0200 (Tue, 24 May 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Don't use thin cut for antialiasing, which gives the desired results.
+
+------------------------------------------------------------------------
+r171 | softadm | 2005-05-24 21:52:35 +0200 (Tue, 24 May 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsistream.c
+   M /trunk/hpgs/src/hpgsostream.c
+
+Allow duplicating the input data for memory istreams.
+
+------------------------------------------------------------------------
+r170 | softadm | 2005-05-24 18:34:44 +0200 (Tue, 24 May 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgscairo/hpgscairo.c
+
+Change in order to meet recent cairo API shakeup.
+
+------------------------------------------------------------------------
+r169 | softadm | 2005-05-24 17:36:19 +0200 (Tue, 24 May 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsistream.c
+   M /trunk/hpgs/src/hpgsostream.c
+   M /trunk/hpgs/src/hpgsreader.c
+
+Redesign of stream API.
+
+------------------------------------------------------------------------
+r168 | softadm | 2005-05-24 17:07:34 +0200 (Tue, 24 May 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsimagerop.c
+
+Use malloc for clip_lines, which gets really big in practise.
+
+------------------------------------------------------------------------
+r167 | softadm | 2005-05-20 16:04:01 +0200 (Fri, 20 May 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspen.c
+
+Extend palette, if PC of PW uses a larger pen number.
+
+------------------------------------------------------------------------
+r166 | softadm | 2005-04-12 11:51:52 +0200 (Tue, 12 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbase.c
+
+Fixed Bug #3739: Incorrect parsing of papersize <width>x<height> arguments
+
+------------------------------------------------------------------------
+r165 | softadm | 2005-04-07 17:30:14 +0200 (Thu, 07 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/mingw-shared/Makefile
+   M /trunk/hpgs/src/include.mak
+
+Allow different installation prefixes for runtime and development.
+
+------------------------------------------------------------------------
+r164 | softadm | 2005-04-06 20:37:22 +0200 (Wed, 06 Apr 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+
+Handle semicolon right after PCL context.
+Write file position for unknown HPGL commands.
+
+------------------------------------------------------------------------
+r163 | softadm | 2005-04-06 20:25:27 +0200 (Wed, 06 Apr 2005) | 4 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgscairo/hpgscairo.c
+   M /trunk/hpgs/src/hpgsimage.c
+
+Use a 4 byte-aligned stride in png images.
+Export depth in hpgs_image_get_data, too.
+Set version to 0.7.3
+
+------------------------------------------------------------------------
+r162 | softadm | 2005-04-05 21:30:55 +0200 (Tue, 05 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+
+Implemented CO command.
+
+------------------------------------------------------------------------
+r161 | softadm | 2005-04-05 20:52:32 +0200 (Tue, 05 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspath.c
+
+Reverse angle sweep, when the transformation has a neg. determinant.
+
+------------------------------------------------------------------------
+r160 | softadm | 2005-04-05 20:29:27 +0200 (Tue, 05 Apr 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspe.c
+
+Forward broken PE streams to the recovery in hpgs_read, which
+allows to parse some ultra-broken HPGL files.
+
+------------------------------------------------------------------------
+r159 | softadm | 2005-04-05 18:47:15 +0200 (Tue, 05 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspjl.c
+
+Be more tolerant with leading linefeeds.
+
+------------------------------------------------------------------------
+r158 | softadm | 2005-04-05 10:17:10 +0200 (Tue, 05 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspjl.c
+
+Allow empty lines with '@PJL\n'
+
+------------------------------------------------------------------------
+r157 | softadm | 2005-04-04 10:28:12 +0200 (Mon, 04 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/include.mak
+
+Added install-devel rule for installing header files.
+
+------------------------------------------------------------------------
+r156 | softadm | 2005-04-01 18:53:29 +0200 (Fri, 01 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+hpgs-0.7.2 released.
+
+------------------------------------------------------------------------
+r155 | softadm | 2005-04-01 18:51:44 +0200 (Fri, 01 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsimagerop.c
+
+Include the right headers for alloca.
+
+------------------------------------------------------------------------
+r154 | softadm | 2005-04-01 18:47:52 +0200 (Fri, 01 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/TODO
+
+Fixed hpgscairo integration.
+
+------------------------------------------------------------------------
+r153 | softadm | 2005-04-01 18:39:56 +0200 (Fri, 01 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/INSTALL
+   M /trunk/hpgs/TODO
+   M /trunk/hpgs/src/hpgs.c
+
+Integrate cairo plugin in distribution.
+
+------------------------------------------------------------------------
+r152 | softadm | 2005-04-01 14:46:49 +0200 (Fri, 01 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgstransform.c
+
+Handle IP after RO90 correctly.
+
+------------------------------------------------------------------------
+r151 | softadm | 2005-04-01 11:32:15 +0200 (Fri, 01 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+
+Handle <ESC>0B<ESC>0A correctly.
+
+------------------------------------------------------------------------
+r150 | softadm | 2005-04-01 11:31:41 +0200 (Fri, 01 Apr 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspath.c
+
+Handle AC w/o arguments.
+
+------------------------------------------------------------------------
+r149 | softadm | 2005-03-31 09:25:28 +0200 (Thu, 31 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbezier.c
+
+Removed a shortcut in midpoint hit, which produced wrong results.
+
+------------------------------------------------------------------------
+r148 | softadm | 2005-03-30 22:08:59 +0200 (Wed, 30 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintpath.c
+
+Use golden cut for partitioning bezier splines.
+
+------------------------------------------------------------------------
+r147 | softadm | 2005-03-30 17:38:22 +0200 (Wed, 30 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspaintpath.c
+
+Detect bezier spline singularities and extrude spline piececwise.
+
+------------------------------------------------------------------------
+r146 | softadm | 2005-03-30 11:54:40 +0200 (Wed, 30 Mar 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspaintpath.c
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Calculate a robust tangent in bezier extrusion.
+Allow left/right/mid tangents in hpgs_bezier_tangent.
+
+------------------------------------------------------------------------
+r145 | softadm | 2005-03-30 10:45:36 +0200 (Wed, 30 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Handle bezier corner cases in thin_cut.
+
+------------------------------------------------------------------------
+r144 | softadm | 2005-03-30 10:43:16 +0200 (Wed, 30 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgspaint.h
+
+Added robust bezier tangent calculation.
+
+------------------------------------------------------------------------
+r143 | softadm | 2005-03-29 20:56:25 +0200 (Tue, 29 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Preliminary work on handling bezier corner cases.
+
+------------------------------------------------------------------------
+r142 | softadm | 2005-03-29 20:55:46 +0200 (Tue, 29 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintpath.c
+
+Fixed inside join of paths and prepare internals for better bezier handling.
+
+------------------------------------------------------------------------
+r141 | softadm | 2005-03-29 09:43:16 +0200 (Tue, 29 Mar 2005) | 2 lines
+Changed paths:
+   A /trunk/hpgs/build/unix-shared/hpgscairo
+   A /trunk/hpgs/build/unix-shared/hpgscairo/Makefile
+   A /trunk/hpgs/src/hpgscairo
+   A /trunk/hpgs/src/hpgscairo/hpgscairo.c
+   A /trunk/hpgs/src/hpgscairo/hpgscairo.h
+   A /trunk/hpgs/src/hpgscairo/hpgsplugin.c
+   A /trunk/hpgs/src/hpgscairo/include.mak
+   M /trunk/hpgs/src/hpgsimage.c
+
+Integration of an expermental cairo plugin.
+
+------------------------------------------------------------------------
+r140 | softadm | 2005-03-26 16:14:00 +0100 (Sat, 26 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsimage.c
+
+Changed image get_data API in order to take a hpgs_image instead of hpgs_png_image.
+
+------------------------------------------------------------------------
+r139 | softadm | 2005-03-26 12:08:19 +0100 (Sat, 26 Mar 2005) | 2 lines
+Changed paths:
+   A /trunk/hpgs/src/hpgsplugin.h
+
+Added common header file for all plugins.
+
+------------------------------------------------------------------------
+r138 | softadm | 2005-03-26 11:49:46 +0100 (Sat, 26 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+
+Expose png image buffer in API. Set version to 0.7.2
+
+------------------------------------------------------------------------
+r137 | softadm | 2005-03-26 11:49:02 +0100 (Sat, 26 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsimage.c
+
+Use premultiplied alpha in alpha images.
+
+------------------------------------------------------------------------
+r136 | softadm | 2005-03-17 12:01:42 +0100 (Thu, 17 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Respect frame advance in PCL coordinate calculations.
+
+------------------------------------------------------------------------
+r135 | softadm | 2005-03-17 10:29:29 +0100 (Thu, 17 Mar 2005) | 4 lines
+Changed paths:
+   M /trunk/hpgs/INSTALL
+   M /trunk/hpgs/build/mingw-shared/Makefile
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgsdevices.c
+
+- Adapted default prefix for Windows in order to use PROGAMFILES.
+- Activated plugin mechanism unde Win32.
+- Allow loading of up to 4 plugins simultaneously.
+
+------------------------------------------------------------------------
+r134 | softadm | 2005-03-16 18:04:07 +0100 (Wed, 16 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+hpgs-0.7.1 released.
+
+------------------------------------------------------------------------
+r133 | softadm | 2005-03-16 17:59:44 +0100 (Wed, 16 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/INSTALL
+
+Added notes on zlib and libpng for MinGW.
+
+------------------------------------------------------------------------
+r132 | softadm | 2005-03-16 13:22:16 +0100 (Wed, 16 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+
+Set patch version to 1.
+
+------------------------------------------------------------------------
+r131 | softadm | 2005-03-16 13:21:46 +0100 (Wed, 16 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Silently ignore raster lines with too mauch data for compression 0.
+
+------------------------------------------------------------------------
+r130 | softadm | 2005-03-16 12:31:46 +0100 (Wed, 16 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Fixed pls_expand_pages, which crashed.
+
+------------------------------------------------------------------------
+r129 | softadm | 2005-03-16 11:48:01 +0100 (Wed, 16 Mar 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgslexer.c
+
+Ignore commas after a HPGL command when interpreting numbers, which
+is needed to accept some broken files.
+
+------------------------------------------------------------------------
+r128 | softadm | 2005-03-15 11:19:55 +0100 (Tue, 15 Mar 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgstransform.c
+
+Revised coordinate setup in order to avoid mirrored plots through
+a negative orientation of P1/P2 set through IP.
+
+------------------------------------------------------------------------
+r127 | softadm | 2005-03-13 22:04:44 +0100 (Sun, 13 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/mingw/Makefile
+
+Add LNS in order to allow 'make install'.
+
+------------------------------------------------------------------------
+r126 | softadm | 2005-03-13 22:03:52 +0100 (Sun, 13 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/unix/Makefile
+
+Add LNS variable in order to allow 'make install'.
+
+------------------------------------------------------------------------
+r125 | softadm | 2005-03-10 15:59:26 +0100 (Thu, 10 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgslexer.c
+
+Do a proper cleanup upon realloc failure in hpgs_vsprintf_malloc.
+
+------------------------------------------------------------------------
+r124 | softadm | 2005-03-09 10:40:56 +0100 (Wed, 09 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+hpgs-0.7.0 released.
+
+------------------------------------------------------------------------
+r123 | softadm | 2005-03-09 10:35:02 +0100 (Wed, 09 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/TODO
+
+Drop a note on a missing PCL testsuite.
+
+------------------------------------------------------------------------
+r122 | softadm | 2005-03-09 10:12:23 +0100 (Wed, 09 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Fixed the documentation of hpgs_getplotsize.
+
+------------------------------------------------------------------------
+r121 | softadm | 2005-03-09 10:11:09 +0100 (Wed, 09 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+
+Added a simple bounding box pseudo-device.
+
+------------------------------------------------------------------------
+r120 | softadm | 2005-03-08 18:57:33 +0100 (Tue, 08 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/TODO
+
+The PJL papersize mystery has recently been resolved.
+
+------------------------------------------------------------------------
+r119 | softadm | 2005-03-08 18:46:26 +0100 (Tue, 08 Mar 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Finally figures out, that for HPGL primitives we have to apply ROP3
+only if source transparency is ON.
+
+------------------------------------------------------------------------
+r118 | softadm | 2005-03-08 11:46:13 +0100 (Tue, 08 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/include.mak
+
+Fixed typo in fixed install rule.
+
+------------------------------------------------------------------------
+r117 | softadm | 2005-03-08 11:36:30 +0100 (Tue, 08 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+
+Fixed typo in iline hpgs_image_rop3_chunk().
+
+------------------------------------------------------------------------
+r116 | softadm | 2005-03-08 11:33:51 +0100 (Tue, 08 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsmkrop.c
+   M /trunk/hpgs/src/hpgssetup.c
+
+Fixed raster operation in a way to work around typos in HP's docs.
+
+------------------------------------------------------------------------
+r115 | softadm | 2005-03-08 11:28:20 +0100 (Tue, 08 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/include.mak
+
+Remove installed shared lib before actually copying it ins install rule.
+
+------------------------------------------------------------------------
+r114 | softadm | 2005-03-08 10:38:43 +0100 (Tue, 08 Mar 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Fixed an endless loop with pcl_fill_scanline for CID encoding 0
+(Indexed by plane).
+
+------------------------------------------------------------------------
+r113 | softadm | 2005-03-02 09:38:18 +0100 (Wed, 02 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+Updated ChangeLog as we approach hpgs-0.7.0
+
+------------------------------------------------------------------------
+r112 | softadm | 2005-03-02 09:31:21 +0100 (Wed, 02 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/TODO
+
+Drop a note on raster fill and screened vectors.
+
+------------------------------------------------------------------------
+r111 | softadm | 2005-03-02 09:28:04 +0100 (Wed, 02 Mar 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspen.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+
+Implement PC excatly as in HP's spec.
+
+------------------------------------------------------------------------
+r110 | softadm | 2005-02-27 22:37:58 +0100 (Sun, 27 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgspjl.c
+   M /trunk/hpgs/src/hpgsreader.c
+
+Cleanly handle EOF inside PCL. Documented PCL/PJL return values.
+
+------------------------------------------------------------------------
+r109 | softadm | 2005-02-27 11:19:52 +0100 (Sun, 27 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgscharacter.c
+
+Corrected pen positioning avter LB for non-trivial LO's.
+
+------------------------------------------------------------------------
+r108 | softadm | 2005-02-27 11:18:31 +0100 (Sun, 27 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspen.c
+
+Tolerate PC w/o arg.
+
+------------------------------------------------------------------------
+r107 | softadm | 2005-02-27 11:18:01 +0100 (Sun, 27 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgstransform.c
+
+Set a portrait paper size for PS w/o args.
+
+------------------------------------------------------------------------
+r106 | softadm | 2005-02-27 11:17:12 +0100 (Sun, 27 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+
+Be much more tolerant with broken or unknown HPGL commands.
+
+------------------------------------------------------------------------
+r105 | softadm | 2005-02-27 11:16:34 +0100 (Sun, 27 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgslexer.c
+
+Added lookahead after comma in order to tolerate commands that end prematurely.
+
+------------------------------------------------------------------------
+r104 | softadm | 2005-02-24 12:05:32 +0100 (Thu, 24 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Detect horizontal sub-pixel fill areas, which are not hit by any scanline.
+
+------------------------------------------------------------------------
+r103 | softadm | 2005-02-24 10:22:38 +0100 (Thu, 24 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Do not reset CID parameters when leaving PCL context.
+
+------------------------------------------------------------------------
+r102 | softadm | 2005-02-23 10:26:57 +0100 (Wed, 23 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/include.mak
+
+Avoid endless make-loop by usig dep=no in hpgsrop.c rule.
+
+------------------------------------------------------------------------
+r101 | softadm | 2005-02-23 10:24:46 +0100 (Wed, 23 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgslexer.c
+   M /trunk/hpgs/src/hpgsmkrop.c
+   M /trunk/hpgs/src/hpgsostream.c
+
+Obey a cleaner semantics for va_start/va_end.
+
+------------------------------------------------------------------------
+r100 | softadm | 2005-02-22 21:09:31 +0100 (Tue, 22 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Pass ROP3 flag onto plugins.
+
+------------------------------------------------------------------------
+r99 | softadm | 2005-02-22 21:08:42 +0100 (Tue, 22 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsimagerop.c
+
+More assertion. Issue newpath after clip.
+
+------------------------------------------------------------------------
+r98 | softadm | 2005-02-22 19:47:04 +0100 (Tue, 22 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsdevices.h
+   A /trunk/hpgs/src/hpgsimagerop.c
+   M /trunk/hpgs/src/include.mak
+
+Added ROP3 support for PostScript images.
+
+------------------------------------------------------------------------
+r97 | softadm | 2005-02-22 19:45:40 +0100 (Tue, 22 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsimage.c
+
+Change 0.0 -> 0 constants in integer initialization.
+
+------------------------------------------------------------------------
+r96 | softadm | 2005-02-22 10:28:20 +0100 (Tue, 22 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsmkrop.c
+
+Added ROP3 transfer functions.
+
+------------------------------------------------------------------------
+r95 | softadm | 2005-02-21 18:22:44 +0100 (Mon, 21 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Fix PCL coordinate setup for portrait plots.
+
+------------------------------------------------------------------------
+r94 | softadm | 2005-02-21 18:18:31 +0100 (Mon, 21 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspjl.c
+
+Interpret PJL paper size in PCL units.
+
+------------------------------------------------------------------------
+r93 | softadm | 2005-02-21 13:18:55 +0100 (Mon, 21 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/INSTALL
+
+Added a note about compiling ROP3 tables from CVS.
+
+------------------------------------------------------------------------
+r92 | softadm | 2005-02-21 13:14:30 +0100 (Mon, 21 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/TODO
+
+Drop a note about ROP3 incertainities.
+
+------------------------------------------------------------------------
+r91 | softadm | 2005-02-21 13:12:39 +0100 (Mon, 21 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/unix-shared/Makefile
+
+Use force option for ln command.
+
+------------------------------------------------------------------------
+r90 | softadm | 2005-02-21 13:12:01 +0100 (Mon, 21 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgssetup.c
+
+Turn off default transparency for better integration of old-style plots.
+
+------------------------------------------------------------------------
+r89 | softadm | 2005-02-21 13:10:29 +0100 (Mon, 21 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Apply ROP operations to filled polygons.
+
+------------------------------------------------------------------------
+r88 | softadm | 2005-02-21 00:23:27 +0100 (Mon, 21 Feb 2005) | 13 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsgstate.c
+   M /trunk/hpgs/src/hpgsimage.c
+   M /trunk/hpgs/src/hpgsimage.h
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspaintimage.c
+   M /trunk/hpgs/src/hpgspath.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgspen.c
+   M /trunk/hpgs/src/hpgspjl.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgsscanline.c
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/include.mak
+
+Integration of ROP3 support:
+- Added setrop3 / setpatcol to hpgs_device API.
+- Added setrop3 / setpatcol to hpgs_image API.
+- Images have now a ROP3 enabled version of put_chunk/put_pixel.
+- Implement MC,TR HPGL/2 commands.
+- Implement PCL ROP3/pattern commands.
+- Use hpgs_color in hpgs_setrgbcolor.
+- Use PJL resolution for PCL units/rastre resolution.
+- Correctly mov the PCL position after procccessing an image.
+- Implemented PCL push/pop palette.
+- Added argument do_rop3 to hpgs_new_png_image.
+- Added --rop3 --no-rop3 options to main program.
+
+------------------------------------------------------------------------
+r87 | softadm | 2005-02-20 11:00:27 +0100 (Sun, 20 Feb 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsmkrop.c
+
+Changed ROP3 API from color to unsigned char.
+Generate less temporary stack objects in ROP functions.
+
+------------------------------------------------------------------------
+r86 | softadm | 2005-02-20 00:27:26 +0100 (Sun, 20 Feb 2005) | 2 lines
+Changed paths:
+   A /trunk/hpgs/src/hpgsmkrop.c
+   A /trunk/hpgs/src/hpgsrop.dat
+
+Added an ahead-of-time raster operation engine.
+
+------------------------------------------------------------------------
+r85 | softadm | 2005-02-17 10:38:37 +0100 (Thu, 17 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+correctly ignore and wran about unimplemented raster compression modes.
+
+------------------------------------------------------------------------
+r84 | softadm | 2005-02-16 10:24:49 +0100 (Wed, 16 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Make the filename of the plugin dependent on the device name.
+
+------------------------------------------------------------------------
+r83 | softadm | 2005-02-16 10:24:00 +0100 (Wed, 16 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/include.mak
+
+Fixed typo in install rule.
+
+------------------------------------------------------------------------
+r82 | softadm | 2005-02-15 23:23:20 +0100 (Tue, 15 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/TODO
+
+Update to reflect 0.6 status.
+
+------------------------------------------------------------------------
+r81 | softadm | 2005-02-15 23:20:56 +0100 (Tue, 15 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+hpgs-0.6.0 released.
+
+------------------------------------------------------------------------
+r80 | softadm | 2005-02-15 23:19:08 +0100 (Tue, 15 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/include.mak
+
+Minor adaption for mingw build.
+
+------------------------------------------------------------------------
+r79 | softadm | 2005-02-15 23:06:25 +0100 (Tue, 15 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Fixed page bbox stack reallocation.
+
+------------------------------------------------------------------------
+r78 | softadm | 2005-02-15 18:17:24 +0100 (Tue, 15 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Carefully write %%EOF at the end of each file.
+
+------------------------------------------------------------------------
+r77 | softadm | 2005-02-15 18:02:17 +0100 (Tue, 15 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/INSTALL
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+
+Changed the semantics of hpgs_init(). Specify prefix instead of share path.
+
+------------------------------------------------------------------------
+r76 | softadm | 2005-02-15 17:31:21 +0100 (Tue, 15 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsbase.c
+
+Allow mater as unit. Fixed documentation typos.
+
+------------------------------------------------------------------------
+r75 | softadm | 2005-02-15 16:46:12 +0100 (Tue, 15 Feb 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+
+Set version to 0.6.0.
+Use gcc format attribute to get the most out of -Wall.
+
+------------------------------------------------------------------------
+r74 | softadm | 2005-02-15 16:15:08 +0100 (Tue, 15 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaint.c
+
+Allow writing to stdout, when filename is NULL.
+
+------------------------------------------------------------------------
+r73 | softadm | 2005-02-15 16:14:18 +0100 (Tue, 15 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsimage.c
+
+Fixed clearing extended areas in pim_resize.
+
+------------------------------------------------------------------------
+r72 | softadm | 2005-02-15 15:31:56 +0100 (Tue, 15 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Allow output to stdout, when file is NULL.
+
+------------------------------------------------------------------------
+r71 | softadm | 2005-02-15 11:53:44 +0100 (Tue, 15 Feb 2005) | 5 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   A /trunk/hpgs/src/hpgsbase.c
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsdevices.h
+   M /trunk/hpgs/src/hpgsostream.c
+   M /trunk/hpgs/src/include.mak
+
+Implemented multipage postscript device:
+- Added basic paper size and length parsing subroutines.
+- Adapted hpgs_ostream for usage with stdout.
+- Implemented papersize handling in hpgs_eps_device.
+
+------------------------------------------------------------------------
+r70 | softadm | 2005-02-14 21:05:16 +0100 (Mon, 14 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   A /trunk/hpgs/src/hpgsostream.c
+   M /trunk/hpgs/src/include.mak
+
+Added an abstract outputstream used to implement a multipage PostScript device.
+
+------------------------------------------------------------------------
+r69 | softadm | 2005-02-14 16:38:36 +0100 (Mon, 14 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+
+Allow multiple input documents to be collated.
+
+------------------------------------------------------------------------
+r68 | softadm | 2005-02-14 16:36:31 +0100 (Mon, 14 Feb 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgssetup.c
+
+Be careful in order to stop interpretation after the last page
+known to the plotsize device.
+
+------------------------------------------------------------------------
+r67 | softadm | 2005-02-14 16:31:51 +0100 (Mon, 14 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspath.c
+
+Print PP: unimplemented for verbosity 2, not 1.
+
+------------------------------------------------------------------------
+r66 | softadm | 2005-02-14 16:30:43 +0100 (Mon, 14 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgstransform.c
+
+Don't report plot size, if we have a plotsize device.
+
+------------------------------------------------------------------------
+r65 | softadm | 2005-02-14 14:53:40 +0100 (Mon, 14 Feb 2005) | 11 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   A /trunk/hpgs/src/hpgsbbox.c
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsdevices.h
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspaintimage.c
+   M /trunk/hpgs/src/hpgspaintpath.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgsscanline.c
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgstransform.c
+   M /trunk/hpgs/src/include.mak
+
+More API changes for support of multiple pages with different sizes:
+- Added getplotsize to the hpgs_device API.
+- Use setplotsize for multipage devices in order to transfer page sizes from plotsize device.
+- Added device capability information to hpgs_device API.
+- Added a hpgs_bbox helper struct, wihch is used for bounding boxes.
+- hpgs_plotsize_device now has a real clip stack and calculates the size of each page separately.
+- hpgs_reader can be fed with more than one file using hpgs_attach().
+- hpgs_reader holds a reference to the plotsize device in order to transfer page sizes.
+- hpgs_read() has now an extra arg for indicating, whether we are processing the last input file.
+- hpgs_eps_device and hpgs_paint_device now handle multiple page sizes.
+
+------------------------------------------------------------------------
+r64 | softadm | 2005-02-14 09:00:31 +0100 (Mon, 14 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsreader.c
+
+Renamed hpgs_close() to hpgs_istream_close().
+
+------------------------------------------------------------------------
+r63 | softadm | 2005-02-14 00:45:16 +0100 (Mon, 14 Feb 2005) | 9 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsdevices.h
+   M /trunk/hpgs/src/hpgsimage.c
+   A /trunk/hpgs/src/hpgsimage.h
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+
+Major API revision in order to allow multipage support:
+- Added a write() method to images.
+- Removed hpgs_png_image_write().
+- Added hpgs_png_image_set_compression().
+- Added hpgs_device_finish().
+- Added a page hint to hpgs_showpage().
+- Multipage enabled all devices.
+- Moved the internals of hpgs_png_image to a sepearate private header hpgsimage.h
+
+------------------------------------------------------------------------
+r62 | softadm | 2005-02-13 21:18:10 +0100 (Sun, 13 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsfreetype.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+
+Implemented custom encodings for background stamps.
+
+------------------------------------------------------------------------
+r61 | softadm | 2005-02-13 20:09:37 +0100 (Sun, 13 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/mingw/Makefile
+   A /trunk/hpgs/build/mingw-shared
+   A /trunk/hpgs/build/mingw-shared/Makefile
+   M /trunk/hpgs/build/unix/Makefile
+   A /trunk/hpgs/build/unix-shared
+   A /trunk/hpgs/build/unix-shared/Makefile
+
+Added full support for a shared library build.
+
+------------------------------------------------------------------------
+r60 | softadm | 2005-02-13 20:08:08 +0100 (Sun, 13 Feb 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   A /trunk/hpgs/src/hpgsgstate.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/include.mak
+
+Enable ELF/Win32 function attributes for full shared library support.
+Moved hpgs_gstate to the public API.
+
+------------------------------------------------------------------------
+r59 | softadm | 2005-02-13 20:06:46 +0100 (Sun, 13 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+
+Implemented O(log(N) HPGL command lookup in a sorted cmd table.
+
+------------------------------------------------------------------------
+r58 | softadm | 2005-02-12 22:05:52 +0100 (Sat, 12 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Revision of the plugin mechanism, which has been unused for a long time.
+
+------------------------------------------------------------------------
+r55 | softadm | 2005-02-04 15:58:47 +0100 (Fri, 04 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+
+Set patch version to 2.
+
+------------------------------------------------------------------------
+r54 | softadm | 2005-02-04 15:58:08 +0100 (Fri, 04 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.h
+
+Finished the documentation of the structure memebers.
+
+------------------------------------------------------------------------
+r53 | softadm | 2005-02-04 11:29:47 +0100 (Fri, 04 Feb 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintpath.c
+
+Join inner edges via the center point in order to avoid strange artefacts
+with short line segments and thick lines.
+
+------------------------------------------------------------------------
+r52 | softadm | 2005-02-03 23:41:47 +0100 (Thu, 03 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+hpgs-0.5.1 released.
+
+------------------------------------------------------------------------
+r51 | softadm | 2005-02-03 23:37:42 +0100 (Thu, 03 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/README
+   M /trunk/hpgs/src/hpgs.c
+   A /trunk/hpgs/src/hpgs.doxycfg
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsdevices.h
+   M /trunk/hpgs/src/hpgsimage.c
+   M /trunk/hpgs/src/hpgsistream.c
+   M /trunk/hpgs/src/hpgslexer.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspaintimage.c
+   M /trunk/hpgs/src/hpgspaintpath.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgsscanline.c
+   M /trunk/hpgs/src/include.mak
+
+Finshed integration of first mostly complete doxygen documentation.
+
+------------------------------------------------------------------------
+r50 | softadm | 2005-02-03 18:27:00 +0100 (Thu, 03 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsbezier.c
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspaintimage.c
+   M /trunk/hpgs/src/hpgspaintpath.c
+   M /trunk/hpgs/src/hpgsscanline.c
+   M /trunk/hpgs/src/include.mak
+
+Finished doxygen documentation of paint device and internals.
+
+------------------------------------------------------------------------
+r49 | softadm | 2005-02-03 15:16:51 +0100 (Thu, 03 Feb 2005) | 2 lines
+Changed paths:
+   A /trunk/hpgs/doc
+   A /trunk/hpgs/doc/images
+   A /trunk/hpgs/doc/images/Makefile
+   A /trunk/hpgs/doc/images/clipper.fig
+   A /trunk/hpgs/doc/images/eps2png.sh
+   A /trunk/hpgs/doc/images/scanline_0.fig
+   A /trunk/hpgs/doc/images/scanline_n.fig
+
+Added images for the doxygen documentation.
+
+------------------------------------------------------------------------
+r48 | softadm | 2005-02-03 12:14:05 +0100 (Thu, 03 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaint.h
+
+Added doxy gen documentation for structures and their members.
+
+------------------------------------------------------------------------
+r47 | softadm | 2005-02-02 14:00:38 +0100 (Wed, 02 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+Updated ChangeLog
+
+------------------------------------------------------------------------
+r45 | softadm | 2005-02-02 11:00:49 +0100 (Wed, 02 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Use the correct include for alloca() under Windows.
+
+------------------------------------------------------------------------
+r44 | softadm | 2005-02-02 11:00:00 +0100 (Wed, 02 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/INSTALL
+
+Updated installation notes.
+
+------------------------------------------------------------------------
+r43 | softadm | 2005-02-01 21:35:31 +0100 (Tue, 01 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+Updated ChangeLog.
+
+------------------------------------------------------------------------
+r42 | softadm | 2005-02-01 21:34:38 +0100 (Tue, 01 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+hpgs-0.5.0 released.
+
+------------------------------------------------------------------------
+r41 | softadm | 2005-02-01 21:32:54 +0100 (Tue, 01 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/TODO
+
+Updated TODO for the status of hpgs-0.5.0
+
+------------------------------------------------------------------------
+r40 | softadm | 2005-02-01 21:03:12 +0100 (Tue, 01 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgstransform.c
+
+Restore SC settings in hpgs_reader_do_IP, which is moree conformant with old HPGL files.
+
+------------------------------------------------------------------------
+r39 | softadm | 2005-02-01 20:49:10 +0100 (Tue, 01 Feb 2005) | 4 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   A /trunk/hpgs/src/hpgsdevices.h
+
+Separated device internal into private header file.
+Corrected an invalid bounding box generated from totally clipped paths.
+Handle empty bounding boxes with an error message.
+
+------------------------------------------------------------------------
+r38 | softadm | 2005-02-01 20:46:53 +0100 (Tue, 01 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsreader.c
+
+Handle universal exit command in PCL context.
+
+------------------------------------------------------------------------
+r37 | softadm | 2005-02-01 19:37:23 +0100 (Tue, 01 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgslexer.c
+
+Fixed hpgs_reader_read_pcl_int for negative numbers.
+
+------------------------------------------------------------------------
+r36 | softadm | 2005-02-01 19:36:45 +0100 (Tue, 01 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsimage.c
+
+Fixed pim_resize.
+
+------------------------------------------------------------------------
+r35 | softadm | 2005-02-01 16:42:13 +0100 (Tue, 01 Feb 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgslexer.c
+   M /trunk/hpgs/src/hpgspcl.c
+   A /trunk/hpgs/src/hpgspjl.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgstransform.c
+   M /trunk/hpgs/src/include.mak
+
+Added PJL header interpretation.
+
+------------------------------------------------------------------------
+r34 | softadm | 2005-01-31 15:42:08 +0100 (Mon, 31 Jan 2005) | 5 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/hpgstransform.c
+
+Implemented FR command.
+Revised transformation engine:
+ - Always apply SC settings after changing any other transformation setting.
+- Retain the orientation, if we encounter multiple IR commands.
+
+------------------------------------------------------------------------
+r33 | softadm | 2005-01-31 11:11:27 +0100 (Mon, 31 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Added the possibility to take linewidths into account for the plotsize calculation.
+
+------------------------------------------------------------------------
+r32 | softadm | 2005-01-31 10:44:01 +0100 (Mon, 31 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgspaint.c
+
+Make drawimage methods reports an error for null imagepointers.
+
+------------------------------------------------------------------------
+r31 | softadm | 2005-01-31 10:43:29 +0100 (Mon, 31 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Don't process image data for the plotsize device.
+
+------------------------------------------------------------------------
+r30 | softadm | 2005-01-30 22:54:25 +0100 (Sun, 30 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+Updated ChangeLog.
+
+------------------------------------------------------------------------
+r29 | softadm | 2005-01-30 22:42:16 +0100 (Sun, 30 Jan 2005) | 4 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Use hpgs_image_set_palette for indexed images.
+Tolerate borken PCL files with premature ESC-bytes.
+Fixed direct-by-plane image extraction.
+
+------------------------------------------------------------------------
+r28 | softadm | 2005-01-30 22:40:40 +0100 (Sun, 30 Jan 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsimage.c
+
+Made hpgs_define_color an inline checing for image w/o palette.
+Added hpgs_image_set_palette with index update.
+
+------------------------------------------------------------------------
+r27 | softadm | 2005-01-30 22:39:08 +0100 (Sun, 30 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintimage.c
+
+Fixed a missing hpgs_image_define_color for uninterpolated image drawing.
+
+------------------------------------------------------------------------
+r26 | softadm | 2005-01-30 22:38:17 +0100 (Sun, 30 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgsreader.c
+
+Improved error reporting.
+
+------------------------------------------------------------------------
+r25 | softadm | 2005-01-29 22:36:31 +0100 (Sat, 29 Jan 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsfreetype.c
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsscanline.c
+
+Added the possibility to compile the program without using alloca() through -DHPGS_NO_ALLOCA.
+This makes it possible to supervise the program using valgind-2.2.0
+
+------------------------------------------------------------------------
+r24 | softadm | 2005-01-29 21:38:10 +0100 (Sat, 29 Jan 2005) | 4 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+
+Implemented even more correct PCL cursor position.
+Added PCL vertical motion index.
+Polished the default PCL state to be more conformant with HP's docs.
+
+------------------------------------------------------------------------
+r23 | softadm | 2005-01-29 00:17:10 +0100 (Sat, 29 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+update ChangeLog.
+
+------------------------------------------------------------------------
+r22 | softadm | 2005-01-29 00:16:04 +0100 (Sat, 29 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/build/unix/Makefile
+
+Added -lz for 'make LDFLAGS=-static'.
+
+------------------------------------------------------------------------
+r21 | softadm | 2005-01-29 00:14:49 +0100 (Sat, 29 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintimage.c
+
+Fixed image drawing with antialiasing activated.
+
+------------------------------------------------------------------------
+r20 | softadm | 2005-01-28 23:55:01 +0100 (Fri, 28 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   M /trunk/hpgs/src/hpgspaintimage.c
+
+Implemented switch for interpolated or non-interpolated image drawing.
+
+------------------------------------------------------------------------
+r19 | softadm | 2005-01-28 22:13:37 +0100 (Fri, 28 Jan 2005) | 3 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsreader.c
+
+Minor restructuring of the PCL entry/exit code.
+Implemented HPGL takeover of PCL pen position.
+
+------------------------------------------------------------------------
+r18 | softadm | 2005-01-28 20:28:43 +0100 (Fri, 28 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaintimage.c
+
+fixed an off-by-a-halt pixel error.
+
+------------------------------------------------------------------------
+r17 | softadm | 2005-01-28 19:29:31 +0100 (Fri, 28 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.c
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+
+Add the possibility to dump inline pcl files to a user-defined filename.
+
+------------------------------------------------------------------------
+r16 | softadm | 2005-01-28 18:17:42 +0100 (Fri, 28 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspaint.c
+   M /trunk/hpgs/src/hpgspaint.h
+   A /trunk/hpgs/src/hpgspaintimage.c
+   M /trunk/hpgs/src/include.mak
+
+Added image drawing for hpgs_paint_device.
+
+------------------------------------------------------------------------
+r15 | softadm | 2005-01-27 21:35:52 +0100 (Thu, 27 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/ChangeLog
+
+Updated ChangeLog.
+
+------------------------------------------------------------------------
+r14 | softadm | 2005-01-27 21:33:52 +0100 (Thu, 27 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+
+Implemented PCL image placement.
+
+------------------------------------------------------------------------
+r13 | softadm | 2005-01-27 21:23:03 +0100 (Thu, 27 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgsdevices.c
+
+Fixed eps_drawimage.
+
+------------------------------------------------------------------------
+r12 | softadm | 2005-01-27 18:36:28 +0100 (Thu, 27 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgspcl.c
+
+Fixed some bugs with indexed images.
+
+------------------------------------------------------------------------
+r11 | softadm | 2005-01-26 23:22:13 +0100 (Wed, 26 Jan 2005) | 2 lines
+Changed paths:
+   M /trunk/hpgs/src/hpgs.h
+   M /trunk/hpgs/src/hpgsdevices.c
+   M /trunk/hpgs/src/hpgsimage.c
+   M /trunk/hpgs/src/hpgspaint.c
+   A /trunk/hpgs/src/hpgspcl.c
+   M /trunk/hpgs/src/hpgsreader.c
+   M /trunk/hpgs/src/hpgsreader.h
+   M /trunk/hpgs/src/hpgssetup.c
+   M /trunk/hpgs/src/include.mak
+
+PCLimage integration cut #1: The interpreter/decoder.
+
+------------------------------------------------------------------------
+r8 | softadm | 2004-09-22 10:02:57 +0200 (Wed, 22 Sep 2004) | 2 lines
+Changed paths:
+   A /trunk/hpgs/ChangeLog
+
+Added a ChangeLog file for use with Emacs' 'update ChangeLog' functionality.
+
+------------------------------------------------------------------------
+r4 | softadm | 2004-09-21 20:20:30 +0200 (Tue, 21 Sep 2004) | 2 lines
+Changed paths:
+   A /trunk/hpgs/INSTALL
+   M /trunk/hpgs/README
+   M /trunk/hpgs/TODO
+   A /trunk/hpgs/build
+   A /trunk/hpgs/build/mingw
+   A /trunk/hpgs/build/mingw/Makefile
+   A /trunk/hpgs/build/unix
+   A /trunk/hpgs/build/unix/Makefile
+   A /trunk/hpgs/src
+   A /trunk/hpgs/src/hpgs.c
+   A /trunk/hpgs/src/hpgs.h
+   A /trunk/hpgs/src/hpgsbezier.c
+   A /trunk/hpgs/src/hpgscharacter.c
+   A /trunk/hpgs/src/hpgsdevices.c
+   A /trunk/hpgs/src/hpgsfreetype.c
+   A /trunk/hpgs/src/hpgsimage.c
+   A /trunk/hpgs/src/hpgsistream.c
+   A /trunk/hpgs/src/hpgslexer.c
+   A /trunk/hpgs/src/hpgspaint.c
+   A /trunk/hpgs/src/hpgspaint.h
+   A /trunk/hpgs/src/hpgspaintpath.c
+   A /trunk/hpgs/src/hpgspath.c
+   A /trunk/hpgs/src/hpgspe.c
+   A /trunk/hpgs/src/hpgspen.c
+   A /trunk/hpgs/src/hpgsreader.c
+   A /trunk/hpgs/src/hpgsreader.h
+   A /trunk/hpgs/src/hpgsscanline.c
+   A /trunk/hpgs/src/hpgssetup.c
+   A /trunk/hpgs/src/hpgstransform.c
+   A /trunk/hpgs/src/include.mak
+
+First public release.
+
+------------------------------------------------------------------------
+r2 | softadm | 2004-09-21 16:53:38 +0200 (Tue, 21 Sep 2004) | 2 lines
+Changed paths:
+   A /trunk/hpgs
+   A /trunk/hpgs/LICENSE
+   A /trunk/hpgs/README
+   A /trunk/hpgs/TODO
+   A /trunk/htdocs
+   A /trunk/htdocs/hpgs.css
+   A /trunk/htdocs/images
+   A /trunk/htdocs/images/background.png
+   A /trunk/htdocs/include
+   A /trunk/htdocs/include/cache.php
+   A /trunk/htdocs/include/news.php
+   A /trunk/htdocs/index.php
+
+Initial revision
+
+------------------------------------------------------------------------

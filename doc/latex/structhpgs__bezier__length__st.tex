@@ -1,0 +1,41 @@
+\section{hpgs\_\-bezier\_\-length\_\-st Struct Reference}
+\label{structhpgs__bezier__length__st}\index{hpgs\_\-bezier\_\-length\_\-st@{hpgs\_\-bezier\_\-length\_\-st}}
+A structure for holding intermediate values for length calculations of a bezier spline.  
+
+
+{\tt \#include $<$hpgspaint.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+double {\bf l} [HPGS\_\-BEZIER\_\-NSEGS+1]
+\item 
+double {\bf dl} [HPGS\_\-BEZIER\_\-NSEGS+1]
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A structure for holding intermediate values for length calculations of a bezier spline. 
+
+This structure has a public alias {\tt hpgs\_\-bezier\_\-length} and holds internals of a bezier spline used during length calculations. 
+
+\subsection{Field Documentation}
+\index{hpgs\_\-bezier\_\-length\_\-st@{hpgs\_\-bezier\_\-length\_\-st}!l@{l}}
+\index{l@{l}!hpgs_bezier_length_st@{hpgs\_\-bezier\_\-length\_\-st}}
+\subsubsection[l]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-bezier\_\-length\_\-st::l}[HPGS\_\-BEZIER\_\-NSEGS+1]}\label{structhpgs__bezier__length__st_59bf18b9efbb949ab3c75a56e0c39e4f}
+
+
+The length of the spline from the beginning to the parameter -0.5+i/HPGS\_\-BEZIER\_\-NSEGS. 
+
+Referenced by hpgs\_\-bezier\_\-length\_\-init(), and hpgs\_\-bezier\_\-length\_\-param().\index{hpgs\_\-bezier\_\-length\_\-st@{hpgs\_\-bezier\_\-length\_\-st}!dl@{dl}}
+\index{dl@{dl}!hpgs_bezier_length_st@{hpgs\_\-bezier\_\-length\_\-st}}
+\subsubsection[dl]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-bezier\_\-length\_\-st::dl}[HPGS\_\-BEZIER\_\-NSEGS+1]}\label{structhpgs__bezier__length__st_796a0a19c199113346316abce43d4adc}
+
+
+The derivative of the length of the spline at the parameter -0.5+i/HPGS\_\-BEZIER\_\-NSEGS. 
+
+Referenced by hpgs\_\-bezier\_\-length\_\-init(), and hpgs\_\-bezier\_\-length\_\-param().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf hpgspaint.h}\end{CompactItemize}

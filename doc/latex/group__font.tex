@@ -1,0 +1,207 @@
+\section{Font}
+\label{group__font}\index{Font@{Font}}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-moveto\_\-func\_\-t} )(void $\ast$ctxt, const {\bf hpgs\_\-point} $\ast$p)\label{group__font_gdb482453b858b6b9561c76752f3e0e46}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-lineto\_\-func\_\-t} )(void $\ast$ctxt, const {\bf hpgs\_\-point} $\ast$p)\label{group__font_gaa432603ef5a4185c0e7d23e280a45b8}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-curveto\_\-func\_\-t} )(void $\ast$ctxt, const {\bf hpgs\_\-point} $\ast$p1, const {\bf hpgs\_\-point} $\ast$p2, const {\bf hpgs\_\-point} $\ast$p3)\label{group__font_g0b886c68898c98c2aaf7536f97d7bcc5}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-fill\_\-func\_\-t} )(void $\ast$ctxt, hpgs\_\-bool winding)\label{group__font_gbad7cbae9e3d41a823f63520ab61c167}
+
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+HPGS\_\-API {\bf hpgs\_\-font} $\ast$ {\bf hpgs\_\-find\_\-font} (const char $\ast$name)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-destroy\_\-font} ({\bf hpgs\_\-font} $\ast$font)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-font\_\-get\_\-ascent} ({\bf hpgs\_\-font} $\ast$font)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-font\_\-get\_\-descent} ({\bf hpgs\_\-font} $\ast$font)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-font\_\-get\_\-line\_\-gap} ({\bf hpgs\_\-font} $\ast$font)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-font\_\-get\_\-cap\_\-height} ({\bf hpgs\_\-font} $\ast$font)
+\item 
+HPGS\_\-API unsigned {\bf hpgs\_\-font\_\-get\_\-glyph\_\-count} ({\bf hpgs\_\-font} $\ast$font)
+\item 
+HPGS\_\-API unsigned {\bf hpgs\_\-font\_\-get\_\-glyph\_\-id} ({\bf hpgs\_\-font} $\ast$font, int uc)
+\item 
+HPGS\_\-API const char $\ast$ {\bf hpgs\_\-font\_\-get\_\-glyph\_\-name} ({\bf hpgs\_\-font} $\ast$font, unsigned gid)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-get\_\-glyph\_\-bbox} ({\bf hpgs\_\-font} $\ast$font, {\bf hpgs\_\-bbox} $\ast$bb, unsigned gid)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-get\_\-glyph\_\-metrics} ({\bf hpgs\_\-font} $\ast$font, {\bf hpgs\_\-point} $\ast$m, unsigned gid)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-get\_\-kern\_\-metrics} ({\bf hpgs\_\-font} $\ast$font, {\bf hpgs\_\-point} $\ast$m, unsigned gid\_\-l, unsigned gid\_\-r)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-get\_\-utf8\_\-metrics} ({\bf hpgs\_\-font} $\ast$font, {\bf hpgs\_\-point} $\ast$m, const char $\ast$str, int strlen)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-decompose\_\-glyph} ({\bf hpgs\_\-font} $\ast$font, void $\ast$ctxt, hpgs\_\-moveto\_\-func\_\-t moveto\_\-func, hpgs\_\-lineto\_\-func\_\-t lineto\_\-func, hpgs\_\-curveto\_\-func\_\-t curveto\_\-func, const {\bf hpgs\_\-matrix} $\ast$m, unsigned gid)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-draw\_\-glyph} ({\bf hpgs\_\-font} $\ast$font, {\bf hpgs\_\-device} $\ast$device, const {\bf hpgs\_\-matrix} $\ast$m, unsigned gid)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-decompose\_\-utf8} ({\bf hpgs\_\-font} $\ast$font, void $\ast$ctxt, hpgs\_\-moveto\_\-func\_\-t moveto\_\-func, hpgs\_\-lineto\_\-func\_\-t lineto\_\-func, hpgs\_\-curveto\_\-func\_\-t curveto\_\-func, hpgs\_\-fill\_\-func\_\-t fill\_\-func, const {\bf hpgs\_\-matrix} $\ast$m, const char $\ast$str, int strlen)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-draw\_\-utf8} ({\bf hpgs\_\-font} $\ast$font, {\bf hpgs\_\-device} $\ast$device, const {\bf hpgs\_\-matrix} $\ast$m, const char $\ast$str, int strlen)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{font@{font}!hpgs\_\-destroy\_\-font@{hpgs\_\-destroy\_\-font}}
+\index{hpgs\_\-destroy\_\-font@{hpgs\_\-destroy\_\-font}!font@{font}}
+\subsubsection[hpgs\_\-destroy\_\-font]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-destroy\_\-font ({\bf hpgs\_\-font} $\ast$ {\em font})}\label{group__font_g76e917ef915da555fde6409eafb61fbd}
+
+
+Frees all resources associated with this font object. 
+
+References hpgs\_\-font\_\-st::cmap\_\-data, hpgs\_\-font\_\-st::glyph\_\-cache, hpgs\_\-font\_\-st::glyph\_\-cache\_\-positions, hpgs\_\-font\_\-st::hmtx\_\-data, hpgs\_\-istream\_\-close(), hpgs\_\-font\_\-st::is, hpgs\_\-font\_\-st::kern\_\-data, hpgs\_\-font\_\-st::loca\_\-data, hpgs\_\-font\_\-st::mutex, hpgs\_\-font\_\-st::n\_\-cached\_\-glyphs, hpgs\_\-font\_\-st::nref, and hpgs\_\-font\_\-st::post\_\-data.\index{font@{font}!hpgs\_\-find\_\-font@{hpgs\_\-find\_\-font}}
+\index{hpgs\_\-find\_\-font@{hpgs\_\-find\_\-font}!font@{font}}
+\subsubsection[hpgs\_\-find\_\-font]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-font}$\ast$ hpgs\_\-find\_\-font (const char $\ast$ {\em name})}\label{group__font_g54168bad3f8e87d9d36865c6d5387b08}
+
+
+Loads the given font from disk. Depending on your operating system, the appropriate font directories are scanned for a truetype file which contains the font of the given name. {\tt name} is expected to be utf-8 encoded, which is almost no problem, since all known font names are ASCII-encoded. 
+
+References hpgs\_\-font\_\-dentry\_\-st::font, hpgs\_\-set\_\-error(), hpgs\_\-font\_\-st::mutex, and hpgs\_\-font\_\-st::nref.\index{font@{font}!hpgs\_\-font\_\-decompose\_\-glyph@{hpgs\_\-font\_\-decompose\_\-glyph}}
+\index{hpgs\_\-font\_\-decompose\_\-glyph@{hpgs\_\-font\_\-decompose\_\-glyph}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-decompose\_\-glyph]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-font\_\-decompose\_\-glyph ({\bf hpgs\_\-font} $\ast$ {\em font}, \/  void $\ast$ {\em ctxt}, \/  hpgs\_\-moveto\_\-func\_\-t {\em moveto\_\-func}, \/  hpgs\_\-lineto\_\-func\_\-t {\em lineto\_\-func}, \/  hpgs\_\-curveto\_\-func\_\-t {\em curveto\_\-func}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em m}, \/  unsigned {\em gid})}\label{group__font_gf1547131b15cfeae35340ceb6f9f9b02}
+
+
+Decomposes the outline of the given glyph id using the given moveto/linto/curveto functions and the specified transformation matrix.
+
+You can get a glyph id for a given unicode character using {\tt hpgs\_\-font\_\-get\_\-glyph\_\-id}.
+
+Returns the number of outlines drawn or -1, if an error occurrs. 
+
+Referenced by hpgs\_\-font\_\-draw\_\-glyph().\index{font@{font}!hpgs\_\-font\_\-decompose\_\-utf8@{hpgs\_\-font\_\-decompose\_\-utf8}}
+\index{hpgs\_\-font\_\-decompose\_\-utf8@{hpgs\_\-font\_\-decompose\_\-utf8}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-decompose\_\-utf8]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-font\_\-decompose\_\-utf8 ({\bf hpgs\_\-font} $\ast$ {\em font}, \/  void $\ast$ {\em ctxt}, \/  hpgs\_\-moveto\_\-func\_\-t {\em moveto\_\-func}, \/  hpgs\_\-lineto\_\-func\_\-t {\em lineto\_\-func}, \/  hpgs\_\-curveto\_\-func\_\-t {\em curveto\_\-func}, \/  hpgs\_\-fill\_\-func\_\-t {\em fill\_\-func}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em m}, \/  const char $\ast$ {\em str}, \/  int {\em strlen})}\label{group__font_g45140e6b77db9167a1e48a606147e3e0}
+
+
+Decomposes the outline of the given utf8-encoded unicode string using the given moveto/linto/curveto/fill functions and the specified transformation matrix.
+
+Returns -1, if an error occurrs. 
+
+References hpgs\_\-matrix\_\-st::dx, hpgs\_\-matrix\_\-st::dy, hpgs\_\-font\_\-st::head\_\-data, hpgs\_\-font\_\-st::hmtx\_\-data, hpgs\_\-next\_\-utf8(), hpgs\_\-matrix\_\-st::mxx, and hpgs\_\-matrix\_\-st::myx.
+
+Referenced by hpgs\_\-font\_\-draw\_\-utf8().\index{font@{font}!hpgs\_\-font\_\-draw\_\-glyph@{hpgs\_\-font\_\-draw\_\-glyph}}
+\index{hpgs\_\-font\_\-draw\_\-glyph@{hpgs\_\-font\_\-draw\_\-glyph}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-draw\_\-glyph]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-font\_\-draw\_\-glyph ({\bf hpgs\_\-font} $\ast$ {\em font}, \/  {\bf hpgs\_\-device} $\ast$ {\em device}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em m}, \/  unsigned {\em gid})}\label{group__font_ge8c95c21bbd2ee5ad75adf6ddcce6f4c}
+
+
+Draws the outline of the given glyph id to the given device by issuing moveto/linto/curveto/fill operations.
+
+You can get a glyph id for a given unicode character using {\tt hpgs\_\-font\_\-get\_\-glyph\_\-id}.
+
+Returns -1, if an error occurrs. 
+
+References hpgs\_\-device\_\-vtable\_\-st::curveto, hpgs\_\-fill(), hpgs\_\-font\_\-decompose\_\-glyph(), hpgs\_\-device\_\-vtable\_\-st::lineto, hpgs\_\-device\_\-vtable\_\-st::moveto, and hpgs\_\-device\_\-st::vtable.\index{font@{font}!hpgs\_\-font\_\-draw\_\-utf8@{hpgs\_\-font\_\-draw\_\-utf8}}
+\index{hpgs\_\-font\_\-draw\_\-utf8@{hpgs\_\-font\_\-draw\_\-utf8}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-draw\_\-utf8]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-font\_\-draw\_\-utf8 ({\bf hpgs\_\-font} $\ast$ {\em font}, \/  {\bf hpgs\_\-device} $\ast$ {\em device}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em m}, \/  const char $\ast$ {\em str}, \/  int {\em strlen})}\label{group__font_g3bc1d462a0ac9cdbba24ef61cd25112b}
+
+
+Draws the outline of the given utf8-encoded unicode string to the given device by issuing moveto/linto/curveto/fill operations.
+
+Returns -1, if an error occurrs. 
+
+References hpgs\_\-device\_\-vtable\_\-st::curveto, hpgs\_\-device\_\-vtable\_\-st::fill, hpgs\_\-font\_\-decompose\_\-utf8(), hpgs\_\-device\_\-vtable\_\-st::lineto, hpgs\_\-device\_\-vtable\_\-st::moveto, and hpgs\_\-device\_\-st::vtable.\index{font@{font}!hpgs\_\-font\_\-get\_\-ascent@{hpgs\_\-font\_\-get\_\-ascent}}
+\index{hpgs\_\-font\_\-get\_\-ascent@{hpgs\_\-font\_\-get\_\-ascent}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-get\_\-ascent]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API double hpgs\_\-font\_\-get\_\-ascent ({\bf hpgs\_\-font} $\ast$ {\em font})}\label{group__font_g4c31ff0e52736eb6ab55a3bc0c178b24}
+
+
+Gets the maximal ascent of the font. 
+
+References hpgs\_\-font\_\-st::head\_\-data, and hpgs\_\-font\_\-st::hhea\_\-data.\index{font@{font}!hpgs\_\-font\_\-get\_\-cap\_\-height@{hpgs\_\-font\_\-get\_\-cap\_\-height}}
+\index{hpgs\_\-font\_\-get\_\-cap\_\-height@{hpgs\_\-font\_\-get\_\-cap\_\-height}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-get\_\-cap\_\-height]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API double hpgs\_\-font\_\-get\_\-cap\_\-height ({\bf hpgs\_\-font} $\ast$ {\em font})}\label{group__font_gb75c848878a655dd0a24286772879136}
+
+
+Gets the height of capital letters above the baseline, computed from the size of the capital letter M. 
+
+References hpgs\_\-set\_\-error().\index{font@{font}!hpgs\_\-font\_\-get\_\-descent@{hpgs\_\-font\_\-get\_\-descent}}
+\index{hpgs\_\-font\_\-get\_\-descent@{hpgs\_\-font\_\-get\_\-descent}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-get\_\-descent]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API double hpgs\_\-font\_\-get\_\-descent ({\bf hpgs\_\-font} $\ast$ {\em font})}\label{group__font_g0ba261087b2bb68426ec3924bbf7f2dd}
+
+
+Gets the maximal descent of the font. 
+
+References hpgs\_\-font\_\-st::head\_\-data, and hpgs\_\-font\_\-st::hhea\_\-data.\index{font@{font}!hpgs\_\-font\_\-get\_\-glyph\_\-bbox@{hpgs\_\-font\_\-get\_\-glyph\_\-bbox}}
+\index{hpgs\_\-font\_\-get\_\-glyph\_\-bbox@{hpgs\_\-font\_\-get\_\-glyph\_\-bbox}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-get\_\-glyph\_\-bbox]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-font\_\-get\_\-glyph\_\-bbox ({\bf hpgs\_\-font} $\ast$ {\em font}, \/  {\bf hpgs\_\-bbox} $\ast$ {\em bb}, \/  unsigned {\em gid})}\label{group__font_ga15d6b275995ad582a992d697e6e69e0}
+
+
+Gets the bounding box of the specified glpyh id.
+
+You can get a glyph id for a given unicode character using {\tt hpgs\_\-font\_\-get\_\-glyph\_\-id}.
+
+Return -1, if an error occurrs. 
+
+References hpgs\_\-set\_\-error().\index{font@{font}!hpgs\_\-font\_\-get\_\-glyph\_\-count@{hpgs\_\-font\_\-get\_\-glyph\_\-count}}
+\index{hpgs\_\-font\_\-get\_\-glyph\_\-count@{hpgs\_\-font\_\-get\_\-glyph\_\-count}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-get\_\-glyph\_\-count]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API unsigned hpgs\_\-font\_\-get\_\-glyph\_\-count ({\bf hpgs\_\-font} $\ast$ {\em font})}\label{group__font_g7c2cc74c151939a86011d1985e121e89}
+
+
+Gets the number of glyphs in this font. This information might be useful, if you keep a hash map with additional information for the glyphs. 
+
+References hpgs\_\-font\_\-st::maxp\_\-data.\index{font@{font}!hpgs\_\-font\_\-get\_\-glyph\_\-id@{hpgs\_\-font\_\-get\_\-glyph\_\-id}}
+\index{hpgs\_\-font\_\-get\_\-glyph\_\-id@{hpgs\_\-font\_\-get\_\-glyph\_\-id}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-get\_\-glyph\_\-id]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API unsigned hpgs\_\-font\_\-get\_\-glyph\_\-id ({\bf hpgs\_\-font} $\ast$ {\em font}, \/  int {\em uc})}\label{group__font_g77eece2579503c8b8f61b457b330d3aa}
+
+
+Gets the glyph ID of the given unicode character. The returned glpyh id is used by several other font functions. \index{font@{font}!hpgs\_\-font\_\-get\_\-glyph\_\-metrics@{hpgs\_\-font\_\-get\_\-glyph\_\-metrics}}
+\index{hpgs\_\-font\_\-get\_\-glyph\_\-metrics@{hpgs\_\-font\_\-get\_\-glyph\_\-metrics}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-get\_\-glyph\_\-metrics]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-font\_\-get\_\-glyph\_\-metrics ({\bf hpgs\_\-font} $\ast$ {\em font}, \/  {\bf hpgs\_\-point} $\ast$ {\em m}, \/  unsigned {\em gid})}\label{group__font_g56eca584198b3a74e06929a036f6ea8a}
+
+
+Gets the horizontal and vertical advance of the given glyph id. The unit of the returned vector is em, the nominal size of the letter M of the font. For almost any font one em is actually larger than the size of the capital letter M.
+
+You can get a glyph id for a given unicode character using {\tt hpgs\_\-font\_\-get\_\-glyph\_\-id}.
+
+Return -1, if an error occurrs. 
+
+References hpgs\_\-font\_\-st::head\_\-data, hpgs\_\-font\_\-st::hmtx\_\-data, hpgs\_\-font\_\-st::maxp\_\-data, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{font@{font}!hpgs\_\-font\_\-get\_\-glyph\_\-name@{hpgs\_\-font\_\-get\_\-glyph\_\-name}}
+\index{hpgs\_\-font\_\-get\_\-glyph\_\-name@{hpgs\_\-font\_\-get\_\-glyph\_\-name}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-get\_\-glyph\_\-name]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API const char$\ast$ hpgs\_\-font\_\-get\_\-glyph\_\-name ({\bf hpgs\_\-font} $\ast$ {\em font}, \/  unsigned {\em gid})}\label{group__font_g85f387b7ff799d031d1f1bf91d441cae}
+
+
+Gets the PostScript glyph name of the specified glpyh id. This function retunrs a null pointer, if the glyph does not have a PostScript name. In this situation you can use a glyph name of the form {\tt uniXXXX}, where XXXX is the upppercase 4-digit hexadecimal unicode of the glpyh.
+
+You can get a glyph id for a given unicode character using {\tt hpgs\_\-font\_\-get\_\-glyph\_\-id}.
+
+Return -1, if an error occurrs. 
+
+References hpgs\_\-font\_\-st::post\_\-data.\index{font@{font}!hpgs\_\-font\_\-get\_\-kern\_\-metrics@{hpgs\_\-font\_\-get\_\-kern\_\-metrics}}
+\index{hpgs\_\-font\_\-get\_\-kern\_\-metrics@{hpgs\_\-font\_\-get\_\-kern\_\-metrics}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-get\_\-kern\_\-metrics]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-font\_\-get\_\-kern\_\-metrics ({\bf hpgs\_\-font} $\ast$ {\em font}, \/  {\bf hpgs\_\-point} $\ast$ {\em m}, \/  unsigned {\em gid\_\-l}, \/  unsigned {\em gid\_\-r})}\label{group__font_g67bd79e5a342c97f302f96edd4064078}
+
+
+Gets the horizontal and vertical kerning correction for the given glyph ids. The unit of the returned vector is em, the nominal size of the letter M of the font. For almost any font one em is actually larger than the size of the capital letter M.
+
+You can get a glyph id for a given unicode character using {\tt hpgs\_\-font\_\-get\_\-glyph\_\-id}.
+
+Return -1, if an error occurrs. 
+
+References hpgs\_\-font\_\-st::kern\_\-data, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{font@{font}!hpgs\_\-font\_\-get\_\-line\_\-gap@{hpgs\_\-font\_\-get\_\-line\_\-gap}}
+\index{hpgs\_\-font\_\-get\_\-line\_\-gap@{hpgs\_\-font\_\-get\_\-line\_\-gap}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-get\_\-line\_\-gap]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API double hpgs\_\-font\_\-get\_\-line\_\-gap ({\bf hpgs\_\-font} $\ast$ {\em font})}\label{group__font_g77ba5973c88e0087b0f1ee41c37ff555}
+
+
+Gets the typographical line gap of the font. 
+
+References hpgs\_\-font\_\-st::head\_\-data, and hpgs\_\-font\_\-st::hhea\_\-data.\index{font@{font}!hpgs\_\-font\_\-get\_\-utf8\_\-metrics@{hpgs\_\-font\_\-get\_\-utf8\_\-metrics}}
+\index{hpgs\_\-font\_\-get\_\-utf8\_\-metrics@{hpgs\_\-font\_\-get\_\-utf8\_\-metrics}!font@{font}}
+\subsubsection[hpgs\_\-font\_\-get\_\-utf8\_\-metrics]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-font\_\-get\_\-utf8\_\-metrics ({\bf hpgs\_\-font} $\ast$ {\em font}, \/  {\bf hpgs\_\-point} $\ast$ {\em m}, \/  const char $\ast$ {\em str}, \/  int {\em strlen})}\label{group__font_gc2265b0afa11970e7d15dd0c746ce1a3}
+
+
+Gets the horizontal and vertical advance of the given unicode string given in utf8 encoding. The unit of the returned vector is em, the nominal size of the letter M of the font. For almost any font one em is actually larger than the size of the capital letter M.
+
+Return -1, if an error occurrs. 
+
+References hpgs\_\-font\_\-st::head\_\-data, hpgs\_\-font\_\-st::hmtx\_\-data, hpgs\_\-next\_\-utf8(), hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.

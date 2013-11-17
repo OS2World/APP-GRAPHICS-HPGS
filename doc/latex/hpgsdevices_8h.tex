@@ -1,0 +1,38 @@
+\section{hpgsdevices.h File Reference}
+\label{hpgsdevices_8h}\index{hpgsdevices.h@{hpgsdevices.h}}
+The private interfaces for basic vector devices. 
+
+{\tt \#include $<$hpgs.h$>$}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf hpgs\_\-plotsize\_\-device\_\-st}
+\begin{CompactList}\small\item\em A vector graphics device for plotsize calculating. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-ps\_\-media\_\-size\_\-st}
+\begin{CompactList}\small\item\em A structure for storing a paper size. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-eps\_\-device\_\-st}
+\begin{CompactList}\small\item\em A vector graphics device for drawing to an eps file. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \textbf{HPGS\_\-PLOTSIZE\_\-MAX\_\-CLIP\_\-DEPTH}~16\label{group__device_ge92b44de322e9c1b9fbd0f732aea9077}
+
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef struct {\bf hpgs\_\-ps\_\-media\_\-size\_\-st} \textbf{hpgs\_\-ps\_\-media\_\-size}\label{group__device_g9bbe4ba684b8a07c23d89ee820f00574}
+
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+HPGS\_\-INTERNAL\_\-API void \textbf{hpgs\_\-cleanup\_\-plugin\_\-devices} ()\label{group__device_ge99c6a46a83f5dc00f3e9cc3420356fb}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+The private interfaces for basic vector devices. 
+
+A header file, which declares the structures and functions internally used for implementing the very basic implementations of {\tt hpgs\_\-device}. 

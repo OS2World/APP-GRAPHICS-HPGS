@@ -1,0 +1,101 @@
+\section{hpgs\_\-plotsize\_\-device\_\-st Struct Reference}
+\label{structhpgs__plotsize__device__st}\index{hpgs\_\-plotsize\_\-device\_\-st@{hpgs\_\-plotsize\_\-device\_\-st}}
+A vector graphics device for plotsize calculating.  
+
+
+{\tt \#include $<$hpgsdevices.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+{\bf hpgs\_\-device} {\bf inherited}\label{structhpgs__plotsize__device__st_896e5ef39be8fb94f861db9d51800c3e}
+
+\begin{CompactList}\small\item\em The base device structure. \item\end{CompactList}\item 
+hpgs\_\-bool {\bf ignore\_\-ps}\label{structhpgs__plotsize__device__st_b33cc0245c082105f5bb0cb9a1ce47b2}
+
+\begin{CompactList}\small\item\em Do we ignore a PS command? \item\end{CompactList}\item 
+int {\bf clip\_\-depth}\label{structhpgs__plotsize__device__st_397e61533c894d3396d6452572cecaf3}
+
+\begin{CompactList}\small\item\em The depth of the current clip path stack. \item\end{CompactList}\item 
+{\bf hpgs\_\-point} {\bf moveto}\label{structhpgs__plotsize__device__st_69ad990dc8df48bde3470d1dd562beac}
+
+\begin{CompactList}\small\item\em The position of the last moveto. \item\end{CompactList}\item 
+int {\bf deferred\_\-moveto}\label{structhpgs__plotsize__device__st_5322a4a685eb24f0a3ef5bf897a85364}
+
+\begin{CompactList}\small\item\em Do we have an unregistered moveto pending? \item\end{CompactList}\item 
+hpgs\_\-bool {\bf do\_\-linewidth}\label{structhpgs__plotsize__device__st_e8e92266b09da342dbd1f1cc26dd914d}
+
+\begin{CompactList}\small\item\em Do we account for the current linewidth? \item\end{CompactList}\item 
+double {\bf linewidth}\label{structhpgs__plotsize__device__st_e18ef2c36ee97539c25b88dd1cbf4368}
+
+\begin{CompactList}\small\item\em Current linewidth. \item\end{CompactList}\item 
+{\bf hpgs\_\-bbox} \textbf{clip\_\-bbs} [HPGS\_\-PLOTSIZE\_\-MAX\_\-CLIP\_\-DEPTH]\label{structhpgs__plotsize__device__st_ce813b5e80f82a23bfd48844c21bc67f}
+
+\item 
+{\bf hpgs\_\-bbox} {\bf path\_\-bb}
+\item 
+{\bf hpgs\_\-bbox} {\bf page\_\-bb}
+\item 
+{\bf hpgs\_\-bbox} {\bf global\_\-bb}
+\end{CompactItemize}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+{\bf hpgs\_\-bbox} $\ast$ {\bf page\_\-bbs}
+\item 
+int {\bf n\_\-page\_\-bbs}
+\item 
+int \textbf{page\_\-bbs\_\-alloc\_\-size}\label{structhpgs__plotsize__device__st_0d0a3522e149fdd32062286a75316d4a}
+
+\end{CompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+A vector graphics device for plotsize calculating. 
+
+This structure implements a {\tt hpgs\_\-device} and is used to calculate the bounding box of a vector graphics scenery. 
+
+\subsection{Field Documentation}
+\index{hpgs\_\-plotsize\_\-device\_\-st@{hpgs\_\-plotsize\_\-device\_\-st}!path\_\-bb@{path\_\-bb}}
+\index{path\_\-bb@{path\_\-bb}!hpgs_plotsize_device_st@{hpgs\_\-plotsize\_\-device\_\-st}}
+\subsubsection[path\_\-bb]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-bbox} {\bf hpgs\_\-plotsize\_\-device\_\-st::path\_\-bb}}\label{structhpgs__plotsize__device__st_35db4a71c68d2dadd16f2fe5628af408}
+
+
+The bounding boxes of the clip paths. 
+
+Referenced by hpgs\_\-new\_\-plotsize\_\-device().\index{hpgs\_\-plotsize\_\-device\_\-st@{hpgs\_\-plotsize\_\-device\_\-st}!page\_\-bb@{page\_\-bb}}
+\index{page\_\-bb@{page\_\-bb}!hpgs_plotsize_device_st@{hpgs\_\-plotsize\_\-device\_\-st}}
+\subsubsection[page\_\-bb]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-bbox} {\bf hpgs\_\-plotsize\_\-device\_\-st::page\_\-bb}}\label{structhpgs__plotsize__device__st_1facd325cac492ed0f0e4ceae0e51b61}
+
+
+The bounding box of the current path. 
+
+Referenced by hpgs\_\-new\_\-plotsize\_\-device().\index{hpgs\_\-plotsize\_\-device\_\-st@{hpgs\_\-plotsize\_\-device\_\-st}!global\_\-bb@{global\_\-bb}}
+\index{global\_\-bb@{global\_\-bb}!hpgs_plotsize_device_st@{hpgs\_\-plotsize\_\-device\_\-st}}
+\subsubsection[global\_\-bb]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-bbox} {\bf hpgs\_\-plotsize\_\-device\_\-st::global\_\-bb}}\label{structhpgs__plotsize__device__st_ff4e09e9145c2584b76ba475bdbe7925}
+
+
+The bounding box of the current page. 
+
+Referenced by hpgs\_\-new\_\-plotsize\_\-device().\index{hpgs\_\-plotsize\_\-device\_\-st@{hpgs\_\-plotsize\_\-device\_\-st}!page\_\-bbs@{page\_\-bbs}}
+\index{page\_\-bbs@{page\_\-bbs}!hpgs_plotsize_device_st@{hpgs\_\-plotsize\_\-device\_\-st}}
+\subsubsection[page\_\-bbs]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-bbox}$\ast$ {\bf hpgs\_\-plotsize\_\-device\_\-st::page\_\-bbs}}\label{structhpgs__plotsize__device__st_016fbde7815a9034098f94cb60e0dcdd}
+
+
+The currently calculated overall bounding box.
+
+A stack of page bounding boxes. 
+
+Referenced by hpgs\_\-new\_\-plotsize\_\-device().\index{hpgs\_\-plotsize\_\-device\_\-st@{hpgs\_\-plotsize\_\-device\_\-st}!n\_\-page\_\-bbs@{n\_\-page\_\-bbs}}
+\index{n\_\-page\_\-bbs@{n\_\-page\_\-bbs}!hpgs_plotsize_device_st@{hpgs\_\-plotsize\_\-device\_\-st}}
+\subsubsection[n\_\-page\_\-bbs]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-plotsize\_\-device\_\-st::n\_\-page\_\-bbs}}\label{structhpgs__plotsize__device__st_9375b4471761001e8a68d70e62612f0d}
+
+
+The currently calculated overall bounding box. 
+
+Referenced by hpgs\_\-new\_\-plotsize\_\-device().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf hpgsdevices.h}\end{CompactItemize}

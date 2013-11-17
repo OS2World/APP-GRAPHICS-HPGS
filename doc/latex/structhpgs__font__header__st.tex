@@ -1,0 +1,135 @@
+\section{hpgs\_\-font\_\-header\_\-st Struct Reference}
+\label{structhpgs__font__header__st}\index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}}
+A truetype font header.  
+
+
+{\tt \#include $<$hpgsfont.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+int32\_\-t {\bf version}
+\item 
+uint16\_\-t {\bf numtab}
+\item 
+uint16\_\-t {\bf searchRange}
+\item 
+uint16\_\-t {\bf entrySel}
+\item 
+uint16\_\-t {\bf rangeShift}
+\item 
+hpgs\_\-font\_\-table\_\-entry {\bf tables} [HPGS\_\-FONT\_\-MAX\_\-TTF\_\-TABLES]
+\item 
+int {\bf name\_\-table}
+\item 
+int {\bf head\_\-table}
+\item 
+int {\bf hhea\_\-table}
+\item 
+int {\bf maxp\_\-table}
+\item 
+int {\bf hmtx\_\-table}
+\item 
+int {\bf loca\_\-table}
+\item 
+int {\bf cmap\_\-table}
+\item 
+int {\bf post\_\-table}
+\item 
+int {\bf glyf\_\-table}
+\item 
+int {\bf kern\_\-table}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A truetype font header. 
+
+This structure holds all the header information of a truetype font and is used when scanning a fon directory as well as a part of an open font file. 
+
+\subsection{Field Documentation}
+\index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!version@{version}}
+\index{version@{version}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[version]{\setlength{\rightskip}{0pt plus 5cm}int32\_\-t {\bf hpgs\_\-font\_\-header\_\-st::version}}\label{structhpgs__font__header__st_d3ab0f4f9723b09428d611c04dbf66bf}
+
+
+0x00010000 \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!numtab@{numtab}}
+\index{numtab@{numtab}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[numtab]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t {\bf hpgs\_\-font\_\-header\_\-st::numtab}}\label{structhpgs__font__header__st_73194636df1a30d97c3892baec5fcee1}
+
+
+The number truetype tables in this file. \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!searchRange@{searchRange}}
+\index{searchRange@{searchRange}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[searchRange]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t {\bf hpgs\_\-font\_\-header\_\-st::searchRange}}\label{structhpgs__font__header__st_668c08868584b25e54cafc16f1a35d73}
+
+
+(Max power of 2 $<$= numtab) $\ast$16 \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!entrySel@{entrySel}}
+\index{entrySel@{entrySel}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[entrySel]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t {\bf hpgs\_\-font\_\-header\_\-st::entrySel}}\label{structhpgs__font__header__st_48dab4c81c63193d84f92f343bd5f913}
+
+
+Log2(Max power of 2 $<$= numtab ) \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!rangeShift@{rangeShift}}
+\index{rangeShift@{rangeShift}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[rangeShift]{\setlength{\rightskip}{0pt plus 5cm}uint16\_\-t {\bf hpgs\_\-font\_\-header\_\-st::rangeShift}}\label{structhpgs__font__header__st_cd34db3fd2dd32cb4f492390a9dd208f}
+
+
+numtab$\ast$16 - searchRange \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!tables@{tables}}
+\index{tables@{tables}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[tables]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-font\_\-table\_\-entry {\bf hpgs\_\-font\_\-header\_\-st::tables}[HPGS\_\-FONT\_\-MAX\_\-TTF\_\-TABLES]}\label{structhpgs__font__header__st_f54ad94acf0f8f8a41a9766914282db6}
+
+
+The truetype table entries. \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!name\_\-table@{name\_\-table}}
+\index{name\_\-table@{name\_\-table}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[name\_\-table]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-font\_\-header\_\-st::name\_\-table}}\label{structhpgs__font__header__st_1adba6dba263ca70554b4d4964aafeb7}
+
+
+The position of the name table. \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!head\_\-table@{head\_\-table}}
+\index{head\_\-table@{head\_\-table}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[head\_\-table]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-font\_\-header\_\-st::head\_\-table}}\label{structhpgs__font__header__st_bdd02e9bd7be9269418de6803c546b99}
+
+
+The position of the head table. \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!hhea\_\-table@{hhea\_\-table}}
+\index{hhea\_\-table@{hhea\_\-table}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[hhea\_\-table]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-font\_\-header\_\-st::hhea\_\-table}}\label{structhpgs__font__header__st_75d66be8fecd9efccb8331d5189f0986}
+
+
+The position of the hhea table. \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!maxp\_\-table@{maxp\_\-table}}
+\index{maxp\_\-table@{maxp\_\-table}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[maxp\_\-table]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-font\_\-header\_\-st::maxp\_\-table}}\label{structhpgs__font__header__st_3b6087f86dd4d7b44416244797e29c84}
+
+
+The position of the maxp table. \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!hmtx\_\-table@{hmtx\_\-table}}
+\index{hmtx\_\-table@{hmtx\_\-table}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[hmtx\_\-table]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-font\_\-header\_\-st::hmtx\_\-table}}\label{structhpgs__font__header__st_5b6510174b7573a836323b837c36af65}
+
+
+The position of the hmtx table. \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!loca\_\-table@{loca\_\-table}}
+\index{loca\_\-table@{loca\_\-table}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[loca\_\-table]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-font\_\-header\_\-st::loca\_\-table}}\label{structhpgs__font__header__st_08577d0c6d7f3565618c3632996c4073}
+
+
+The position of the loca table. \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!cmap\_\-table@{cmap\_\-table}}
+\index{cmap\_\-table@{cmap\_\-table}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[cmap\_\-table]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-font\_\-header\_\-st::cmap\_\-table}}\label{structhpgs__font__header__st_dee2605275470c5e8aa5b5a1a7540afd}
+
+
+The position of the cmap table. \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!post\_\-table@{post\_\-table}}
+\index{post\_\-table@{post\_\-table}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[post\_\-table]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-font\_\-header\_\-st::post\_\-table}}\label{structhpgs__font__header__st_d063ab4b87fe74878f0effba5bd4edf3}
+
+
+The position of the post table. \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!glyf\_\-table@{glyf\_\-table}}
+\index{glyf\_\-table@{glyf\_\-table}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[glyf\_\-table]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-font\_\-header\_\-st::glyf\_\-table}}\label{structhpgs__font__header__st_8d9c804d2222a29fc5897a37da030f90}
+
+
+The position of the glyf table. \index{hpgs\_\-font\_\-header\_\-st@{hpgs\_\-font\_\-header\_\-st}!kern\_\-table@{kern\_\-table}}
+\index{kern\_\-table@{kern\_\-table}!hpgs_font_header_st@{hpgs\_\-font\_\-header\_\-st}}
+\subsubsection[kern\_\-table]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-font\_\-header\_\-st::kern\_\-table}}\label{structhpgs__font__header__st_d3548a900071302b64d154c9d3875ec2}
+
+
+The position of the kern table. 
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+hpgsfont.h\end{CompactItemize}

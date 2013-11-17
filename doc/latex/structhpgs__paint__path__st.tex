@@ -1,0 +1,48 @@
+\section{hpgs\_\-paint\_\-path\_\-st Struct Reference}
+\label{structhpgs__paint__path__st}\index{hpgs\_\-paint\_\-path\_\-st@{hpgs\_\-paint\_\-path\_\-st}}
+A stored vector path.  
+
+
+{\tt \#include $<$hpgs.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+{\bf hpgs\_\-bbox} \textbf{bb}\label{structhpgs__paint__path__st_f4ae3fb2b6fd1725377c0399b8506b23}
+
+\end{CompactItemize}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+{\bf hpgs\_\-path\_\-point} $\ast$ {\bf points}
+\item 
+int \textbf{n\_\-points}\label{structhpgs__paint__path__st_3180496eb7ad6dd7bd9a84a6393f9ea9}
+
+\item 
+int \textbf{last\_\-start}\label{structhpgs__paint__path__st_b74ad95c8195e77194d3a79191823be0}
+
+\item 
+int \textbf{points\_\-malloc\_\-size}\label{structhpgs__paint__path__st_d251d2fedecc7e918c83cfd05d4fb358}
+
+\end{CompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+A stored vector path. 
+
+This structure has a public alias {\tt hpgs\_\-paint\_\-path} and represents a polygonal path, which is stores the path topology together with cached informations about bezier splines. 
+
+\subsection{Field Documentation}
+\index{hpgs\_\-paint\_\-path\_\-st@{hpgs\_\-paint\_\-path\_\-st}!points@{points}}
+\index{points@{points}!hpgs_paint_path_st@{hpgs\_\-paint\_\-path\_\-st}}
+\subsubsection[points]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-path\_\-point}$\ast$ {\bf hpgs\_\-paint\_\-path\_\-st::points}}\label{structhpgs__paint__path__st_8731bebc1e5715a5e4838035349afc3e}
+
+
+A stack of path points. {\tt last\_\-start} indicates the index of the last start of a subpolygon. This is information is needed during path construction. 
+
+Referenced by hpgs\_\-bezier\_\-path\_\-delta(), hpgs\_\-bezier\_\-path\_\-delta\_\-x(), hpgs\_\-bezier\_\-path\_\-delta\_\-y(), hpgs\_\-bezier\_\-path\_\-point(), hpgs\_\-bezier\_\-path\_\-singularities(), hpgs\_\-bezier\_\-path\_\-to\_\-quadratic(), hpgs\_\-bezier\_\-path\_\-x(), hpgs\_\-bezier\_\-path\_\-xmax(), hpgs\_\-bezier\_\-path\_\-xmin(), hpgs\_\-bezier\_\-path\_\-y(), hpgs\_\-bezier\_\-path\_\-ymax(), hpgs\_\-bezier\_\-path\_\-ymin(), hpgs\_\-new\_\-paint\_\-path(), hpgs\_\-paint\_\-path\_\-buldgeto(), hpgs\_\-paint\_\-path\_\-closepath(), hpgs\_\-paint\_\-path\_\-curveto(), hpgs\_\-paint\_\-path\_\-destroy(), hpgs\_\-paint\_\-path\_\-lineto(), and hpgs\_\-paint\_\-path\_\-moveto().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf hpgs.h}\end{CompactItemize}

@@ -1,0 +1,960 @@
+\section{Basic facilities.}
+\label{group__base}\index{Basic facilities.@{Basic facilities.}}
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf hpgs\_\-point\_\-st}
+\begin{CompactList}\small\item\em A 2D point. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-color\_\-st}
+\begin{CompactList}\small\item\em An application level RGB color. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-palette\_\-color\_\-st}
+\begin{CompactList}\small\item\em A screen RGB color as stored in a palette. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-paint\_\-color\_\-st}
+\begin{CompactList}\small\item\em An image RGB color with an optional palette index. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-bbox\_\-st}
+\begin{CompactList}\small\item\em A bounding box. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-matrix\_\-st}
+\begin{CompactList}\small\item\em A transformation matrix for 2D points. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-istream\_\-vtable\_\-st}
+\begin{CompactList}\small\item\em A table of virtual function implementing {\tt hpgs\_\-istream}. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-istream\_\-st}
+\begin{CompactList}\small\item\em A virtual input stream for the HPGL reader. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-ostream\_\-vtable\_\-st}
+\begin{CompactList}\small\item\em A table of virtual function implementing {\tt hpgs\_\-istream}. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-ostream\_\-st}
+\begin{CompactList}\small\item\em A virtual output stream for the HPGL reader. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \textbf{HPGS\_\-TRUE}~1\label{group__base_ge0f1d05c80ae8bfc1042404f598edc5a}
+
+\item 
+\#define \textbf{HPGS\_\-FALSE}~0\label{group__base_g7550d077e74634032f51951a9c8efd76}
+
+\item 
+\#define \textbf{HPGS\_\-MIN}(a, b)~((a)$<$(b)?(a):(b))\label{group__base_g7286dad34df84df5fd05ce3d26920acb}
+
+\item 
+\#define \textbf{HPGS\_\-MAX}(a, b)~((a)$>$(b)?(a):(b))\label{group__base_gec5d7d39582cda4657e55bc03d8e46b6}
+
+\item 
+\#define \textbf{HPGS\_\-INIT\_\-ARRAY}(st, type, pmemb, nmemb, szmemb, insz)~(st $\rightarrow$ szmemb=insz,st $\rightarrow$ nmemb=0,(st $\rightarrow$ pmemb=(type$\ast$)malloc(sizeof(type)$\ast$insz))?0:-1)\label{group__base_g7c2f4a9472ff7fbb4bc8ae03dca95ee5}
+
+\item 
+\#define \textbf{HPGS\_\-GROW\_\-ARRAY\_\-FOR\_\-PUSH}(st, type, pmemb, nmemb, szmemb)~((st $\rightarrow$ nmemb $>$= st $\rightarrow$ szmemb)?hpgs\_\-array\_\-safe\_\-resize(sizeof(type),(void $\ast$$\ast$)(\&st $\rightarrow$ pmemb),\&st $\rightarrow$ szmemb,st $\rightarrow$ szmemb$\ast$2):(0))\label{group__base_g517e12a0413b50a105931b08e38750cc}
+
+\item 
+\#define \textbf{HPGS\_\-GROW\_\-ARRAY\_\-MIN\_\-SIZE}(st, type, pmemb, nmemb, szmemb, msz)~((st $\rightarrow$ nmemb$>$=st $\rightarrow$ szmemb$|$$|$st $\rightarrow$ szmemb$<$msz)?hpgs\_\-array\_\-safe\_\-resize(sizeof(type),(void $\ast$$\ast$)(\&st $\rightarrow$ pmemb),\&st $\rightarrow$ szmemb,HPGS\_\-MAX(st $\rightarrow$ szmemb$\ast$2,msz)):(0))\label{group__base_g3d54bf84dedc8374eab4ff3d4f08cd97}
+
+\item 
+\#define \textbf{HPGS\_\-PATH\_\-SEPARATOR}~'/'\label{group__base_g844e792efbe234c04b5ecd4b23d5db9b}
+
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef int \textbf{hpgs\_\-bool}\label{group__base_g29a7aec912fb7a5ad0e82601a18b39ce}
+
+\item 
+typedef void($\ast$ \textbf{hpgs\_\-logger\_\-func\_\-t} )(const char $\ast$fmt, va\_\-list ap)\label{group__base_g563fc8cbc02904086ce0f3080c697db9}
+
+\item 
+typedef struct {\bf hpgs\_\-point\_\-st} {\bf hpgs\_\-point}
+\begin{CompactList}\small\item\em A 2D point. \item\end{CompactList}\item 
+typedef struct {\bf hpgs\_\-color\_\-st} {\bf hpgs\_\-color}
+\begin{CompactList}\small\item\em An application level RGB color. \item\end{CompactList}\item 
+typedef struct {\bf hpgs\_\-palette\_\-color\_\-st} \textbf{hpgs\_\-palette\_\-color}\label{group__base_gde4e9715040c0819f79ca4f2efddf250}
+
+\item 
+typedef void($\ast$ \textbf{hpgs\_\-rop3\_\-func\_\-t} )(unsigned char $\ast$, unsigned char, unsigned char)\label{group__base_g764146c86d8ef0cd9adc8b6be930f872}
+
+\item 
+typedef unsigned($\ast$ \textbf{hpgs\_\-xrop3\_\-func\_\-t} )(unsigned char, unsigned char)\label{group__base_g972157f576ddf01954e520bbb7ec5498}
+
+\item 
+typedef struct {\bf hpgs\_\-paint\_\-color\_\-st} \textbf{hpgs\_\-paint\_\-color}\label{group__base_gdb45ff83823a45567588dd72d29b91cd}
+
+\item 
+typedef struct {\bf hpgs\_\-bbox\_\-st} \textbf{hpgs\_\-bbox}\label{group__base_g0faf36b0ed91c6b5fb9b6df45e0df2aa}
+
+\item 
+typedef struct {\bf hpgs\_\-matrix\_\-st} \textbf{hpgs\_\-matrix}\label{group__base_g69971a93db7c8418772cdf2f064a9234}
+
+\item 
+typedef struct {\bf hpgs\_\-istream\_\-st} \textbf{hpgs\_\-istream}\label{group__base_gb25ff4e14eb9bdcca226366b3706db25}
+
+\item 
+typedef struct {\bf hpgs\_\-istream\_\-vtable\_\-st} \textbf{hpgs\_\-istream\_\-vtable}\label{group__base_gba260b5c9250efc155ac0110287bb979}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-getc\_\-func\_\-t} )(void $\ast$)\label{group__base_g37dd7ea28f1d328d1ea5281f425b2f3b}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-ungetc\_\-func\_\-t} )(int, void $\ast$)\label{group__base_g6f547af6fefa0a7dcd8cf68f27e2691a}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-close\_\-func\_\-t} )(void $\ast$)\label{group__base_g4b32300990917abe2f30daa66677c803}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-iseof\_\-func\_\-t} )(void $\ast$)\label{group__base_g4ae8f88a9c6dd4477034e97034a1020c}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-iserror\_\-func\_\-t} )(void $\ast$)\label{group__base_g9300e5b3f98786a7c377b56bd04de348}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-seek\_\-func\_\-t} )(void $\ast$, size\_\-t)\label{group__base_g9a77b5f808d21c733cbf7a1f869824f9}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-tell\_\-func\_\-t} )(void $\ast$, size\_\-t $\ast$)\label{group__base_g6ae96c4a5b1f83c1dbd93e09f5855b60}
+
+\item 
+typedef size\_\-t($\ast$ \textbf{hpgs\_\-istream\_\-read\_\-func\_\-t} )(void $\ast$, size\_\-t, size\_\-t, void $\ast$)\label{group__base_gbc43b203b3772c3f03c6b54019146a7b}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-seekend\_\-func\_\-t} )(void $\ast$, size\_\-t)\label{group__base_gf288d6ec93cc5e6c446ff1f8c1800a73}
+
+\item 
+typedef struct {\bf hpgs\_\-ostream\_\-st} \textbf{hpgs\_\-ostream}\label{group__base_gd6d11d1839853862992558a3e2d8cfc7}
+
+\item 
+typedef struct {\bf hpgs\_\-ostream\_\-vtable\_\-st} \textbf{hpgs\_\-ostream\_\-vtable}\label{group__base_g2b4c0b89aad0445c029e2d3845d5d360}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-putc\_\-func\_\-t} )(int, void $\ast$)\label{group__base_g8c774072a71ef4f6dc25f996c4ded5ac}
+
+\item 
+typedef size\_\-t($\ast$ \textbf{hpgs\_\-ostream\_\-write\_\-func\_\-t} )(const void $\ast$, size\_\-t, size\_\-t, void $\ast$)\label{group__base_gfa6e15df29369bef01e53d5e93092489}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-vprintf\_\-func\_\-t} )(void $\ast$, const char $\ast$, va\_\-list)\label{group__base_g2d992564508c4d5906649fb7d050b8fe}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-flush\_\-func\_\-t} )(void $\ast$)\label{group__base_g150a622af849722d9fda7eec6fae0d48}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-close\_\-func\_\-t} )(void $\ast$)\label{group__base_ga65e4bab9e215962cd7be730737d804f}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-iserror\_\-func\_\-t} )(void $\ast$)\label{group__base_g41a536b40e02ad3f2699b66d653c875a}
+
+\item 
+typedef {\bf hpgs\_\-istream} $\ast$($\ast$ \textbf{hpgs\_\-ostream\_\-getbuf\_\-func\_\-t} )(void $\ast$)\label{group__base_g16f71e23dc6b7b0a2f3edfd69400fd32}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-tell\_\-func\_\-t} )(void $\ast$, int layer, size\_\-t $\ast$)\label{group__base_g58fbc47400676e8566943232871e1d00}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-seek\_\-func\_\-t} )(void $\ast$, size\_\-t)\label{group__base_gd2ade65e145c72c1093f3ccb009d80c6}
+
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum {\bf hpgs\_\-line\_\-cap} \{ {\bf hpgs\_\-cap\_\-butt} =  0, 
+{\bf hpgs\_\-cap\_\-round} =  1, 
+{\bf hpgs\_\-cap\_\-square} =  2
+ \}
+\item 
+enum {\bf hpgs\_\-line\_\-join} \{ {\bf hpgs\_\-join\_\-miter} =  0, 
+{\bf hpgs\_\-join\_\-round} =  1, 
+{\bf hpgs\_\-join\_\-bevel} =  2
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+HPGS\_\-API int {\bf hpgs\_\-array\_\-safe\_\-resize} (size\_\-t itemsz, void $\ast$$\ast$pptr, size\_\-t $\ast$psz, size\_\-t nsz)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-init} (const char $\ast$prefix)
+\item 
+HPGS\_\-API const char $\ast$ {\bf hpgs\_\-get\_\-prefix} ()
+\item 
+HPGS\_\-API void {\bf hpgs\_\-cleanup} (void)
+\item 
+HPGS\_\-API char $\ast$ {\bf hpgs\_\-share\_\-filename} (const char $\ast$rel\_\-filename)
+\item 
+HPGS\_\-API char $\ast$ {\bf hpgs\_\-vsprintf\_\-malloc} (const char $\ast$fmt, va\_\-list ap)
+\item 
+HPGS\_\-PRINTF1\_\-API char $\ast$ {\bf hpgs\_\-sprintf\_\-malloc} (const char $\ast$fmt,...)
+\item 
+HPGS\_\-PRINTF1\_\-API int {\bf hpgs\_\-set\_\-error} (const char $\ast$fmt,...)
+\item 
+HPGS\_\-PRINTF1\_\-API int {\bf hpgs\_\-error\_\-ctxt} (const char $\ast$fmt,...)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-set\_\-verror} (const char $\ast$fmt, va\_\-list ap)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-verror\_\-ctxt} (const char $\ast$fmt, va\_\-list ap)
+\item 
+HPGS\_\-API const char $\ast$ {\bf hpgs\_\-get\_\-error} ()
+\item 
+HPGS\_\-API hpgs\_\-bool {\bf hpgs\_\-have\_\-error} ()
+\item 
+HPGS\_\-API void {\bf hpgs\_\-clear\_\-error} ()
+\item 
+HPGS\_\-API int {\bf hpgs\_\-next\_\-utf8} (const char $\ast$$\ast$p)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-utf8\_\-strlen} (const char $\ast$p, int n)
+\item 
+HPGS\_\-I18N\_\-API const char $\ast$ \textbf{hpgs\_\-i18n} (const char $\ast$msg)\label{group__base_g3b14be33eec8c80d111a4394efcbf008}
+
+\item 
+HPGS\_\-I18N\_\-N\_\-API const char $\ast$ \textbf{hpgs\_\-i18n\_\-n} (const char $\ast$msg, const char $\ast$msg\_\-plural, unsigned long n)\label{group__base_gc841286219f60f4198b3fb3c869f9e5e}
+
+\item 
+HPGS\_\-API void {\bf hpgs\_\-set\_\-logger} (hpgs\_\-logger\_\-func\_\-t func)
+\item 
+HPGS\_\-PRINTF1\_\-API void {\bf hpgs\_\-log} (const char $\ast$fmt,...)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-vlog} (const char $\ast$fmt, va\_\-list ap)
+\item 
+HPGS\_\-API hpgs\_\-bool {\bf hpgs\_\-get\_\-arg\_\-value} (const char $\ast$opt, const char $\ast$argv[$\,$], const char $\ast$$\ast$value, int $\ast$narg)
+\item 
+HPGS\_\-API hpgs\_\-rop3\_\-func\_\-t \textbf{hpgs\_\-rop3\_\-func} (int rop3, hpgs\_\-bool src\_\-transparency, hpgs\_\-bool pattern\_\-transparency)\label{group__base_g028f514a3b58348a40c435d69749f0fb}
+
+\item 
+HPGS\_\-API hpgs\_\-xrop3\_\-func\_\-t \textbf{hpgs\_\-xrop3\_\-func} (int rop3, hpgs\_\-bool src\_\-transparency, hpgs\_\-bool pattern\_\-transparency)\label{group__base_gf10e4f96ae58786ee0d86420a2a6d899}
+
+\item 
+HPGS\_\-API hpgs\_\-bool {\bf hpgs\_\-bbox\_\-isequal} (const {\bf hpgs\_\-bbox} $\ast$bb1, const {\bf hpgs\_\-bbox} $\ast$bb2)
+\item 
+HPGS\_\-API hpgs\_\-bool {\bf hpgs\_\-bbox\_\-isnull} (const {\bf hpgs\_\-bbox} $\ast$bb)
+\item 
+HPGS\_\-API hpgs\_\-bool {\bf hpgs\_\-bbox\_\-isempty} (const {\bf hpgs\_\-bbox} $\ast$bb)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bbox\_\-distance} ({\bf hpgs\_\-point} $\ast$d, const {\bf hpgs\_\-bbox} $\ast$bb1, const {\bf hpgs\_\-bbox} $\ast$bb2)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bbox\_\-null} ({\bf hpgs\_\-bbox} $\ast$bb)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bbox\_\-expand} ({\bf hpgs\_\-bbox} $\ast$bb1, const {\bf hpgs\_\-bbox} $\ast$bb2)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bbox\_\-intersect} ({\bf hpgs\_\-bbox} $\ast$bb1, const {\bf hpgs\_\-bbox} $\ast$bb2)
+\item 
+static void {\bf hpgs\_\-bbox\_\-addborder} ({\bf hpgs\_\-bbox} $\ast$bb, double border)
+\item 
+static void {\bf hpgs\_\-bbox\_\-add} ({\bf hpgs\_\-bbox} $\ast$bb, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-set\_\-identity} ({\bf hpgs\_\-matrix} $\ast$m)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-xform} ({\bf hpgs\_\-point} $\ast$res, const {\bf hpgs\_\-matrix} $\ast$m, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-ixform} ({\bf hpgs\_\-point} $\ast$res, const {\bf hpgs\_\-point} $\ast$p, const {\bf hpgs\_\-matrix} $\ast$m)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-scale} ({\bf hpgs\_\-point} $\ast$res, const {\bf hpgs\_\-matrix} $\ast$m, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-iscale} ({\bf hpgs\_\-point} $\ast$res, const {\bf hpgs\_\-point} $\ast$p, const {\bf hpgs\_\-matrix} $\ast$m)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-concat} ({\bf hpgs\_\-matrix} $\ast$res, const {\bf hpgs\_\-matrix} $\ast$a, const {\bf hpgs\_\-matrix} $\ast$b)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-invert} ({\bf hpgs\_\-matrix} $\ast$res, const {\bf hpgs\_\-matrix} $\ast$m)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-xform\_\-bbox} ({\bf hpgs\_\-bbox} $\ast$res, const {\bf hpgs\_\-matrix} $\ast$m, const {\bf hpgs\_\-bbox} $\ast$bb)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-ixform\_\-bbox} ({\bf hpgs\_\-bbox} $\ast$res, const {\bf hpgs\_\-bbox} $\ast$bb, const {\bf hpgs\_\-matrix} $\ast$m)
+\item 
+HPGS\_\-API {\bf hpgs\_\-istream} $\ast$ {\bf hpgs\_\-new\_\-file\_\-istream} (const char $\ast$fn)
+\item 
+HPGS\_\-API {\bf hpgs\_\-istream} $\ast$ {\bf hpgs\_\-new\_\-mem\_\-istream} (const unsigned char $\ast$data, size\_\-t data\_\-size, hpgs\_\-bool dup)
+\item 
+static int {\bf hpgs\_\-getc} ({\bf hpgs\_\-istream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-ungetc} (int c, {\bf hpgs\_\-istream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-istream\_\-close} ({\bf hpgs\_\-istream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-istream\_\-iseof} ({\bf hpgs\_\-istream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-istream\_\-iserror} ({\bf hpgs\_\-istream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-istream\_\-seek} ({\bf hpgs\_\-istream} $\ast$\_\-this, size\_\-t pos)
+\item 
+static int {\bf hpgs\_\-istream\_\-seekend} ({\bf hpgs\_\-istream} $\ast$\_\-this, size\_\-t pos)
+\item 
+static int {\bf hpgs\_\-istream\_\-tell} ({\bf hpgs\_\-istream} $\ast$\_\-this, size\_\-t $\ast$pos)
+\item 
+static size\_\-t {\bf hpgs\_\-istream\_\-read} (void $\ast$ptr, size\_\-t size, size\_\-t nmemb, {\bf hpgs\_\-istream} $\ast$\_\-this)
+\item 
+HPGS\_\-API {\bf hpgs\_\-ostream} $\ast$ {\bf hpgs\_\-new\_\-file\_\-ostream} (const char $\ast$fn)
+\item 
+HPGS\_\-API {\bf hpgs\_\-ostream} $\ast$ {\bf hpgs\_\-new\_\-mem\_\-ostream} (size\_\-t data\_\-reserve)
+\item 
+HPGS\_\-API {\bf hpgs\_\-ostream} $\ast$ {\bf hpgs\_\-new\_\-z\_\-ostream} ({\bf hpgs\_\-ostream} $\ast$base, int compression, hpgs\_\-bool take\_\-base)
+\item 
+HPGS\_\-API int \textbf{hpgs\_\-copy\_\-streams} ({\bf hpgs\_\-ostream} $\ast$out, {\bf hpgs\_\-istream} $\ast$in)\label{group__base_g74770e20d2f627732e67d5e60750ab15}
+
+\item 
+HPGS\_\-PRINTF2\_\-API int {\bf hpgs\_\-ostream\_\-printf} ({\bf hpgs\_\-ostream} $\ast$\_\-this, const char $\ast$msg,...)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-ostream\_\-vprintf} ({\bf hpgs\_\-ostream} $\ast$\_\-this, const char $\ast$msg, va\_\-list ap)
+\item 
+static int {\bf hpgs\_\-ostream\_\-putc} (int c, {\bf hpgs\_\-ostream} $\ast$\_\-this)
+\item 
+static size\_\-t {\bf hpgs\_\-ostream\_\-write} (const void $\ast$ptr, size\_\-t size, size\_\-t nmemb, {\bf hpgs\_\-ostream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-ostream\_\-flush} ({\bf hpgs\_\-ostream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-ostream\_\-close} ({\bf hpgs\_\-ostream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-ostream\_\-iserror} ({\bf hpgs\_\-ostream} $\ast$\_\-this)
+\item 
+static {\bf hpgs\_\-istream} $\ast$ {\bf hpgs\_\-ostream\_\-getbuf} ({\bf hpgs\_\-ostream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-ostream\_\-tell} ({\bf hpgs\_\-ostream} $\ast$\_\-this, int layer, size\_\-t $\ast$pos)
+\item 
+static int {\bf hpgs\_\-ostream\_\-seek} ({\bf hpgs\_\-ostream} $\ast$\_\-this, size\_\-t pos)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-parse\_\-papersize} (const char $\ast$str, double $\ast$pt\_\-width, double $\ast$pt\_\-height)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-parse\_\-length} (const char $\ast$str, double $\ast$pt\_\-length)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains structures for operating on abstract input streams as well as color structures and a 2D point. 
+
+\subsection{Typedef Documentation}
+\index{base@{base}!hpgs\_\-color@{hpgs\_\-color}}
+\index{hpgs\_\-color@{hpgs\_\-color}!base@{base}}
+\subsubsection[hpgs\_\-color]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf hpgs\_\-color\_\-st}  {\bf hpgs\_\-color}}\label{group__base_gfa39fb2e8f6e9f7644dac5ec330480b3}
+
+
+An application level RGB color. 
+
+This structure has a public alias {\tt hpgs\_\-color} and represents an application level RGB color consisting of double precision r,g and b color values in the range from 0.0 to 1.0. \index{base@{base}!hpgs\_\-point@{hpgs\_\-point}}
+\index{hpgs\_\-point@{hpgs\_\-point}!base@{base}}
+\subsubsection[hpgs\_\-point]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf hpgs\_\-point\_\-st}  {\bf hpgs\_\-point}}\label{group__base_g067dd72a307f1eeb4480d25c7238568b}
+
+
+A 2D point. 
+
+This structure has a public alias {\tt hpgs\_\-point} and represents a point consisting of double precision x and y coordinates. 
+
+\subsection{Enumeration Type Documentation}
+\index{base@{base}!hpgs\_\-line\_\-cap@{hpgs\_\-line\_\-cap}}
+\index{hpgs\_\-line\_\-cap@{hpgs\_\-line\_\-cap}!base@{base}}
+\subsubsection[hpgs\_\-line\_\-cap]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf hpgs\_\-line\_\-cap}}\label{group__base_g5e98ba454f847cb884340ff4357821cc}
+
+
+Defines the supported line cap styles. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{hpgs\_\-cap\_\-butt@{hpgs\_\-cap\_\-butt}!base@{base}}\index{base@{base}!hpgs\_\-cap\_\-butt@{hpgs\_\-cap\_\-butt}}\item[{\em 
+hpgs\_\-cap\_\-butt\label{group__base_gg5e98ba454f847cb884340ff4357821cc1415660746cf0ce04ad578930de38bc0}
+}]Butt line cap. \index{hpgs\_\-cap\_\-round@{hpgs\_\-cap\_\-round}!base@{base}}\index{base@{base}!hpgs\_\-cap\_\-round@{hpgs\_\-cap\_\-round}}\item[{\em 
+hpgs\_\-cap\_\-round\label{group__base_gg5e98ba454f847cb884340ff4357821cce8aec1678556e7ab884059d58f89c1b0}
+}]Round line cap. \index{hpgs\_\-cap\_\-square@{hpgs\_\-cap\_\-square}!base@{base}}\index{base@{base}!hpgs\_\-cap\_\-square@{hpgs\_\-cap\_\-square}}\item[{\em 
+hpgs\_\-cap\_\-square\label{group__base_gg5e98ba454f847cb884340ff4357821ccb03510369be3e023b368bcb9cc6ba940}
+}]Square line cap. \end{description}
+\end{Desc}
+
+\index{base@{base}!hpgs\_\-line\_\-join@{hpgs\_\-line\_\-join}}
+\index{hpgs\_\-line\_\-join@{hpgs\_\-line\_\-join}!base@{base}}
+\subsubsection[hpgs\_\-line\_\-join]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf hpgs\_\-line\_\-join}}\label{group__base_gcf8ab347bd466e725a7f2f70d029da42}
+
+
+Defines the supported line join styles. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{hpgs\_\-join\_\-miter@{hpgs\_\-join\_\-miter}!base@{base}}\index{base@{base}!hpgs\_\-join\_\-miter@{hpgs\_\-join\_\-miter}}\item[{\em 
+hpgs\_\-join\_\-miter\label{group__base_ggcf8ab347bd466e725a7f2f70d029da42a7edf1fc633bfb7d96b9b6af8a3519b2}
+}]Miter line join. \index{hpgs\_\-join\_\-round@{hpgs\_\-join\_\-round}!base@{base}}\index{base@{base}!hpgs\_\-join\_\-round@{hpgs\_\-join\_\-round}}\item[{\em 
+hpgs\_\-join\_\-round\label{group__base_ggcf8ab347bd466e725a7f2f70d029da421fdee93aeb6871f77704d3b62136857b}
+}]Round line join. \index{hpgs\_\-join\_\-bevel@{hpgs\_\-join\_\-bevel}!base@{base}}\index{base@{base}!hpgs\_\-join\_\-bevel@{hpgs\_\-join\_\-bevel}}\item[{\em 
+hpgs\_\-join\_\-bevel\label{group__base_ggcf8ab347bd466e725a7f2f70d029da42d1be1194dc52dc8df5c075ce5d18dbdc}
+}]Bevel line join. \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\index{base@{base}!hpgs\_\-array\_\-safe\_\-resize@{hpgs\_\-array\_\-safe\_\-resize}}
+\index{hpgs\_\-array\_\-safe\_\-resize@{hpgs\_\-array\_\-safe\_\-resize}!base@{base}}
+\subsubsection[hpgs\_\-array\_\-safe\_\-resize]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-array\_\-safe\_\-resize (size\_\-t {\em itemsz}, \/  void $\ast$$\ast$ {\em pptr}, \/  size\_\-t $\ast$ {\em psz}, \/  size\_\-t {\em nsz})}\label{group__base_g3cc47d429464906c4101ea2a2cdd1ee0}
+
+
+This subroutine encapsulates the standard C library function {\tt realloc}. This is needed in order to aviod hassels when {\tt realloc} returns a null pointer and the original pointer is still needed for subsequent deallocations.
+
+{\tt itemsz} is the size of the individual items in the array. {\tt pptr} is a pointer to the pointer holding te address of the array. On success, {\tt $\ast$pptr} points to the newly allocated array, otherwise {\tt $\ast$pptr} is untouched. {\tt psz} is a pointer to the allocated size of the array . On success, $\ast$psz hold the new size {\tt nsz} of the array, otherwise {\tt $\ast$psz} is untouched.
+
+Returns 0 upon success or -1 if the system is out of memory. \index{base@{base}!hpgs\_\-bbox\_\-add@{hpgs\_\-bbox\_\-add}}
+\index{hpgs\_\-bbox\_\-add@{hpgs\_\-bbox\_\-add}!base@{base}}
+\subsubsection[hpgs\_\-bbox\_\-add]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- void hpgs\_\-bbox\_\-add ({\bf hpgs\_\-bbox} $\ast$ {\em bb}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p})\hspace{0.3cm}{\tt  [static]}}\label{group__base_gd8ab7de7cb9475befe40749c93079056}
+
+
+Expands the bounding box {\tt bb} in order to comprise the smallest bounding box containing both {\tt bb} and . 
+
+References hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-bbox\_\-st::urx, hpgs\_\-bbox\_\-st::ury, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.
+
+Referenced by hpgs\_\-paint\_\-path\_\-moveto().\index{base@{base}!hpgs\_\-bbox\_\-addborder@{hpgs\_\-bbox\_\-addborder}}
+\index{hpgs\_\-bbox\_\-addborder@{hpgs\_\-bbox\_\-addborder}!base@{base}}
+\subsubsection[hpgs\_\-bbox\_\-addborder]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- void hpgs\_\-bbox\_\-addborder ({\bf hpgs\_\-bbox} $\ast$ {\em bb}, \/  double {\em border})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g340cd4f2eab0a4c5b82ba5c7aa378020}
+
+
+Expands the bounding box {\tt bb} in all directions by the amount of {\tt border}. 
+
+References hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-bbox\_\-st::urx, and hpgs\_\-bbox\_\-st::ury.\index{base@{base}!hpgs\_\-bbox\_\-distance@{hpgs\_\-bbox\_\-distance}}
+\index{hpgs\_\-bbox\_\-distance@{hpgs\_\-bbox\_\-distance}!base@{base}}
+\subsubsection[hpgs\_\-bbox\_\-distance]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-bbox\_\-distance ({\bf hpgs\_\-point} $\ast$ {\em d}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb1}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb2})}\label{group__base_gad2b5b27e238867395d393527afa8d73}
+
+
+Calculates the distance of the two bounding boxes. 
+
+References hpgs\_\-bbox\_\-isnull(), hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-bbox\_\-st::urx, hpgs\_\-bbox\_\-st::ury, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{base@{base}!hpgs\_\-bbox\_\-expand@{hpgs\_\-bbox\_\-expand}}
+\index{hpgs\_\-bbox\_\-expand@{hpgs\_\-bbox\_\-expand}!base@{base}}
+\subsubsection[hpgs\_\-bbox\_\-expand]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-bbox\_\-expand ({\bf hpgs\_\-bbox} $\ast$ {\em bb1}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb2})}\label{group__base_gfd097b549d0bd3d40d2e1923e93ae2b2}
+
+
+Expands {\tt bb1} in order to comprise the smallest bounding box containing both {\tt bb1} and {\tt bb2} 
+
+References hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-bbox\_\-st::urx, and hpgs\_\-bbox\_\-st::ury.\index{base@{base}!hpgs\_\-bbox\_\-intersect@{hpgs\_\-bbox\_\-intersect}}
+\index{hpgs\_\-bbox\_\-intersect@{hpgs\_\-bbox\_\-intersect}!base@{base}}
+\subsubsection[hpgs\_\-bbox\_\-intersect]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-bbox\_\-intersect ({\bf hpgs\_\-bbox} $\ast$ {\em bb1}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb2})}\label{group__base_g4a150fb54407af8ba3bc09a748b63cc5}
+
+
+Shrinks {\tt bb1} in order to comprise the intersection of {\tt bb1} and {\tt bb2}. If the bounding boxes do not intersect, {\tt bb1} is set to a null bounding box. 
+
+References hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-bbox\_\-st::urx, and hpgs\_\-bbox\_\-st::ury.\index{base@{base}!hpgs\_\-bbox\_\-isempty@{hpgs\_\-bbox\_\-isempty}}
+\index{hpgs\_\-bbox\_\-isempty@{hpgs\_\-bbox\_\-isempty}!base@{base}}
+\subsubsection[hpgs\_\-bbox\_\-isempty]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API hpgs\_\-bool hpgs\_\-bbox\_\-isempty (const {\bf hpgs\_\-bbox} $\ast$ {\em bb})}\label{group__base_g8b35a9f0aa9d79090d3bc01063bc59b6}
+
+
+Returns, whether the bounding box is empty. 
+
+References hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-bbox\_\-st::urx, and hpgs\_\-bbox\_\-st::ury.\index{base@{base}!hpgs\_\-bbox\_\-isequal@{hpgs\_\-bbox\_\-isequal}}
+\index{hpgs\_\-bbox\_\-isequal@{hpgs\_\-bbox\_\-isequal}!base@{base}}
+\subsubsection[hpgs\_\-bbox\_\-isequal]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API hpgs\_\-bool hpgs\_\-bbox\_\-isequal (const {\bf hpgs\_\-bbox} $\ast$ {\em bb1}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb2})}\label{group__base_g33e7061340da6f4a911b1fe719ab7c61}
+
+
+Returns, whether the two bounding boxes are equal. 
+
+References hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-bbox\_\-st::urx, and hpgs\_\-bbox\_\-st::ury.\index{base@{base}!hpgs\_\-bbox\_\-isnull@{hpgs\_\-bbox\_\-isnull}}
+\index{hpgs\_\-bbox\_\-isnull@{hpgs\_\-bbox\_\-isnull}!base@{base}}
+\subsubsection[hpgs\_\-bbox\_\-isnull]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API hpgs\_\-bool hpgs\_\-bbox\_\-isnull (const {\bf hpgs\_\-bbox} $\ast$ {\em bb})}\label{group__base_g903fdc14a848b5da49f9b09793d92e9b}
+
+
+Returns, whether the bounding box is null. A null bounding box is als empty. An empty bounding box may not be null, if either of the x or y extend of the bounding box is exactly zero. 
+
+References hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-bbox\_\-st::urx, and hpgs\_\-bbox\_\-st::ury.
+
+Referenced by hpgs\_\-bbox\_\-distance().\index{base@{base}!hpgs\_\-bbox\_\-null@{hpgs\_\-bbox\_\-null}}
+\index{hpgs\_\-bbox\_\-null@{hpgs\_\-bbox\_\-null}!base@{base}}
+\subsubsection[hpgs\_\-bbox\_\-null]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-bbox\_\-null ({\bf hpgs\_\-bbox} $\ast$ {\em bb})}\label{group__base_g8b750b3ced289c7ca767a97f2819d8ee}
+
+
+Sets this bounding box to an empty bounding box. 
+
+References hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-bbox\_\-st::urx, and hpgs\_\-bbox\_\-st::ury.
+
+Referenced by hpgs\_\-new\_\-paint\_\-path(), hpgs\_\-new\_\-plotsize\_\-device(), and hpgs\_\-paint\_\-path\_\-truncate().\index{base@{base}!hpgs\_\-cleanup@{hpgs\_\-cleanup}}
+\index{hpgs\_\-cleanup@{hpgs\_\-cleanup}!base@{base}}
+\subsubsection[hpgs\_\-cleanup]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-cleanup (void)}\label{group__base_g0bd1b3ce9168b43ec0354a0a1cf37733}
+
+
+This function has to be called atfer the last usage of hpgs. It cleans up internally allocated resources. 
+
+References hpgs\_\-clear\_\-error().\index{base@{base}!hpgs\_\-clear\_\-error@{hpgs\_\-clear\_\-error}}
+\index{hpgs\_\-clear\_\-error@{hpgs\_\-clear\_\-error}!base@{base}}
+\subsubsection[hpgs\_\-clear\_\-error]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-clear\_\-error ()}\label{group__base_g31244e13a3465d5cdcb50940c48fdefe}
+
+
+Clears the error message of the current thread. 
+
+Referenced by hpgs\_\-cleanup(), and hpgs\_\-read().\index{base@{base}!hpgs\_\-error\_\-ctxt@{hpgs\_\-error\_\-ctxt}}
+\index{hpgs\_\-error\_\-ctxt@{hpgs\_\-error\_\-ctxt}!base@{base}}
+\subsubsection[hpgs\_\-error\_\-ctxt]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-PRINTF1\_\-API int hpgs\_\-error\_\-ctxt (const char $\ast$ {\em fmt}, \/   {\em ...})}\label{group__base_g23c83e6959da70afe448cc1549061e04}
+
+
+Prepends the error message of the current thread with the given string. this is useful, if you want to push context information to the error message.
+
+Always returns -1. 
+
+References hpgs\_\-verror\_\-ctxt().
+
+Referenced by hpgs\_\-paint\_\-device\_\-fill(), hpgs\_\-read(), and hpgs\_\-reader\_\-do\_\-PCL().\index{base@{base}!hpgs\_\-get\_\-arg\_\-value@{hpgs\_\-get\_\-arg\_\-value}}
+\index{hpgs\_\-get\_\-arg\_\-value@{hpgs\_\-get\_\-arg\_\-value}!base@{base}}
+\subsubsection[hpgs\_\-get\_\-arg\_\-value]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API hpgs\_\-bool hpgs\_\-get\_\-arg\_\-value (const char $\ast$ {\em opt}, \/  const char $\ast$ {\em argv}[$\,$], \/  const char $\ast$$\ast$ {\em value}, \/  int $\ast$ {\em narg})}\label{group__base_gba688c6d96a12a484a76b13254a67819}
+
+
+Get the value of the command line argument argv[0], if the argument starts with {\tt opt}.
+
+This subroutine is useful when parsing command lines like in the following loop:
+
+
+
+\footnotesize\begin{verbatim}
+int main(int argc, const char *argv[])
+{
+  while (argc>1)
+    {
+      int narg = 1;
+      const char *value;
+      
+      if (hpgs_get_arg_value("-r",argv,&value,&narg))
+	{
+          ...parse value of option -r...
+	}
+      else if (hpgs_get_arg_value("-p",argv,&value,&narg))
+	{
+	  ...parse value of option -p...
+	}
+      else
+	{
+	  if (argv[0][0] == '-')
+	    {
+	      fprintf(stderr,"Error: Unknown option %s given.\n",argv[0]);
+	      return usage();
+	    }
+          break;
+	}
+
+      argv+=narg;
+      argc-=narg;
+    }
+
+\end{verbatim}
+\normalsize
+
+
+Returns {\tt HPGS\_\-TRUE}, if argv[0] starts with opt. If {\tt $\ast$narg} == 2, argv[0] is exactly {\tt opt} and {\tt $\ast$value} points to {\tt argv}[1]. If {\tt $\ast$narg} == 1, argv[0] startwith {\tt opt} and {\tt $\ast$value} points to {\tt argv}[0]+strlen(opt).
+
+Returns {\tt HPGS\_\-FALSE}, if argv[0] does not start with {\tt opt}. \index{base@{base}!hpgs\_\-get\_\-error@{hpgs\_\-get\_\-error}}
+\index{hpgs\_\-get\_\-error@{hpgs\_\-get\_\-error}!base@{base}}
+\subsubsection[hpgs\_\-get\_\-error]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API const char$\ast$ hpgs\_\-get\_\-error ()}\label{group__base_g53641039f75340c5dbebec4492054a4a}
+
+
+Get the error message of the current thread. \index{base@{base}!hpgs\_\-get\_\-prefix@{hpgs\_\-get\_\-prefix}}
+\index{hpgs\_\-get\_\-prefix@{hpgs\_\-get\_\-prefix}!base@{base}}
+\subsubsection[hpgs\_\-get\_\-prefix]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API const char$\ast$ hpgs\_\-get\_\-prefix ()}\label{group__base_g46799fb68c5fab4e775f264ac90fdf29}
+
+
+This function return a pointer to the installation prefix set through {\tt hpgs\_\-init}. The returned string has any trailing directory separator of the string passed to {\tt hpgs\_\-init} stripped off. 
+
+Referenced by hpgs\_\-share\_\-filename().\index{base@{base}!hpgs\_\-getc@{hpgs\_\-getc}}
+\index{hpgs\_\-getc@{hpgs\_\-getc}!base@{base}}
+\subsubsection[hpgs\_\-getc]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-getc ({\bf hpgs\_\-istream} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g85ed8dfe77d083ebd28d815b6a8a0a57}
+
+
+The counterpart of ANSI getc for {\tt hpgs\_\-istream}. 
+
+References hpgs\_\-istream\_\-vtable\_\-st::getc\_\-func, hpgs\_\-istream\_\-st::stream, and hpgs\_\-istream\_\-st::vtable.
+
+Referenced by hpgs\_\-read(), hpgs\_\-reader\_\-do\_\-PCL(), hpgs\_\-reader\_\-do\_\-PJL(), hpgs\_\-reader\_\-read\_\-double(), hpgs\_\-reader\_\-read\_\-int(), hpgs\_\-reader\_\-read\_\-new\_\-string(), and hpgs\_\-reader\_\-read\_\-pcl\_\-int().\index{base@{base}!hpgs\_\-have\_\-error@{hpgs\_\-have\_\-error}}
+\index{hpgs\_\-have\_\-error@{hpgs\_\-have\_\-error}!base@{base}}
+\subsubsection[hpgs\_\-have\_\-error]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API hpgs\_\-bool hpgs\_\-have\_\-error ()}\label{group__base_g08600e5602f861bf90ed3de8258e88bf}
+
+
+Checks, whther the error message of the current thread has been set. 
+
+Referenced by hpgs\_\-paint\_\-device\_\-fill(), and hpgs\_\-read().\index{base@{base}!hpgs\_\-init@{hpgs\_\-init}}
+\index{hpgs\_\-init@{hpgs\_\-init}!base@{base}}
+\subsubsection[hpgs\_\-init]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-init (const char $\ast$ {\em path})}\label{group__base_g77844536186c5059b0b04a1a4805cab1}
+
+
+This function has to be called before using any other function of hpgs. It defines the path, where additional files such as the truetype files for HPGL files or plugins are stored.
+
+Truetype fonts are searched in the path $<$prefix$>$/share/hpgs
+
+The path is internally duplicated using {\tt strdup}. \index{base@{base}!hpgs\_\-istream\_\-close@{hpgs\_\-istream\_\-close}}
+\index{hpgs\_\-istream\_\-close@{hpgs\_\-istream\_\-close}!base@{base}}
+\subsubsection[hpgs\_\-istream\_\-close]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-istream\_\-close ({\bf hpgs\_\-istream} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__base_ga90de9097ba2fce033d0fd42a7ce96f5}
+
+
+The counterpart of ANSI fclose for {\tt hpgs\_\-istream}. After calling this function, all allocated resources of the stream are freed. 
+
+References hpgs\_\-istream\_\-vtable\_\-st::close\_\-func, hpgs\_\-istream\_\-st::stream, and hpgs\_\-istream\_\-st::vtable.
+
+Referenced by hpgs\_\-destroy\_\-font(), hpgs\_\-destroy\_\-reader(), hpgs\_\-new\_\-reader(), and hpgs\_\-reader\_\-attach().\index{base@{base}!hpgs\_\-istream\_\-iseof@{hpgs\_\-istream\_\-iseof}}
+\index{hpgs\_\-istream\_\-iseof@{hpgs\_\-istream\_\-iseof}!base@{base}}
+\subsubsection[hpgs\_\-istream\_\-iseof]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-istream\_\-iseof ({\bf hpgs\_\-istream} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__base_gc0187d2d9b8a5e599682a7031b09f876}
+
+
+The counterpart of ANSI feof for {\tt hpgs\_\-istream}. 
+
+References hpgs\_\-istream\_\-vtable\_\-st::iseof\_\-func, hpgs\_\-istream\_\-st::stream, and hpgs\_\-istream\_\-st::vtable.
+
+Referenced by hpgs\_\-read().\index{base@{base}!hpgs\_\-istream\_\-iserror@{hpgs\_\-istream\_\-iserror}}
+\index{hpgs\_\-istream\_\-iserror@{hpgs\_\-istream\_\-iserror}!base@{base}}
+\subsubsection[hpgs\_\-istream\_\-iserror]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-istream\_\-iserror ({\bf hpgs\_\-istream} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g87c6b71e2c5f5a9627153eb7961c9d49}
+
+
+The counterpart of ANSI ferror for {\tt hpgs\_\-istream}. 
+
+References hpgs\_\-istream\_\-vtable\_\-st::iserror\_\-func, hpgs\_\-istream\_\-st::stream, and hpgs\_\-istream\_\-st::vtable.
+
+Referenced by hpgs\_\-read().\index{base@{base}!hpgs\_\-istream\_\-read@{hpgs\_\-istream\_\-read}}
+\index{hpgs\_\-istream\_\-read@{hpgs\_\-istream\_\-read}!base@{base}}
+\subsubsection[hpgs\_\-istream\_\-read]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- size\_\-t hpgs\_\-istream\_\-read (void $\ast$ {\em ptr}, \/  size\_\-t {\em size}, \/  size\_\-t {\em nmemb}, \/  {\bf hpgs\_\-istream} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g698dd15eab121b64717823a9eca81d11}
+
+
+The counterpart of ANSI fread for {\tt hpgs\_\-istream}. 
+
+References hpgs\_\-istream\_\-vtable\_\-st::read\_\-func, hpgs\_\-istream\_\-st::stream, and hpgs\_\-istream\_\-st::vtable.\index{base@{base}!hpgs\_\-istream\_\-seek@{hpgs\_\-istream\_\-seek}}
+\index{hpgs\_\-istream\_\-seek@{hpgs\_\-istream\_\-seek}!base@{base}}
+\subsubsection[hpgs\_\-istream\_\-seek]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-istream\_\-seek ({\bf hpgs\_\-istream} $\ast$ {\em \_\-this}, \/  size\_\-t {\em pos})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g4020d2f7ad23bbc0097b5adec802916e}
+
+
+The counterpart of ANSI fseek for {\tt hpgs\_\-istream}. 
+
+References hpgs\_\-istream\_\-vtable\_\-st::seek\_\-func, hpgs\_\-istream\_\-st::stream, and hpgs\_\-istream\_\-st::vtable.
+
+Referenced by hpgs\_\-read(), hpgs\_\-reader\_\-do\_\-PJL(), and hpgs\_\-reader\_\-imbue().\index{base@{base}!hpgs\_\-istream\_\-seekend@{hpgs\_\-istream\_\-seekend}}
+\index{hpgs\_\-istream\_\-seekend@{hpgs\_\-istream\_\-seekend}!base@{base}}
+\subsubsection[hpgs\_\-istream\_\-seekend]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-istream\_\-seekend ({\bf hpgs\_\-istream} $\ast$ {\em \_\-this}, \/  size\_\-t {\em pos})\hspace{0.3cm}{\tt  [static]}}\label{group__base_gde20828546eaabf3e6017cd82d08d846}
+
+
+The counterpart of ANSI fseek(SEEK\_\-END) for {\tt hpgs\_\-istream}. 
+
+References hpgs\_\-istream\_\-vtable\_\-st::seekend\_\-func, hpgs\_\-istream\_\-st::stream, and hpgs\_\-istream\_\-st::vtable.\index{base@{base}!hpgs\_\-istream\_\-tell@{hpgs\_\-istream\_\-tell}}
+\index{hpgs\_\-istream\_\-tell@{hpgs\_\-istream\_\-tell}!base@{base}}
+\subsubsection[hpgs\_\-istream\_\-tell]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-istream\_\-tell ({\bf hpgs\_\-istream} $\ast$ {\em \_\-this}, \/  size\_\-t $\ast$ {\em pos})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g8d2ea95d0d97304eec8381997ccd5936}
+
+
+The counterpart of ANSI ftell for {\tt hpgs\_\-istream}. 
+
+References hpgs\_\-istream\_\-st::stream, hpgs\_\-istream\_\-vtable\_\-st::tell\_\-func, and hpgs\_\-istream\_\-st::vtable.
+
+Referenced by hpgs\_\-read(), and hpgs\_\-reader\_\-do\_\-PJL().\index{base@{base}!hpgs\_\-log@{hpgs\_\-log}}
+\index{hpgs\_\-log@{hpgs\_\-log}!base@{base}}
+\subsubsection[hpgs\_\-log]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-PRINTF1\_\-API void hpgs\_\-log (const char $\ast$ {\em fmt}, \/   {\em ...})}\label{group__base_g83a7705a988a839eb01f0aa704ceea3b}
+
+
+Logs an informational message using the function set with {\tt \doxyref{hpgs\_\-set\_\-logger()}{p.}{group__base_gde430a885b271198a98706efa9343563}}. If no function is set with {\tt \doxyref{hpgs\_\-set\_\-logger()}{p.}{group__base_gde430a885b271198a98706efa9343563}}, the message is printed to {\tt stderr}. 
+
+Referenced by hpgs\_\-image\_\-rop3\_\-clip(), hpgs\_\-paint\_\-clipper\_\-clip(), hpgs\_\-paint\_\-clipper\_\-emit(), hpgs\_\-paint\_\-clipper\_\-thin\_\-cut(), hpgs\_\-paint\_\-device\_\-drawimage(), hpgs\_\-paint\_\-path\_\-curveto(), hpgs\_\-paint\_\-path\_\-lineto(), hpgs\_\-paint\_\-path\_\-moveto(), hpgs\_\-paint\_\-path\_\-stroke\_\-path(), hpgs\_\-read(), hpgs\_\-reader\_\-do\_\-PCL(), and hpgs\_\-reader\_\-do\_\-PJL().\index{base@{base}!hpgs\_\-matrix\_\-concat@{hpgs\_\-matrix\_\-concat}}
+\index{hpgs\_\-matrix\_\-concat@{hpgs\_\-matrix\_\-concat}!base@{base}}
+\subsubsection[hpgs\_\-matrix\_\-concat]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-matrix\_\-concat ({\bf hpgs\_\-matrix} $\ast$ {\em res}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em a}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em b})}\label{group__base_gc04c3b34a3257e4d5c86a83516c79a46}
+
+
+Concatenates the given matrices {\tt a} and {\tt b}. The result is stored in {\tt res}. Either of the pointer {\tt a} or {\bf may} point to the same memory location as the pointer {\tt res}. 
+
+References hpgs\_\-matrix\_\-st::dx, hpgs\_\-matrix\_\-st::dy, hpgs\_\-matrix\_\-st::mxx, hpgs\_\-matrix\_\-st::mxy, hpgs\_\-matrix\_\-st::myx, and hpgs\_\-matrix\_\-st::myy.\index{base@{base}!hpgs\_\-matrix\_\-invert@{hpgs\_\-matrix\_\-invert}}
+\index{hpgs\_\-matrix\_\-invert@{hpgs\_\-matrix\_\-invert}!base@{base}}
+\subsubsection[hpgs\_\-matrix\_\-invert]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-matrix\_\-invert ({\bf hpgs\_\-matrix} $\ast$ {\em res}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em m})}\label{group__base_g1fdde41511f70efe451fb80dd21ac227}
+
+
+Inverts the given matrix {\tt m}. The result is stored in {\tt res}. The pointers {\tt m} and {\tt res} may point to the same memory location. 
+
+References hpgs\_\-matrix\_\-st::dx, hpgs\_\-matrix\_\-st::dy, hpgs\_\-matrix\_\-st::mxx, hpgs\_\-matrix\_\-st::mxy, hpgs\_\-matrix\_\-st::myx, and hpgs\_\-matrix\_\-st::myy.\index{base@{base}!hpgs\_\-matrix\_\-iscale@{hpgs\_\-matrix\_\-iscale}}
+\index{hpgs\_\-matrix\_\-iscale@{hpgs\_\-matrix\_\-iscale}!base@{base}}
+\subsubsection[hpgs\_\-matrix\_\-iscale]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-matrix\_\-iscale ({\bf hpgs\_\-point} $\ast$ {\em res}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em m})}\label{group__base_gbce6d3802a641156ec66496f4a23dd73}
+
+
+Transforms the given point {\tt p} with the inverse of the matrix {\tt m} without applying the translation part of {\tt m}. This is useful in order to transform delta vectors.
+
+The result is stored in {\tt res}. The pointers {\tt p} and {\tt res} may point to the same memory location. 
+
+References hpgs\_\-matrix\_\-st::mxx, hpgs\_\-matrix\_\-st::mxy, hpgs\_\-matrix\_\-st::myx, hpgs\_\-matrix\_\-st::myy, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{base@{base}!hpgs\_\-matrix\_\-ixform@{hpgs\_\-matrix\_\-ixform}}
+\index{hpgs\_\-matrix\_\-ixform@{hpgs\_\-matrix\_\-ixform}!base@{base}}
+\subsubsection[hpgs\_\-matrix\_\-ixform]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-matrix\_\-ixform ({\bf hpgs\_\-point} $\ast$ {\em res}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em m})}\label{group__base_g033acaa4d027bae520aa4ac9060a3e66}
+
+
+Transforms the given point {\tt p} with the inverse of the matrix {\tt m}. The result is stored in {\tt res}. The pointers {\tt p} and {\tt res} may point to the same memory location. 
+
+References hpgs\_\-matrix\_\-st::dx, hpgs\_\-matrix\_\-st::dy, hpgs\_\-matrix\_\-st::mxx, hpgs\_\-matrix\_\-st::mxy, hpgs\_\-matrix\_\-st::myx, hpgs\_\-matrix\_\-st::myy, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.
+
+Referenced by hpgs\_\-matrix\_\-ixform\_\-bbox(), and hpgs\_\-reader\_\-do\_\-PCL().\index{base@{base}!hpgs\_\-matrix\_\-ixform\_\-bbox@{hpgs\_\-matrix\_\-ixform\_\-bbox}}
+\index{hpgs\_\-matrix\_\-ixform\_\-bbox@{hpgs\_\-matrix\_\-ixform\_\-bbox}!base@{base}}
+\subsubsection[hpgs\_\-matrix\_\-ixform\_\-bbox]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-matrix\_\-ixform\_\-bbox ({\bf hpgs\_\-bbox} $\ast$ {\em res}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em m})}\label{group__base_g401c72c5e432f20c67328ff3ca1faa58}
+
+
+Transforms the given bounding box {\tt bb} with the the inverse of the matrix {\tt m}. The result is the enclosing bounding box of the transformed rectangle of the bounding box and is stored in {\tt res}. The pointers {\tt bb} and {\tt res} may point to the same memory location. 
+
+References hpgs\_\-matrix\_\-ixform(), hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-bbox\_\-st::urx, hpgs\_\-bbox\_\-st::ury, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{base@{base}!hpgs\_\-matrix\_\-scale@{hpgs\_\-matrix\_\-scale}}
+\index{hpgs\_\-matrix\_\-scale@{hpgs\_\-matrix\_\-scale}!base@{base}}
+\subsubsection[hpgs\_\-matrix\_\-scale]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-matrix\_\-scale ({\bf hpgs\_\-point} $\ast$ {\em res}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em m}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p})}\label{group__base_gb80a8422dc3d74116654c4b1d165e3cc}
+
+
+Transforms the given point {\tt p} with the matrix {\tt m} without applying the translation part of {\tt m}. This is useful in order to transform delta vectors.
+
+The result is stored in {\tt res}. The pointers {\tt p} and {\tt res} may point to the same memory location. 
+
+References hpgs\_\-matrix\_\-st::mxx, hpgs\_\-matrix\_\-st::mxy, hpgs\_\-matrix\_\-st::myx, hpgs\_\-matrix\_\-st::myy, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{base@{base}!hpgs\_\-matrix\_\-set\_\-identity@{hpgs\_\-matrix\_\-set\_\-identity}}
+\index{hpgs\_\-matrix\_\-set\_\-identity@{hpgs\_\-matrix\_\-set\_\-identity}!base@{base}}
+\subsubsection[hpgs\_\-matrix\_\-set\_\-identity]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-matrix\_\-set\_\-identity ({\bf hpgs\_\-matrix} $\ast$ {\em m})}\label{group__base_gad08523e9f078830a3b6d7e31130b4f2}
+
+
+Sets the given matrix to the identity matrix. 
+
+References hpgs\_\-matrix\_\-st::dx, hpgs\_\-matrix\_\-st::dy, hpgs\_\-matrix\_\-st::mxx, hpgs\_\-matrix\_\-st::mxy, hpgs\_\-matrix\_\-st::myx, and hpgs\_\-matrix\_\-st::myy.
+
+Referenced by hpgs\_\-new\_\-reader().\index{base@{base}!hpgs\_\-matrix\_\-xform@{hpgs\_\-matrix\_\-xform}}
+\index{hpgs\_\-matrix\_\-xform@{hpgs\_\-matrix\_\-xform}!base@{base}}
+\subsubsection[hpgs\_\-matrix\_\-xform]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-matrix\_\-xform ({\bf hpgs\_\-point} $\ast$ {\em res}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em m}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p})}\label{group__base_g4331ecac1529dd2dce9202ef47589520}
+
+
+Transforms the given point {\tt p} with the matrix {\tt m}. The result is stored in {\tt res}. The pointers {\tt p} and {\tt res} may point to the same memory location. 
+
+References hpgs\_\-matrix\_\-st::dx, hpgs\_\-matrix\_\-st::dy, hpgs\_\-matrix\_\-st::mxx, hpgs\_\-matrix\_\-st::mxy, hpgs\_\-matrix\_\-st::myx, hpgs\_\-matrix\_\-st::myy, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.
+
+Referenced by hpgs\_\-matrix\_\-xform\_\-bbox().\index{base@{base}!hpgs\_\-matrix\_\-xform\_\-bbox@{hpgs\_\-matrix\_\-xform\_\-bbox}}
+\index{hpgs\_\-matrix\_\-xform\_\-bbox@{hpgs\_\-matrix\_\-xform\_\-bbox}!base@{base}}
+\subsubsection[hpgs\_\-matrix\_\-xform\_\-bbox]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-matrix\_\-xform\_\-bbox ({\bf hpgs\_\-bbox} $\ast$ {\em res}, \/  const {\bf hpgs\_\-matrix} $\ast$ {\em m}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb})}\label{group__base_g6168f3c8dffba1cb39ef80508bdb1815}
+
+
+Transforms the given bounding box {\tt bb} with the matrix {\tt m}. The result is the enclosing bounding box of the transformed rectangle of the bounding box and is stored in {\tt res}. The pointers {\tt bb} and {\tt res} may point to the same memory location. 
+
+References hpgs\_\-matrix\_\-xform(), hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-bbox\_\-st::urx, hpgs\_\-bbox\_\-st::ury, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{base@{base}!hpgs\_\-new\_\-file\_\-istream@{hpgs\_\-new\_\-file\_\-istream}}
+\index{hpgs\_\-new\_\-file\_\-istream@{hpgs\_\-new\_\-file\_\-istream}!base@{base}}
+\subsubsection[hpgs\_\-new\_\-file\_\-istream]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-istream}$\ast$ hpgs\_\-new\_\-file\_\-istream (const char $\ast$ {\em fn})}\label{group__base_gc2a0e39d76a8654c9666b093c8738466}
+
+
+Returns a new {\tt hpgs\_\-istream} created on the heap, which operates on a file, which is opened by this call in read-only mode.
+
+Returns a null pointer, when an I/O error occurrs. In this case, details about the the error can be retrieved using {\tt errno}. 
+
+References hpgs\_\-istream\_\-st::stream, and hpgs\_\-istream\_\-st::vtable.\index{base@{base}!hpgs\_\-new\_\-file\_\-ostream@{hpgs\_\-new\_\-file\_\-ostream}}
+\index{hpgs\_\-new\_\-file\_\-ostream@{hpgs\_\-new\_\-file\_\-ostream}!base@{base}}
+\subsubsection[hpgs\_\-new\_\-file\_\-ostream]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-ostream}$\ast$ hpgs\_\-new\_\-file\_\-ostream (const char $\ast$ {\em fn})}\label{group__base_g0f10a077e6eebf387ee7b585b1124f2a}
+
+
+Returns a new {\tt hpgs\_\-ostream} created on the heap, which operates on a file, which is opened by this call in write-only mode.
+
+Returns a null pointer, when an I/O error occurrs. In this case, details about the the error can be retrieved using {\tt errno}. 
+
+References hpgs\_\-ostream\_\-st::stream, and hpgs\_\-ostream\_\-st::vtable.\index{base@{base}!hpgs\_\-new\_\-mem\_\-istream@{hpgs\_\-new\_\-mem\_\-istream}}
+\index{hpgs\_\-new\_\-mem\_\-istream@{hpgs\_\-new\_\-mem\_\-istream}!base@{base}}
+\subsubsection[hpgs\_\-new\_\-mem\_\-istream]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-istream}$\ast$ hpgs\_\-new\_\-mem\_\-istream (const unsigned char $\ast$ {\em data}, \/  size\_\-t {\em data\_\-size}, \/  hpgs\_\-bool {\em dup})}\label{group__base_gb2d96a304912ddf69111967f6f913fa1}
+
+
+Returns a new {\tt hpgs\_\-istream} created on the heap, which operates on a chunk of memory in the given location with the given size.
+
+Returns a null pointer, when the system is out of memory. 
+
+References hpgs\_\-istream\_\-st::stream, and hpgs\_\-istream\_\-st::vtable.\index{base@{base}!hpgs\_\-new\_\-mem\_\-ostream@{hpgs\_\-new\_\-mem\_\-ostream}}
+\index{hpgs\_\-new\_\-mem\_\-ostream@{hpgs\_\-new\_\-mem\_\-ostream}!base@{base}}
+\subsubsection[hpgs\_\-new\_\-mem\_\-ostream]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-ostream}$\ast$ hpgs\_\-new\_\-mem\_\-ostream (size\_\-t {\em data\_\-reserve})}\label{group__base_gf9fd63791e01c48a53c536e506f6e7de}
+
+
+Returns a new {\tt hpgs\_\-ostream} created on the heap, which operates on a malloced chunk of memory with the preallocated given size.
+
+The memory buffer is realloced when the data grows over the given preallocated size.
+
+Returns a null pointer, when the system is out of memory. 
+
+References hpgs\_\-ostream\_\-st::stream, and hpgs\_\-ostream\_\-st::vtable.
+
+Referenced by hpgs\_\-new\_\-ps\_\-device().\index{base@{base}!hpgs\_\-new\_\-z\_\-ostream@{hpgs\_\-new\_\-z\_\-ostream}}
+\index{hpgs\_\-new\_\-z\_\-ostream@{hpgs\_\-new\_\-z\_\-ostream}!base@{base}}
+\subsubsection[hpgs\_\-new\_\-z\_\-ostream]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-ostream}$\ast$ hpgs\_\-new\_\-z\_\-ostream ({\bf hpgs\_\-ostream} $\ast$ {\em base}, \/  int {\em compression}, \/  hpgs\_\-bool {\em take\_\-base})}\label{group__base_gd729e332a85bac44c782050d345f9efc}
+
+
+Returns a new {\tt hpgs\_\-ostream} created on the heap, which operates on a given {\tt hpgs\_\-ostream} and writes the given data through a zlib deflate stream using the given compression.
+
+If {\tt take\_\-base} is false, the stream {\tt base} is closed, when the returned stream is closed. In this case, don't close it at your own.
+
+Returns a null pointer, when the system is out of memory. 
+
+References hpgs\_\-ostream\_\-st::stream, and hpgs\_\-ostream\_\-st::vtable.\index{base@{base}!hpgs\_\-next\_\-utf8@{hpgs\_\-next\_\-utf8}}
+\index{hpgs\_\-next\_\-utf8@{hpgs\_\-next\_\-utf8}!base@{base}}
+\subsubsection[hpgs\_\-next\_\-utf8]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-next\_\-utf8 (const char $\ast$$\ast$ {\em p})}\label{group__base_gb826c26c71c58369ff7264acd56981d8}
+
+
+Returns the character code at the given position in an utf-8 string. The pointer {\tt }($\ast$p) is advanced to the next character after the current position. 
+
+Referenced by hpgs\_\-font\_\-decompose\_\-utf8(), hpgs\_\-font\_\-get\_\-utf8\_\-metrics(), and hpgs\_\-utf8\_\-strlen().\index{base@{base}!hpgs\_\-ostream\_\-close@{hpgs\_\-ostream\_\-close}}
+\index{hpgs\_\-ostream\_\-close@{hpgs\_\-ostream\_\-close}!base@{base}}
+\subsubsection[hpgs\_\-ostream\_\-close]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-ostream\_\-close ({\bf hpgs\_\-ostream} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g4d6c6ffcdb40dd91eedfceb1e2f99851}
+
+
+The counterpart of ANSI fclose for {\tt hpgs\_\-ostream}. After calling this function, all allocated resources of the stream are freed. 
+
+References hpgs\_\-ostream\_\-vtable\_\-st::close\_\-func, hpgs\_\-ostream\_\-st::stream, and hpgs\_\-ostream\_\-st::vtable.
+
+Referenced by hpgs\_\-new\_\-ps\_\-device().\index{base@{base}!hpgs\_\-ostream\_\-flush@{hpgs\_\-ostream\_\-flush}}
+\index{hpgs\_\-ostream\_\-flush@{hpgs\_\-ostream\_\-flush}!base@{base}}
+\subsubsection[hpgs\_\-ostream\_\-flush]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-ostream\_\-flush ({\bf hpgs\_\-ostream} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g6612694f75175b6dc17a6269288467c2}
+
+
+The counterpart of ANSI fflush for {\tt hpgs\_\-ostream}. 
+
+References hpgs\_\-ostream\_\-vtable\_\-st::flush\_\-func, hpgs\_\-ostream\_\-st::stream, and hpgs\_\-ostream\_\-st::vtable.\index{base@{base}!hpgs\_\-ostream\_\-getbuf@{hpgs\_\-ostream\_\-getbuf}}
+\index{hpgs\_\-ostream\_\-getbuf@{hpgs\_\-ostream\_\-getbuf}!base@{base}}
+\subsubsection[hpgs\_\-ostream\_\-getbuf]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- {\bf hpgs\_\-istream} $\ast$ hpgs\_\-ostream\_\-getbuf ({\bf hpgs\_\-ostream} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g73263bbe555c0007fa318650f8f8da78}
+
+
+Get the buffer of a {\tt hpgs\_\-ostream}. This function should only be called after {\tt hpgs\_\-ostream\_\-flush}. 
+
+References hpgs\_\-ostream\_\-vtable\_\-st::getbuf\_\-func, hpgs\_\-ostream\_\-st::stream, and hpgs\_\-ostream\_\-st::vtable.\index{base@{base}!hpgs\_\-ostream\_\-iserror@{hpgs\_\-ostream\_\-iserror}}
+\index{hpgs\_\-ostream\_\-iserror@{hpgs\_\-ostream\_\-iserror}!base@{base}}
+\subsubsection[hpgs\_\-ostream\_\-iserror]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-ostream\_\-iserror ({\bf hpgs\_\-ostream} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__base_gc722c5ce87173409896f32b0ec13c6cf}
+
+
+The counterpart of ANSI ferror for {\tt hpgs\_\-ostream}. 
+
+References hpgs\_\-ostream\_\-vtable\_\-st::iserror\_\-func, hpgs\_\-ostream\_\-st::stream, and hpgs\_\-ostream\_\-st::vtable.\index{base@{base}!hpgs\_\-ostream\_\-printf@{hpgs\_\-ostream\_\-printf}}
+\index{hpgs\_\-ostream\_\-printf@{hpgs\_\-ostream\_\-printf}!base@{base}}
+\subsubsection[hpgs\_\-ostream\_\-printf]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-PRINTF2\_\-API int hpgs\_\-ostream\_\-printf ({\bf hpgs\_\-ostream} $\ast$ {\em \_\-this}, \/  const char $\ast$ {\em msg}, \/   {\em ...})}\label{group__base_g4b2dc7bb35cc0171cf3fdcf78a12a140}
+
+
+The counterpart of ANSI fprintf for {\tt hpgs\_\-ostream}. 
+
+References hpgs\_\-ostream\_\-st::stream, hpgs\_\-ostream\_\-vtable\_\-st::vprintf\_\-func, and hpgs\_\-ostream\_\-st::vtable.\index{base@{base}!hpgs\_\-ostream\_\-putc@{hpgs\_\-ostream\_\-putc}}
+\index{hpgs\_\-ostream\_\-putc@{hpgs\_\-ostream\_\-putc}!base@{base}}
+\subsubsection[hpgs\_\-ostream\_\-putc]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-ostream\_\-putc (int {\em c}, \/  {\bf hpgs\_\-ostream} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g05df24cf0139d1b0e7ce9430d0276f78}
+
+
+The counterpart of ANSI putc for {\tt hpgs\_\-ostream}. 
+
+References hpgs\_\-ostream\_\-vtable\_\-st::putc\_\-func, hpgs\_\-ostream\_\-st::stream, and hpgs\_\-ostream\_\-st::vtable.\index{base@{base}!hpgs\_\-ostream\_\-seek@{hpgs\_\-ostream\_\-seek}}
+\index{hpgs\_\-ostream\_\-seek@{hpgs\_\-ostream\_\-seek}!base@{base}}
+\subsubsection[hpgs\_\-ostream\_\-seek]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-ostream\_\-seek ({\bf hpgs\_\-ostream} $\ast$ {\em \_\-this}, \/  size\_\-t {\em pos})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g5812dca8bcf8be224a3b89d540c74a40}
+
+
+The counterpart of ANSI fseek for {\tt hpgs\_\-ostream}. 
+
+References hpgs\_\-ostream\_\-vtable\_\-st::seek\_\-func, hpgs\_\-ostream\_\-st::stream, and hpgs\_\-ostream\_\-st::vtable.\index{base@{base}!hpgs\_\-ostream\_\-tell@{hpgs\_\-ostream\_\-tell}}
+\index{hpgs\_\-ostream\_\-tell@{hpgs\_\-ostream\_\-tell}!base@{base}}
+\subsubsection[hpgs\_\-ostream\_\-tell]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-ostream\_\-tell ({\bf hpgs\_\-ostream} $\ast$ {\em \_\-this}, \/  int {\em layer}, \/  size\_\-t $\ast$ {\em pos})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g040218ac544297edb641f65b5fd3a0a8}
+
+
+The counterpart of ANSI ftell for {\tt hpgs\_\-ostream}. 
+
+References hpgs\_\-ostream\_\-st::stream, hpgs\_\-ostream\_\-vtable\_\-st::tell\_\-func, and hpgs\_\-ostream\_\-st::vtable.\index{base@{base}!hpgs\_\-ostream\_\-vprintf@{hpgs\_\-ostream\_\-vprintf}}
+\index{hpgs\_\-ostream\_\-vprintf@{hpgs\_\-ostream\_\-vprintf}!base@{base}}
+\subsubsection[hpgs\_\-ostream\_\-vprintf]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-ostream\_\-vprintf ({\bf hpgs\_\-ostream} $\ast$ {\em \_\-this}, \/  const char $\ast$ {\em msg}, \/  va\_\-list {\em ap})}\label{group__base_g7688ac9f0810146ff316735e564cd831}
+
+
+The counterpart of ANSI fvprintf for {\tt hpgs\_\-ostream}. 
+
+References hpgs\_\-ostream\_\-st::stream, hpgs\_\-ostream\_\-vtable\_\-st::vprintf\_\-func, and hpgs\_\-ostream\_\-st::vtable.\index{base@{base}!hpgs\_\-ostream\_\-write@{hpgs\_\-ostream\_\-write}}
+\index{hpgs\_\-ostream\_\-write@{hpgs\_\-ostream\_\-write}!base@{base}}
+\subsubsection[hpgs\_\-ostream\_\-write]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- size\_\-t hpgs\_\-ostream\_\-write (const void $\ast$ {\em ptr}, \/  size\_\-t {\em size}, \/  size\_\-t {\em nmemb}, \/  {\bf hpgs\_\-ostream} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__base_g35321cd12ea466c2349fb623f2f6a420}
+
+
+The counterpart of ANSI fwrite for {\tt hpgs\_\-ostream}. 
+
+References hpgs\_\-ostream\_\-st::stream, hpgs\_\-ostream\_\-st::vtable, and hpgs\_\-ostream\_\-vtable\_\-st::write\_\-func.\index{base@{base}!hpgs\_\-parse\_\-length@{hpgs\_\-parse\_\-length}}
+\index{hpgs\_\-parse\_\-length@{hpgs\_\-parse\_\-length}!base@{base}}
+\subsubsection[hpgs\_\-parse\_\-length]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-parse\_\-length (const char $\ast$ {\em str}, \/  double $\ast$ {\em pt\_\-length})}\label{group__base_gea303de12512a7bcaea973a29af5b5ad}
+
+
+Parses a physical length with a given unit and returns the length in PostScript pt (1/72 inch).
+
+The following formats are accepted:
+
+
+
+\footnotesize\begin{verbatim}
+     27
+     37pt
+     4.5inch
+     0.37m
+     1.5cm
+     11.34mm
+   \end{verbatim}
+\normalsize
+
+
+If no unit is specified, PostScript points (1/72 inch) are assumed.
+
+The function returns 0, if the string matches these conventions or -1, if the string is in a wrong format. 
+
+Referenced by hpgs\_\-parse\_\-papersize().\index{base@{base}!hpgs\_\-parse\_\-papersize@{hpgs\_\-parse\_\-papersize}}
+\index{hpgs\_\-parse\_\-papersize@{hpgs\_\-parse\_\-papersize}!base@{base}}
+\subsubsection[hpgs\_\-parse\_\-papersize]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-parse\_\-papersize (const char $\ast$ {\em str}, \/  double $\ast$ {\em pt\_\-width}, \/  double $\ast$ {\em pt\_\-height})}\label{group__base_gd37f787241fcf680f328145156ec6740}
+
+
+Parses a physical paper size with a given unit and returns the width and the height of the paper in PostScript pt (1/72 inch).
+
+The standard formats A4,A3,A2,A1 an A0 as well as their landscape counterparts A4l,A3l,A2l,A1l and A0l are accepted.
+
+If the string does not represent a standard paper size, it must be of the format $<$width$>$x$<$height$>$, where $<$width$>$ and $<$height$>$ must follow the convention of {\tt hpgs\_\-parse\_\-papersize}.
+
+The function returns 0, if the string matches these conventions or -1, if the string is in a wrong format. 
+
+References hpgs\_\-parse\_\-length().\index{base@{base}!hpgs\_\-set\_\-error@{hpgs\_\-set\_\-error}}
+\index{hpgs\_\-set\_\-error@{hpgs\_\-set\_\-error}!base@{base}}
+\subsubsection[hpgs\_\-set\_\-error]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-PRINTF1\_\-API int hpgs\_\-set\_\-error (const char $\ast$ {\em fmt}, \/   {\em ...})}\label{group__base_g0655830bd6da1752654abbc7e5132dc8}
+
+
+Set the error message of the current thread to the given string.
+
+Always returns -1. 
+
+References hpgs\_\-set\_\-verror().
+
+Referenced by hpgs\_\-find\_\-font(), hpgs\_\-font\_\-get\_\-cap\_\-height(), hpgs\_\-font\_\-get\_\-glyph\_\-bbox(), hpgs\_\-image\_\-clear(), hpgs\_\-image\_\-define\_\-color\_\-func(), hpgs\_\-image\_\-get\_\-data(), hpgs\_\-image\_\-resize(), hpgs\_\-image\_\-rop3\_\-clip(), hpgs\_\-image\_\-set\_\-palette(), hpgs\_\-image\_\-write(), hpgs\_\-paint\_\-device\_\-clip(), hpgs\_\-paint\_\-device\_\-fill(), hpgs\_\-png\_\-image\_\-set\_\-compression(), hpgs\_\-read(), hpgs\_\-reader\_\-do\_\-PJL(), and hpgs\_\-reader\_\-set\_\-png\_\-dump().\index{base@{base}!hpgs\_\-set\_\-logger@{hpgs\_\-set\_\-logger}}
+\index{hpgs\_\-set\_\-logger@{hpgs\_\-set\_\-logger}!base@{base}}
+\subsubsection[hpgs\_\-set\_\-logger]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-set\_\-logger (hpgs\_\-logger\_\-func\_\-t {\em func})}\label{group__base_gde430a885b271198a98706efa9343563}
+
+
+Set the logging function for logging informational messages. If {\tt func} is NULL, the default logging function, which log to {\tt stderr} is restored.
+
+Warning: This function is not thread-safe and should be called just after {\tt \doxyref{hpgs\_\-init()}{p.}{group__base_g77844536186c5059b0b04a1a4805cab1}} at the beginning of the program. \index{base@{base}!hpgs\_\-set\_\-verror@{hpgs\_\-set\_\-verror}}
+\index{hpgs\_\-set\_\-verror@{hpgs\_\-set\_\-verror}!base@{base}}
+\subsubsection[hpgs\_\-set\_\-verror]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-set\_\-verror (const char $\ast$ {\em fmt}, \/  va\_\-list {\em ap})}\label{group__base_gc3758c0facd3f34dd8b26f7bbcf048cc}
+
+
+Set the error message of the current thread to the given string.
+
+Always returns -1. 
+
+References hpgs\_\-vsprintf\_\-malloc().
+
+Referenced by hpgs\_\-set\_\-error().\index{base@{base}!hpgs\_\-share\_\-filename@{hpgs\_\-share\_\-filename}}
+\index{hpgs\_\-share\_\-filename@{hpgs\_\-share\_\-filename}!base@{base}}
+\subsubsection[hpgs\_\-share\_\-filename]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API char$\ast$ hpgs\_\-share\_\-filename (const char $\ast$ {\em rel\_\-filename})}\label{group__base_gd2f2c246bc229a01c7ca7b1695c8bb9b}
+
+
+Constructs a filename on the heap for a file located in the installation path passed to {\tt hpgs\_\-init}.
+
+Returns 0, if the system is out of memory. 
+
+References hpgs\_\-get\_\-prefix(), and hpgs\_\-sprintf\_\-malloc().\index{base@{base}!hpgs\_\-sprintf\_\-malloc@{hpgs\_\-sprintf\_\-malloc}}
+\index{hpgs\_\-sprintf\_\-malloc@{hpgs\_\-sprintf\_\-malloc}!base@{base}}
+\subsubsection[hpgs\_\-sprintf\_\-malloc]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-PRINTF1\_\-API char$\ast$ hpgs\_\-sprintf\_\-malloc (const char $\ast$ {\em fmt}, \/   {\em ...})}\label{group__base_g109eb2689e0e73efbbe45849d3ee69ed}
+
+
+A counterpart of sprintf, which allocates the result string on the heap an is save against buffer overflows.
+
+Returns 0, if the system is out of memory. 
+
+References hpgs\_\-vsprintf\_\-malloc().
+
+Referenced by hpgs\_\-share\_\-filename(), and hpgs\_\-verror\_\-ctxt().\index{base@{base}!hpgs\_\-ungetc@{hpgs\_\-ungetc}}
+\index{hpgs\_\-ungetc@{hpgs\_\-ungetc}!base@{base}}
+\subsubsection[hpgs\_\-ungetc]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-ungetc (int {\em c}, \/  {\bf hpgs\_\-istream} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__base_ga77f88e810a092cedb365974ffb1b7ad}
+
+
+The counterpart of ANSI ungetc for {\tt hpgs\_\-istream}. 
+
+References hpgs\_\-istream\_\-st::stream, hpgs\_\-istream\_\-vtable\_\-st::ungetc\_\-func, and hpgs\_\-istream\_\-st::vtable.
+
+Referenced by hpgs\_\-read(), hpgs\_\-reader\_\-do\_\-PJL(), hpgs\_\-reader\_\-read\_\-double(), hpgs\_\-reader\_\-read\_\-int(), and hpgs\_\-reader\_\-read\_\-pcl\_\-int().\index{base@{base}!hpgs\_\-utf8\_\-strlen@{hpgs\_\-utf8\_\-strlen}}
+\index{hpgs\_\-utf8\_\-strlen@{hpgs\_\-utf8\_\-strlen}!base@{base}}
+\subsubsection[hpgs\_\-utf8\_\-strlen]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-utf8\_\-strlen (const char $\ast$ {\em p}, \/  int {\em n})}\label{group__base_ge8771aa9652c62fc84876b550111f599}
+
+
+Returns the number of unicode characters contained in the first {\tt n} bytes of the given utf-8 string. If the null character is encountered, the interpretation is stopped before the n'th byte.
+
+if {\tt n} == -1, the string is ultimatively search up to the first occurrence of the null character.
+
+The pointer {\tt }($\ast$p) is advanced to the next character after the current position. 
+
+References hpgs\_\-next\_\-utf8().
+
+Referenced by hpgs\_\-device\_\-stamp().\index{base@{base}!hpgs\_\-verror\_\-ctxt@{hpgs\_\-verror\_\-ctxt}}
+\index{hpgs\_\-verror\_\-ctxt@{hpgs\_\-verror\_\-ctxt}!base@{base}}
+\subsubsection[hpgs\_\-verror\_\-ctxt]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-verror\_\-ctxt (const char $\ast$ {\em fmt}, \/  va\_\-list {\em ap})}\label{group__base_gc033293d4aeef52832cfc2e88793aa0c}
+
+
+Prepends the error message of the current thread with the given string. this is useful, if you want to push context information to the error message.
+
+Always returns -1. 
+
+References hpgs\_\-sprintf\_\-malloc(), and hpgs\_\-vsprintf\_\-malloc().
+
+Referenced by hpgs\_\-error\_\-ctxt().\index{base@{base}!hpgs\_\-vlog@{hpgs\_\-vlog}}
+\index{hpgs\_\-vlog@{hpgs\_\-vlog}!base@{base}}
+\subsubsection[hpgs\_\-vlog]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-vlog (const char $\ast$ {\em fmt}, \/  va\_\-list {\em ap})}\label{group__base_gcc5e539cca13c4e617666c30d19fbc64}
+
+
+Logs an informational message using the function set with {\tt \doxyref{hpgs\_\-set\_\-logger()}{p.}{group__base_gde430a885b271198a98706efa9343563}}. If no function is set with {\tt \doxyref{hpgs\_\-set\_\-logger()}{p.}{group__base_gde430a885b271198a98706efa9343563}}, the message is printed to {\tt stderr}. \index{base@{base}!hpgs\_\-vsprintf\_\-malloc@{hpgs\_\-vsprintf\_\-malloc}}
+\index{hpgs\_\-vsprintf\_\-malloc@{hpgs\_\-vsprintf\_\-malloc}!base@{base}}
+\subsubsection[hpgs\_\-vsprintf\_\-malloc]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API char$\ast$ hpgs\_\-vsprintf\_\-malloc (const char $\ast$ {\em fmt}, \/  va\_\-list {\em ap})}\label{group__base_g8bffe38f63d03bfe325acdba4f53b6a4}
+
+
+A counterpart of vsprintf, which allocates the result string on the heap an is save against buffer overflows.
+
+Returns 0, if the system is out of memory. 
+
+Referenced by hpgs\_\-set\_\-verror(), hpgs\_\-sprintf\_\-malloc(), and hpgs\_\-verror\_\-ctxt().

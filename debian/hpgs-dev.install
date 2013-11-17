@@ -1,0 +1,4 @@
+debian/tmp/usr/lib/libhpgs.so
+debian/tmp/usr/include/hpgs.h
+debian/tmp/usr/include/hpgsplugin.h
+debian/tmp/usr/include/hpgsmutex.h

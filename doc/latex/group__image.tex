@@ -1,0 +1,233 @@
+\section{The public pixel image API.}
+\label{group__image}\index{The public pixel image API.@{The public pixel image API.}}
+An concrete pixel image.  
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf hpgs\_\-image\_\-vtable\_\-st}
+\begin{CompactList}\small\item\em A table of virtual function implementing {\tt hpgs\_\-image}. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-image\_\-st}
+\begin{CompactList}\small\item\em An abstract pixel image. \item\end{CompactList}\item 
+struct \textbf{hpgs\_\-png\_\-image\_\-st}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-define\_\-color\_\-func} ({\bf hpgs\_\-image} $\ast$image, {\bf hpgs\_\-paint\_\-color} $\ast$c)
+\item 
+static int {\bf hpgs\_\-image\_\-define\_\-color} ({\bf hpgs\_\-image} $\ast$image, {\bf hpgs\_\-paint\_\-color} $\ast$c)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-set\_\-palette} ({\bf hpgs\_\-image} $\ast$image, {\bf hpgs\_\-palette\_\-color} $\ast$p, int np)
+\item 
+HPGS\_\-API hpgs\_\-png\_\-image $\ast$ {\bf hpgs\_\-new\_\-png\_\-image} (int width, int height, int depth, hpgs\_\-bool palette, hpgs\_\-bool do\_\-rop3)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-png\_\-image\_\-set\_\-compression} (hpgs\_\-png\_\-image $\ast$pim, int compression)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-set\_\-resolution} ({\bf hpgs\_\-image} $\ast$pim, double x\_\-dpi, double y\_\-dpi)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-get\_\-data} ({\bf hpgs\_\-image} $\ast$\_\-this, unsigned char $\ast$$\ast$data, int $\ast$stride, int $\ast$depth)
+\item 
+static int {\bf hpgs\_\-image\_\-get\_\-pixel} (const {\bf hpgs\_\-image} $\ast$\_\-this, int x, int y, {\bf hpgs\_\-paint\_\-color} $\ast$c, double $\ast$alpha)
+\item 
+static int {\bf hpgs\_\-image\_\-put\_\-pixel} ({\bf hpgs\_\-image} $\ast$\_\-this, int x, int y, const {\bf hpgs\_\-paint\_\-color} $\ast$c, double alpha)
+\item 
+static int {\bf hpgs\_\-image\_\-put\_\-chunk} ({\bf hpgs\_\-image} $\ast$\_\-this, int x1, int x2, int y, const {\bf hpgs\_\-paint\_\-color} $\ast$c)
+\item 
+static int {\bf hpgs\_\-image\_\-rop3\_\-pixel} ({\bf hpgs\_\-image} $\ast$\_\-this, int x, int y, const {\bf hpgs\_\-paint\_\-color} $\ast$c, double alpha)
+\item 
+static int {\bf hpgs\_\-image\_\-rop3\_\-chunk} ({\bf hpgs\_\-image} $\ast$\_\-this, int x1, int x2, int y, const {\bf hpgs\_\-paint\_\-color} $\ast$c)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-resize} ({\bf hpgs\_\-image} $\ast$\_\-this, int w, int h)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-clear} ({\bf hpgs\_\-image} $\ast$\_\-this)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-write} ({\bf hpgs\_\-image} $\ast$\_\-this, const char $\ast$filename)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-setrop3} ({\bf hpgs\_\-image} $\ast$\_\-this, hpgs\_\-rop3\_\-func\_\-t rop3)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-setpatcol} ({\bf hpgs\_\-image} $\ast$\_\-this, const {\bf hpgs\_\-palette\_\-color} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-image\_\-destroy} ({\bf hpgs\_\-image} $\ast$\_\-this)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-rop3\_\-clip} ({\bf hpgs\_\-device} $\ast$device, {\bf hpgs\_\-palette\_\-color} $\ast$data, const {\bf hpgs\_\-image} $\ast$img, const {\bf hpgs\_\-point} $\ast$ll, const {\bf hpgs\_\-point} $\ast$lr, const {\bf hpgs\_\-point} $\ast$ur, const {\bf hpgs\_\-palette\_\-color} $\ast$p, hpgs\_\-xrop3\_\-func\_\-t xrop3)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+An concrete pixel image. 
+
+The structures and functions in this group handle the creation and manipulation of rectangular pixel containers.
+
+This structure has a public alias {\tt hpgs\_\-png\_\-image} and implements {\tt hpgs\_\-image}. The storage format is similar to the format used by {\tt libpng}, so the image may be written to png file using {\tt hpgs\_\-png\_\-image\_\-write}. 
+
+\subsection{Function Documentation}
+\index{image@{image}!hpgs\_\-image\_\-clear@{hpgs\_\-image\_\-clear}}
+\index{hpgs\_\-image\_\-clear@{hpgs\_\-image\_\-clear}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-clear]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-image\_\-clear ({\bf hpgs\_\-image} $\ast$ {\em \_\-this})}\label{group__image_g9f6a20451fa5beeae3abd96ff2132558}
+
+
+Clears the given image {\tt \_\-this}. 
+
+References hpgs\_\-image\_\-vtable\_\-st::clear, hpgs\_\-set\_\-error(), and hpgs\_\-image\_\-st::vtable.\index{image@{image}!hpgs\_\-image\_\-define\_\-color@{hpgs\_\-image\_\-define\_\-color}}
+\index{hpgs\_\-image\_\-define\_\-color@{hpgs\_\-image\_\-define\_\-color}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-define\_\-color]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-image\_\-define\_\-color ({\bf hpgs\_\-image} $\ast$ {\em image}, \/  {\bf hpgs\_\-paint\_\-color} $\ast$ {\em c})\hspace{0.3cm}{\tt  [static]}}\label{group__image_g2a4f19888f56d1b7fb65d6bba76fde9f}
+
+
+Enter the supplied rgb value to the palette of an indexed image. Set the index member of {\tt c} to the palette index of the RGB triplet.
+
+If the palette is exhausted, -1 is returned. 
+
+References hpgs\_\-image\_\-define\_\-color\_\-func(), and hpgs\_\-image\_\-st::palette.
+
+Referenced by hpgs\_\-new\_\-png\_\-image().\index{image@{image}!hpgs\_\-image\_\-define\_\-color\_\-func@{hpgs\_\-image\_\-define\_\-color\_\-func}}
+\index{hpgs\_\-image\_\-define\_\-color\_\-func@{hpgs\_\-image\_\-define\_\-color\_\-func}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-define\_\-color\_\-func]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-image\_\-define\_\-color\_\-func ({\bf hpgs\_\-image} $\ast$ {\em image}, \/  {\bf hpgs\_\-paint\_\-color} $\ast$ {\em c})}\label{group__image_g7544e23df1fac79399161ceeb9ca77a3}
+
+
+The helper function for the inline function {\tt hpgs\_\-image\_\-define\_\-color}, which is actually called for indexed images. 
+
+References hpgs\_\-palette\_\-color\_\-st::b, hpgs\_\-paint\_\-color\_\-st::b, hpgs\_\-palette\_\-color\_\-st::g, hpgs\_\-paint\_\-color\_\-st::g, hpgs\_\-set\_\-error(), hpgs\_\-paint\_\-color\_\-st::index, hpgs\_\-image\_\-st::palette, hpgs\_\-image\_\-st::palette\_\-idx, hpgs\_\-image\_\-st::palette\_\-ncolors, hpgs\_\-palette\_\-color\_\-st::r, and hpgs\_\-paint\_\-color\_\-st::r.
+
+Referenced by hpgs\_\-image\_\-define\_\-color().\index{image@{image}!hpgs\_\-image\_\-destroy@{hpgs\_\-image\_\-destroy}}
+\index{hpgs\_\-image\_\-destroy@{hpgs\_\-image\_\-destroy}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-destroy]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-image\_\-destroy ({\bf hpgs\_\-image} $\ast$ {\em \_\-this})}\label{group__image_g0be15914a56178078fc488e254949cc7}
+
+
+Destroys the given image and frees all allocated resources by this image. 
+
+References hpgs\_\-image\_\-vtable\_\-st::destroy, hpgs\_\-image\_\-st::palette, hpgs\_\-image\_\-st::palette\_\-idx, and hpgs\_\-image\_\-st::vtable.
+
+Referenced by hpgs\_\-destroy\_\-reader(), and hpgs\_\-new\_\-paint\_\-device().\index{image@{image}!hpgs\_\-image\_\-get\_\-data@{hpgs\_\-image\_\-get\_\-data}}
+\index{hpgs\_\-image\_\-get\_\-data@{hpgs\_\-image\_\-get\_\-data}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-get\_\-data]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-image\_\-get\_\-data ({\bf hpgs\_\-image} $\ast$ {\em \_\-this}, \/  unsigned char $\ast$$\ast$ {\em data}, \/  int $\ast$ {\em stride}, \/  int $\ast$ {\em depth})}\label{group__image_g2240c492d0f359a24e3d01c5eff70a3b}
+
+
+Gets the pixel buffer of the png image, which is needed by some backends. If the image is not a png image -1 is retuned.
+
+If 0 is returned, $\ast$data point to the image data and $\ast$stride is the number of bytes between two consecutive scanlines of the image. 
+
+References hpgs\_\-image\_\-vtable\_\-st::get\_\-data, hpgs\_\-set\_\-error(), and hpgs\_\-image\_\-st::vtable.\index{image@{image}!hpgs\_\-image\_\-get\_\-pixel@{hpgs\_\-image\_\-get\_\-pixel}}
+\index{hpgs\_\-image\_\-get\_\-pixel@{hpgs\_\-image\_\-get\_\-pixel}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-get\_\-pixel]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-image\_\-get\_\-pixel (const {\bf hpgs\_\-image} $\ast$ {\em \_\-this}, \/  int {\em x}, \/  int {\em y}, \/  {\bf hpgs\_\-paint\_\-color} $\ast$ {\em c}, \/  double $\ast$ {\em alpha})\hspace{0.3cm}{\tt  [static]}}\label{group__image_g05c2b3b1f31abd151367019a8353f1f6}
+
+
+Retrieves the color and alpha value of the pixel in column {\tt x} and row {\tt y}. 
+
+References hpgs\_\-image\_\-vtable\_\-st::get\_\-pixel, and hpgs\_\-image\_\-st::vtable.
+
+Referenced by hpgs\_\-image\_\-rop3\_\-clip().\index{image@{image}!hpgs\_\-image\_\-put\_\-chunk@{hpgs\_\-image\_\-put\_\-chunk}}
+\index{hpgs\_\-image\_\-put\_\-chunk@{hpgs\_\-image\_\-put\_\-chunk}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-put\_\-chunk]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-image\_\-put\_\-chunk ({\bf hpgs\_\-image} $\ast$ {\em \_\-this}, \/  int {\em x1}, \/  int {\em x2}, \/  int {\em y}, \/  const {\bf hpgs\_\-paint\_\-color} $\ast$ {\em c})\hspace{0.3cm}{\tt  [static]}}\label{group__image_g878871bee62b4b1a604263c4d19b7598}
+
+
+Sets the color of all pixels in the columns {\tt x1} up to {\tt x2} in row {\tt y}. The alpha value is set to 1. 
+
+References hpgs\_\-image\_\-vtable\_\-st::put\_\-chunk, and hpgs\_\-image\_\-st::vtable.\index{image@{image}!hpgs\_\-image\_\-put\_\-pixel@{hpgs\_\-image\_\-put\_\-pixel}}
+\index{hpgs\_\-image\_\-put\_\-pixel@{hpgs\_\-image\_\-put\_\-pixel}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-put\_\-pixel]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-image\_\-put\_\-pixel ({\bf hpgs\_\-image} $\ast$ {\em \_\-this}, \/  int {\em x}, \/  int {\em y}, \/  const {\bf hpgs\_\-paint\_\-color} $\ast$ {\em c}, \/  double {\em alpha})\hspace{0.3cm}{\tt  [static]}}\label{group__image_gc3e27eb47a6cb869d3d8696b08df1b55}
+
+
+Sets the color and alpha value of the pixel in column {\tt x} and row {\tt y}. 
+
+References hpgs\_\-image\_\-vtable\_\-st::put\_\-pixel, and hpgs\_\-image\_\-st::vtable.\index{image@{image}!hpgs\_\-image\_\-resize@{hpgs\_\-image\_\-resize}}
+\index{hpgs\_\-image\_\-resize@{hpgs\_\-image\_\-resize}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-resize]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-image\_\-resize ({\bf hpgs\_\-image} $\ast$ {\em \_\-this}, \/  int {\em w}, \/  int {\em h})}\label{group__image_g74996c0c44f726bce4d32c3260d9eb47}
+
+
+Resizes the given image {\tt \_\-this} to a new width {\tt w} and new height {\tt h}. The pixel data preserved or initialized, if the image grows. 
+
+References hpgs\_\-set\_\-error(), hpgs\_\-image\_\-vtable\_\-st::resize, and hpgs\_\-image\_\-st::vtable.\index{image@{image}!hpgs\_\-image\_\-rop3\_\-chunk@{hpgs\_\-image\_\-rop3\_\-chunk}}
+\index{hpgs\_\-image\_\-rop3\_\-chunk@{hpgs\_\-image\_\-rop3\_\-chunk}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-rop3\_\-chunk]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-image\_\-rop3\_\-chunk ({\bf hpgs\_\-image} $\ast$ {\em \_\-this}, \/  int {\em x1}, \/  int {\em x2}, \/  int {\em y}, \/  const {\bf hpgs\_\-paint\_\-color} $\ast$ {\em c})\hspace{0.3cm}{\tt  [static]}}\label{group__image_gfa793929911f17d232d6936bf64f1a3a}
+
+
+Sets the color of all pixels in the columns {\tt x1} up to {\tt x2} in row {\tt y}. The alpha value is set to 1. This function applies a ROP3 operation, if supported by the image. 
+
+References hpgs\_\-image\_\-vtable\_\-st::rop3\_\-chunk, and hpgs\_\-image\_\-st::vtable.\index{image@{image}!hpgs\_\-image\_\-rop3\_\-clip@{hpgs\_\-image\_\-rop3\_\-clip}}
+\index{hpgs\_\-image\_\-rop3\_\-clip@{hpgs\_\-image\_\-rop3\_\-clip}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-rop3\_\-clip]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-image\_\-rop3\_\-clip ({\bf hpgs\_\-device} $\ast$ {\em device}, \/  {\bf hpgs\_\-palette\_\-color} $\ast$ {\em data}, \/  const {\bf hpgs\_\-image} $\ast$ {\em img}, \/  const {\bf hpgs\_\-point} $\ast$ {\em ll}, \/  const {\bf hpgs\_\-point} $\ast$ {\em lr}, \/  const {\bf hpgs\_\-point} $\ast$ {\em ur}, \/  const {\bf hpgs\_\-palette\_\-color} $\ast$ {\em p}, \/  hpgs\_\-xrop3\_\-func\_\-t {\em xrop3})}\label{group__image_g31be12e9a8d10fa5c07bcd43a830b77b}
+
+
+Sets a clip frame to the given device, which encloses all regions of the device, which are cover by the image taking into account the given ROP3 transfer function.
+
+The argument {\tt data} must contain a pointer to a two-dimensional array of raw pixels of the size of the image. This array is filled with pixel values as if the image has been painted to a white destination area using the given ROP3 function.
+
+Return values: \begin{itemize}
+\item 0 The clip frame is empty, no operation has been performed on the output device.\end{itemize}
+\begin{itemize}
+\item 1 The clip frame is not empty, the clip path has been set to the output device using clipsave/moveto/lineto/clip operations.\end{itemize}
+\begin{itemize}
+\item 2 The clip frame covers the whole image, no operation has been performed on the output device.\end{itemize}
+\begin{itemize}
+\item 3 The clip frame is not empty, the visible pixels have all the same color and clip path has been set to the output device using moveto/lineto/setrgbcolor/fill operations. The image does not have to be transferred by subsequent functions, the rgb color of the device has been altered.\end{itemize}
+\begin{itemize}
+\item -1 An error occured on the output device. \end{itemize}
+
+
+References hpgs\_\-color\_\-st::b, hpgs\_\-palette\_\-color\_\-st::b, hpgs\_\-paint\_\-color\_\-st::b, hpgs\_\-color\_\-st::g, hpgs\_\-palette\_\-color\_\-st::g, hpgs\_\-paint\_\-color\_\-st::g, hpgs\_\-image\_\-st::height, hpgs\_\-clip(), hpgs\_\-clipsave(), hpgs\_\-closepath(), hpgs\_\-fill(), hpgs\_\-image\_\-get\_\-pixel(), hpgs\_\-lineto(), hpgs\_\-log(), hpgs\_\-moveto(), hpgs\_\-newpath(), hpgs\_\-set\_\-error(), hpgs\_\-setrgbcolor(), hpgs\_\-color\_\-st::r, hpgs\_\-palette\_\-color\_\-st::r, hpgs\_\-paint\_\-color\_\-st::r, hpgs\_\-image\_\-st::width, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{image@{image}!hpgs\_\-image\_\-rop3\_\-pixel@{hpgs\_\-image\_\-rop3\_\-pixel}}
+\index{hpgs\_\-image\_\-rop3\_\-pixel@{hpgs\_\-image\_\-rop3\_\-pixel}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-rop3\_\-pixel]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-image\_\-rop3\_\-pixel ({\bf hpgs\_\-image} $\ast$ {\em \_\-this}, \/  int {\em x}, \/  int {\em y}, \/  const {\bf hpgs\_\-paint\_\-color} $\ast$ {\em c}, \/  double {\em alpha})\hspace{0.3cm}{\tt  [static]}}\label{group__image_g62487d780b695de88ea0c944fef61894}
+
+
+Sets the color and alpha value of the pixel in column {\tt x} and row {\tt y}. This function applies a ROP3 operation, if supported by the image. 
+
+References hpgs\_\-image\_\-vtable\_\-st::rop3\_\-pixel, and hpgs\_\-image\_\-st::vtable.\index{image@{image}!hpgs\_\-image\_\-set\_\-palette@{hpgs\_\-image\_\-set\_\-palette}}
+\index{hpgs\_\-image\_\-set\_\-palette@{hpgs\_\-image\_\-set\_\-palette}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-set\_\-palette]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-image\_\-set\_\-palette ({\bf hpgs\_\-image} $\ast$ {\em image}, \/  {\bf hpgs\_\-palette\_\-color} $\ast$ {\em p}, \/  int {\em np})}\label{group__image_gccce2a8027854c1898034302d33b1471}
+
+
+Sets the palette to an indexed image. 
+
+References hpgs\_\-set\_\-error(), hpgs\_\-image\_\-st::palette, hpgs\_\-image\_\-st::palette\_\-idx, hpgs\_\-image\_\-st::palette\_\-ncolors, and hpgs\_\-palette\_\-color\_\-st::r.\index{image@{image}!hpgs\_\-image\_\-set\_\-resolution@{hpgs\_\-image\_\-set\_\-resolution}}
+\index{hpgs\_\-image\_\-set\_\-resolution@{hpgs\_\-image\_\-set\_\-resolution}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-set\_\-resolution]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-image\_\-set\_\-resolution ({\bf hpgs\_\-image} $\ast$ {\em \_\-this}, \/  double {\em x\_\-dpi}, \/  double {\em y\_\-dpi})}\label{group__image_g70f2f4f5bdec053d29e89991d97db67a}
+
+
+Sets the resolution of this image in dpi. Note that for PNG images the information in the pHYs chunk is given as an integral number of pixels per meter. 
+
+References hpgs\_\-image\_\-vtable\_\-st::set\_\-resolution, and hpgs\_\-image\_\-st::vtable.
+
+Referenced by hpgs\_\-new\_\-paint\_\-device().\index{image@{image}!hpgs\_\-image\_\-setpatcol@{hpgs\_\-image\_\-setpatcol}}
+\index{hpgs\_\-image\_\-setpatcol@{hpgs\_\-image\_\-setpatcol}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-setpatcol]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-image\_\-setpatcol ({\bf hpgs\_\-image} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-palette\_\-color} $\ast$ {\em p})}\label{group__image_g3d1709fd4b96a366af437eea44ddf0bd}
+
+
+Sets the color of the pattern applied by the ROP3 operation. 
+
+References hpgs\_\-image\_\-vtable\_\-st::setpatcol, and hpgs\_\-image\_\-st::vtable.\index{image@{image}!hpgs\_\-image\_\-setrop3@{hpgs\_\-image\_\-setrop3}}
+\index{hpgs\_\-image\_\-setrop3@{hpgs\_\-image\_\-setrop3}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-setrop3]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-image\_\-setrop3 ({\bf hpgs\_\-image} $\ast$ {\em \_\-this}, \/  hpgs\_\-rop3\_\-func\_\-t {\em rop3})}\label{group__image_g34ad39852d133cb855c6d315c2eb48eb}
+
+
+Sets the ROP3 raster operation applied by {\tt hpgs\_\-image\_\-put\_\-pixel} and {\tt hpgs\_\-image\_\-put\_\-chunk}. 
+
+References hpgs\_\-image\_\-vtable\_\-st::setrop3, and hpgs\_\-image\_\-st::vtable.\index{image@{image}!hpgs\_\-image\_\-write@{hpgs\_\-image\_\-write}}
+\index{hpgs\_\-image\_\-write@{hpgs\_\-image\_\-write}!image@{image}}
+\subsubsection[hpgs\_\-image\_\-write]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-image\_\-write ({\bf hpgs\_\-image} $\ast$ {\em \_\-this}, \/  const char $\ast$ {\em filename})}\label{group__image_g3c87359a79f9da67a3a541cb4cb63c76}
+
+
+Writes the given image {\tt \_\-this} to a file with the given name {\tt filename}. 
+
+References hpgs\_\-set\_\-error(), hpgs\_\-image\_\-st::vtable, and hpgs\_\-image\_\-vtable\_\-st::write.\index{image@{image}!hpgs\_\-new\_\-png\_\-image@{hpgs\_\-new\_\-png\_\-image}}
+\index{hpgs\_\-new\_\-png\_\-image@{hpgs\_\-new\_\-png\_\-image}!image@{image}}
+\subsubsection[hpgs\_\-new\_\-png\_\-image]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API hpgs\_\-png\_\-image$\ast$ hpgs\_\-new\_\-png\_\-image (int {\em width}, \/  int {\em height}, \/  int {\em depth}, \/  hpgs\_\-bool {\em palette}, \/  hpgs\_\-bool {\em do\_\-rop3})}\label{group__image_g1d4c0fff4731c1f76a4305fc4a6cea74}
+
+
+Creates a new {\tt hpgs\_\-png\_\-image} on the heap using the given {\tt width} and {\tt height}. The bit depth {\tt depth} of the image is limited to 8,16, 24 or 32.
+
+If {\tt palette} is {\tt HPGS\_\-TRUE} the image uses and indexed palette and the bit depth is limited to 8.
+
+If {\tt palette} is {\tt HPGS\_\-FALSE} the folowing depth are supported: \begin{itemize}
+\item 8 contructs a greyscale image. \item 16 contructs a greyscale image with alpha (transparency) plane. \item 24 contructs an RGB image. \item 16 contructs an RGB image with alpha (transparency) plane.\end{itemize}
+If {\tt do\_\-rop3} is {\tt HPGS\_\-TRUE} the image uses ROP3 raster operations. {\tt do\_\-rop3} is ignored for indexed images. Indexed images do never support raster operations. 
+
+References hpgs\_\-paint\_\-color\_\-st::b, hpgs\_\-paint\_\-color\_\-st::g, hpgs\_\-image\_\-define\_\-color(), and hpgs\_\-paint\_\-color\_\-st::r.\index{image@{image}!hpgs\_\-png\_\-image\_\-set\_\-compression@{hpgs\_\-png\_\-image\_\-set\_\-compression}}
+\index{hpgs\_\-png\_\-image\_\-set\_\-compression@{hpgs\_\-png\_\-image\_\-set\_\-compression}!image@{image}}
+\subsubsection[hpgs\_\-png\_\-image\_\-set\_\-compression]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-png\_\-image\_\-set\_\-compression (hpgs\_\-png\_\-image $\ast$ {\em pim}, \/  int {\em compression})}\label{group__image_g8ce473703db5e914363733df424e81cc}
+
+
+Sets the compression ratio used for a png image. Returns 0, if the compression is in the interval from 1 to 9 inclusive.
+
+If the compression is invalid, -1 is returned. 
+
+References hpgs\_\-set\_\-error().

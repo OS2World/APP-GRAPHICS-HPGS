@@ -1,0 +1,887 @@
+\section{hpgs\_\-reader\_\-st Struct Reference}
+\label{structhpgs__reader__st}\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}}
+A HPGL interpreter.  
+
+
+{\tt \#include $<$hpgsreader.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+{\bf hpgs\_\-istream} $\ast$ {\bf in}
+\item 
+{\bf hpgs\_\-device} $\ast$ {\bf device}
+\item 
+{\bf hpgs\_\-device} $\ast$ {\bf plotsize\_\-device}
+\item 
+int {\bf current\_\-page}
+\item 
+int {\bf verbosity}
+\item 
+double {\bf lw\_\-factor}
+\item 
+{\bf hpgs\_\-point} {\bf P1}
+\item 
+{\bf hpgs\_\-point} {\bf P2}
+\item 
+{\bf hpgs\_\-point} {\bf delta\_\-P}
+\item 
+int {\bf rotation}
+\item 
+int {\bf rop3}
+\item 
+hpgs\_\-bool {\bf src\_\-transparency}
+\item 
+hpgs\_\-bool {\bf pattern\_\-transparency}
+\item 
+{\bf hpgs\_\-matrix} {\bf world\_\-matrix}
+\item 
+double {\bf world\_\-scale}
+\item 
+{\bf hpgs\_\-matrix} {\bf page\_\-matrix}
+\item 
+double {\bf page\_\-scale}
+\item 
+{\bf hpgs\_\-matrix} {\bf total\_\-matrix}
+\item 
+double {\bf total\_\-scale}
+\item 
+int {\bf page\_\-mode}
+\item 
+double {\bf page\_\-width}
+\item 
+double {\bf page\_\-height}
+\item 
+double {\bf page\_\-angle}
+\item 
+double {\bf page\_\-border}
+\item 
+{\bf hpgs\_\-bbox} {\bf page\_\-bbox}
+\item 
+{\bf hpgs\_\-bbox} {\bf content\_\-bbox}
+\item 
+void $\ast$ {\bf page\_\-asset\_\-ctxt}
+\item 
+hpgs\_\-reader\_\-asset\_\-func\_\-t {\bf page\_\-asset\_\-func}
+\item 
+void $\ast$ {\bf frame\_\-asset\_\-ctxt}
+\item 
+hpgs\_\-reader\_\-asset\_\-func\_\-t {\bf frame\_\-asset\_\-func}
+\item 
+{\bf hpgs\_\-color} {\bf min\_\-color}
+\item 
+{\bf hpgs\_\-color} {\bf max\_\-color}
+\item 
+int {\bf polygon\_\-mode}
+\item 
+int {\bf polygon\_\-open}
+\item 
+int {\bf pen\_\-width\_\-relative}
+\item 
+int {\bf pen\_\-down}
+\item 
+int {\bf current\_\-pen}
+\item 
+int {\bf current\_\-linetype}
+\item 
+int {\bf absolute\_\-plotting}
+\item 
+int {\bf have\_\-current\_\-point}
+\item 
+{\bf hpgs\_\-point} {\bf current\_\-point}
+\item 
+{\bf hpgs\_\-point} {\bf first\_\-path\_\-point}
+\item 
+{\bf hpgs\_\-point} {\bf min\_\-path\_\-point}
+\item 
+{\bf hpgs\_\-point} {\bf max\_\-path\_\-point}
+\item 
+{\bf hpgs\_\-point} {\bf anchor\_\-point}
+\item 
+int {\bf current\_\-ft}
+\item 
+double {\bf ft3\_\-angle}
+\item 
+double {\bf ft3\_\-spacing}
+\item 
+double {\bf ft4\_\-angle}
+\item 
+double {\bf ft4\_\-spacing}
+\item 
+double {\bf ft10\_\-level}
+\item 
+int {\bf alternate\_\-font}
+\item 
+double {\bf pcl\_\-scale}
+\item 
+double {\bf pcl\_\-hmi}
+\item 
+double {\bf pcl\_\-vmi}
+\item 
+{\bf hpgs\_\-point} {\bf pcl\_\-point}
+\item 
+{\bf hpgs\_\-reader\_\-pcl\_\-palette} $\ast$$\ast$ {\bf pcl\_\-palettes}
+\item 
+size\_\-t {\bf pcl\_\-n\_\-palettes}
+\item 
+int {\bf pcl\_\-i\_\-palette}
+\item 
+int {\bf pcl\_\-pattern}
+\item 
+{\bf hpgs\_\-palette\_\-color} {\bf pcl\_\-foreground\_\-color}
+\item 
+int {\bf pcl\_\-raster\_\-mode}
+\item 
+int {\bf pcl\_\-raster\_\-presentation}
+\item 
+int {\bf pcl\_\-raster\_\-src\_\-width}
+\item 
+int {\bf pcl\_\-raster\_\-src\_\-height}
+\item 
+int {\bf pcl\_\-raster\_\-dest\_\-width}
+\item 
+int {\bf pcl\_\-raster\_\-dest\_\-height}
+\item 
+int {\bf pcl\_\-raster\_\-res}
+\item 
+int {\bf pcl\_\-raster\_\-compression}
+\item 
+int {\bf pcl\_\-raster\_\-y\_\-offset}
+\item 
+int {\bf pcl\_\-raster\_\-plane}
+\item 
+int {\bf pcl\_\-raster\_\-line}
+\item 
+unsigned char $\ast$ {\bf pcl\_\-raster\_\-data} [8]
+\item 
+int {\bf pcl\_\-raster\_\-data\_\-size}
+\item 
+int {\bf pcl\_\-raster\_\-planes}
+\item 
+{\bf hpgs\_\-image} $\ast$ {\bf pcl\_\-image}
+\item 
+int {\bf png\_\-dump\_\-count}
+\item 
+char $\ast$ {\bf png\_\-dump\_\-filename}
+\item 
+int {\bf clipsave\_\-depth}
+\item 
+int {\bf last\_\-byte}
+\item 
+int {\bf bytes\_\-ignored}
+\item 
+int {\bf eoc}
+\item 
+hpgs\_\-bool {\bf interrupted}
+\end{CompactItemize}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+double {\bf x\_\-size}
+\item 
+double \textbf{y\_\-size}\label{structhpgs__reader__st_6596945c1dba7e48b3c9193a0e549c8f}
+
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+double {\bf frame\_\-x}
+\item 
+double \textbf{frame\_\-y}\label{structhpgs__reader__st_c2f19dbd790611b87ec699f6eaa9b204}
+
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+int {\bf sc\_\-type}
+\item 
+double \textbf{sc\_\-xmin}\label{structhpgs__reader__st_5a40f76e90895fc2b756a89c8f62714d}
+
+\item 
+double \textbf{sc\_\-xmax}\label{structhpgs__reader__st_9ae55a23410d686c96bb465f8aa80f7a}
+
+\item 
+double \textbf{sc\_\-ymin}\label{structhpgs__reader__st_cbf694476f0996aab26245dc6a4dcd24}
+
+\item 
+double \textbf{sc\_\-ymax}\label{structhpgs__reader__st_250631be90f5274ff935119a93aaccbb}
+
+\item 
+double \textbf{sc\_\-left}\label{structhpgs__reader__st_f245a6e2a76afe8085d30eea8499217b}
+
+\item 
+double \textbf{sc\_\-bottom}\label{structhpgs__reader__st_462644489e395b43ca0c37e8bdb3a392}
+
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+int {\bf linetype\_\-nsegs} [17]
+\item 
+float \textbf{linetype\_\-segs} [17][20]\label{structhpgs__reader__st_d772d590b70c7411001cbb255f3e6db4}
+
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+int {\bf npens}
+\item 
+double $\ast$ \textbf{pen\_\-widths}\label{structhpgs__reader__st_41eff30329ceb411108cc8a621043c76}
+
+\item 
+{\bf hpgs\_\-color} $\ast$ \textbf{pen\_\-colors}\label{structhpgs__reader__st_81f41ebedb2bf9171fd0a01168d5bdc6}
+
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+char {\bf label\_\-term}
+\item 
+int \textbf{label\_\-term\_\-ignore}\label{structhpgs__reader__st_9e54f7011e6a35f47903a8e132f1212a}
+
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+{\bf hpgs\_\-reader\_\-poly\_\-point} $\ast$ {\bf poly\_\-buffer}
+\item 
+int \textbf{poly\_\-buffer\_\-size}\label{structhpgs__reader__st_23291d784cf75b1b3d1783182187056b}
+
+\item 
+int \textbf{poly\_\-buffer\_\-alloc\_\-size}\label{structhpgs__reader__st_92c9024e53ba5a600ffe4bd151d580d0}
+
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+int {\bf default\_\-encoding}
+\item 
+int \textbf{default\_\-face}\label{structhpgs__reader__st_1567ffd38e5fefe6193fa7dbd68b0214}
+
+\item 
+int \textbf{default\_\-spacing}\label{structhpgs__reader__st_df010575fe9deb40304f19897e14823a}
+
+\item 
+double \textbf{default\_\-pitch}\label{structhpgs__reader__st_c9e0c057f334d74a0ed547082c82a858}
+
+\item 
+double \textbf{default\_\-height}\label{structhpgs__reader__st_d33323846ca9017ec569745d305fdfb3}
+
+\item 
+int \textbf{default\_\-posture}\label{structhpgs__reader__st_b1723b82575818b75322dcfa6569fd1e}
+
+\item 
+int \textbf{default\_\-weight}\label{structhpgs__reader__st_9128f39109a96e024bcc5325479c0c0c}
+
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+int {\bf alternate\_\-encoding}
+\item 
+int \textbf{alternate\_\-face}\label{structhpgs__reader__st_d4664cdeb2e9140523d233d3618ab467}
+
+\item 
+int \textbf{alternate\_\-spacing}\label{structhpgs__reader__st_973a5b831cb3c9f2daecfa9079f88508}
+
+\item 
+double \textbf{alternate\_\-pitch}\label{structhpgs__reader__st_6779bb010dc5a5979e7e9181915cf4c2}
+
+\item 
+double \textbf{alternate\_\-height}\label{structhpgs__reader__st_ce276698951871437095e60a206ee947}
+
+\item 
+int \textbf{alternate\_\-posture}\label{structhpgs__reader__st_62b354f8911769f700b57db1845e41ac}
+
+\item 
+int \textbf{alternate\_\-weight}\label{structhpgs__reader__st_5d9273b00c3e306a9b80afd92709db24}
+
+\end{CompactItemize}
+\end{Indent}
+\begin{Indent}{\bf }\par
+\begin{CompactItemize}
+\item 
+{\bf hpgs\_\-point} {\bf cr\_\-point}
+\item 
+{\bf hpgs\_\-point} \textbf{current\_\-char\_\-size}\label{structhpgs__reader__st_89602a47d739d1447cec5c9512206217}
+
+\item 
+{\bf hpgs\_\-point} \textbf{current\_\-extra\_\-space}\label{structhpgs__reader__st_f735f045829c8adcdfc25e02a20cf0a7}
+
+\item 
+double \textbf{current\_\-slant}\label{structhpgs__reader__st_0b86cd57160128c8ce27ee6f4792b97f}
+
+\item 
+int \textbf{current\_\-label\_\-origin}\label{structhpgs__reader__st_8bf22f602c40554105e0a6d7f442fe12}
+
+\item 
+int \textbf{current\_\-text\_\-path}\label{structhpgs__reader__st_9e6eedcf159c66ae00b33a5cb219f981}
+
+\item 
+int \textbf{current\_\-text\_\-line}\label{structhpgs__reader__st_fa2b325c62bdc91cb9e7e620f03fb2e1}
+
+\item 
+double \textbf{current\_\-label\_\-angle}\label{structhpgs__reader__st_c648cfbddbe85a41e8c5bf8a5d600cd3}
+
+\end{CompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+A HPGL interpreter. 
+
+This structure holds all the states used during the interpretation of a HPGL stream. Users of the library usually don't have to cope with details of this structure. 
+
+\subsection{Field Documentation}
+\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!in@{in}}
+\index{in@{in}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[in]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-istream}$\ast$ {\bf hpgs\_\-reader\_\-st::in}}\label{structhpgs__reader__st_0820ac4de3db8f395d3a09682560a82d}
+
+
+The current input stream. 
+
+Referenced by hpgs\_\-destroy\_\-reader(), hpgs\_\-new\_\-reader(), hpgs\_\-read(), hpgs\_\-reader\_\-attach(), hpgs\_\-reader\_\-do\_\-PCL(), hpgs\_\-reader\_\-do\_\-PJL(), hpgs\_\-reader\_\-imbue(), hpgs\_\-reader\_\-read\_\-double(), hpgs\_\-reader\_\-read\_\-int(), hpgs\_\-reader\_\-read\_\-new\_\-string(), and hpgs\_\-reader\_\-read\_\-pcl\_\-int().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!device@{device}}
+\index{device@{device}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[device]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-device}$\ast$ {\bf hpgs\_\-reader\_\-st::device}}\label{structhpgs__reader__st_638ea28d18384d24ac73eca74675b3e1}
+
+
+The current output device. 
+
+Referenced by hpgs\_\-destroy\_\-reader(), hpgs\_\-new\_\-reader(), hpgs\_\-read(), hpgs\_\-reader\_\-imbue(), and hpgs\_\-reader\_\-stamp().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!plotsize\_\-device@{plotsize\_\-device}}
+\index{plotsize\_\-device@{plotsize\_\-device}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[plotsize\_\-device]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-device}$\ast$ {\bf hpgs\_\-reader\_\-st::plotsize\_\-device}}\label{structhpgs__reader__st_0c17198587a3b759bf04fef35a687dbf}
+
+
+The current plotsize device. 
+
+Referenced by hpgs\_\-destroy\_\-reader(), hpgs\_\-new\_\-reader(), hpgs\_\-read(), and hpgs\_\-reader\_\-imbue().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!current\_\-page@{current\_\-page}}
+\index{current\_\-page@{current\_\-page}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[current\_\-page]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::current\_\-page}}\label{structhpgs__reader__st_623cad219ac749b60933354b3c19ff12}
+
+
+The number of the current page. -1...single page mode. 
+
+Referenced by hpgs\_\-new\_\-reader(), hpgs\_\-read(), and hpgs\_\-reader\_\-imbue().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!verbosity@{verbosity}}
+\index{verbosity@{verbosity}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[verbosity]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::verbosity}}\label{structhpgs__reader__st_84b00d202beed5194204a34c46121d09}
+
+
+The verbosity level in effect. 
+
+Referenced by hpgs\_\-new\_\-reader(), hpgs\_\-read(), and hpgs\_\-reader\_\-do\_\-PJL().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!lw\_\-factor@{lw\_\-factor}}
+\index{lw\_\-factor@{lw\_\-factor}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[lw\_\-factor]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::lw\_\-factor}}\label{structhpgs__reader__st_8d52bb49d1520e0f7478e8da42779f3b}
+
+
+The linewidth scaling factor. 
+
+Referenced by hpgs\_\-new\_\-reader(), and hpgs\_\-reader\_\-set\_\-lw\_\-factor().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!x\_\-size@{x\_\-size}}
+\index{x\_\-size@{x\_\-size}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[x\_\-size]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::x\_\-size}}\label{structhpgs__reader__st_d803c4e43446a11d580858270508d767}
+
+
+The paper size in PostScript pt (1/72 inch). \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!frame\_\-x@{frame\_\-x}}
+\index{frame\_\-x@{frame\_\-x}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[frame\_\-x]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::frame\_\-x}}\label{structhpgs__reader__st_9b94337c22f1c37b911af05cae026bd3}
+
+
+The frame advance vector in PostScript pt (1/72 inch). \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!P1@{P1}}
+\index{P1@{P1}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[P1]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-point} {\bf hpgs\_\-reader\_\-st::P1}}\label{structhpgs__reader__st_ee7c95228a9ca69f97bebf9f05323ae1}
+
+
+HPGL frame point P1 in PostScript pt (1/72 inch). \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!P2@{P2}}
+\index{P2@{P2}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[P2]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-point} {\bf hpgs\_\-reader\_\-st::P2}}\label{structhpgs__reader__st_202ca8d57bb648548e2d7734271cc055}
+
+
+HPGL frame point P2 in PostScript pt (1/72 inch). \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!delta\_\-P@{delta\_\-P}}
+\index{delta\_\-P@{delta\_\-P}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[delta\_\-P]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-point} {\bf hpgs\_\-reader\_\-st::delta\_\-P}}\label{structhpgs__reader__st_46a3367b70f96e3b9d33750ac3b964f9}
+
+
+The difference of P2-P1 as set by the IP command. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!rotation@{rotation}}
+\index{rotation@{rotation}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[rotation]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::rotation}}\label{structhpgs__reader__st_8573cfba08ff02a7f2ff3b8bd290b291}
+
+
+The current rotation angle (90/180/270/360). \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!sc\_\-type@{sc\_\-type}}
+\index{sc\_\-type@{sc\_\-type}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[sc\_\-type]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::sc\_\-type}}\label{structhpgs__reader__st_9965b2804ef11e60242cd42044fb815e}
+
+
+The current effective coordinate scaling of a SC command. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!rop3@{rop3}}
+\index{rop3@{rop3}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[rop3]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::rop3}}\label{structhpgs__reader__st_3bdfe505341184cf0d69c7cde6d19d49}
+
+
+ROP3 operation in effect. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!src\_\-transparency@{src\_\-transparency}}
+\index{src\_\-transparency@{src\_\-transparency}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[src\_\-transparency]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-bool {\bf hpgs\_\-reader\_\-st::src\_\-transparency}}\label{structhpgs__reader__st_adf25c6c84c8cd6a909f62c006ea8939}
+
+
+ROP3 source transparency. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pattern\_\-transparency@{pattern\_\-transparency}}
+\index{pattern\_\-transparency@{pattern\_\-transparency}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pattern\_\-transparency]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-bool {\bf hpgs\_\-reader\_\-st::pattern\_\-transparency}}\label{structhpgs__reader__st_d303bb4fe1c896024fa1883cae6816f0}
+
+
+ROP3 pattern transparency. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!world\_\-matrix@{world\_\-matrix}}
+\index{world\_\-matrix@{world\_\-matrix}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[world\_\-matrix]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-matrix} {\bf hpgs\_\-reader\_\-st::world\_\-matrix}}\label{structhpgs__reader__st_2153ebf8e7d6bdc7a091dbe2a32b94ad}
+
+
+transformation matrix for the transformation of HPGL to PostScript (world) coordinates usually given in points (1/72 inch). \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!world\_\-scale@{world\_\-scale}}
+\index{world\_\-scale@{world\_\-scale}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[world\_\-scale]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::world\_\-scale}}\label{structhpgs__reader__st_9c9337367da6b45d8723dda3b6b55929}
+
+
+sqrt($|$det(world\_\-matrix)$|$) \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!page\_\-matrix@{page\_\-matrix}}
+\index{page\_\-matrix@{page\_\-matrix}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[page\_\-matrix]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-matrix} {\bf hpgs\_\-reader\_\-st::page\_\-matrix}}\label{structhpgs__reader__st_57eabb10e99d2b73f539d9d48f2e75e9}
+
+
+transformation matrix for the transformation of PostScript (world) coordinates usually given in points (1/72 inch) to user defined page-coorindates. 
+
+Referenced by hpgs\_\-new\_\-reader(), and hpgs\_\-reader\_\-do\_\-PCL().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!page\_\-scale@{page\_\-scale}}
+\index{page\_\-scale@{page\_\-scale}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[page\_\-scale]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::page\_\-scale}}\label{structhpgs__reader__st_4ed2af3b63c82fbeb325d400f51956a7}
+
+
+sqrt($|$det(page\_\-matrix)$|$) 
+
+Referenced by hpgs\_\-new\_\-reader().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!total\_\-matrix@{total\_\-matrix}}
+\index{total\_\-matrix@{total\_\-matrix}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[total\_\-matrix]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-matrix} {\bf hpgs\_\-reader\_\-st::total\_\-matrix}}\label{structhpgs__reader__st_f55190b7655794319d7674c364eeebaa}
+
+
+The concatenation of page\_\-matrix and world\_\-matrix. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!total\_\-scale@{total\_\-scale}}
+\index{total\_\-scale@{total\_\-scale}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[total\_\-scale]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::total\_\-scale}}\label{structhpgs__reader__st_02296e6401684131d808245dae6bc32b}
+
+
+sqrt($|$det(page\_\-matrix)$|$) \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!page\_\-mode@{page\_\-mode}}
+\index{page\_\-mode@{page\_\-mode}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[page\_\-mode]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::page\_\-mode}}\label{structhpgs__reader__st_79244f4b44844514bce58c3ce48d4aa1}
+
+
+0...untransformed, 1...fixed page, 2...dynamic page 
+
+Referenced by hpgs\_\-new\_\-reader(), hpgs\_\-reader\_\-set\_\-dynamic\_\-page(), and hpgs\_\-reader\_\-set\_\-fixed\_\-page().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!page\_\-width@{page\_\-width}}
+\index{page\_\-width@{page\_\-width}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[page\_\-width]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::page\_\-width}}\label{structhpgs__reader__st_f35c4d1eece0d47f368a8c373cc36b8b}
+
+
+The page width or the maximal page width in points. 
+
+Referenced by hpgs\_\-new\_\-reader(), hpgs\_\-reader\_\-set\_\-dynamic\_\-page(), and hpgs\_\-reader\_\-set\_\-fixed\_\-page().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!page\_\-height@{page\_\-height}}
+\index{page\_\-height@{page\_\-height}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[page\_\-height]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::page\_\-height}}\label{structhpgs__reader__st_fb8ffce6da9c89b402445c858d0d8104}
+
+
+The page height or the maximal page height in points. 
+
+Referenced by hpgs\_\-new\_\-reader(), hpgs\_\-reader\_\-set\_\-dynamic\_\-page(), and hpgs\_\-reader\_\-set\_\-fixed\_\-page().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!page\_\-angle@{page\_\-angle}}
+\index{page\_\-angle@{page\_\-angle}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[page\_\-angle]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::page\_\-angle}}\label{structhpgs__reader__st_7b872779669ce0f0f8808383899ee0ea}
+
+
+The rotation angle of the HPGL content on the page. 
+
+Referenced by hpgs\_\-new\_\-reader(), hpgs\_\-reader\_\-set\_\-dynamic\_\-page(), and hpgs\_\-reader\_\-set\_\-fixed\_\-page().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!page\_\-border@{page\_\-border}}
+\index{page\_\-border@{page\_\-border}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[page\_\-border]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::page\_\-border}}\label{structhpgs__reader__st_1c27af742da3c6b23a667d5adf8ccbc8}
+
+
+The border of the HPGL border on the page. 
+
+Referenced by hpgs\_\-new\_\-reader(), hpgs\_\-reader\_\-set\_\-dynamic\_\-page(), and hpgs\_\-reader\_\-set\_\-fixed\_\-page().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!page\_\-bbox@{page\_\-bbox}}
+\index{page\_\-bbox@{page\_\-bbox}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[page\_\-bbox]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-bbox} {\bf hpgs\_\-reader\_\-st::page\_\-bbox}}\label{structhpgs__reader__st_36a681f5552fb748728a6e181b5935fe}
+
+
+The currently active page bounding box. 
+
+Referenced by hpgs\_\-new\_\-reader(), hpgs\_\-read(), hpgs\_\-reader\_\-set\_\-dynamic\_\-page(), and hpgs\_\-reader\_\-set\_\-fixed\_\-page().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!content\_\-bbox@{content\_\-bbox}}
+\index{content\_\-bbox@{content\_\-bbox}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[content\_\-bbox]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-bbox} {\bf hpgs\_\-reader\_\-st::content\_\-bbox}}\label{structhpgs__reader__st_dde90c67f5592eb707127dda52e7f1af}
+
+
+The bounding box of the HPGL content of the current page. 
+
+Referenced by hpgs\_\-new\_\-reader().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!page\_\-asset\_\-ctxt@{page\_\-asset\_\-ctxt}}
+\index{page\_\-asset\_\-ctxt@{page\_\-asset\_\-ctxt}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[page\_\-asset\_\-ctxt]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf hpgs\_\-reader\_\-st::page\_\-asset\_\-ctxt}}\label{structhpgs__reader__st_51299fdec828aae63911855615d3abf6}
+
+
+A callback for rendering additional page assets before showpage. 
+
+Referenced by hpgs\_\-new\_\-reader(), and hpgs\_\-reader\_\-set\_\-page\_\-asset\_\-func().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!page\_\-asset\_\-func@{page\_\-asset\_\-func}}
+\index{page\_\-asset\_\-func@{page\_\-asset\_\-func}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[page\_\-asset\_\-func]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-reader\_\-asset\_\-func\_\-t {\bf hpgs\_\-reader\_\-st::page\_\-asset\_\-func}}\label{structhpgs__reader__st_489a8be5a1404f6442db2bcb979f8e04}
+
+
+A callback for rendering additional page assets before showpage. 
+
+Referenced by hpgs\_\-new\_\-reader(), and hpgs\_\-reader\_\-set\_\-page\_\-asset\_\-func().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!frame\_\-asset\_\-ctxt@{frame\_\-asset\_\-ctxt}}
+\index{frame\_\-asset\_\-ctxt@{frame\_\-asset\_\-ctxt}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[frame\_\-asset\_\-ctxt]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf hpgs\_\-reader\_\-st::frame\_\-asset\_\-ctxt}}\label{structhpgs__reader__st_6750637d9d21d8e91d9bd3fe4fbd22f2}
+
+
+A callback for rendering additional frame assets before frame advance/showpage. 
+
+Referenced by hpgs\_\-new\_\-reader(), and hpgs\_\-reader\_\-set\_\-frame\_\-asset\_\-func().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!frame\_\-asset\_\-func@{frame\_\-asset\_\-func}}
+\index{frame\_\-asset\_\-func@{frame\_\-asset\_\-func}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[frame\_\-asset\_\-func]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-reader\_\-asset\_\-func\_\-t {\bf hpgs\_\-reader\_\-st::frame\_\-asset\_\-func}}\label{structhpgs__reader__st_00151e4215b46b4053a089cc95aa5f69}
+
+
+A callback for rendering additional frame asset before frame advance/showpage. 
+
+Referenced by hpgs\_\-new\_\-reader(), and hpgs\_\-reader\_\-set\_\-frame\_\-asset\_\-func().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!linetype\_\-nsegs@{linetype\_\-nsegs}}
+\index{linetype\_\-nsegs@{linetype\_\-nsegs}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[linetype\_\-nsegs]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::linetype\_\-nsegs}[17]}\label{structhpgs__reader__st_3f097e4de0c64307c99d18e4597ebb2e}
+
+
+linetype settings. (-8,...8) stored from 0...16 \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!npens@{npens}}
+\index{npens@{npens}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[npens]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::npens}}\label{structhpgs__reader__st_cbb97d4f9a7d2500c1068177fb1feb32}
+
+
+pen settings \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!min\_\-color@{min\_\-color}}
+\index{min\_\-color@{min\_\-color}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[min\_\-color]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-color} {\bf hpgs\_\-reader\_\-st::min\_\-color}}\label{structhpgs__reader__st_1024bff0bc3ef54be296c6e98e4cf202}
+
+
+The minimal RGB values. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!max\_\-color@{max\_\-color}}
+\index{max\_\-color@{max\_\-color}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[max\_\-color]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-color} {\bf hpgs\_\-reader\_\-st::max\_\-color}}\label{structhpgs__reader__st_e84048978a285048a6c4e30bf442d969}
+
+
+The maximal RGB values. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!label\_\-term@{label\_\-term}}
+\index{label\_\-term@{label\_\-term}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[label\_\-term]{\setlength{\rightskip}{0pt plus 5cm}char {\bf hpgs\_\-reader\_\-st::label\_\-term}}\label{structhpgs__reader__st_bdb2310ec5ab74dc408eff8e85bdb1e7}
+
+
+label terminator settings \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!polygon\_\-mode@{polygon\_\-mode}}
+\index{polygon\_\-mode@{polygon\_\-mode}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[polygon\_\-mode]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::polygon\_\-mode}}\label{structhpgs__reader__st_c6f5ffb0799120c579073a10f8dda99d}
+
+
+Are we in polygon mode? \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!poly\_\-buffer@{poly\_\-buffer}}
+\index{poly\_\-buffer@{poly\_\-buffer}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[poly\_\-buffer]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-reader\_\-poly\_\-point}$\ast$ {\bf hpgs\_\-reader\_\-st::poly\_\-buffer}}\label{structhpgs__reader__st_e71fdd01d1e62cf0893692acf6796920}
+
+
+the polygon buffer used in polygon mode. 
+
+Referenced by hpgs\_\-destroy\_\-reader(), and hpgs\_\-new\_\-reader().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!polygon\_\-open@{polygon\_\-open}}
+\index{polygon\_\-open@{polygon\_\-open}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[polygon\_\-open]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::polygon\_\-open}}\label{structhpgs__reader__st_b84b4fe7de340a06ba16d07b9a1f7387}
+
+
+Is a polygon currently open? \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pen\_\-width\_\-relative@{pen\_\-width\_\-relative}}
+\index{pen\_\-width\_\-relative@{pen\_\-width\_\-relative}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pen\_\-width\_\-relative]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pen\_\-width\_\-relative}}\label{structhpgs__reader__st_383155685b823031c197d401e9da4519}
+
+
+Are pen widths specified relative? \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pen\_\-down@{pen\_\-down}}
+\index{pen\_\-down@{pen\_\-down}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pen\_\-down]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pen\_\-down}}\label{structhpgs__reader__st_9f2449aee3d9f7e7faad17bd61918567}
+
+
+Is the pen down? \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!current\_\-pen@{current\_\-pen}}
+\index{current\_\-pen@{current\_\-pen}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[current\_\-pen]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::current\_\-pen}}\label{structhpgs__reader__st_92993b1ad64e3231a76a573a98034425}
+
+
+Number of the current pen. 
+
+Referenced by hpgs\_\-reader\_\-get\_\-current\_\-pen().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!current\_\-linetype@{current\_\-linetype}}
+\index{current\_\-linetype@{current\_\-linetype}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[current\_\-linetype]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::current\_\-linetype}}\label{structhpgs__reader__st_7bae59709584e09da7a60cb2a86ef1f7}
+
+
+Number of the current linetype. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!absolute\_\-plotting@{absolute\_\-plotting}}
+\index{absolute\_\-plotting@{absolute\_\-plotting}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[absolute\_\-plotting]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::absolute\_\-plotting}}\label{structhpgs__reader__st_04d6a37e1e9b04a801fb9b6e55663f8c}
+
+
+Are PU and PD coordinates absoulte, because a PA statement is in effect? \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!have\_\-current\_\-point@{have\_\-current\_\-point}}
+\index{have\_\-current\_\-point@{have\_\-current\_\-point}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[have\_\-current\_\-point]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::have\_\-current\_\-point}}\label{structhpgs__reader__st_e622c0decb815832f931ab8f707c0b63}
+
+
+Do we have a current pen position, aka current\_\-point is a valid position. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!current\_\-point@{current\_\-point}}
+\index{current\_\-point@{current\_\-point}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[current\_\-point]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-point} {\bf hpgs\_\-reader\_\-st::current\_\-point}}\label{structhpgs__reader__st_5742512be1ab22bb26247c309cfac95e}
+
+
+The current pen position in PostScript pt (1/72 inch), if {\tt have\_\-current\_\-point} is true. 
+
+Referenced by hpgs\_\-reader\_\-do\_\-PCL().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!first\_\-path\_\-point@{first\_\-path\_\-point}}
+\index{first\_\-path\_\-point@{first\_\-path\_\-point}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[first\_\-path\_\-point]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-point} {\bf hpgs\_\-reader\_\-st::first\_\-path\_\-point}}\label{structhpgs__reader__st_e2dd059b9b389ea689fbfb0b7229c837}
+
+
+The first point in a path, if {\tt polygon\_\-open} is true. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!min\_\-path\_\-point@{min\_\-path\_\-point}}
+\index{min\_\-path\_\-point@{min\_\-path\_\-point}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[min\_\-path\_\-point]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-point} {\bf hpgs\_\-reader\_\-st::min\_\-path\_\-point}}\label{structhpgs__reader__st_88d31f257c371acf55cc45c3537f5b4e}
+
+
+The minimal x/y coordinates of all points in an open path. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!max\_\-path\_\-point@{max\_\-path\_\-point}}
+\index{max\_\-path\_\-point@{max\_\-path\_\-point}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[max\_\-path\_\-point]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-point} {\bf hpgs\_\-reader\_\-st::max\_\-path\_\-point}}\label{structhpgs__reader__st_43c54bdd07dbf56fb8f8d3ce073fb4c0}
+
+
+The maximal x/y coordinates of all points in an open path. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!anchor\_\-point@{anchor\_\-point}}
+\index{anchor\_\-point@{anchor\_\-point}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[anchor\_\-point]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-point} {\bf hpgs\_\-reader\_\-st::anchor\_\-point}}\label{structhpgs__reader__st_4f626593ae810ddef48b04c7163df796}
+
+
+The anchor point for fill patterns. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!current\_\-ft@{current\_\-ft}}
+\index{current\_\-ft@{current\_\-ft}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[current\_\-ft]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::current\_\-ft}}\label{structhpgs__reader__st_b3139b44a6a2b77ed3b7c0ed6b185e8f}
+
+
+The fill type currently in effect. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!ft3\_\-angle@{ft3\_\-angle}}
+\index{ft3\_\-angle@{ft3\_\-angle}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[ft3\_\-angle]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::ft3\_\-angle}}\label{structhpgs__reader__st_9856de831974f3500f7eb5462cce2faa}
+
+
+The current pattern angle of fill type 3. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!ft3\_\-spacing@{ft3\_\-spacing}}
+\index{ft3\_\-spacing@{ft3\_\-spacing}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[ft3\_\-spacing]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::ft3\_\-spacing}}\label{structhpgs__reader__st_916601d74af1abf7065a2d441851fa0e}
+
+
+The current pattern spacing of fill type 3. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!ft4\_\-angle@{ft4\_\-angle}}
+\index{ft4\_\-angle@{ft4\_\-angle}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[ft4\_\-angle]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::ft4\_\-angle}}\label{structhpgs__reader__st_40a2ac5fb645b3daf000d9b383a5850a}
+
+
+The current pattern angle of fill type 4. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!ft4\_\-spacing@{ft4\_\-spacing}}
+\index{ft4\_\-spacing@{ft4\_\-spacing}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[ft4\_\-spacing]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::ft4\_\-spacing}}\label{structhpgs__reader__st_28128eaea4f8510044d186406cc927df}
+
+
+The current pattern spacing of fill type 4. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!ft10\_\-level@{ft10\_\-level}}
+\index{ft10\_\-level@{ft10\_\-level}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[ft10\_\-level]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::ft10\_\-level}}\label{structhpgs__reader__st_37d720ec49a859770409af8e05301441}
+
+
+The current color level for fill type 10. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!default\_\-encoding@{default\_\-encoding}}
+\index{default\_\-encoding@{default\_\-encoding}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[default\_\-encoding]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::default\_\-encoding}}\label{structhpgs__reader__st_0309333a8f568b4c953c19573d7382e1}
+
+
+the text state for the standard font. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!alternate\_\-encoding@{alternate\_\-encoding}}
+\index{alternate\_\-encoding@{alternate\_\-encoding}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[alternate\_\-encoding]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::alternate\_\-encoding}}\label{structhpgs__reader__st_c07b5535afdff4cf8301da1effa4bbc5}
+
+
+the text state for the alternate font. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!alternate\_\-font@{alternate\_\-font}}
+\index{alternate\_\-font@{alternate\_\-font}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[alternate\_\-font]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::alternate\_\-font}}\label{structhpgs__reader__st_e150f3881d0c8d20a7b46e866e032f44}
+
+
+do we use the alternate font? \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!cr\_\-point@{cr\_\-point}}
+\index{cr\_\-point@{cr\_\-point}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[cr\_\-point]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-point} {\bf hpgs\_\-reader\_\-st::cr\_\-point}}\label{structhpgs__reader__st_c23965a70821d900c36839de190089be}
+
+
+text attributes set through special commands. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-scale@{pcl\_\-scale}}
+\index{pcl\_\-scale@{pcl\_\-scale}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-scale]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::pcl\_\-scale}}\label{structhpgs__reader__st_da48ebf583e0870b81f7be402ff6f911}
+
+
+The factor from PCL units to PostScript pt (1/72 inch). 
+
+Referenced by hpgs\_\-reader\_\-do\_\-PJL().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-hmi@{pcl\_\-hmi}}
+\index{pcl\_\-hmi@{pcl\_\-hmi}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-hmi]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::pcl\_\-hmi}}\label{structhpgs__reader__st_6a1bba961dbb44a788c407f76a0e7738}
+
+
+PCL horizontal motion index in pt. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-vmi@{pcl\_\-vmi}}
+\index{pcl\_\-vmi@{pcl\_\-vmi}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-vmi]{\setlength{\rightskip}{0pt plus 5cm}double {\bf hpgs\_\-reader\_\-st::pcl\_\-vmi}}\label{structhpgs__reader__st_893a7337617fd19a6f48b071c378d7bf}
+
+
+PCL vertical motion index in pt. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-point@{pcl\_\-point}}
+\index{pcl\_\-point@{pcl\_\-point}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-point]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-point} {\bf hpgs\_\-reader\_\-st::pcl\_\-point}}\label{structhpgs__reader__st_b442193f453cc9e03b4bda37d7b9da0c}
+
+
+PCL point position in pt. 
+
+Referenced by hpgs\_\-reader\_\-do\_\-PCL().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-palettes@{pcl\_\-palettes}}
+\index{pcl\_\-palettes@{pcl\_\-palettes}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-palettes]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-reader\_\-pcl\_\-palette}$\ast$$\ast$ {\bf hpgs\_\-reader\_\-st::pcl\_\-palettes}}\label{structhpgs__reader__st_0c384bda72a671d8f77975019e138847}
+
+
+The PCL palette stack of palattes for 256 colors. 
+
+Referenced by hpgs\_\-destroy\_\-reader(), and hpgs\_\-new\_\-reader().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-n\_\-palettes@{pcl\_\-n\_\-palettes}}
+\index{pcl\_\-n\_\-palettes@{pcl\_\-n\_\-palettes}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-n\_\-palettes]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf hpgs\_\-reader\_\-st::pcl\_\-n\_\-palettes}}\label{structhpgs__reader__st_0e0acf2acb5b1faaeb1fde401c03f562}
+
+
+The allocated size of the palette stack. 
+
+Referenced by hpgs\_\-new\_\-reader().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-i\_\-palette@{pcl\_\-i\_\-palette}}
+\index{pcl\_\-i\_\-palette@{pcl\_\-i\_\-palette}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-i\_\-palette]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-i\_\-palette}}\label{structhpgs__reader__st_dc791ff7e8c2666ef0b41166f1ae0b74}
+
+
+The number of of the current PCL palette on the stack. 
+
+Referenced by hpgs\_\-destroy\_\-reader(), and hpgs\_\-new\_\-reader().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-pattern@{pcl\_\-pattern}}
+\index{pcl\_\-pattern@{pcl\_\-pattern}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-pattern]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-pattern}}\label{structhpgs__reader__st_cf671880c6c1ae59c925349d9da5ba66}
+
+
+The current PCL pattern. Default value 0. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-foreground\_\-color@{pcl\_\-foreground\_\-color}}
+\index{pcl\_\-foreground\_\-color@{pcl\_\-foreground\_\-color}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-foreground\_\-color]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-palette\_\-color} {\bf hpgs\_\-reader\_\-st::pcl\_\-foreground\_\-color}}\label{structhpgs__reader__st_1a8109f23e2276a6cdc7b678c4a6462a}
+
+
+The currently set PCL forground color. Set to black, if no foreground color is set. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-mode@{pcl\_\-raster\_\-mode}}
+\index{pcl\_\-raster\_\-mode@{pcl\_\-raster\_\-mode}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-mode]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-mode}}\label{structhpgs__reader__st_94717a915f04e38ccf6954f79a0aed76}
+
+
+The PCL ratser mode. -1 no raster graphics, 0 horizontal graphics, 3 vertical graphics \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-presentation@{pcl\_\-raster\_\-presentation}}
+\index{pcl\_\-raster\_\-presentation@{pcl\_\-raster\_\-presentation}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-presentation]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-presentation}}\label{structhpgs__reader__st_a719fff507257e35bb1d8a75e5ad1547}
+
+
+The PCL raster presentation mode. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-src\_\-width@{pcl\_\-raster\_\-src\_\-width}}
+\index{pcl\_\-raster\_\-src\_\-width@{pcl\_\-raster\_\-src\_\-width}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-src\_\-width]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-src\_\-width}}\label{structhpgs__reader__st_2c2def9afb39268366d8dd182ceeda4c}
+
+
+The PCL raster image source width. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-src\_\-height@{pcl\_\-raster\_\-src\_\-height}}
+\index{pcl\_\-raster\_\-src\_\-height@{pcl\_\-raster\_\-src\_\-height}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-src\_\-height]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-src\_\-height}}\label{structhpgs__reader__st_d2526b16d2f3cd3a61def01e3723abbe}
+
+
+The PCL raster image source height. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-dest\_\-width@{pcl\_\-raster\_\-dest\_\-width}}
+\index{pcl\_\-raster\_\-dest\_\-width@{pcl\_\-raster\_\-dest\_\-width}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-dest\_\-width]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-dest\_\-width}}\label{structhpgs__reader__st_710d83626984533d90f749e47d33ccd2}
+
+
+The PCL raster image destination width. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-dest\_\-height@{pcl\_\-raster\_\-dest\_\-height}}
+\index{pcl\_\-raster\_\-dest\_\-height@{pcl\_\-raster\_\-dest\_\-height}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-dest\_\-height]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-dest\_\-height}}\label{structhpgs__reader__st_a0cea59f03a62d822030a748d0250244}
+
+
+The PCL raster image destination height. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-res@{pcl\_\-raster\_\-res}}
+\index{pcl\_\-raster\_\-res@{pcl\_\-raster\_\-res}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-res]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-res}}\label{structhpgs__reader__st_95d3097681417f5b50f584c31d0ce5a9}
+
+
+The PCL raster image resolution. 
+
+Referenced by hpgs\_\-reader\_\-do\_\-PJL().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-compression@{pcl\_\-raster\_\-compression}}
+\index{pcl\_\-raster\_\-compression@{pcl\_\-raster\_\-compression}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-compression]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-compression}}\label{structhpgs__reader__st_7f9f6a2957dd7482c31a979ebe4587fb}
+
+
+The PCL raster compression in effect. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-y\_\-offset@{pcl\_\-raster\_\-y\_\-offset}}
+\index{pcl\_\-raster\_\-y\_\-offset@{pcl\_\-raster\_\-y\_\-offset}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-y\_\-offset]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-y\_\-offset}}\label{structhpgs__reader__st_c65b9460273bfccc7b48a152c617cf24}
+
+
+The PCL raster y offset in effect. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-plane@{pcl\_\-raster\_\-plane}}
+\index{pcl\_\-raster\_\-plane@{pcl\_\-raster\_\-plane}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-plane]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-plane}}\label{structhpgs__reader__st_6601c9ae20b7b0eb8282c64dda3481ba}
+
+
+The current PCL raster plane for transfer data by plane. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-line@{pcl\_\-raster\_\-line}}
+\index{pcl\_\-raster\_\-line@{pcl\_\-raster\_\-line}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-line]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-line}}\label{structhpgs__reader__st_6ba17133f382263f5cbc5545be459aed}
+
+
+The number of the raster line currently transferred. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-data@{pcl\_\-raster\_\-data}}
+\index{pcl\_\-raster\_\-data@{pcl\_\-raster\_\-data}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-data]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-data}[8]}\label{structhpgs__reader__st_b11a72c0a62466ebd86d30726c37d8ba}
+
+
+The buffer for the data of the current raster. One pointer per plane. 
+
+Referenced by hpgs\_\-destroy\_\-reader(), and hpgs\_\-new\_\-reader().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-data\_\-size@{pcl\_\-raster\_\-data\_\-size}}
+\index{pcl\_\-raster\_\-data\_\-size@{pcl\_\-raster\_\-data\_\-size}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-data\_\-size]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-data\_\-size}}\label{structhpgs__reader__st_6d466db42e933a5951a9f1eb32d7cb02}
+
+
+The size of the raster data buffer. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-raster\_\-planes@{pcl\_\-raster\_\-planes}}
+\index{pcl\_\-raster\_\-planes@{pcl\_\-raster\_\-planes}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-raster\_\-planes]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::pcl\_\-raster\_\-planes}}\label{structhpgs__reader__st_2be566b130835713d4ece66cc8634900}
+
+
+The number of planes of the raster data currently being transferred. \index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!pcl\_\-image@{pcl\_\-image}}
+\index{pcl\_\-image@{pcl\_\-image}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[pcl\_\-image]{\setlength{\rightskip}{0pt plus 5cm}{\bf hpgs\_\-image}$\ast$ {\bf hpgs\_\-reader\_\-st::pcl\_\-image}}\label{structhpgs__reader__st_e63839dcbee1b611dc6395e0ad1dbb3e}
+
+
+The image currently filled by pcl. 
+
+Referenced by hpgs\_\-destroy\_\-reader(), hpgs\_\-new\_\-reader(), and hpgs\_\-reader\_\-do\_\-PCL().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!png\_\-dump\_\-count@{png\_\-dump\_\-count}}
+\index{png\_\-dump\_\-count@{png\_\-dump\_\-count}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[png\_\-dump\_\-count]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::png\_\-dump\_\-count}}\label{structhpgs__reader__st_3943aa511e5cc534061bec0511dd2003}
+
+
+The number of PCL images dumped so far. 
+
+Referenced by hpgs\_\-new\_\-reader(), and hpgs\_\-reader\_\-set\_\-png\_\-dump().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!png\_\-dump\_\-filename@{png\_\-dump\_\-filename}}
+\index{png\_\-dump\_\-filename@{png\_\-dump\_\-filename}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[png\_\-dump\_\-filename]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf hpgs\_\-reader\_\-st::png\_\-dump\_\-filename}}\label{structhpgs__reader__st_77896d1ba452a75ae0e26f02a1bd3b50}
+
+
+The base filename for dumped PCL images. 
+
+Referenced by hpgs\_\-destroy\_\-reader(), hpgs\_\-new\_\-reader(), and hpgs\_\-reader\_\-set\_\-png\_\-dump().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!clipsave\_\-depth@{clipsave\_\-depth}}
+\index{clipsave\_\-depth@{clipsave\_\-depth}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[clipsave\_\-depth]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::clipsave\_\-depth}}\label{structhpgs__reader__st_495296c78e61bc23e1ff853d5d2f4f70}
+
+
+how many clipsaves have been issued? 
+
+Referenced by hpgs\_\-read().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!last\_\-byte@{last\_\-byte}}
+\index{last\_\-byte@{last\_\-byte}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[last\_\-byte]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::last\_\-byte}}\label{structhpgs__reader__st_a3fce47e898bffa3c3799f252bf2ea82}
+
+
+The last byte extracted from the stream? 
+
+Referenced by hpgs\_\-read(), hpgs\_\-reader\_\-do\_\-PCL(), hpgs\_\-reader\_\-do\_\-PJL(), hpgs\_\-reader\_\-read\_\-double(), hpgs\_\-reader\_\-read\_\-int(), hpgs\_\-reader\_\-read\_\-new\_\-string(), and hpgs\_\-reader\_\-read\_\-pcl\_\-int().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!bytes\_\-ignored@{bytes\_\-ignored}}
+\index{bytes\_\-ignored@{bytes\_\-ignored}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[bytes\_\-ignored]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::bytes\_\-ignored}}\label{structhpgs__reader__st_224d05ab1b2d4f53c5c623221c439031}
+
+
+A byte counter for various purposes. 
+
+Referenced by hpgs\_\-read(), hpgs\_\-reader\_\-do\_\-PCL(), and hpgs\_\-reader\_\-do\_\-PJL().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!eoc@{eoc}}
+\index{eoc@{eoc}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[eoc]{\setlength{\rightskip}{0pt plus 5cm}int {\bf hpgs\_\-reader\_\-st::eoc}}\label{structhpgs__reader__st_f6ab3ba49fa4700f2f4abd6cf4c251f6}
+
+
+Did we reach the end of a HPGL command? 
+
+Referenced by hpgs\_\-read(), hpgs\_\-reader\_\-do\_\-PCL(), hpgs\_\-reader\_\-do\_\-PJL(), hpgs\_\-reader\_\-read\_\-double(), hpgs\_\-reader\_\-read\_\-int(), and hpgs\_\-reader\_\-read\_\-new\_\-string().\index{hpgs\_\-reader\_\-st@{hpgs\_\-reader\_\-st}!interrupted@{interrupted}}
+\index{interrupted@{interrupted}!hpgs_reader_st@{hpgs\_\-reader\_\-st}}
+\subsubsection[interrupted]{\setlength{\rightskip}{0pt plus 5cm}hpgs\_\-bool {\bf hpgs\_\-reader\_\-st::interrupted}}\label{structhpgs__reader__st_d3efd09b11ca226c560481cb1dc1e343}
+
+
+Did someone call {\tt hpgs\_\-reader\_\-interrupt} ? 
+
+Referenced by hpgs\_\-new\_\-reader(), hpgs\_\-read(), hpgs\_\-reader\_\-do\_\-PCL(), and hpgs\_\-reader\_\-interrupt().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf hpgsreader.h}\end{CompactItemize}

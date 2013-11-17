@@ -1,0 +1,340 @@
+\section{Path contruction functions.}
+\label{group__path}\index{Path contruction functions.@{Path contruction functions.}}
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf hpgs\_\-path\_\-point\_\-st}
+\begin{CompactList}\small\item\em A point in a stored path. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-paint\_\-path\_\-st}
+\begin{CompactList}\small\item\em A stored vector path. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-bezier\_\-length\_\-st}
+\begin{CompactList}\small\item\em A structure for holding intermediate values for length calculations of a bezier spline. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf HPGS\_\-POINT\_\-ROLE\_\-MASK}~0xF\label{group__path_g3229deba8d3d400eb35dc5a23ffd8468}
+
+\begin{CompactList}\small\item\em A mask for retrieving the role of a point in the path. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-UNDEFINED}~0x0\label{group__path_g6d0ec9ff7cda2cb9f20d2f4d915af2cd}
+
+\begin{CompactList}\small\item\em point is undefined \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-LINE}~0x1\label{group__path_g31b0bb74be6c5267fdae0be7bcc72a0c}
+
+\begin{CompactList}\small\item\em start of line \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-BEZIER}~0x2\label{group__path_g71dc1db8502694139211792a33094978}
+
+\begin{CompactList}\small\item\em start of bezier curve \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-CONTROL}~0x3\label{group__path_g197617cc3e882301564d69bda1600cdc}
+
+\begin{CompactList}\small\item\em bezier control point \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-FILL\_\-LINE}~0x4\label{group__path_g0f1ad714cd387f5808fd99fb26a145cc}
+
+\begin{CompactList}\small\item\em line fill only (implicit closepath) \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-DOT}~0x8\label{group__path_gf33f767f7b5b8849d65a0e6988386f14}
+
+\begin{CompactList}\small\item\em indicates a moveto/lineto with the same coordinates at the start of a subpath. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-SUBPATH\_\-START}~0x10\label{group__path_g701397585f03b6cd04df91f618919bb6}
+
+\begin{CompactList}\small\item\em a subpath starts at this point \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-SUBPATH\_\-END}~0x20\label{group__path_g7fa10e914aeb28a8de35407e16e702ae}
+
+\begin{CompactList}\small\item\em a subpath ends at this point \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-SUBPATH\_\-CLOSE}~0x40\label{group__path_g8b553718c2918f34ff13305103cbc4c5}
+
+\begin{CompactList}\small\item\em indicates an explicit closepath at the end of a subpath \item\end{CompactList}\item 
+\#define \textbf{HPGS\_\-BEZIER\_\-NSEGS}~16\label{group__path_gc1e1b2309958cace37208a8072ac9f4f}
+
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef struct {\bf hpgs\_\-path\_\-point\_\-st} \textbf{hpgs\_\-path\_\-point}\label{group__path_gfc59f1822b1f6783bfcce4c824b911f4}
+
+\item 
+typedef struct {\bf hpgs\_\-paint\_\-path\_\-st} \textbf{hpgs\_\-paint\_\-path}\label{group__path_g13ce072f19c7638345701bd3fb2f6f31}
+
+\item 
+typedef struct {\bf hpgs\_\-bezier\_\-length\_\-st} \textbf{hpgs\_\-bezier\_\-length}\label{group__path_g5e084a0203b2fc7fcbe94b5c2a7af9b0}
+
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+HPGS\_\-API {\bf hpgs\_\-paint\_\-path} $\ast$ {\bf hpgs\_\-new\_\-paint\_\-path} (void)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-paint\_\-path\_\-destroy} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-paint\_\-path\_\-truncate} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-paint\_\-path\_\-moveto} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-paint\_\-path\_\-lineto} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-paint\_\-path\_\-curveto} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p1, const {\bf hpgs\_\-point} $\ast$p2, const {\bf hpgs\_\-point} $\ast$p3)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-paint\_\-path\_\-closepath} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-paint\_\-path\_\-buldgeto} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p, double buldge)
+\item 
+HPGS\_\-API {\bf hpgs\_\-paint\_\-path} $\ast$ {\bf hpgs\_\-paint\_\-path\_\-stroke\_\-path} (const {\bf hpgs\_\-paint\_\-path} $\ast$\_\-this, const {\bf hpgs\_\-gstate} $\ast$gstate)
+\item 
+HPGS\_\-API {\bf hpgs\_\-paint\_\-path} $\ast$ {\bf hpgs\_\-paint\_\-path\_\-decompose\_\-dashes} (const {\bf hpgs\_\-paint\_\-path} $\ast$\_\-this, const {\bf hpgs\_\-gstate} $\ast$gstate)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-x} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-y} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-delta\_\-x} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-delta\_\-y} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-xmin} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-xmax} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-ymin} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-ymax} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bezier\_\-path\_\-point} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t, {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bezier\_\-path\_\-delta} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t, {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bezier\_\-path\_\-tangent} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t, int orientation, double ytol, {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bezier\_\-path\_\-singularities} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t0, double t1, int $\ast$nx, double $\ast$tx)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bezier\_\-path\_\-to\_\-quadratic} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t0, double t1, int $\ast$nx, {\bf hpgs\_\-point} $\ast$points)
+\item 
+HPGS\_\-INTERNAL\_\-API void {\bf hpgs\_\-bezier\_\-length\_\-init} ({\bf hpgs\_\-bezier\_\-length} $\ast$b, const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i)
+\item 
+HPGS\_\-INTERNAL\_\-API double {\bf hpgs\_\-bezier\_\-length\_\-param} (const {\bf hpgs\_\-bezier\_\-length} $\ast$b, double l)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains the documentation of the path contruction layer of the vector renderer {\tt hpgs\_\-paint\_\-device}.
+
+The dcomumentation of {\tt \doxyref{hpgs\_\-paint\_\-path\_\-st}{p.}{structhpgs__paint__path__st}} explains the most important parts of this module. 
+
+\subsection{Function Documentation}
+\index{path@{path}!hpgs\_\-bezier\_\-length\_\-init@{hpgs\_\-bezier\_\-length\_\-init}}
+\index{hpgs\_\-bezier\_\-length\_\-init@{hpgs\_\-bezier\_\-length\_\-init}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-length\_\-init]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API void hpgs\_\-bezier\_\-length\_\-init ({\bf hpgs\_\-bezier\_\-length} $\ast$ {\em b}, \/  const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i})}\label{group__path_ge1de1d8ec6713cc6cff64c6e87681770}
+
+
+Calculates the curve lengths at an equidistant grid of curve parmeters by na numerical quadrature.
+
+You must call this subroutine before using {\tt hpgs\_\-bezier\_\-length\_\-param}. 
+
+References hpgs\_\-bezier\_\-length\_\-st::dl, and hpgs\_\-bezier\_\-length\_\-st::l.\index{path@{path}!hpgs\_\-bezier\_\-length\_\-param@{hpgs\_\-bezier\_\-length\_\-param}}
+\index{hpgs\_\-bezier\_\-length\_\-param@{hpgs\_\-bezier\_\-length\_\-param}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-length\_\-param]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-INTERNAL\_\-API double hpgs\_\-bezier\_\-length\_\-param (const {\bf hpgs\_\-bezier\_\-length} $\ast$ {\em b}, \/  double {\em l})}\label{group__path_gbb6dbb8f38eb0e1a11c1a04972380ca6}
+
+
+Returns the curve parameter at the bezier curve {\tt b} corresponding to a curve length {\tt l}.
+
+You must have called {\tt hpgs\_\-bezier\_\-length\_\-init} before using this function. 
+
+References hpgs\_\-bezier\_\-length\_\-st::dl, and hpgs\_\-bezier\_\-length\_\-st::l.\index{path@{path}!hpgs\_\-bezier\_\-path\_\-delta@{hpgs\_\-bezier\_\-path\_\-delta}}
+\index{hpgs\_\-bezier\_\-path\_\-delta@{hpgs\_\-bezier\_\-path\_\-delta}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-delta]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-bezier\_\-path\_\-delta (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i}, \/  double {\em t}, \/  {\bf hpgs\_\-point} $\ast$ {\em p})}\label{group__path_gb33a3385293bcb5df268027fba1f279d}
+
+
+Calculates the derivation of the bezier curve starting at point {\tt i} of {\tt path} at curve parameter {\tt t}. 
+
+References hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.
+
+Referenced by hpgs\_\-bezier\_\-path\_\-tangent().\index{path@{path}!hpgs\_\-bezier\_\-path\_\-delta\_\-x@{hpgs\_\-bezier\_\-path\_\-delta\_\-x}}
+\index{hpgs\_\-bezier\_\-path\_\-delta\_\-x@{hpgs\_\-bezier\_\-path\_\-delta\_\-x}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-delta\_\-x]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API double hpgs\_\-bezier\_\-path\_\-delta\_\-x (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i}, \/  double {\em t})}\label{group__path_g64dbf30a9de3d4a4f78bb8b1b35a251b}
+
+
+Calculates the derivation of the bezier curve starting at point {\tt i} of {\tt path} at curve parameter {\tt t}. 
+
+References hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, and hpgs\_\-point\_\-st::x.\index{path@{path}!hpgs\_\-bezier\_\-path\_\-delta\_\-y@{hpgs\_\-bezier\_\-path\_\-delta\_\-y}}
+\index{hpgs\_\-bezier\_\-path\_\-delta\_\-y@{hpgs\_\-bezier\_\-path\_\-delta\_\-y}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-delta\_\-y]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API double hpgs\_\-bezier\_\-path\_\-delta\_\-y (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i}, \/  double {\em t})}\label{group__path_g108a95693117dcccbd20d63f724db873}
+
+
+Calculates the derivation of the bezier curve starting at point {\tt i} of {\tt path} at curve parameter {\tt t}. 
+
+References hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, and hpgs\_\-point\_\-st::y.\index{path@{path}!hpgs\_\-bezier\_\-path\_\-point@{hpgs\_\-bezier\_\-path\_\-point}}
+\index{hpgs\_\-bezier\_\-path\_\-point@{hpgs\_\-bezier\_\-path\_\-point}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-point]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-bezier\_\-path\_\-point (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i}, \/  double {\em t}, \/  {\bf hpgs\_\-point} $\ast$ {\em p})}\label{group__path_ga9d1fb5d9f3701dca155b81c08f6b1a0}
+
+
+Calculates the point on the bezier curve starting at point {\tt i} of {\tt path} at curve parameter {\tt t}. 
+
+References hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.
+
+Referenced by hpgs\_\-bezier\_\-path\_\-tangent(), and hpgs\_\-bezier\_\-path\_\-to\_\-quadratic().\index{path@{path}!hpgs\_\-bezier\_\-path\_\-singularities@{hpgs\_\-bezier\_\-path\_\-singularities}}
+\index{hpgs\_\-bezier\_\-path\_\-singularities@{hpgs\_\-bezier\_\-path\_\-singularities}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-singularities]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-bezier\_\-path\_\-singularities (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i}, \/  double {\em t0}, \/  double {\em t1}, \/  int $\ast$ {\em nx}, \/  double $\ast$ {\em tx})}\label{group__path_g8e07a97f4090db038f018afe95a526e3}
+
+
+Calculates the singularities of the bezier curve in the parameter interval from {\tt t0} to {\tt t1}.
+
+We calculate points, where the cross product of the first derivative and the second derivative vanishes. These points include points, where the first or second derivative vanishes. Additionally, turning points of the curve are also included.
+
+{\tt tx} is a pointer to an array of at least two double values, in which the position of the singularities is returned. 
+
+References hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{path@{path}!hpgs\_\-bezier\_\-path\_\-tangent@{hpgs\_\-bezier\_\-path\_\-tangent}}
+\index{hpgs\_\-bezier\_\-path\_\-tangent@{hpgs\_\-bezier\_\-path\_\-tangent}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-tangent]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-bezier\_\-path\_\-tangent (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i}, \/  double {\em t}, \/  int {\em orientation}, \/  double {\em ytol}, \/  {\bf hpgs\_\-point} $\ast$ {\em p})}\label{group__path_g34d53990c546cbed40b159bc24fae3a6}
+
+
+Calculates the tangent to the bezier curve starting at point {\tt i} of {\tt path} at curve parameter {\tt t}.
+
+If {\tt orientation} is {\tt 1}, the tangent is calculated with increasing curve parameter, if we meet a singularity (right tangent).
+
+If {\tt orientation} is {\tt -1}, the tangent is calculated with decreasing curve parameter, if we meet a singularity (left tangent).
+
+If {\tt orientation} is {\tt 0}, the tangent is calculated with decreased and increased curve parameter, if we meet a singularity (mid tangent). 
+
+References hpgs\_\-bezier\_\-path\_\-delta(), hpgs\_\-bezier\_\-path\_\-point(), hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.
+
+Referenced by hpgs\_\-bezier\_\-path\_\-to\_\-quadratic().\index{path@{path}!hpgs\_\-bezier\_\-path\_\-to\_\-quadratic@{hpgs\_\-bezier\_\-path\_\-to\_\-quadratic}}
+\index{hpgs\_\-bezier\_\-path\_\-to\_\-quadratic@{hpgs\_\-bezier\_\-path\_\-to\_\-quadratic}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-to\_\-quadratic]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-bezier\_\-path\_\-to\_\-quadratic (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i}, \/  double {\em t0}, \/  double {\em t1}, \/  int $\ast$ {\em nx}, \/  {\bf hpgs\_\-point} $\ast$ {\em points})}\label{group__path_gc06ce64d98ddcc7e1915da3ff83f152e}
+
+
+Approximates the bezier curve segment in the parameter interval from {\tt t0} to {\tt t1} with quadratic bezier splines.
+
+The array {\tt points} is used to return the quadratic bezier segments and must have a dimension of at least 16 points.
+
+{\tt nx} returns the number of generated points, which is always an even number. The first point is the control point of the first quadratic spline, the second point the endpoint of the first quadratic spline and so on. 
+
+References hpgs\_\-bezier\_\-path\_\-point(), hpgs\_\-bezier\_\-path\_\-tangent(), hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{path@{path}!hpgs\_\-bezier\_\-path\_\-x@{hpgs\_\-bezier\_\-path\_\-x}}
+\index{hpgs\_\-bezier\_\-path\_\-x@{hpgs\_\-bezier\_\-path\_\-x}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-x]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API double hpgs\_\-bezier\_\-path\_\-x (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i}, \/  double {\em t})}\label{group__path_g589ab0826ff2b0a0e4d76422eaebb658}
+
+
+Calculates the x component of a point on the bezier spline. 
+
+References hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, and hpgs\_\-point\_\-st::x.\index{path@{path}!hpgs\_\-bezier\_\-path\_\-xmax@{hpgs\_\-bezier\_\-path\_\-xmax}}
+\index{hpgs\_\-bezier\_\-path\_\-xmax@{hpgs\_\-bezier\_\-path\_\-xmax}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-xmax]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API double hpgs\_\-bezier\_\-path\_\-xmax (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i})}\label{group__path_gb88fd70b75e07b4cf33367ec69a6ea00}
+
+
+Calculates the maximal x component of all four control points of the bezier spline. 
+
+References hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, and hpgs\_\-point\_\-st::x.\index{path@{path}!hpgs\_\-bezier\_\-path\_\-xmin@{hpgs\_\-bezier\_\-path\_\-xmin}}
+\index{hpgs\_\-bezier\_\-path\_\-xmin@{hpgs\_\-bezier\_\-path\_\-xmin}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-xmin]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API double hpgs\_\-bezier\_\-path\_\-xmin (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i})}\label{group__path_g810a2b07127ac56ff8f04b7bfd2a8998}
+
+
+Calculates the minimal x component of all four control points of the bezier spline. 
+
+References hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, and hpgs\_\-point\_\-st::x.\index{path@{path}!hpgs\_\-bezier\_\-path\_\-y@{hpgs\_\-bezier\_\-path\_\-y}}
+\index{hpgs\_\-bezier\_\-path\_\-y@{hpgs\_\-bezier\_\-path\_\-y}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-y]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API double hpgs\_\-bezier\_\-path\_\-y (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i}, \/  double {\em t})}\label{group__path_g959862417dc7ffc0792fcf25c6ab6eb8}
+
+
+Calculates the y component of a point on the bezier spline. 
+
+References hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, and hpgs\_\-point\_\-st::y.\index{path@{path}!hpgs\_\-bezier\_\-path\_\-ymax@{hpgs\_\-bezier\_\-path\_\-ymax}}
+\index{hpgs\_\-bezier\_\-path\_\-ymax@{hpgs\_\-bezier\_\-path\_\-ymax}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-ymax]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API double hpgs\_\-bezier\_\-path\_\-ymax (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i})}\label{group__path_gc70eb5670be00d5a057a4870108cc721}
+
+
+Calculates the maximal y component of all four control points of the bezier spline. 
+
+References hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, and hpgs\_\-point\_\-st::y.\index{path@{path}!hpgs\_\-bezier\_\-path\_\-ymin@{hpgs\_\-bezier\_\-path\_\-ymin}}
+\index{hpgs\_\-bezier\_\-path\_\-ymin@{hpgs\_\-bezier\_\-path\_\-ymin}!path@{path}}
+\subsubsection[hpgs\_\-bezier\_\-path\_\-ymin]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API double hpgs\_\-bezier\_\-path\_\-ymin (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em path}, \/  int {\em i})}\label{group__path_g245d9eddd44cff174916663d1d6ff51e}
+
+
+Calculates the minimal y component of all four control points of the bezier spline. 
+
+References hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, and hpgs\_\-point\_\-st::y.\index{path@{path}!hpgs\_\-new\_\-paint\_\-path@{hpgs\_\-new\_\-paint\_\-path}}
+\index{hpgs\_\-new\_\-paint\_\-path@{hpgs\_\-new\_\-paint\_\-path}!path@{path}}
+\subsubsection[hpgs\_\-new\_\-paint\_\-path]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-paint\_\-path}$\ast$ hpgs\_\-new\_\-paint\_\-path (void)}\label{group__path_g07d2a592ad7adae336198184241a27e5}
+
+
+Returns a new, empty path created on the heap.
+
+Use {\tt hpgs\_\-paint\_\-path\_\-destroy} in order to destroy the returned {\tt hpgs\_\-paint\_\-path} from the heap.
+
+Returns a null pointer, if the system is out of memory. 
+
+References hpgs\_\-paint\_\-path\_\-st::bb, hpgs\_\-bbox\_\-null(), hpgs\_\-paint\_\-path\_\-st::last\_\-start, hpgs\_\-paint\_\-path\_\-st::n\_\-points, hpgs\_\-paint\_\-path\_\-st::points, and hpgs\_\-paint\_\-path\_\-st::points\_\-malloc\_\-size.
+
+Referenced by hpgs\_\-new\_\-paint\_\-device(), hpgs\_\-paint\_\-path\_\-decompose\_\-dashes(), and hpgs\_\-paint\_\-path\_\-stroke\_\-path().\index{path@{path}!hpgs\_\-paint\_\-path\_\-buldgeto@{hpgs\_\-paint\_\-path\_\-buldgeto}}
+\index{hpgs\_\-paint\_\-path\_\-buldgeto@{hpgs\_\-paint\_\-path\_\-buldgeto}!path@{path}}
+\subsubsection[hpgs\_\-paint\_\-path\_\-buldgeto]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-paint\_\-path\_\-buldgeto ({\bf hpgs\_\-paint\_\-path} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p}, \/  double {\em buldge})}\label{group__path_g1fe6435c2606f26ceffb4c4168471386}
+
+
+Adds a buldged arc segment to the path. Buldge is defined to be {\tt tan}(alpha/4), where {\tt alpha} is the turning angle of the arc. 
+
+References hpgs\_\-paint\_\-path\_\-buldgeto(), hpgs\_\-paint\_\-path\_\-curveto(), hpgs\_\-paint\_\-path\_\-st::n\_\-points, hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.
+
+Referenced by hpgs\_\-paint\_\-path\_\-buldgeto().\index{path@{path}!hpgs\_\-paint\_\-path\_\-closepath@{hpgs\_\-paint\_\-path\_\-closepath}}
+\index{hpgs\_\-paint\_\-path\_\-closepath@{hpgs\_\-paint\_\-path\_\-closepath}!path@{path}}
+\subsubsection[hpgs\_\-paint\_\-path\_\-closepath]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-paint\_\-path\_\-closepath ({\bf hpgs\_\-paint\_\-path} $\ast$ {\em \_\-this})}\label{group__path_gfc64aa16fc56a640686f796a5bce510e}
+
+
+Closes the current subpolygon. If the current point is distinct from the start point of the current subpolygon, a line is drawn from the start point of the current subpolygon to the last point. 
+
+References hpgs\_\-path\_\-point\_\-st::flags, HPGS\_\-POINT\_\-LINE, HPGS\_\-POINT\_\-ROLE\_\-MASK, HPGS\_\-POINT\_\-SUBPATH\_\-CLOSE, HPGS\_\-POINT\_\-SUBPATH\_\-END, HPGS\_\-POINT\_\-SUBPATH\_\-START, hpgs\_\-paint\_\-path\_\-st::last\_\-start, hpgs\_\-paint\_\-path\_\-st::n\_\-points, hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{path@{path}!hpgs\_\-paint\_\-path\_\-curveto@{hpgs\_\-paint\_\-path\_\-curveto}}
+\index{hpgs\_\-paint\_\-path\_\-curveto@{hpgs\_\-paint\_\-path\_\-curveto}!path@{path}}
+\subsubsection[hpgs\_\-paint\_\-path\_\-curveto]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-paint\_\-path\_\-curveto ({\bf hpgs\_\-paint\_\-path} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p1}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p2}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p3})}\label{group__path_g35dc4d991969c871df406e0ddb945d6f}
+
+
+Adds three new points to the path and mark the last segment as bezier spline. 
+
+References hpgs\_\-path\_\-point\_\-st::flags, hpgs\_\-log(), HPGS\_\-POINT\_\-BEZIER, HPGS\_\-POINT\_\-CONTROL, HPGS\_\-POINT\_\-ROLE\_\-MASK, HPGS\_\-POINT\_\-SUBPATH\_\-END, HPGS\_\-POINT\_\-SUBPATH\_\-START, hpgs\_\-paint\_\-path\_\-st::last\_\-start, hpgs\_\-paint\_\-path\_\-st::n\_\-points, hpgs\_\-paint\_\-path\_\-st::points, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.
+
+Referenced by hpgs\_\-paint\_\-path\_\-buldgeto().\index{path@{path}!hpgs\_\-paint\_\-path\_\-decompose\_\-dashes@{hpgs\_\-paint\_\-path\_\-decompose\_\-dashes}}
+\index{hpgs\_\-paint\_\-path\_\-decompose\_\-dashes@{hpgs\_\-paint\_\-path\_\-decompose\_\-dashes}!path@{path}}
+\subsubsection[hpgs\_\-paint\_\-path\_\-decompose\_\-dashes]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-paint\_\-path}$\ast$ hpgs\_\-paint\_\-path\_\-decompose\_\-dashes (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-gstate} $\ast$ {\em gstate})}\label{group__path_ge2c596a2809f63296e80e1949f232eb4}
+
+
+Returns a new path on the heap, which represents a path which conists of solid line segments which should be drawn instead of \_\-this, if your output device does not support dashed lines.
+
+Use {\tt hpgs\_\-paint\_\-path\_\-destroy} in order to destroy the returned {\tt hpgs\_\-paint\_\-path} from the heap.
+
+Returns a null pointer, if the system is out of memory. 
+
+References hpgs\_\-new\_\-paint\_\-path(), hpgs\_\-paint\_\-path\_\-destroy(), and hpgs\_\-gstate\_\-st::n\_\-dashes.\index{path@{path}!hpgs\_\-paint\_\-path\_\-destroy@{hpgs\_\-paint\_\-path\_\-destroy}}
+\index{hpgs\_\-paint\_\-path\_\-destroy@{hpgs\_\-paint\_\-path\_\-destroy}!path@{path}}
+\subsubsection[hpgs\_\-paint\_\-path\_\-destroy]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-paint\_\-path\_\-destroy ({\bf hpgs\_\-paint\_\-path} $\ast$ {\em \_\-this})}\label{group__path_g35940c0dfe7415e673a1f1d6e1df5707}
+
+
+Destroys a path from the heap. 
+
+References hpgs\_\-paint\_\-path\_\-st::points.
+
+Referenced by hpgs\_\-new\_\-paint\_\-device(), hpgs\_\-paint\_\-path\_\-decompose\_\-dashes(), and hpgs\_\-paint\_\-path\_\-stroke\_\-path().\index{path@{path}!hpgs\_\-paint\_\-path\_\-lineto@{hpgs\_\-paint\_\-path\_\-lineto}}
+\index{hpgs\_\-paint\_\-path\_\-lineto@{hpgs\_\-paint\_\-path\_\-lineto}!path@{path}}
+\subsubsection[hpgs\_\-paint\_\-path\_\-lineto]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-paint\_\-path\_\-lineto ({\bf hpgs\_\-paint\_\-path} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p})}\label{group__path_g413a780ab57f3cda699f4925f040f664}
+
+
+Adds a new point to the path and mark the last segment as line. 
+
+References hpgs\_\-path\_\-point\_\-st::flags, hpgs\_\-log(), HPGS\_\-POINT\_\-DOT, HPGS\_\-POINT\_\-LINE, HPGS\_\-POINT\_\-ROLE\_\-MASK, HPGS\_\-POINT\_\-SUBPATH\_\-END, HPGS\_\-POINT\_\-SUBPATH\_\-START, hpgs\_\-paint\_\-path\_\-st::last\_\-start, hpgs\_\-paint\_\-path\_\-st::n\_\-points, hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{path@{path}!hpgs\_\-paint\_\-path\_\-moveto@{hpgs\_\-paint\_\-path\_\-moveto}}
+\index{hpgs\_\-paint\_\-path\_\-moveto@{hpgs\_\-paint\_\-path\_\-moveto}!path@{path}}
+\subsubsection[hpgs\_\-paint\_\-path\_\-moveto]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-paint\_\-path\_\-moveto ({\bf hpgs\_\-paint\_\-path} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p})}\label{group__path_gc4ff98d00ebdc0b3d5d5ed238dd89e64}
+
+
+Adds a new point to the path. If the path already has some points, the current subpolygon is implicitly closed. 
+
+References hpgs\_\-paint\_\-path\_\-st::bb, hpgs\_\-path\_\-point\_\-st::flags, hpgs\_\-bbox\_\-add(), hpgs\_\-log(), HPGS\_\-POINT\_\-DOT, HPGS\_\-POINT\_\-FILL\_\-LINE, HPGS\_\-POINT\_\-ROLE\_\-MASK, HPGS\_\-POINT\_\-SUBPATH\_\-END, HPGS\_\-POINT\_\-SUBPATH\_\-START, hpgs\_\-paint\_\-path\_\-st::last\_\-start, hpgs\_\-paint\_\-path\_\-st::n\_\-points, hpgs\_\-path\_\-point\_\-st::p, hpgs\_\-paint\_\-path\_\-st::points, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{path@{path}!hpgs\_\-paint\_\-path\_\-stroke\_\-path@{hpgs\_\-paint\_\-path\_\-stroke\_\-path}}
+\index{hpgs\_\-paint\_\-path\_\-stroke\_\-path@{hpgs\_\-paint\_\-path\_\-stroke\_\-path}!path@{path}}
+\subsubsection[hpgs\_\-paint\_\-path\_\-stroke\_\-path]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-paint\_\-path}$\ast$ hpgs\_\-paint\_\-path\_\-stroke\_\-path (const {\bf hpgs\_\-paint\_\-path} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-gstate} $\ast$ {\em gstate})}\label{group__path_gf11d73d398a2370a335b1898648f32d4}
+
+
+Returns a new path on the heap, which represents the extruded border line of {\tt \_\-this}. The setting of {\tt gstate} are applied accordingly.
+
+Use {\tt hpgs\_\-paint\_\-path\_\-destroy} in order to destroy the returned {\tt hpgs\_\-paint\_\-path} from the heap.
+
+Returns a null pointer, if the system is out of memory. 
+
+References hpgs\_\-log(), hpgs\_\-new\_\-paint\_\-path(), hpgs\_\-paint\_\-path\_\-destroy(), and hpgs\_\-gstate\_\-st::n\_\-dashes.\index{path@{path}!hpgs\_\-paint\_\-path\_\-truncate@{hpgs\_\-paint\_\-path\_\-truncate}}
+\index{hpgs\_\-paint\_\-path\_\-truncate@{hpgs\_\-paint\_\-path\_\-truncate}!path@{path}}
+\subsubsection[hpgs\_\-paint\_\-path\_\-truncate]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-paint\_\-path\_\-truncate ({\bf hpgs\_\-paint\_\-path} $\ast$ {\em \_\-this})}\label{group__path_g7bc7ada876cd857a1ceb02cc20485fff}
+
+
+Resets the given path to be empty. 
+
+References hpgs\_\-paint\_\-path\_\-st::bb, hpgs\_\-bbox\_\-null(), hpgs\_\-paint\_\-path\_\-st::last\_\-start, and hpgs\_\-paint\_\-path\_\-st::n\_\-points.

@@ -1,0 +1,100 @@
+\section{hpgs\_\-device\_\-vtable\_\-st Struct Reference}
+\label{structhpgs__device__vtable__st}\index{hpgs\_\-device\_\-vtable\_\-st@{hpgs\_\-device\_\-vtable\_\-st}}
+A table of virtual function implementing {\tt hpgs\_\-device}.  
+
+
+{\tt \#include $<$hpgs.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+const char $\ast$ \textbf{rtti}\label{structhpgs__device__vtable__st_59095283a999512ac8edfc1e9008c4e1}
+
+\item 
+int($\ast$ \textbf{moveto} )({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p)\label{structhpgs__device__vtable__st_287a5215d8597c643d41ac771e1bc15c}
+
+\item 
+int($\ast$ \textbf{lineto} )({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p)\label{structhpgs__device__vtable__st_f6cb3fa9fed286a18632631fc8c4ee1f}
+
+\item 
+int($\ast$ \textbf{curveto} )({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p1, const {\bf hpgs\_\-point} $\ast$p2, const {\bf hpgs\_\-point} $\ast$p3)\label{structhpgs__device__vtable__st_5581e1c0473f9b748466c1bf38fdb4b0}
+
+\item 
+int($\ast$ \textbf{newpath} )({\bf hpgs\_\-device} $\ast$\_\-this)\label{structhpgs__device__vtable__st_5781cdaec70e07b2fbe42759878c4a12}
+
+\item 
+int($\ast$ \textbf{closepath} )({\bf hpgs\_\-device} $\ast$\_\-this)\label{structhpgs__device__vtable__st_f6d07ac482acfa3ae42fb2720d6125f5}
+
+\item 
+int($\ast$ \textbf{stroke} )({\bf hpgs\_\-device} $\ast$\_\-this)\label{structhpgs__device__vtable__st_69685e71952f8df6987aaf99fe266fce}
+
+\item 
+int($\ast$ \textbf{fill} )({\bf hpgs\_\-device} $\ast$\_\-this, hpgs\_\-bool winding)\label{structhpgs__device__vtable__st_4af148c1a1b85a60c548044b900e4122}
+
+\item 
+int($\ast$ \textbf{clip} )({\bf hpgs\_\-device} $\ast$\_\-this, hpgs\_\-bool winding)\label{structhpgs__device__vtable__st_ebf6c867c63f6073f6331b5437c110f2}
+
+\item 
+int($\ast$ \textbf{clipsave} )({\bf hpgs\_\-device} $\ast$\_\-this)\label{structhpgs__device__vtable__st_57bb09f77e43229624be5b3de22b9008}
+
+\item 
+int($\ast$ \textbf{cliprestore} )({\bf hpgs\_\-device} $\ast$\_\-this)\label{structhpgs__device__vtable__st_ca68f41a1cce4a6e60cae48418dd6665}
+
+\item 
+int($\ast$ \textbf{setrgbcolor} )({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-color} $\ast$rgb)\label{structhpgs__device__vtable__st_ca3c049976707c1a86bdfcfaf195d105}
+
+\item 
+int($\ast$ \textbf{setdash} )({\bf hpgs\_\-device} $\ast$\_\-this, const float $\ast$, unsigned, double)\label{structhpgs__device__vtable__st_e2111971e1822582a9d7ade1f16e1bab}
+
+\item 
+int($\ast$ \textbf{setlinewidth} )({\bf hpgs\_\-device} $\ast$\_\-this, double)\label{structhpgs__device__vtable__st_cbf75582e190064c7a024cba5587c4f8}
+
+\item 
+int($\ast$ \textbf{setlinecap} )({\bf hpgs\_\-device} $\ast$\_\-this, {\bf hpgs\_\-line\_\-cap})\label{structhpgs__device__vtable__st_57e5a4206e37340fbdadd216a7b10bae}
+
+\item 
+int($\ast$ \textbf{setlinejoin} )({\bf hpgs\_\-device} $\ast$\_\-this, {\bf hpgs\_\-line\_\-join})\label{structhpgs__device__vtable__st_5bbc58c850e20ed95e37d1d6d4503579}
+
+\item 
+int($\ast$ \textbf{setmiterlimit} )({\bf hpgs\_\-device} $\ast$\_\-this, double l)\label{structhpgs__device__vtable__st_6b98bf0b2df5fa5c2b0493b9224e9ac8}
+
+\item 
+int($\ast$ \textbf{setrop3} )({\bf hpgs\_\-device} $\ast$\_\-this, int rop, hpgs\_\-bool src\_\-transparency, hpgs\_\-bool pattern\_\-transparency)\label{structhpgs__device__vtable__st_244148e4288962733ef93590bc6b0f9b}
+
+\item 
+int($\ast$ \textbf{setpatcol} )({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-color} $\ast$rgb)\label{structhpgs__device__vtable__st_ef383649215701a43c5e589fe5070b11}
+
+\item 
+int($\ast$ \textbf{drawimage} )({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-image} $\ast$img, const {\bf hpgs\_\-point} $\ast$ll, const {\bf hpgs\_\-point} $\ast$lr, const {\bf hpgs\_\-point} $\ast$ur)\label{structhpgs__device__vtable__st_5dd8b6dfd8cc38201f337b1755a9f833}
+
+\item 
+int($\ast$ \textbf{setplotsize} )({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-bbox} $\ast$bb)\label{structhpgs__device__vtable__st_731e06a06d4693c043b54148f6774d5a}
+
+\item 
+int($\ast$ \textbf{getplotsize} )({\bf hpgs\_\-device} $\ast$\_\-this, int i, {\bf hpgs\_\-bbox} $\ast$bb)\label{structhpgs__device__vtable__st_c62d3a20b9edaa607dde29a6851908ef}
+
+\item 
+int($\ast$ \textbf{showpage} )({\bf hpgs\_\-device} $\ast$\_\-this, int i)\label{structhpgs__device__vtable__st_ec74873ea699dfc85f6e829c9541692b}
+
+\item 
+int($\ast$ \textbf{finish} )({\bf hpgs\_\-device} $\ast$\_\-this)\label{structhpgs__device__vtable__st_0c06346b783d52d7eccf575ae7cda5bd}
+
+\item 
+int($\ast$ \textbf{capabilities} )({\bf hpgs\_\-device} $\ast$\_\-this)\label{structhpgs__device__vtable__st_2e5b01f48058722e3350a91c3d9468d3}
+
+\item 
+void($\ast$ \textbf{destroy} )({\bf hpgs\_\-device} $\ast$\_\-this)\label{structhpgs__device__vtable__st_499ef5eb1d26c04b87a701384a0c3292}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A table of virtual function implementing {\tt hpgs\_\-device}. 
+
+This structure has a public alias {\tt hpgs\_\-device\_\-vtable} and represents a table of functions for a specific implementation of {\tt hpgs\_\-device}.
+
+The function names are deliberately similar to the corresponding functions of the PostScript programming language. 
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf hpgs.h}\end{CompactItemize}

@@ -1,0 +1,11 @@
+hpgs (1.1.5-492) any; urgency=high
+
+  * Created release tarball.
+ 
+ -- Wolfgang Glas (ev-i Informationstechnologie GmbH) <wolfgang.glas@ev-i.at>  Wed, 11 Feb 2009 16:49:44 +0100
+
+hpgs (1.1.0-3ubuntu1) feisty; urgency=low
+
+  * Orignal debain package for ubunutu feisty.
+	
+ -- Wolfgang Glas <wolfgang.glas@ev-i.at>  Thu,  3 May 2007 17:35:49 +0200

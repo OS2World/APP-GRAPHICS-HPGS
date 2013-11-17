@@ -1,0 +1,734 @@
+\section{hpgs.h File Reference}
+\label{hpgs_8h}\index{hpgs.h@{hpgs.h}}
+The public interfaces. 
+
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$stdarg.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf hpgs\_\-point\_\-st}
+\begin{CompactList}\small\item\em A 2D point. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-color\_\-st}
+\begin{CompactList}\small\item\em An application level RGB color. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-palette\_\-color\_\-st}
+\begin{CompactList}\small\item\em A screen RGB color as stored in a palette. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-paint\_\-color\_\-st}
+\begin{CompactList}\small\item\em An image RGB color with an optional palette index. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-bbox\_\-st}
+\begin{CompactList}\small\item\em A bounding box. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-matrix\_\-st}
+\begin{CompactList}\small\item\em A transformation matrix for 2D points. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-istream\_\-vtable\_\-st}
+\begin{CompactList}\small\item\em A table of virtual function implementing {\tt hpgs\_\-istream}. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-istream\_\-st}
+\begin{CompactList}\small\item\em A virtual input stream for the HPGL reader. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-ostream\_\-vtable\_\-st}
+\begin{CompactList}\small\item\em A table of virtual function implementing {\tt hpgs\_\-istream}. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-ostream\_\-st}
+\begin{CompactList}\small\item\em A virtual output stream for the HPGL reader. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-gstate\_\-st}
+\begin{CompactList}\small\item\em The vector graphics state. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-device\_\-vtable\_\-st}
+\begin{CompactList}\small\item\em A table of virtual function implementing {\tt hpgs\_\-device}. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-device\_\-st}
+\begin{CompactList}\small\item\em A virtual vector graphics device for the HPGL reader. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-image\_\-vtable\_\-st}
+\begin{CompactList}\small\item\em A table of virtual function implementing {\tt hpgs\_\-image}. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-image\_\-st}
+\begin{CompactList}\small\item\em An abstract pixel image. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-path\_\-point\_\-st}
+\begin{CompactList}\small\item\em A point in a stored path. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-paint\_\-path\_\-st}
+\begin{CompactList}\small\item\em A stored vector path. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define \textbf{\_\-\_\-inline\_\-\_\-}~inline\label{hpgs_8h_9f04218fe09e6ee659e045b2f11542ed}
+
+\item 
+\#define \textbf{HPGS\_\-PRINTF\_\-API}(i)~HPGS\_\-API\label{hpgs_8h_841b8789fdbbdf99423a4a1fd472e6cf}
+
+\item 
+\#define \textbf{HPGS\_\-I18N\_\-API}~HPGS\_\-API\label{hpgs_8h_8dd402019b057c0bb79183ee78b386cd}
+
+\item 
+\#define \textbf{HPGS\_\-I18N\_\-N\_\-API}~HPGS\_\-API\label{hpgs_8h_ffd075aa3892f19e16a1125ba76a1293}
+
+\item 
+\#define \textbf{HPGS\_\-INTERNAL\_\-PRINTF\_\-API}(i)~HPGS\_\-INTERNAL\_\-API\label{hpgs_8h_587752cd1981a07da1cf88299cb96b71}
+
+\item 
+\#define \textbf{HPGS\_\-PRINTF1\_\-API}~HPGS\_\-PRINTF\_\-API(1)\label{hpgs_8h_e770da628b9829fdf6dd9a26f8cd4100}
+
+\item 
+\#define \textbf{HPGS\_\-PRINTF2\_\-API}~HPGS\_\-PRINTF\_\-API(2)\label{hpgs_8h_16149d9df2a5b43ef9c91bafebbb2ccf}
+
+\item 
+\#define \textbf{HPGS\_\-INTERNAL\_\-PRINTF1\_\-API}~HPGS\_\-INTERNAL\_\-PRINTF\_\-API(1)\label{hpgs_8h_35416b7d7d1b18a914e776346ac2312c}
+
+\item 
+\#define \textbf{HPGS\_\-INTERNAL\_\-PRINTF2\_\-API}~HPGS\_\-INTERNAL\_\-PRINTF\_\-API(2)\label{hpgs_8h_87a8358970381118710cbc7dfa138082}
+
+\item 
+\#define \textbf{HPGS\_\-SIZE\_\-T\_\-FMT}~\char`\"{}\%zu\char`\"{}\label{hpgs_8h_90a47e4f17a389176f98b2702820e9e3}
+
+\item 
+\#define \textbf{HPGS\_\-STRINGIFYIFY}(i)~\#i\label{hpgs_8h_6ad6efbf1f5d6adef86e6983ee798753}
+
+\item 
+\#define \textbf{HPGS\_\-STRINGIFY}(i)~HPGS\_\-STRINGIFYIFY(i)\label{hpgs_8h_4e456ba5245914a7c5e352e2597ce632}
+
+\item 
+\#define \textbf{HPGS\_\-MAJOR\_\-VERSION}~1\label{hpgs_8h_de7aab82ab56928ed6df6bdcedae807c}
+
+\item 
+\#define \textbf{HPGS\_\-MINOR\_\-VERSION}~1\label{hpgs_8h_550e3ba4c84b649b13558c4f36d86c7f}
+
+\item 
+\#define \textbf{HPGS\_\-PATCH\_\-VERSION}~5\label{hpgs_8h_668869e5cf929e18ca4d9c652547ac92}
+
+\item 
+\#define \textbf{HPGS\_\-EXTRA\_\-VERSION}\label{hpgs_8h_88170bea2b579797be141ac2053cbb5b}
+
+\item 
+\#define \textbf{HPGS\_\-VERSION}~HPGS\_\-STRINGIFY(HPGS\_\-MAJOR\_\-VERSION) \char`\"{}.\char`\"{} HPGS\_\-STRINGIFY(HPGS\_\-MINOR\_\-VERSION) \char`\"{}.\char`\"{} HPGS\_\-STRINGIFY(HPGS\_\-PATCH\_\-VERSION) HPGS\_\-STRINGIFY(HPGS\_\-EXTRA\_\-VERSION)\label{hpgs_8h_42f05b0655bb58990f90051848d2014f}
+
+\item 
+\#define \textbf{HPGS\_\-ESC}~'$\backslash$033'\label{hpgs_8h_f85c7694ffa01049f33b03cefde8471f}
+
+\item 
+\#define \textbf{HPGS\_\-MAX\_\-LABEL\_\-SIZE}~256\label{hpgs_8h_97fdfd742336d9c8d3087479ce300ecc}
+
+\item 
+\#define \textbf{hpgs\_\-alloca}(sz)~alloca(sz)\label{hpgs_8h_2cb07930a25ffa3bcd5254fa25d1ba3e}
+
+\item 
+\#define \textbf{HPGS\_\-TRUE}~1\label{group__base_ge0f1d05c80ae8bfc1042404f598edc5a}
+
+\item 
+\#define \textbf{HPGS\_\-FALSE}~0\label{group__base_g7550d077e74634032f51951a9c8efd76}
+
+\item 
+\#define \textbf{HPGS\_\-MIN}(a, b)~((a)$<$(b)?(a):(b))\label{group__base_g7286dad34df84df5fd05ce3d26920acb}
+
+\item 
+\#define \textbf{HPGS\_\-MAX}(a, b)~((a)$>$(b)?(a):(b))\label{group__base_gec5d7d39582cda4657e55bc03d8e46b6}
+
+\item 
+\#define \textbf{HPGS\_\-INIT\_\-ARRAY}(st, type, pmemb, nmemb, szmemb, insz)~(st $\rightarrow$ szmemb=insz,st $\rightarrow$ nmemb=0,(st $\rightarrow$ pmemb=(type$\ast$)malloc(sizeof(type)$\ast$insz))?0:-1)\label{group__base_g7c2f4a9472ff7fbb4bc8ae03dca95ee5}
+
+\item 
+\#define \textbf{HPGS\_\-GROW\_\-ARRAY\_\-FOR\_\-PUSH}(st, type, pmemb, nmemb, szmemb)~((st $\rightarrow$ nmemb $>$= st $\rightarrow$ szmemb)?hpgs\_\-array\_\-safe\_\-resize(sizeof(type),(void $\ast$$\ast$)(\&st $\rightarrow$ pmemb),\&st $\rightarrow$ szmemb,st $\rightarrow$ szmemb$\ast$2):(0))\label{group__base_g517e12a0413b50a105931b08e38750cc}
+
+\item 
+\#define \textbf{HPGS\_\-GROW\_\-ARRAY\_\-MIN\_\-SIZE}(st, type, pmemb, nmemb, szmemb, msz)~((st $\rightarrow$ nmemb$>$=st $\rightarrow$ szmemb$|$$|$st $\rightarrow$ szmemb$<$msz)?hpgs\_\-array\_\-safe\_\-resize(sizeof(type),(void $\ast$$\ast$)(\&st $\rightarrow$ pmemb),\&st $\rightarrow$ szmemb,HPGS\_\-MAX(st $\rightarrow$ szmemb$\ast$2,msz)):(0))\label{group__base_g3d54bf84dedc8374eab4ff3d4f08cd97}
+
+\item 
+\#define \textbf{HPGS\_\-PATH\_\-SEPARATOR}~'/'\label{group__base_g844e792efbe234c04b5ecd4b23d5db9b}
+
+\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-RASTER}~(1$<$$<$0)\label{group__device_g8175e4398fb6e52394c50e931f8cf693}
+
+\begin{CompactList}\small\item\em This device is a raster device. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-ANTIALIAS}~(1$<$$<$1)\label{group__device_gbfbaca61af5c0e6faef1ad7a562f3329}
+
+\begin{CompactList}\small\item\em This device supports anitaliasing. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-VECTOR}~(1$<$$<$2)\label{group__device_g83df9d5e409b8b6c76d218cac0a6e0a1}
+
+\begin{CompactList}\small\item\em This device is a true vector device. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-MULTIPAGE}~(1$<$$<$3)\label{group__device_ge56cf76d457f9ee8dd758b10d6bd10e5}
+
+\begin{CompactList}\small\item\em This device supports multiple pages. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-PAGECOLLATION}~(1$<$$<$4)\label{group__device_g47c1e796774cc9019de505639ba2d8b4}
+
+\begin{CompactList}\small\item\em This device is able to write multiple pages to a single file. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-MULTISIZE}~(1$<$$<$5)\label{group__device_g74b3043329761f6c48088374cb2645d0}
+
+\begin{CompactList}\small\item\em This device is able to cope with distinct sizes per page. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-DRAWIMAGE}~(1$<$$<$6)\label{group__device_g0e8d3be8de1ccdc0c814a7d4f50d5ea5}
+
+\begin{CompactList}\small\item\em The device may draw an image. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-NULLIMAGE}~(1$<$$<$7)\label{group__device_g137bf6ecfa0799889cc3338b3e6e57cf}
+
+\begin{CompactList}\small\item\em The device accepts a null image in drawimage. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-PLOTSIZE}~(1$<$$<$8)\label{group__device_g6fc3e52dd7ac9e001d1148b075d16e4c}
+
+\begin{CompactList}\small\item\em This device is a plotsize device. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-ROP3}~(1$<$$<$9)\label{group__device_g35207578b9faef0e1602a6600c73dd39}
+
+\begin{CompactList}\small\item\em This device supports rop3 operations. \item\end{CompactList}\item 
+\#define \textbf{HPGS\_\-BASE\_\-CLASS}(d)~(\&(d $\rightarrow$ inherited))\label{group__device_gd40c8bf92012b37cda89ba8ee69a33a1}
+
+\item 
+\#define {\bf HPGS\_\-POINT\_\-ROLE\_\-MASK}~0xF\label{group__path_g3229deba8d3d400eb35dc5a23ffd8468}
+
+\begin{CompactList}\small\item\em A mask for retrieving the role of a point in the path. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-UNDEFINED}~0x0\label{group__path_g6d0ec9ff7cda2cb9f20d2f4d915af2cd}
+
+\begin{CompactList}\small\item\em point is undefined \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-LINE}~0x1\label{group__path_g31b0bb74be6c5267fdae0be7bcc72a0c}
+
+\begin{CompactList}\small\item\em start of line \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-BEZIER}~0x2\label{group__path_g71dc1db8502694139211792a33094978}
+
+\begin{CompactList}\small\item\em start of bezier curve \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-CONTROL}~0x3\label{group__path_g197617cc3e882301564d69bda1600cdc}
+
+\begin{CompactList}\small\item\em bezier control point \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-FILL\_\-LINE}~0x4\label{group__path_g0f1ad714cd387f5808fd99fb26a145cc}
+
+\begin{CompactList}\small\item\em line fill only (implicit closepath) \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-DOT}~0x8\label{group__path_gf33f767f7b5b8849d65a0e6988386f14}
+
+\begin{CompactList}\small\item\em indicates a moveto/lineto with the same coordinates at the start of a subpath. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-SUBPATH\_\-START}~0x10\label{group__path_g701397585f03b6cd04df91f618919bb6}
+
+\begin{CompactList}\small\item\em a subpath starts at this point \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-SUBPATH\_\-END}~0x20\label{group__path_g7fa10e914aeb28a8de35407e16e702ae}
+
+\begin{CompactList}\small\item\em a subpath ends at this point \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-POINT\_\-SUBPATH\_\-CLOSE}~0x40\label{group__path_g8b553718c2918f34ff13305103cbc4c5}
+
+\begin{CompactList}\small\item\em indicates an explicit closepath at the end of a subpath \item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef int \textbf{hpgs\_\-bool}\label{group__base_g29a7aec912fb7a5ad0e82601a18b39ce}
+
+\item 
+typedef void($\ast$ \textbf{hpgs\_\-logger\_\-func\_\-t} )(const char $\ast$fmt, va\_\-list ap)\label{group__base_g563fc8cbc02904086ce0f3080c697db9}
+
+\item 
+typedef struct {\bf hpgs\_\-point\_\-st} {\bf hpgs\_\-point}
+\begin{CompactList}\small\item\em A 2D point. \item\end{CompactList}\item 
+typedef struct {\bf hpgs\_\-color\_\-st} {\bf hpgs\_\-color}
+\begin{CompactList}\small\item\em An application level RGB color. \item\end{CompactList}\item 
+typedef struct {\bf hpgs\_\-palette\_\-color\_\-st} \textbf{hpgs\_\-palette\_\-color}\label{group__base_gde4e9715040c0819f79ca4f2efddf250}
+
+\item 
+typedef void($\ast$ \textbf{hpgs\_\-rop3\_\-func\_\-t} )(unsigned char $\ast$, unsigned char, unsigned char)\label{group__base_g764146c86d8ef0cd9adc8b6be930f872}
+
+\item 
+typedef unsigned($\ast$ \textbf{hpgs\_\-xrop3\_\-func\_\-t} )(unsigned char, unsigned char)\label{group__base_g972157f576ddf01954e520bbb7ec5498}
+
+\item 
+typedef struct {\bf hpgs\_\-paint\_\-color\_\-st} \textbf{hpgs\_\-paint\_\-color}\label{group__base_gdb45ff83823a45567588dd72d29b91cd}
+
+\item 
+typedef struct {\bf hpgs\_\-bbox\_\-st} \textbf{hpgs\_\-bbox}\label{group__base_g0faf36b0ed91c6b5fb9b6df45e0df2aa}
+
+\item 
+typedef struct {\bf hpgs\_\-matrix\_\-st} \textbf{hpgs\_\-matrix}\label{group__base_g69971a93db7c8418772cdf2f064a9234}
+
+\item 
+typedef struct {\bf hpgs\_\-istream\_\-st} \textbf{hpgs\_\-istream}\label{group__base_gb25ff4e14eb9bdcca226366b3706db25}
+
+\item 
+typedef struct {\bf hpgs\_\-istream\_\-vtable\_\-st} \textbf{hpgs\_\-istream\_\-vtable}\label{group__base_gba260b5c9250efc155ac0110287bb979}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-getc\_\-func\_\-t} )(void $\ast$)\label{group__base_g37dd7ea28f1d328d1ea5281f425b2f3b}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-ungetc\_\-func\_\-t} )(int, void $\ast$)\label{group__base_g6f547af6fefa0a7dcd8cf68f27e2691a}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-close\_\-func\_\-t} )(void $\ast$)\label{group__base_g4b32300990917abe2f30daa66677c803}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-iseof\_\-func\_\-t} )(void $\ast$)\label{group__base_g4ae8f88a9c6dd4477034e97034a1020c}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-iserror\_\-func\_\-t} )(void $\ast$)\label{group__base_g9300e5b3f98786a7c377b56bd04de348}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-seek\_\-func\_\-t} )(void $\ast$, size\_\-t)\label{group__base_g9a77b5f808d21c733cbf7a1f869824f9}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-tell\_\-func\_\-t} )(void $\ast$, size\_\-t $\ast$)\label{group__base_g6ae96c4a5b1f83c1dbd93e09f5855b60}
+
+\item 
+typedef size\_\-t($\ast$ \textbf{hpgs\_\-istream\_\-read\_\-func\_\-t} )(void $\ast$, size\_\-t, size\_\-t, void $\ast$)\label{group__base_gbc43b203b3772c3f03c6b54019146a7b}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-istream\_\-seekend\_\-func\_\-t} )(void $\ast$, size\_\-t)\label{group__base_gf288d6ec93cc5e6c446ff1f8c1800a73}
+
+\item 
+typedef struct {\bf hpgs\_\-ostream\_\-st} \textbf{hpgs\_\-ostream}\label{group__base_gd6d11d1839853862992558a3e2d8cfc7}
+
+\item 
+typedef struct {\bf hpgs\_\-ostream\_\-vtable\_\-st} \textbf{hpgs\_\-ostream\_\-vtable}\label{group__base_g2b4c0b89aad0445c029e2d3845d5d360}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-putc\_\-func\_\-t} )(int, void $\ast$)\label{group__base_g8c774072a71ef4f6dc25f996c4ded5ac}
+
+\item 
+typedef size\_\-t($\ast$ \textbf{hpgs\_\-ostream\_\-write\_\-func\_\-t} )(const void $\ast$, size\_\-t, size\_\-t, void $\ast$)\label{group__base_gfa6e15df29369bef01e53d5e93092489}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-vprintf\_\-func\_\-t} )(void $\ast$, const char $\ast$, va\_\-list)\label{group__base_g2d992564508c4d5906649fb7d050b8fe}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-flush\_\-func\_\-t} )(void $\ast$)\label{group__base_g150a622af849722d9fda7eec6fae0d48}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-close\_\-func\_\-t} )(void $\ast$)\label{group__base_ga65e4bab9e215962cd7be730737d804f}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-iserror\_\-func\_\-t} )(void $\ast$)\label{group__base_g41a536b40e02ad3f2699b66d653c875a}
+
+\item 
+typedef {\bf hpgs\_\-istream} $\ast$($\ast$ \textbf{hpgs\_\-ostream\_\-getbuf\_\-func\_\-t} )(void $\ast$)\label{group__base_g16f71e23dc6b7b0a2f3edfd69400fd32}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-tell\_\-func\_\-t} )(void $\ast$, int layer, size\_\-t $\ast$)\label{group__base_g58fbc47400676e8566943232871e1d00}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-ostream\_\-seek\_\-func\_\-t} )(void $\ast$, size\_\-t)\label{group__base_gd2ade65e145c72c1093f3ccb009d80c6}
+
+\item 
+typedef struct {\bf hpgs\_\-device\_\-st} \textbf{hpgs\_\-device}\label{group__device_g100927b1ad4b437d61dddc42708fa8f3}
+
+\item 
+typedef struct {\bf hpgs\_\-plotsize\_\-device\_\-st} \textbf{hpgs\_\-plotsize\_\-device}\label{group__device_g98a37f93bf5799c2d55d6e59d9f2c1b1}
+
+\item 
+typedef struct {\bf hpgs\_\-eps\_\-device\_\-st} \textbf{hpgs\_\-eps\_\-device}\label{group__device_g648708ea6527d8ffec62f075471c78f9}
+
+\item 
+typedef struct hpgs\_\-gs\_\-device\_\-st \textbf{hpgs\_\-gs\_\-device}\label{group__device_g21b6ff6181ec0b14869ddf3aef4fc0e0}
+
+\item 
+typedef struct {\bf hpgs\_\-device\_\-vtable\_\-st} \textbf{hpgs\_\-device\_\-vtable}\label{group__device_g503100ff768d14078274b7abe457ac93}
+
+\item 
+typedef struct {\bf hpgs\_\-image\_\-st} \textbf{hpgs\_\-image}\label{group__device_ge374b15dff89c5d2c569c4250d4e3a2b}
+
+\item 
+typedef struct {\bf hpgs\_\-image\_\-vtable\_\-st} \textbf{hpgs\_\-image\_\-vtable}\label{group__device_g3d673430a5742c7e44d5494bb124d221}
+
+\item 
+typedef struct hpgs\_\-png\_\-image\_\-st \textbf{hpgs\_\-png\_\-image}\label{group__device_g73df7e42f65edb523ba4869a4c20155c}
+
+\item 
+typedef struct {\bf hpgs\_\-paint\_\-device\_\-st} \textbf{hpgs\_\-paint\_\-device}\label{group__device_g4ca0f0bd51075fb9da27bf731ab5eefd}
+
+\item 
+typedef struct {\bf hpgs\_\-gstate\_\-st} \textbf{hpgs\_\-gstate}\label{group__device_g2cbad771732e3c16b8efa41910affdf3}
+
+\item 
+typedef struct {\bf hpgs\_\-font\_\-st} \textbf{hpgs\_\-font}\label{group__device_gd67dc54687613dc2af6ca86aa2a61cb3}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-reader\_\-asset\_\-func\_\-t} )(void $\ast$, {\bf hpgs\_\-device} $\ast$, const {\bf hpgs\_\-matrix} $\ast$, const {\bf hpgs\_\-matrix} $\ast$, const {\bf hpgs\_\-bbox} $\ast$, int)\label{group__device_gb994453805be117de7c3e23d451b3348}
+
+\item 
+typedef struct {\bf hpgs\_\-reader\_\-st} \textbf{hpgs\_\-reader}\label{group__reader_g9fe73110cf6f76ff88160a677e4a5c4e}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-moveto\_\-func\_\-t} )(void $\ast$ctxt, const {\bf hpgs\_\-point} $\ast$p)\label{group__font_gdb482453b858b6b9561c76752f3e0e46}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-lineto\_\-func\_\-t} )(void $\ast$ctxt, const {\bf hpgs\_\-point} $\ast$p)\label{group__font_gaa432603ef5a4185c0e7d23e280a45b8}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-curveto\_\-func\_\-t} )(void $\ast$ctxt, const {\bf hpgs\_\-point} $\ast$p1, const {\bf hpgs\_\-point} $\ast$p2, const {\bf hpgs\_\-point} $\ast$p3)\label{group__font_g0b886c68898c98c2aaf7536f97d7bcc5}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-fill\_\-func\_\-t} )(void $\ast$ctxt, hpgs\_\-bool winding)\label{group__font_gbad7cbae9e3d41a823f63520ab61c167}
+
+\item 
+typedef struct {\bf hpgs\_\-path\_\-point\_\-st} \textbf{hpgs\_\-path\_\-point}\label{group__path_gfc59f1822b1f6783bfcce4c824b911f4}
+
+\item 
+typedef struct {\bf hpgs\_\-paint\_\-path\_\-st} \textbf{hpgs\_\-paint\_\-path}\label{group__path_g13ce072f19c7638345701bd3fb2f6f31}
+
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum {\bf hpgs\_\-line\_\-cap} \{ {\bf hpgs\_\-cap\_\-butt} =  0, 
+{\bf hpgs\_\-cap\_\-round} =  1, 
+{\bf hpgs\_\-cap\_\-square} =  2
+ \}
+\item 
+enum {\bf hpgs\_\-line\_\-join} \{ {\bf hpgs\_\-join\_\-miter} =  0, 
+{\bf hpgs\_\-join\_\-round} =  1, 
+{\bf hpgs\_\-join\_\-bevel} =  2
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+HPGS\_\-API int {\bf hpgs\_\-array\_\-safe\_\-resize} (size\_\-t itemsz, void $\ast$$\ast$pptr, size\_\-t $\ast$psz, size\_\-t nsz)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-init} (const char $\ast$prefix)
+\item 
+HPGS\_\-API const char $\ast$ {\bf hpgs\_\-get\_\-prefix} ()
+\item 
+HPGS\_\-API void {\bf hpgs\_\-cleanup} (void)
+\item 
+HPGS\_\-API char $\ast$ {\bf hpgs\_\-share\_\-filename} (const char $\ast$rel\_\-filename)
+\item 
+HPGS\_\-API char $\ast$ {\bf hpgs\_\-vsprintf\_\-malloc} (const char $\ast$fmt, va\_\-list ap)
+\item 
+HPGS\_\-PRINTF1\_\-API char $\ast$ {\bf hpgs\_\-sprintf\_\-malloc} (const char $\ast$fmt,...)
+\item 
+HPGS\_\-PRINTF1\_\-API int {\bf hpgs\_\-set\_\-error} (const char $\ast$fmt,...)
+\item 
+HPGS\_\-PRINTF1\_\-API int {\bf hpgs\_\-error\_\-ctxt} (const char $\ast$fmt,...)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-set\_\-verror} (const char $\ast$fmt, va\_\-list ap)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-verror\_\-ctxt} (const char $\ast$fmt, va\_\-list ap)
+\item 
+HPGS\_\-API const char $\ast$ {\bf hpgs\_\-get\_\-error} ()
+\item 
+HPGS\_\-API hpgs\_\-bool {\bf hpgs\_\-have\_\-error} ()
+\item 
+HPGS\_\-API void {\bf hpgs\_\-clear\_\-error} ()
+\item 
+HPGS\_\-API int {\bf hpgs\_\-next\_\-utf8} (const char $\ast$$\ast$p)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-utf8\_\-strlen} (const char $\ast$p, int n)
+\item 
+HPGS\_\-I18N\_\-API const char $\ast$ \textbf{hpgs\_\-i18n} (const char $\ast$msg)\label{group__base_g3b14be33eec8c80d111a4394efcbf008}
+
+\item 
+HPGS\_\-I18N\_\-N\_\-API const char $\ast$ \textbf{hpgs\_\-i18n\_\-n} (const char $\ast$msg, const char $\ast$msg\_\-plural, unsigned long n)\label{group__base_gc841286219f60f4198b3fb3c869f9e5e}
+
+\item 
+HPGS\_\-API void {\bf hpgs\_\-set\_\-logger} (hpgs\_\-logger\_\-func\_\-t func)
+\item 
+HPGS\_\-PRINTF1\_\-API void {\bf hpgs\_\-log} (const char $\ast$fmt,...)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-vlog} (const char $\ast$fmt, va\_\-list ap)
+\item 
+HPGS\_\-API hpgs\_\-bool {\bf hpgs\_\-get\_\-arg\_\-value} (const char $\ast$opt, const char $\ast$argv[$\,$], const char $\ast$$\ast$value, int $\ast$narg)
+\item 
+HPGS\_\-API hpgs\_\-rop3\_\-func\_\-t \textbf{hpgs\_\-rop3\_\-func} (int rop3, hpgs\_\-bool src\_\-transparency, hpgs\_\-bool pattern\_\-transparency)\label{group__base_g028f514a3b58348a40c435d69749f0fb}
+
+\item 
+HPGS\_\-API hpgs\_\-xrop3\_\-func\_\-t \textbf{hpgs\_\-xrop3\_\-func} (int rop3, hpgs\_\-bool src\_\-transparency, hpgs\_\-bool pattern\_\-transparency)\label{group__base_gf10e4f96ae58786ee0d86420a2a6d899}
+
+\item 
+HPGS\_\-API hpgs\_\-bool {\bf hpgs\_\-bbox\_\-isequal} (const {\bf hpgs\_\-bbox} $\ast$bb1, const {\bf hpgs\_\-bbox} $\ast$bb2)
+\item 
+HPGS\_\-API hpgs\_\-bool {\bf hpgs\_\-bbox\_\-isnull} (const {\bf hpgs\_\-bbox} $\ast$bb)
+\item 
+HPGS\_\-API hpgs\_\-bool {\bf hpgs\_\-bbox\_\-isempty} (const {\bf hpgs\_\-bbox} $\ast$bb)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bbox\_\-distance} ({\bf hpgs\_\-point} $\ast$d, const {\bf hpgs\_\-bbox} $\ast$bb1, const {\bf hpgs\_\-bbox} $\ast$bb2)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bbox\_\-null} ({\bf hpgs\_\-bbox} $\ast$bb)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bbox\_\-expand} ({\bf hpgs\_\-bbox} $\ast$bb1, const {\bf hpgs\_\-bbox} $\ast$bb2)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bbox\_\-intersect} ({\bf hpgs\_\-bbox} $\ast$bb1, const {\bf hpgs\_\-bbox} $\ast$bb2)
+\item 
+static void {\bf hpgs\_\-bbox\_\-addborder} ({\bf hpgs\_\-bbox} $\ast$bb, double border)
+\item 
+static void {\bf hpgs\_\-bbox\_\-add} ({\bf hpgs\_\-bbox} $\ast$bb, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-set\_\-identity} ({\bf hpgs\_\-matrix} $\ast$m)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-xform} ({\bf hpgs\_\-point} $\ast$res, const {\bf hpgs\_\-matrix} $\ast$m, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-ixform} ({\bf hpgs\_\-point} $\ast$res, const {\bf hpgs\_\-point} $\ast$p, const {\bf hpgs\_\-matrix} $\ast$m)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-scale} ({\bf hpgs\_\-point} $\ast$res, const {\bf hpgs\_\-matrix} $\ast$m, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-iscale} ({\bf hpgs\_\-point} $\ast$res, const {\bf hpgs\_\-point} $\ast$p, const {\bf hpgs\_\-matrix} $\ast$m)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-concat} ({\bf hpgs\_\-matrix} $\ast$res, const {\bf hpgs\_\-matrix} $\ast$a, const {\bf hpgs\_\-matrix} $\ast$b)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-invert} ({\bf hpgs\_\-matrix} $\ast$res, const {\bf hpgs\_\-matrix} $\ast$m)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-xform\_\-bbox} ({\bf hpgs\_\-bbox} $\ast$res, const {\bf hpgs\_\-matrix} $\ast$m, const {\bf hpgs\_\-bbox} $\ast$bb)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-matrix\_\-ixform\_\-bbox} ({\bf hpgs\_\-bbox} $\ast$res, const {\bf hpgs\_\-bbox} $\ast$bb, const {\bf hpgs\_\-matrix} $\ast$m)
+\item 
+HPGS\_\-API {\bf hpgs\_\-istream} $\ast$ {\bf hpgs\_\-new\_\-file\_\-istream} (const char $\ast$fn)
+\item 
+HPGS\_\-API {\bf hpgs\_\-istream} $\ast$ {\bf hpgs\_\-new\_\-mem\_\-istream} (const unsigned char $\ast$data, size\_\-t data\_\-size, hpgs\_\-bool dup)
+\item 
+static int {\bf hpgs\_\-getc} ({\bf hpgs\_\-istream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-ungetc} (int c, {\bf hpgs\_\-istream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-istream\_\-close} ({\bf hpgs\_\-istream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-istream\_\-iseof} ({\bf hpgs\_\-istream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-istream\_\-iserror} ({\bf hpgs\_\-istream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-istream\_\-seek} ({\bf hpgs\_\-istream} $\ast$\_\-this, size\_\-t pos)
+\item 
+static int {\bf hpgs\_\-istream\_\-seekend} ({\bf hpgs\_\-istream} $\ast$\_\-this, size\_\-t pos)
+\item 
+static int {\bf hpgs\_\-istream\_\-tell} ({\bf hpgs\_\-istream} $\ast$\_\-this, size\_\-t $\ast$pos)
+\item 
+static size\_\-t {\bf hpgs\_\-istream\_\-read} (void $\ast$ptr, size\_\-t size, size\_\-t nmemb, {\bf hpgs\_\-istream} $\ast$\_\-this)
+\item 
+HPGS\_\-API {\bf hpgs\_\-ostream} $\ast$ {\bf hpgs\_\-new\_\-file\_\-ostream} (const char $\ast$fn)
+\item 
+HPGS\_\-API {\bf hpgs\_\-ostream} $\ast$ {\bf hpgs\_\-new\_\-mem\_\-ostream} (size\_\-t data\_\-reserve)
+\item 
+HPGS\_\-API {\bf hpgs\_\-ostream} $\ast$ {\bf hpgs\_\-new\_\-z\_\-ostream} ({\bf hpgs\_\-ostream} $\ast$base, int compression, hpgs\_\-bool take\_\-base)
+\item 
+HPGS\_\-API int \textbf{hpgs\_\-copy\_\-streams} ({\bf hpgs\_\-ostream} $\ast$out, {\bf hpgs\_\-istream} $\ast$in)\label{group__base_g74770e20d2f627732e67d5e60750ab15}
+
+\item 
+HPGS\_\-PRINTF2\_\-API int {\bf hpgs\_\-ostream\_\-printf} ({\bf hpgs\_\-ostream} $\ast$\_\-this, const char $\ast$msg,...)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-ostream\_\-vprintf} ({\bf hpgs\_\-ostream} $\ast$\_\-this, const char $\ast$msg, va\_\-list ap)
+\item 
+static int {\bf hpgs\_\-ostream\_\-putc} (int c, {\bf hpgs\_\-ostream} $\ast$\_\-this)
+\item 
+static size\_\-t {\bf hpgs\_\-ostream\_\-write} (const void $\ast$ptr, size\_\-t size, size\_\-t nmemb, {\bf hpgs\_\-ostream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-ostream\_\-flush} ({\bf hpgs\_\-ostream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-ostream\_\-close} ({\bf hpgs\_\-ostream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-ostream\_\-iserror} ({\bf hpgs\_\-ostream} $\ast$\_\-this)
+\item 
+static {\bf hpgs\_\-istream} $\ast$ {\bf hpgs\_\-ostream\_\-getbuf} ({\bf hpgs\_\-ostream} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-ostream\_\-tell} ({\bf hpgs\_\-ostream} $\ast$\_\-this, int layer, size\_\-t $\ast$pos)
+\item 
+static int {\bf hpgs\_\-ostream\_\-seek} ({\bf hpgs\_\-ostream} $\ast$\_\-this, size\_\-t pos)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-parse\_\-papersize} (const char $\ast$str, double $\ast$pt\_\-width, double $\ast$pt\_\-height)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-parse\_\-length} (const char $\ast$str, double $\ast$pt\_\-length)
+\item 
+HPGS\_\-API {\bf hpgs\_\-gstate} $\ast$ {\bf hpgs\_\-new\_\-gstate} (void)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-gstate\_\-destroy} ({\bf hpgs\_\-gstate} $\ast$gstate)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-gstate\_\-setdash} ({\bf hpgs\_\-gstate} $\ast$gstate, const float $\ast$, unsigned, double)
+\item 
+HPGS\_\-API {\bf hpgs\_\-plotsize\_\-device} $\ast$ {\bf hpgs\_\-new\_\-plotsize\_\-device} (hpgs\_\-bool ignore\_\-ps, hpgs\_\-bool do\_\-linewidth)
+\item 
+HPGS\_\-API {\bf hpgs\_\-eps\_\-device} $\ast$ {\bf hpgs\_\-new\_\-eps\_\-device} (const char $\ast$filename, const {\bf hpgs\_\-bbox} $\ast$bb, hpgs\_\-bool do\_\-rop3)
+\item 
+HPGS\_\-API {\bf hpgs\_\-eps\_\-device} $\ast$ {\bf hpgs\_\-new\_\-ps\_\-device} (const char $\ast$filename, const {\bf hpgs\_\-bbox} $\ast$bb, hpgs\_\-bool do\_\-rop3)
+\item 
+HPGS\_\-API int \textbf{hpgs\_\-new\_\-plugin\_\-device} ({\bf hpgs\_\-device} $\ast$$\ast$device, void $\ast$$\ast$page\_\-asset\_\-ctxt, hpgs\_\-reader\_\-asset\_\-func\_\-t $\ast$page\_\-asset\_\-func, void $\ast$$\ast$frame\_\-asset\_\-ctxt, hpgs\_\-reader\_\-asset\_\-func\_\-t $\ast$frame\_\-asset\_\-func, const char $\ast$dev\_\-name, const char $\ast$filename, const {\bf hpgs\_\-bbox} $\ast$bb, double xres, double yres, hpgs\_\-bool do\_\-rop3, int argc, const char $\ast$argv[$\,$])\label{group__device_g32a98f875a08a2a1e5a511ee3f51c5f9}
+
+\item 
+HPGS\_\-API const char $\ast$ {\bf hpgs\_\-device\_\-rtti} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-moveto} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+static int {\bf hpgs\_\-lineto} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+static int {\bf hpgs\_\-curveto} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p1, const {\bf hpgs\_\-point} $\ast$p2, const {\bf hpgs\_\-point} $\ast$p3)
+\item 
+static int {\bf hpgs\_\-closepath} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-newpath} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-stroke} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-fill} ({\bf hpgs\_\-device} $\ast$\_\-this, hpgs\_\-bool winding)
+\item 
+static int {\bf hpgs\_\-clip} ({\bf hpgs\_\-device} $\ast$\_\-this, hpgs\_\-bool winding)
+\item 
+static int {\bf hpgs\_\-clipsave} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-cliprestore} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-setrgbcolor} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-color} $\ast$rgb)
+\item 
+static int {\bf hpgs\_\-setdash} ({\bf hpgs\_\-device} $\ast$\_\-this, const float $\ast$d, unsigned nd, double s)
+\item 
+static int {\bf hpgs\_\-setlinewidth} ({\bf hpgs\_\-device} $\ast$\_\-this, double w)
+\item 
+static int {\bf hpgs\_\-setlinecap} ({\bf hpgs\_\-device} $\ast$\_\-this, {\bf hpgs\_\-line\_\-cap} c)
+\item 
+static int {\bf hpgs\_\-setlinejoin} ({\bf hpgs\_\-device} $\ast$\_\-this, {\bf hpgs\_\-line\_\-join} j)
+\item 
+static int {\bf hpgs\_\-setmiterlimit} ({\bf hpgs\_\-device} $\ast$\_\-this, double l)
+\item 
+static int {\bf hpgs\_\-device\_\-capabilities} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-setrop3} ({\bf hpgs\_\-device} $\ast$\_\-this, int rop, hpgs\_\-bool src\_\-transparency, hpgs\_\-bool pattern\_\-transparency)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-setpatcol} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-color} $\ast$rgb)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-drawimage} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-image} $\ast$img, const {\bf hpgs\_\-point} $\ast$ll, const {\bf hpgs\_\-point} $\ast$lr, const {\bf hpgs\_\-point} $\ast$ur)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-setplotsize} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-bbox} $\ast$bb)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-getplotsize} ({\bf hpgs\_\-device} $\ast$\_\-this, int i, {\bf hpgs\_\-bbox} $\ast$bb)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-showpage} ({\bf hpgs\_\-device} $\ast$\_\-this, int i)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-device\_\-finish} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-device\_\-destroy} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+HPGS\_\-API {\bf hpgs\_\-reader} $\ast$ {\bf hpgs\_\-new\_\-reader} ({\bf hpgs\_\-istream} $\ast$in, {\bf hpgs\_\-device} $\ast$dev, hpgs\_\-bool multipage, int v)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-reader\_\-set\_\-lw\_\-factor} ({\bf hpgs\_\-reader} $\ast$reader, double lw\_\-factor)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-reader\_\-set\_\-fixed\_\-page} ({\bf hpgs\_\-reader} $\ast$reader, {\bf hpgs\_\-bbox} $\ast$bbox, double page\_\-width, double page\_\-height, double border, double angle)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-reader\_\-set\_\-dynamic\_\-page} ({\bf hpgs\_\-reader} $\ast$reader, {\bf hpgs\_\-bbox} $\ast$bbox, double max\_\-page\_\-width, double max\_\-page\_\-height, double border, double angle)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-reader\_\-set\_\-page\_\-asset\_\-func} ({\bf hpgs\_\-reader} $\ast$reader, void $\ast$ctxt, hpgs\_\-reader\_\-asset\_\-func\_\-t func)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-reader\_\-set\_\-frame\_\-asset\_\-func} ({\bf hpgs\_\-reader} $\ast$reader, void $\ast$ctxt, hpgs\_\-reader\_\-asset\_\-func\_\-t func)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-reader\_\-interrupt} ({\bf hpgs\_\-reader} $\ast$reader)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-reader\_\-get\_\-current\_\-pen} ({\bf hpgs\_\-reader} $\ast$reader)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-reader\_\-imbue} ({\bf hpgs\_\-reader} $\ast$reader, {\bf hpgs\_\-device} $\ast$dev)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-reader\_\-attach} ({\bf hpgs\_\-reader} $\ast$reader, {\bf hpgs\_\-istream} $\ast$in)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-reader\_\-stamp} ({\bf hpgs\_\-reader} $\ast$reader, const {\bf hpgs\_\-bbox} $\ast$bb, const char $\ast$stamp, const char $\ast$encoding, double stamp\_\-size)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-device\_\-stamp} ({\bf hpgs\_\-device} $\ast$dev, const {\bf hpgs\_\-bbox} $\ast$bb, const char $\ast$stamp, const char $\ast$encoding, double stamp\_\-size)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-reader\_\-set\_\-png\_\-dump} ({\bf hpgs\_\-reader} $\ast$reader, const char $\ast$filename)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-read} ({\bf hpgs\_\-reader} $\ast$reader, hpgs\_\-bool finish)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-destroy\_\-reader} ({\bf hpgs\_\-reader} $\ast$reader)
+\item 
+HPGS\_\-API {\bf hpgs\_\-font} $\ast$ {\bf hpgs\_\-find\_\-font} (const char $\ast$name)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-destroy\_\-font} ({\bf hpgs\_\-font} $\ast$font)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-font\_\-get\_\-ascent} ({\bf hpgs\_\-font} $\ast$font)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-font\_\-get\_\-descent} ({\bf hpgs\_\-font} $\ast$font)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-font\_\-get\_\-line\_\-gap} ({\bf hpgs\_\-font} $\ast$font)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-font\_\-get\_\-cap\_\-height} ({\bf hpgs\_\-font} $\ast$font)
+\item 
+HPGS\_\-API unsigned {\bf hpgs\_\-font\_\-get\_\-glyph\_\-count} ({\bf hpgs\_\-font} $\ast$font)
+\item 
+HPGS\_\-API unsigned {\bf hpgs\_\-font\_\-get\_\-glyph\_\-id} ({\bf hpgs\_\-font} $\ast$font, int uc)
+\item 
+HPGS\_\-API const char $\ast$ {\bf hpgs\_\-font\_\-get\_\-glyph\_\-name} ({\bf hpgs\_\-font} $\ast$font, unsigned gid)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-get\_\-glyph\_\-bbox} ({\bf hpgs\_\-font} $\ast$font, {\bf hpgs\_\-bbox} $\ast$bb, unsigned gid)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-get\_\-glyph\_\-metrics} ({\bf hpgs\_\-font} $\ast$font, {\bf hpgs\_\-point} $\ast$m, unsigned gid)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-get\_\-kern\_\-metrics} ({\bf hpgs\_\-font} $\ast$font, {\bf hpgs\_\-point} $\ast$m, unsigned gid\_\-l, unsigned gid\_\-r)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-get\_\-utf8\_\-metrics} ({\bf hpgs\_\-font} $\ast$font, {\bf hpgs\_\-point} $\ast$m, const char $\ast$str, int strlen)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-decompose\_\-glyph} ({\bf hpgs\_\-font} $\ast$font, void $\ast$ctxt, hpgs\_\-moveto\_\-func\_\-t moveto\_\-func, hpgs\_\-lineto\_\-func\_\-t lineto\_\-func, hpgs\_\-curveto\_\-func\_\-t curveto\_\-func, const {\bf hpgs\_\-matrix} $\ast$m, unsigned gid)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-draw\_\-glyph} ({\bf hpgs\_\-font} $\ast$font, {\bf hpgs\_\-device} $\ast$device, const {\bf hpgs\_\-matrix} $\ast$m, unsigned gid)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-decompose\_\-utf8} ({\bf hpgs\_\-font} $\ast$font, void $\ast$ctxt, hpgs\_\-moveto\_\-func\_\-t moveto\_\-func, hpgs\_\-lineto\_\-func\_\-t lineto\_\-func, hpgs\_\-curveto\_\-func\_\-t curveto\_\-func, hpgs\_\-fill\_\-func\_\-t fill\_\-func, const {\bf hpgs\_\-matrix} $\ast$m, const char $\ast$str, int strlen)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-font\_\-draw\_\-utf8} ({\bf hpgs\_\-font} $\ast$font, {\bf hpgs\_\-device} $\ast$device, const {\bf hpgs\_\-matrix} $\ast$m, const char $\ast$str, int strlen)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-define\_\-color\_\-func} ({\bf hpgs\_\-image} $\ast$image, {\bf hpgs\_\-paint\_\-color} $\ast$c)
+\item 
+static int {\bf hpgs\_\-image\_\-define\_\-color} ({\bf hpgs\_\-image} $\ast$image, {\bf hpgs\_\-paint\_\-color} $\ast$c)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-set\_\-palette} ({\bf hpgs\_\-image} $\ast$image, {\bf hpgs\_\-palette\_\-color} $\ast$p, int np)
+\item 
+HPGS\_\-API hpgs\_\-png\_\-image $\ast$ {\bf hpgs\_\-new\_\-png\_\-image} (int width, int height, int depth, hpgs\_\-bool palette, hpgs\_\-bool do\_\-rop3)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-png\_\-image\_\-set\_\-compression} (hpgs\_\-png\_\-image $\ast$pim, int compression)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-set\_\-resolution} ({\bf hpgs\_\-image} $\ast$pim, double x\_\-dpi, double y\_\-dpi)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-get\_\-data} ({\bf hpgs\_\-image} $\ast$\_\-this, unsigned char $\ast$$\ast$data, int $\ast$stride, int $\ast$depth)
+\item 
+static int {\bf hpgs\_\-image\_\-get\_\-pixel} (const {\bf hpgs\_\-image} $\ast$\_\-this, int x, int y, {\bf hpgs\_\-paint\_\-color} $\ast$c, double $\ast$alpha)
+\item 
+static int {\bf hpgs\_\-image\_\-put\_\-pixel} ({\bf hpgs\_\-image} $\ast$\_\-this, int x, int y, const {\bf hpgs\_\-paint\_\-color} $\ast$c, double alpha)
+\item 
+static int {\bf hpgs\_\-image\_\-put\_\-chunk} ({\bf hpgs\_\-image} $\ast$\_\-this, int x1, int x2, int y, const {\bf hpgs\_\-paint\_\-color} $\ast$c)
+\item 
+static int {\bf hpgs\_\-image\_\-rop3\_\-pixel} ({\bf hpgs\_\-image} $\ast$\_\-this, int x, int y, const {\bf hpgs\_\-paint\_\-color} $\ast$c, double alpha)
+\item 
+static int {\bf hpgs\_\-image\_\-rop3\_\-chunk} ({\bf hpgs\_\-image} $\ast$\_\-this, int x1, int x2, int y, const {\bf hpgs\_\-paint\_\-color} $\ast$c)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-resize} ({\bf hpgs\_\-image} $\ast$\_\-this, int w, int h)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-clear} ({\bf hpgs\_\-image} $\ast$\_\-this)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-write} ({\bf hpgs\_\-image} $\ast$\_\-this, const char $\ast$filename)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-setrop3} ({\bf hpgs\_\-image} $\ast$\_\-this, hpgs\_\-rop3\_\-func\_\-t rop3)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-setpatcol} ({\bf hpgs\_\-image} $\ast$\_\-this, const {\bf hpgs\_\-palette\_\-color} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-image\_\-destroy} ({\bf hpgs\_\-image} $\ast$\_\-this)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-image\_\-rop3\_\-clip} ({\bf hpgs\_\-device} $\ast$device, {\bf hpgs\_\-palette\_\-color} $\ast$data, const {\bf hpgs\_\-image} $\ast$img, const {\bf hpgs\_\-point} $\ast$ll, const {\bf hpgs\_\-point} $\ast$lr, const {\bf hpgs\_\-point} $\ast$ur, const {\bf hpgs\_\-palette\_\-color} $\ast$p, hpgs\_\-xrop3\_\-func\_\-t xrop3)
+\item 
+HPGS\_\-API {\bf hpgs\_\-paint\_\-path} $\ast$ {\bf hpgs\_\-new\_\-paint\_\-path} (void)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-paint\_\-path\_\-destroy} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-paint\_\-path\_\-truncate} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-paint\_\-path\_\-moveto} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-paint\_\-path\_\-lineto} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-paint\_\-path\_\-curveto} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p1, const {\bf hpgs\_\-point} $\ast$p2, const {\bf hpgs\_\-point} $\ast$p3)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-paint\_\-path\_\-closepath} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-paint\_\-path\_\-buldgeto} ({\bf hpgs\_\-paint\_\-path} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p, double buldge)
+\item 
+HPGS\_\-API {\bf hpgs\_\-paint\_\-path} $\ast$ {\bf hpgs\_\-paint\_\-path\_\-stroke\_\-path} (const {\bf hpgs\_\-paint\_\-path} $\ast$\_\-this, const {\bf hpgs\_\-gstate} $\ast$gstate)
+\item 
+HPGS\_\-API {\bf hpgs\_\-paint\_\-path} $\ast$ {\bf hpgs\_\-paint\_\-path\_\-decompose\_\-dashes} (const {\bf hpgs\_\-paint\_\-path} $\ast$\_\-this, const {\bf hpgs\_\-gstate} $\ast$gstate)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-x} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-y} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-delta\_\-x} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-delta\_\-y} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-xmin} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-xmax} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-ymin} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i)
+\item 
+HPGS\_\-API double {\bf hpgs\_\-bezier\_\-path\_\-ymax} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bezier\_\-path\_\-point} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t, {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bezier\_\-path\_\-delta} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t, {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bezier\_\-path\_\-tangent} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t, int orientation, double ytol, {\bf hpgs\_\-point} $\ast$p)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bezier\_\-path\_\-singularities} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t0, double t1, int $\ast$nx, double $\ast$tx)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-bezier\_\-path\_\-to\_\-quadratic} (const {\bf hpgs\_\-paint\_\-path} $\ast$path, int i, double t0, double t1, int $\ast$nx, {\bf hpgs\_\-point} $\ast$points)
+\item 
+HPGS\_\-API {\bf hpgs\_\-paint\_\-device} $\ast$ {\bf hpgs\_\-new\_\-paint\_\-device} ({\bf hpgs\_\-image} $\ast$image, const char $\ast$filename, const {\bf hpgs\_\-bbox} $\ast$bb, hpgs\_\-bool antialias)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-paint\_\-device\_\-set\_\-image\_\-interpolation} ({\bf hpgs\_\-paint\_\-device} $\ast$pdv, int i)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-paint\_\-device\_\-set\_\-thin\_\-alpha} ({\bf hpgs\_\-paint\_\-device} $\ast$pdv, double a)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+The public interfaces. 
+
+A header file, which declares the public structures and functions provided by the hpgs library. The API declared in this header file remains stable across the whole series of release with the same major ans minor number. 

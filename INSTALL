@@ -1,0 +1,169 @@
+#
+# $Id: INSTALL 447 2008-04-01 08:36:13Z softadm $
+#
+# Installation notes.
+#
+# Author: Wolfgang Glas
+#
+
+UNIX environments
+-----------------
+
+Go to the directory build/unix-shared and type
+
+  make; make install
+
+If you encounter problems, supposedly you don't have
+the freetype library installed or you're using a libc,
+which does not include the iconv library such as glibc.
+
+Under linux, you should check, whether you have the
+libpng, libpng-devel, glibc-devel packages installed.
+
+Otherwise, consider compiling libpng and/or iconv on your
+own and adding the appropriate include and library paths
+to build/unix-shared/Makefile
+
+links:
+
+http://www.libpng.org/pub/png/libpng.html
+http://www.gnu.org/software/libiconv/
+
+If you'd like to compile hpgs using special compiler flags,
+such as compiler optimizations, consider building with
+
+ make COPT='-O3 -march=pentium4 -msse2 -mfpmath=sse'
+
+(These are the options, which give the best performance
+ on my Pentium 4)
+
+Truetype fonts for the support of HPGL labels:
+
+In order to enable rendering of HPGL labels hpgs
+needs a set of Truetype fonts, which are published by
+Artifex as urwfonts-1.40.tar.gz available at
+
+http://www.artifex.com/downloads/
+
+Unpack the archives so, that the ttf files are placed
+in /usr/local/share/fonts/truetype or in
+/usr/X11R6/lib/X11/fonts/truetype
+
+Cairo backend (experimental)
+---------------------------
+
+Starting with hpgs-0.7.2, a backend using the cairo library
+from http://www.cairographics.org is provided. As of 04/2005
+(cairo 0.4.0) the cairo display model does not allow to
+represent PCL raster operations (ROP3) to be represented
+precisely. However, the antialiasing capabilities of cairo
+are impressive and you might get an impression, of what will
+be possible, if we conclude the ongoing discussion with the
+cairo developers about extending their display model.
+
+To build the backend, you have to build hpgs using a shared
+library and afterwards you have to build the cairo plugin for
+hpgs (assuming you have cairo and it's header files installed):
+
+  cd build/unix-shared
+  make
+  make -C hpgscairo
+  make install
+  make -C hpgscairo install
+
+Afterwards, try the device cairo_png using the cmd line option
+-d of hpgs.
+
+MacOS X Environments
+--------------------
+
+The MacOS build directory is located under build/macos-shared
+The MacOS build assumes, taht you have installed libpng using
+the fink open source software installer.
+
+Windows Environments
+--------------------
+
+Currently, only the mingw/MSYS development environment
+from http://www.mingw.org is supported, although
+others might be easily added due to the fact, that
+hpgs is purely written in C and only uses highly
+portable libraries.
+
+All the required libraries zlib,iconv,libpng and freetype
+are available as mingwPORTs from http://www.mingw.org and
+the Makefiles in build/mingw and build/mingw-shared are
+adapted to the file system layout of these mingwPORTs
+beginning with hpgs-0.9.0.
+
+In former versions of hpgs, the MinGW Makefiles assumed the
+libraries to be installed in /usr/local.
+
+After that go to the directory build/mingw (static build) or
+build/mingw-shared (DLL build) and type
+
+  make; make install
+
+Truetype fonts for the support of HPGL labels:
+
+In order to enable rendering of HPGL labels hpgs
+needs a set of Truetype fonts, which are published by
+Artifex as urwfonts-1.40.zip available at
+
+http://www.artifex.com/downloads/
+
+Unpack the archives so, that the ttf files are placed
+in
+
+%SystemRoot%\fonts
+
+This may also be achieved by installing the fonts using the
+Windows font installer.
+
+
+Installing from SVN
+-------------------
+
+If you got a fresh copy from SVN, please issue the command
+
+  make dep=no pre
+
+in order to generate the file src/hpgsrop.c
+If you ever intend to modify the ROP3 tables in
+hpgsop.dat or the ROP3 generator hpgsrop.c, this
+instruction applies to you, too.
+
+I18N
+----
+
+hpgs may be compiled with internationalization support by using
+the -DHPGS_HAVE_GETTEXT comile time switch. This setting is used
+by the unix-shared build configuration by default.
+
+I highly appreciate additional translations for hpgs, currently there
+is only my own german translation available. If you start a new translation,
+add your language to the POLANGS variable in src/include.mak and type
+'make update-po' in the po subdirectory. Then you'd propably like to start
+the translation task on the generated hpgs_<lang>.po file using your
+favourite po-file editor like kbabel.
+
+If you like to have i18n support for Windows, you have to fetch
+the experimental mingwPORT of libgettext from
+
+https://sourceforge.net/tracker/?func=detail&atid=752210&aid=1421286&group_id=2435
+
+and add -DHPGS_HAVE_GETTEXT to the mingw compiler options and
+-lintl to the mingw link libraries in mingw/Makefile or mingw-shared/Makefile.
+
+Custom configurations
+---------------------
+
+At the time of writing, no fancy Makefile generation
+utility like autoconf is used, because compiling hpgs
+is terribly simple by now. Mainly you have to adapt
+the libpng and iconv include and library paths and
+to choose your compiler.
+
+If you need to compile hpgs with a special configuration,
+consider to make your own build subdirectory and create
+your own Makefile based on the one in unix/Makefile.

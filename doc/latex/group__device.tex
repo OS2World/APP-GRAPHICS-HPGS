@@ -1,0 +1,478 @@
+\section{Basic vector graphics devices.}
+\label{group__device}\index{Basic vector graphics devices.@{Basic vector graphics devices.}}
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf hpgs\_\-gstate\_\-st}
+\begin{CompactList}\small\item\em The vector graphics state. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-device\_\-vtable\_\-st}
+\begin{CompactList}\small\item\em A table of virtual function implementing {\tt hpgs\_\-device}. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-device\_\-st}
+\begin{CompactList}\small\item\em A virtual vector graphics device for the HPGL reader. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-plotsize\_\-device\_\-st}
+\begin{CompactList}\small\item\em A vector graphics device for plotsize calculating. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-ps\_\-media\_\-size\_\-st}
+\begin{CompactList}\small\item\em A structure for storing a paper size. \item\end{CompactList}\item 
+struct {\bf hpgs\_\-eps\_\-device\_\-st}
+\begin{CompactList}\small\item\em A vector graphics device for drawing to an eps file. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-RASTER}~(1$<$$<$0)\label{group__device_g8175e4398fb6e52394c50e931f8cf693}
+
+\begin{CompactList}\small\item\em This device is a raster device. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-ANTIALIAS}~(1$<$$<$1)\label{group__device_gbfbaca61af5c0e6faef1ad7a562f3329}
+
+\begin{CompactList}\small\item\em This device supports anitaliasing. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-VECTOR}~(1$<$$<$2)\label{group__device_g83df9d5e409b8b6c76d218cac0a6e0a1}
+
+\begin{CompactList}\small\item\em This device is a true vector device. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-MULTIPAGE}~(1$<$$<$3)\label{group__device_ge56cf76d457f9ee8dd758b10d6bd10e5}
+
+\begin{CompactList}\small\item\em This device supports multiple pages. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-PAGECOLLATION}~(1$<$$<$4)\label{group__device_g47c1e796774cc9019de505639ba2d8b4}
+
+\begin{CompactList}\small\item\em This device is able to write multiple pages to a single file. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-MULTISIZE}~(1$<$$<$5)\label{group__device_g74b3043329761f6c48088374cb2645d0}
+
+\begin{CompactList}\small\item\em This device is able to cope with distinct sizes per page. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-DRAWIMAGE}~(1$<$$<$6)\label{group__device_g0e8d3be8de1ccdc0c814a7d4f50d5ea5}
+
+\begin{CompactList}\small\item\em The device may draw an image. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-NULLIMAGE}~(1$<$$<$7)\label{group__device_g137bf6ecfa0799889cc3338b3e6e57cf}
+
+\begin{CompactList}\small\item\em The device accepts a null image in drawimage. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-PLOTSIZE}~(1$<$$<$8)\label{group__device_g6fc3e52dd7ac9e001d1148b075d16e4c}
+
+\begin{CompactList}\small\item\em This device is a plotsize device. \item\end{CompactList}\item 
+\#define {\bf HPGS\_\-DEVICE\_\-CAP\_\-ROP3}~(1$<$$<$9)\label{group__device_g35207578b9faef0e1602a6600c73dd39}
+
+\begin{CompactList}\small\item\em This device supports rop3 operations. \item\end{CompactList}\item 
+\#define \textbf{HPGS\_\-BASE\_\-CLASS}(d)~(\&(d $\rightarrow$ inherited))\label{group__device_gd40c8bf92012b37cda89ba8ee69a33a1}
+
+\item 
+\#define \textbf{HPGS\_\-PLOTSIZE\_\-MAX\_\-CLIP\_\-DEPTH}~16\label{group__device_ge92b44de322e9c1b9fbd0f732aea9077}
+
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef struct {\bf hpgs\_\-device\_\-st} \textbf{hpgs\_\-device}\label{group__device_g100927b1ad4b437d61dddc42708fa8f3}
+
+\item 
+typedef struct {\bf hpgs\_\-plotsize\_\-device\_\-st} \textbf{hpgs\_\-plotsize\_\-device}\label{group__device_g98a37f93bf5799c2d55d6e59d9f2c1b1}
+
+\item 
+typedef struct {\bf hpgs\_\-eps\_\-device\_\-st} \textbf{hpgs\_\-eps\_\-device}\label{group__device_g648708ea6527d8ffec62f075471c78f9}
+
+\item 
+typedef struct hpgs\_\-gs\_\-device\_\-st \textbf{hpgs\_\-gs\_\-device}\label{group__device_g21b6ff6181ec0b14869ddf3aef4fc0e0}
+
+\item 
+typedef struct {\bf hpgs\_\-device\_\-vtable\_\-st} \textbf{hpgs\_\-device\_\-vtable}\label{group__device_g503100ff768d14078274b7abe457ac93}
+
+\item 
+typedef struct {\bf hpgs\_\-image\_\-st} \textbf{hpgs\_\-image}\label{group__device_ge374b15dff89c5d2c569c4250d4e3a2b}
+
+\item 
+typedef struct {\bf hpgs\_\-image\_\-vtable\_\-st} \textbf{hpgs\_\-image\_\-vtable}\label{group__device_g3d673430a5742c7e44d5494bb124d221}
+
+\item 
+typedef struct hpgs\_\-png\_\-image\_\-st \textbf{hpgs\_\-png\_\-image}\label{group__device_g73df7e42f65edb523ba4869a4c20155c}
+
+\item 
+typedef struct {\bf hpgs\_\-paint\_\-device\_\-st} \textbf{hpgs\_\-paint\_\-device}\label{group__device_g4ca0f0bd51075fb9da27bf731ab5eefd}
+
+\item 
+typedef struct {\bf hpgs\_\-gstate\_\-st} \textbf{hpgs\_\-gstate}\label{group__device_g2cbad771732e3c16b8efa41910affdf3}
+
+\item 
+typedef struct {\bf hpgs\_\-font\_\-st} \textbf{hpgs\_\-font}\label{group__device_gd67dc54687613dc2af6ca86aa2a61cb3}
+
+\item 
+typedef int($\ast$ \textbf{hpgs\_\-reader\_\-asset\_\-func\_\-t} )(void $\ast$, {\bf hpgs\_\-device} $\ast$, const {\bf hpgs\_\-matrix} $\ast$, const {\bf hpgs\_\-matrix} $\ast$, const {\bf hpgs\_\-bbox} $\ast$, int)\label{group__device_gb994453805be117de7c3e23d451b3348}
+
+\item 
+typedef struct {\bf hpgs\_\-ps\_\-media\_\-size\_\-st} \textbf{hpgs\_\-ps\_\-media\_\-size}\label{group__device_g9bbe4ba684b8a07c23d89ee820f00574}
+
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+HPGS\_\-API {\bf hpgs\_\-gstate} $\ast$ {\bf hpgs\_\-new\_\-gstate} (void)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-gstate\_\-destroy} ({\bf hpgs\_\-gstate} $\ast$gstate)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-gstate\_\-setdash} ({\bf hpgs\_\-gstate} $\ast$gstate, const float $\ast$, unsigned, double)
+\item 
+HPGS\_\-API {\bf hpgs\_\-plotsize\_\-device} $\ast$ {\bf hpgs\_\-new\_\-plotsize\_\-device} (hpgs\_\-bool ignore\_\-ps, hpgs\_\-bool do\_\-linewidth)
+\item 
+HPGS\_\-API {\bf hpgs\_\-eps\_\-device} $\ast$ {\bf hpgs\_\-new\_\-eps\_\-device} (const char $\ast$filename, const {\bf hpgs\_\-bbox} $\ast$bb, hpgs\_\-bool do\_\-rop3)
+\item 
+HPGS\_\-API {\bf hpgs\_\-eps\_\-device} $\ast$ {\bf hpgs\_\-new\_\-ps\_\-device} (const char $\ast$filename, const {\bf hpgs\_\-bbox} $\ast$bb, hpgs\_\-bool do\_\-rop3)
+\item 
+HPGS\_\-API int \textbf{hpgs\_\-new\_\-plugin\_\-device} ({\bf hpgs\_\-device} $\ast$$\ast$device, void $\ast$$\ast$page\_\-asset\_\-ctxt, hpgs\_\-reader\_\-asset\_\-func\_\-t $\ast$page\_\-asset\_\-func, void $\ast$$\ast$frame\_\-asset\_\-ctxt, hpgs\_\-reader\_\-asset\_\-func\_\-t $\ast$frame\_\-asset\_\-func, const char $\ast$dev\_\-name, const char $\ast$filename, const {\bf hpgs\_\-bbox} $\ast$bb, double xres, double yres, hpgs\_\-bool do\_\-rop3, int argc, const char $\ast$argv[$\,$])\label{group__device_g32a98f875a08a2a1e5a511ee3f51c5f9}
+
+\item 
+HPGS\_\-API const char $\ast$ {\bf hpgs\_\-device\_\-rtti} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-moveto} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+static int {\bf hpgs\_\-lineto} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p)
+\item 
+static int {\bf hpgs\_\-curveto} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-point} $\ast$p1, const {\bf hpgs\_\-point} $\ast$p2, const {\bf hpgs\_\-point} $\ast$p3)
+\item 
+static int {\bf hpgs\_\-closepath} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-newpath} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-stroke} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-fill} ({\bf hpgs\_\-device} $\ast$\_\-this, hpgs\_\-bool winding)
+\item 
+static int {\bf hpgs\_\-clip} ({\bf hpgs\_\-device} $\ast$\_\-this, hpgs\_\-bool winding)
+\item 
+static int {\bf hpgs\_\-clipsave} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-cliprestore} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+static int {\bf hpgs\_\-setrgbcolor} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-color} $\ast$rgb)
+\item 
+static int {\bf hpgs\_\-setdash} ({\bf hpgs\_\-device} $\ast$\_\-this, const float $\ast$d, unsigned nd, double s)
+\item 
+static int {\bf hpgs\_\-setlinewidth} ({\bf hpgs\_\-device} $\ast$\_\-this, double w)
+\item 
+static int {\bf hpgs\_\-setlinecap} ({\bf hpgs\_\-device} $\ast$\_\-this, {\bf hpgs\_\-line\_\-cap} c)
+\item 
+static int {\bf hpgs\_\-setlinejoin} ({\bf hpgs\_\-device} $\ast$\_\-this, {\bf hpgs\_\-line\_\-join} j)
+\item 
+static int {\bf hpgs\_\-setmiterlimit} ({\bf hpgs\_\-device} $\ast$\_\-this, double l)
+\item 
+static int {\bf hpgs\_\-device\_\-capabilities} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-setrop3} ({\bf hpgs\_\-device} $\ast$\_\-this, int rop, hpgs\_\-bool src\_\-transparency, hpgs\_\-bool pattern\_\-transparency)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-setpatcol} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-color} $\ast$rgb)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-drawimage} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-image} $\ast$img, const {\bf hpgs\_\-point} $\ast$ll, const {\bf hpgs\_\-point} $\ast$lr, const {\bf hpgs\_\-point} $\ast$ur)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-setplotsize} ({\bf hpgs\_\-device} $\ast$\_\-this, const {\bf hpgs\_\-bbox} $\ast$bb)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-getplotsize} ({\bf hpgs\_\-device} $\ast$\_\-this, int i, {\bf hpgs\_\-bbox} $\ast$bb)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-showpage} ({\bf hpgs\_\-device} $\ast$\_\-this, int i)
+\item 
+HPGS\_\-API int {\bf hpgs\_\-device\_\-finish} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+HPGS\_\-API void {\bf hpgs\_\-device\_\-destroy} ({\bf hpgs\_\-device} $\ast$\_\-this)
+\item 
+HPGS\_\-INTERNAL\_\-API void \textbf{hpgs\_\-cleanup\_\-plugin\_\-devices} ()\label{group__device_ge99c6a46a83f5dc00f3e9cc3420356fb}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This group contains the definitions for the abstract vector graphics device {\tt hpgs\_\-device} as well as the implementations of the two very basic vector devices {\tt hpgs\_\-plotsize\_\-device} ans {\tt hpgs\_\-eps\_\-device}. 
+
+\subsection{Function Documentation}
+\index{device@{device}!hpgs\_\-clip@{hpgs\_\-clip}}
+\index{hpgs\_\-clip@{hpgs\_\-clip}!device@{device}}
+\subsubsection[hpgs\_\-clip]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-clip ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  hpgs\_\-bool {\em winding})\hspace{0.3cm}{\tt  [static]}}\label{group__device_g65f0a50bdae77921c1a2240d50e8fe31}
+
+
+PostScript clip/eoclip on the device. If {\tt winding} is {\tt HPGS\_\-TRUE} we issue {\tt clip}, otherwise {\tt eoclip}. 
+
+References hpgs\_\-device\_\-vtable\_\-st::clip, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-image\_\-rop3\_\-clip().\index{device@{device}!hpgs\_\-cliprestore@{hpgs\_\-cliprestore}}
+\index{hpgs\_\-cliprestore@{hpgs\_\-cliprestore}!device@{device}}
+\subsubsection[hpgs\_\-cliprestore]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-cliprestore ({\bf hpgs\_\-device} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__device_g6a627914eb54773183a02b05db2818b4}
+
+
+Restores the last clip state from the clip stack. 
+
+References hpgs\_\-device\_\-vtable\_\-st::cliprestore, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-read().\index{device@{device}!hpgs\_\-clipsave@{hpgs\_\-clipsave}}
+\index{hpgs\_\-clipsave@{hpgs\_\-clipsave}!device@{device}}
+\subsubsection[hpgs\_\-clipsave]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-clipsave ({\bf hpgs\_\-device} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__device_gd4d626725fee547a5a5ab6559ad0de09}
+
+
+Save the clip state onto the clip stack. Unlike PostScripts {\tt gsave} the line attributes and colors of the graphics state are not saved. 
+
+References hpgs\_\-device\_\-vtable\_\-st::clipsave, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-image\_\-rop3\_\-clip().\index{device@{device}!hpgs\_\-closepath@{hpgs\_\-closepath}}
+\index{hpgs\_\-closepath@{hpgs\_\-closepath}!device@{device}}
+\subsubsection[hpgs\_\-closepath]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-closepath ({\bf hpgs\_\-device} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__device_g57e1b5cd052096b4dc60ca719a6e0f9c}
+
+
+PostScript closepath on the device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::closepath, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-image\_\-rop3\_\-clip().\index{device@{device}!hpgs\_\-curveto@{hpgs\_\-curveto}}
+\index{hpgs\_\-curveto@{hpgs\_\-curveto}!device@{device}}
+\subsubsection[hpgs\_\-curveto]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-curveto ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p1}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p2}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p3})\hspace{0.3cm}{\tt  [static]}}\label{group__device_ge9c2bf3ad746f0db9b981cfb51254001}
+
+
+PostScript curveto on the device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::curveto, and hpgs\_\-device\_\-st::vtable.\index{device@{device}!hpgs\_\-device\_\-capabilities@{hpgs\_\-device\_\-capabilities}}
+\index{hpgs\_\-device\_\-capabilities@{hpgs\_\-device\_\-capabilities}!device@{device}}
+\subsubsection[hpgs\_\-device\_\-capabilities]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-device\_\-capabilities ({\bf hpgs\_\-device} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__device_ged7b6320c336ec035a00ea176329978f}
+
+
+Get the device capabilities. 
+
+References hpgs\_\-device\_\-vtable\_\-st::capabilities, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-read(), and hpgs\_\-reader\_\-imbue().\index{device@{device}!hpgs\_\-device\_\-destroy@{hpgs\_\-device\_\-destroy}}
+\index{hpgs\_\-device\_\-destroy@{hpgs\_\-device\_\-destroy}!device@{device}}
+\subsubsection[hpgs\_\-device\_\-destroy]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-device\_\-destroy ({\bf hpgs\_\-device} $\ast$ {\em \_\-this})}\label{group__device_g9e5033cc99679c854402df0157e0eb82}
+
+
+Destroys the given device and frees all allocated resources by this device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::destroy, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-destroy\_\-reader(), hpgs\_\-new\_\-reader(), and hpgs\_\-reader\_\-imbue().\index{device@{device}!hpgs\_\-device\_\-finish@{hpgs\_\-device\_\-finish}}
+\index{hpgs\_\-device\_\-finish@{hpgs\_\-device\_\-finish}!device@{device}}
+\subsubsection[hpgs\_\-device\_\-finish]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-device\_\-finish ({\bf hpgs\_\-device} $\ast$ {\em \_\-this})}\label{group__device_g070f7e3d2c775d37785462eb0424bf89}
+
+
+Finishes the output of a document to the device. Implementations of device should discard all output, which has been undertaken since the past showpage call. 
+
+References hpgs\_\-device\_\-vtable\_\-st::finish, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-read().\index{device@{device}!hpgs\_\-device\_\-rtti@{hpgs\_\-device\_\-rtti}}
+\index{hpgs\_\-device\_\-rtti@{hpgs\_\-device\_\-rtti}!device@{device}}
+\subsubsection[hpgs\_\-device\_\-rtti]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API const char$\ast$ hpgs\_\-device\_\-rtti ({\bf hpgs\_\-device} $\ast$ {\em \_\-this})}\label{group__device_g629c2e61e8761371bc343ce2118797ca}
+
+
+Returns the name of the device for use with RTTI, runtime type information. 
+
+References hpgs\_\-device\_\-vtable\_\-st::rtti, and hpgs\_\-device\_\-st::vtable.\index{device@{device}!hpgs\_\-drawimage@{hpgs\_\-drawimage}}
+\index{hpgs\_\-drawimage@{hpgs\_\-drawimage}!device@{device}}
+\subsubsection[hpgs\_\-drawimage]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-drawimage ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-image} $\ast$ {\em img}, \/  const {\bf hpgs\_\-point} $\ast$ {\em ll}, \/  const {\bf hpgs\_\-point} $\ast$ {\em lr}, \/  const {\bf hpgs\_\-point} $\ast$ {\em ur})}\label{group__device_g6c31703bf9edc382b8b89da02e8f0fed}
+
+
+Draw an image to the device. The arguments {\tt ll}, {\tt lr} and {\tt ur} are the lower left, lower right and upper right corner of the drawn image in world coordinates.
+
+The function returns 0 on success. -1 is returned upon failure. 
+
+References hpgs\_\-device\_\-vtable\_\-st::drawimage, and hpgs\_\-device\_\-st::vtable.\index{device@{device}!hpgs\_\-fill@{hpgs\_\-fill}}
+\index{hpgs\_\-fill@{hpgs\_\-fill}!device@{device}}
+\subsubsection[hpgs\_\-fill]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-fill ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  hpgs\_\-bool {\em winding})\hspace{0.3cm}{\tt  [static]}}\label{group__device_g089db13124aa75a45a6e913aca62e4d4}
+
+
+PostScript fill/eofill on the device. If {\tt winding} is {\tt HPGS\_\-TRUE} we issue {\tt fill}, otherwise {\tt eofill}. 
+
+References hpgs\_\-device\_\-vtable\_\-st::fill, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-font\_\-draw\_\-glyph(), and hpgs\_\-image\_\-rop3\_\-clip().\index{device@{device}!hpgs\_\-getplotsize@{hpgs\_\-getplotsize}}
+\index{hpgs\_\-getplotsize@{hpgs\_\-getplotsize}!device@{device}}
+\subsubsection[hpgs\_\-getplotsize]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-getplotsize ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  int {\em i}, \/  {\bf hpgs\_\-bbox} $\ast$ {\em bb})}\label{group__device_g409181ae96a9c9fe88bc4327552ac242}
+
+
+Gets the plotsize of the given page number {\tt i} or the overall bounding box, if {\tt i} is zero.
+
+The function returns 0 on success.
+
+If the function returns 1, the overall bounding box is returned, because the plotsize of page {\tt i} is not known.
+
+-1 is returned, if the funtion is unimplemented for the given device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::getplotsize, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-read().\index{device@{device}!hpgs\_\-gstate\_\-destroy@{hpgs\_\-gstate\_\-destroy}}
+\index{hpgs\_\-gstate\_\-destroy@{hpgs\_\-gstate\_\-destroy}!device@{device}}
+\subsubsection[hpgs\_\-gstate\_\-destroy]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API void hpgs\_\-gstate\_\-destroy ({\bf hpgs\_\-gstate} $\ast$ {\em gstate})}\label{group__device_g3a2f449b7ae7de3e4ef9a6afac3b526c}
+
+
+Destroys a gstate created using {\tt hpgs\_\-new\_\-gstate}. 
+
+References hpgs\_\-gstate\_\-st::dash\_\-lengths.
+
+Referenced by hpgs\_\-new\_\-paint\_\-device().\index{device@{device}!hpgs\_\-gstate\_\-setdash@{hpgs\_\-gstate\_\-setdash}}
+\index{hpgs\_\-gstate\_\-setdash@{hpgs\_\-gstate\_\-setdash}!device@{device}}
+\subsubsection[hpgs\_\-gstate\_\-setdash]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-gstate\_\-setdash ({\bf hpgs\_\-gstate} $\ast$ {\em gstate}, \/  const float $\ast$ {\em dash\_\-lengths}, \/  unsigned {\em n\_\-dashes}, \/  double {\em offset})}\label{group__device_g3d87c749cf3c6ade663c6319e11a33ce}
+
+
+Sets the dashes of {\tt gstate}. The passed array and offset folow th esemantics of PostScipt's {\tt setdash} command.
+
+Return value: \begin{itemize}
+\item 0 Success. \item -1 The system is out of memory. \end{itemize}
+
+
+References hpgs\_\-gstate\_\-st::dash\_\-lengths, hpgs\_\-gstate\_\-st::dash\_\-offset, and hpgs\_\-gstate\_\-st::n\_\-dashes.\index{device@{device}!hpgs\_\-lineto@{hpgs\_\-lineto}}
+\index{hpgs\_\-lineto@{hpgs\_\-lineto}!device@{device}}
+\subsubsection[hpgs\_\-lineto]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-lineto ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p})\hspace{0.3cm}{\tt  [static]}}\label{group__device_g12162918d937d3248c8b28d505fb7d04}
+
+
+PostScript lineto on the device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::lineto, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-image\_\-rop3\_\-clip().\index{device@{device}!hpgs\_\-moveto@{hpgs\_\-moveto}}
+\index{hpgs\_\-moveto@{hpgs\_\-moveto}!device@{device}}
+\subsubsection[hpgs\_\-moveto]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-moveto ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-point} $\ast$ {\em p})\hspace{0.3cm}{\tt  [static]}}\label{group__device_g02a5a6a75d00357beafb93105f1b2d87}
+
+
+PostScript moveto on the device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::moveto, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-image\_\-rop3\_\-clip().\index{device@{device}!hpgs\_\-new\_\-eps\_\-device@{hpgs\_\-new\_\-eps\_\-device}}
+\index{hpgs\_\-new\_\-eps\_\-device@{hpgs\_\-new\_\-eps\_\-device}!device@{device}}
+\subsubsection[hpgs\_\-new\_\-eps\_\-device]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-eps\_\-device}$\ast$ hpgs\_\-new\_\-eps\_\-device (const char $\ast$ {\em filename}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb}, \/  hpgs\_\-bool {\em do\_\-rop3})}\label{group__device_g576f0a343948b709f8099bb0ec668ef6}
+
+
+Retrieves the pointer to a new {\tt hpgs\_\-eps\_\-device} on the heap, which writes to the file with the gieven {\tt filename}.
+
+The bounding box in the eps files is passed to this functions.
+
+If the file cannot be opened or the system is out of memory, a null pointer is returned. 
+
+References hpgs\_\-color\_\-st::b, hpgs\_\-palette\_\-color\_\-st::b, hpgs\_\-eps\_\-device\_\-st::color, hpgs\_\-eps\_\-device\_\-st::doc\_\-bb, hpgs\_\-eps\_\-device\_\-st::filename, hpgs\_\-color\_\-st::g, hpgs\_\-palette\_\-color\_\-st::g, hpgs\_\-eps\_\-device\_\-st::inherited, hpgs\_\-eps\_\-device\_\-st::media\_\-sizes, hpgs\_\-eps\_\-device\_\-st::media\_\-sizes\_\-alloc\_\-size, hpgs\_\-eps\_\-device\_\-st::n\_\-media\_\-sizes, hpgs\_\-eps\_\-device\_\-st::n\_\-pages, hpgs\_\-eps\_\-device\_\-st::out, hpgs\_\-eps\_\-device\_\-st::page\_\-bb, hpgs\_\-eps\_\-device\_\-st::page\_\-setup, hpgs\_\-eps\_\-device\_\-st::pattern\_\-color, hpgs\_\-color\_\-st::r, hpgs\_\-palette\_\-color\_\-st::r, hpgs\_\-eps\_\-device\_\-st::rop3, and hpgs\_\-device\_\-st::vtable.\index{device@{device}!hpgs\_\-new\_\-gstate@{hpgs\_\-new\_\-gstate}}
+\index{hpgs\_\-new\_\-gstate@{hpgs\_\-new\_\-gstate}!device@{device}}
+\subsubsection[hpgs\_\-new\_\-gstate]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-gstate}$\ast$ hpgs\_\-new\_\-gstate (void)}\label{group__device_gd474e8eca187bdde4ad1608d46029562}
+
+
+Creates a new gstate on the heap. Use {\tt hpgs\_\-gstate\_\-destroy} in order to destroy the returned gstate pointer.
+
+A null pointer is returned, if the system is out of memory. 
+
+References hpgs\_\-color\_\-st::b, hpgs\_\-gstate\_\-st::color, hpgs\_\-gstate\_\-st::dash\_\-lengths, hpgs\_\-gstate\_\-st::dash\_\-offset, hpgs\_\-color\_\-st::g, hpgs\_\-cap\_\-butt, hpgs\_\-join\_\-miter, hpgs\_\-gstate\_\-st::line\_\-cap, hpgs\_\-gstate\_\-st::line\_\-join, hpgs\_\-gstate\_\-st::linewidth, hpgs\_\-gstate\_\-st::miterlimit, hpgs\_\-gstate\_\-st::n\_\-dashes, hpgs\_\-gstate\_\-st::pattern\_\-color, hpgs\_\-gstate\_\-st::pattern\_\-transparency, hpgs\_\-color\_\-st::r, hpgs\_\-gstate\_\-st::rop3, and hpgs\_\-gstate\_\-st::src\_\-transparency.
+
+Referenced by hpgs\_\-new\_\-paint\_\-device().\index{device@{device}!hpgs\_\-new\_\-plotsize\_\-device@{hpgs\_\-new\_\-plotsize\_\-device}}
+\index{hpgs\_\-new\_\-plotsize\_\-device@{hpgs\_\-new\_\-plotsize\_\-device}!device@{device}}
+\subsubsection[hpgs\_\-new\_\-plotsize\_\-device]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-plotsize\_\-device}$\ast$ hpgs\_\-new\_\-plotsize\_\-device (hpgs\_\-bool {\em ignore\_\-ps}, \/  hpgs\_\-bool {\em do\_\-linewidth})}\label{group__device_gdd6dbaffaf1e09f9c771cbf60eb45e3f}
+
+
+Retrieves the pointer to a new {\tt hpgs\_\-plotsize\_\-device} on the heap.
+
+If {\tt ignore\_\-ps} is {\tt HPGS\_\-TRUE}, a HPGL PS statement is ignored an the plotsize is calculated from the vector graphics contents.
+
+If {\tt do\_\-linewidth} is {\tt HPGS\_\-TRUE}, the current linewidth is taken into account in the plotsize calculation.
+
+If the system is out of memory, a null pointer is returned. 
+
+References hpgs\_\-plotsize\_\-device\_\-st::clip\_\-bbs, hpgs\_\-plotsize\_\-device\_\-st::clip\_\-depth, hpgs\_\-plotsize\_\-device\_\-st::deferred\_\-moveto, hpgs\_\-plotsize\_\-device\_\-st::do\_\-linewidth, hpgs\_\-plotsize\_\-device\_\-st::global\_\-bb, hpgs\_\-bbox\_\-null(), hpgs\_\-plotsize\_\-device\_\-st::ignore\_\-ps, hpgs\_\-plotsize\_\-device\_\-st::inherited, hpgs\_\-plotsize\_\-device\_\-st::linewidth, hpgs\_\-bbox\_\-st::llx, hpgs\_\-bbox\_\-st::lly, hpgs\_\-plotsize\_\-device\_\-st::moveto, hpgs\_\-plotsize\_\-device\_\-st::n\_\-page\_\-bbs, hpgs\_\-plotsize\_\-device\_\-st::page\_\-bb, hpgs\_\-plotsize\_\-device\_\-st::page\_\-bbs, hpgs\_\-plotsize\_\-device\_\-st::page\_\-bbs\_\-alloc\_\-size, hpgs\_\-plotsize\_\-device\_\-st::path\_\-bb, hpgs\_\-bbox\_\-st::urx, hpgs\_\-bbox\_\-st::ury, hpgs\_\-device\_\-st::vtable, hpgs\_\-point\_\-st::x, and hpgs\_\-point\_\-st::y.\index{device@{device}!hpgs\_\-new\_\-ps\_\-device@{hpgs\_\-new\_\-ps\_\-device}}
+\index{hpgs\_\-new\_\-ps\_\-device@{hpgs\_\-new\_\-ps\_\-device}!device@{device}}
+\subsubsection[hpgs\_\-new\_\-ps\_\-device]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API {\bf hpgs\_\-eps\_\-device}$\ast$ hpgs\_\-new\_\-ps\_\-device (const char $\ast$ {\em filename}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb}, \/  hpgs\_\-bool {\em do\_\-rop3})}\label{group__device_g8fc4def644785c7762e048a26b12e29a}
+
+
+Retrieves the pointer to a new {\tt hpgs\_\-eps\_\-device} on the heap, which writes to a multipage PostScript file with the given {\tt filename}.
+
+The overall document bounding box for the PostScript file is passed as {\tt bb}.
+
+If {\tt paper\_\-width} and {\tt paper\_\-height} are greater than zero, the content of each page is scaled to this fixed paper format. Otherwise, the paper size of each page adpats to the page bounding box.
+
+The given {\tt border} is used in order to place the contents on the page.
+
+If the file cannot be opened or the system is out of memory, a null pointer is returned. 
+
+References hpgs\_\-color\_\-st::b, hpgs\_\-palette\_\-color\_\-st::b, hpgs\_\-eps\_\-device\_\-st::color, hpgs\_\-eps\_\-device\_\-st::doc\_\-bb, hpgs\_\-eps\_\-device\_\-st::filename, hpgs\_\-color\_\-st::g, hpgs\_\-palette\_\-color\_\-st::g, hpgs\_\-new\_\-mem\_\-ostream(), hpgs\_\-ostream\_\-close(), hpgs\_\-eps\_\-device\_\-st::inherited, hpgs\_\-eps\_\-device\_\-st::media\_\-sizes, hpgs\_\-eps\_\-device\_\-st::media\_\-sizes\_\-alloc\_\-size, hpgs\_\-eps\_\-device\_\-st::n\_\-media\_\-sizes, hpgs\_\-eps\_\-device\_\-st::n\_\-pages, hpgs\_\-eps\_\-device\_\-st::out, hpgs\_\-eps\_\-device\_\-st::page\_\-bb, hpgs\_\-eps\_\-device\_\-st::page\_\-setup, hpgs\_\-eps\_\-device\_\-st::pattern\_\-color, hpgs\_\-color\_\-st::r, hpgs\_\-palette\_\-color\_\-st::r, hpgs\_\-eps\_\-device\_\-st::rop3, and hpgs\_\-device\_\-st::vtable.\index{device@{device}!hpgs\_\-newpath@{hpgs\_\-newpath}}
+\index{hpgs\_\-newpath@{hpgs\_\-newpath}!device@{device}}
+\subsubsection[hpgs\_\-newpath]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-newpath ({\bf hpgs\_\-device} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__device_g1554a8f559ab553dc6de4f2be0171e95}
+
+
+PostScript newpath on the device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::newpath, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-image\_\-rop3\_\-clip().\index{device@{device}!hpgs\_\-setdash@{hpgs\_\-setdash}}
+\index{hpgs\_\-setdash@{hpgs\_\-setdash}!device@{device}}
+\subsubsection[hpgs\_\-setdash]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-setdash ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  const float $\ast$ {\em d}, \/  unsigned {\em nd}, \/  double {\em s})\hspace{0.3cm}{\tt  [static]}}\label{group__device_geb45fb830feaa389fe0aa766fed262d7}
+
+
+PostScript setdash on the device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::setdash, and hpgs\_\-device\_\-st::vtable.\index{device@{device}!hpgs\_\-setlinecap@{hpgs\_\-setlinecap}}
+\index{hpgs\_\-setlinecap@{hpgs\_\-setlinecap}!device@{device}}
+\subsubsection[hpgs\_\-setlinecap]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-setlinecap ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  {\bf hpgs\_\-line\_\-cap} {\em c})\hspace{0.3cm}{\tt  [static]}}\label{group__device_gc6377b47ea8bb7cdf91edb3c87ff62f4}
+
+
+PostScript setlinecap on the device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::setlinecap, and hpgs\_\-device\_\-st::vtable.\index{device@{device}!hpgs\_\-setlinejoin@{hpgs\_\-setlinejoin}}
+\index{hpgs\_\-setlinejoin@{hpgs\_\-setlinejoin}!device@{device}}
+\subsubsection[hpgs\_\-setlinejoin]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-setlinejoin ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  {\bf hpgs\_\-line\_\-join} {\em j})\hspace{0.3cm}{\tt  [static]}}\label{group__device_g03f06fc1905181c70923a4a50432e261}
+
+
+PostScript setlinejoin on the device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::setlinejoin, and hpgs\_\-device\_\-st::vtable.\index{device@{device}!hpgs\_\-setlinewidth@{hpgs\_\-setlinewidth}}
+\index{hpgs\_\-setlinewidth@{hpgs\_\-setlinewidth}!device@{device}}
+\subsubsection[hpgs\_\-setlinewidth]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-setlinewidth ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  double {\em w})\hspace{0.3cm}{\tt  [static]}}\label{group__device_gdf3395c8e59649dc075d1b4f0d938124}
+
+
+PostScript setlinewidth on the device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::setlinewidth, and hpgs\_\-device\_\-st::vtable.\index{device@{device}!hpgs\_\-setmiterlimit@{hpgs\_\-setmiterlimit}}
+\index{hpgs\_\-setmiterlimit@{hpgs\_\-setmiterlimit}!device@{device}}
+\subsubsection[hpgs\_\-setmiterlimit]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-setmiterlimit ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  double {\em l})\hspace{0.3cm}{\tt  [static]}}\label{group__device_g653c3d98e3aa5167ff96f53729e73e1b}
+
+
+PostScript setmiterlimit on the device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::setmiterlimit, and hpgs\_\-device\_\-st::vtable.\index{device@{device}!hpgs\_\-setpatcol@{hpgs\_\-setpatcol}}
+\index{hpgs\_\-setpatcol@{hpgs\_\-setpatcol}!device@{device}}
+\subsubsection[hpgs\_\-setpatcol]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-setpatcol ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-color} $\ast$ {\em rgb})}\label{group__device_g241c4383528e55adbbb1841d7d8ca2b3}
+
+
+Sets the patter ncolor applied using the raster operation specified in {\tt hpgs\_\-setrop3}. 
+
+References hpgs\_\-device\_\-vtable\_\-st::setpatcol, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-device\_\-setrgb\_\-all().\index{device@{device}!hpgs\_\-setplotsize@{hpgs\_\-setplotsize}}
+\index{hpgs\_\-setplotsize@{hpgs\_\-setplotsize}!device@{device}}
+\subsubsection[hpgs\_\-setplotsize]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-setplotsize ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-bbox} $\ast$ {\em bb})}\label{group__device_g9bab1b2e9a8a18abed30dd3a38f866ed}
+
+
+Report a HPGL PS command to the device. If the function returns 2, the interpretation of the file is interrupted immediately without error.
+
+For devices with the {\tt HPGS\_\-DEVICE\_\-CAP\_\-MULTISIZE} capability, this function may be called immediately after a showpage command. 
+
+References hpgs\_\-device\_\-vtable\_\-st::setplotsize, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-read().\index{device@{device}!hpgs\_\-setrgbcolor@{hpgs\_\-setrgbcolor}}
+\index{hpgs\_\-setrgbcolor@{hpgs\_\-setrgbcolor}!device@{device}}
+\subsubsection[hpgs\_\-setrgbcolor]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-setrgbcolor ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  const {\bf hpgs\_\-color} $\ast$ {\em rgb})\hspace{0.3cm}{\tt  [static]}}\label{group__device_gd361763e4803ae55fff0432176dac3ef}
+
+
+PostScript setrgbcolor on the device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::setrgbcolor, and hpgs\_\-device\_\-st::vtable.
+
+Referenced by hpgs\_\-device\_\-setrgb\_\-all(), and hpgs\_\-image\_\-rop3\_\-clip().\index{device@{device}!hpgs\_\-setrop3@{hpgs\_\-setrop3}}
+\index{hpgs\_\-setrop3@{hpgs\_\-setrop3}!device@{device}}
+\subsubsection[hpgs\_\-setrop3]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-setrop3 ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  int {\em rop}, \/  hpgs\_\-bool {\em src\_\-transparency}, \/  hpgs\_\-bool {\em pattern\_\-transparency})}\label{group__device_g81809156b70a1a85832f5af7d0f7e5b9}
+
+
+Sets the raster operation for the given device. Raster operations and source/pattern transparency are described in
+
+PCL 5 Comparison Guide, Edition 2, 6/2003, Hewlett Packard (May be downloaded as bpl13206.pdf from {\tt http://www.hp.com})
+
+The function returns -1, if an invalid raster operation is specified. If the device is not capable of raster operations, the function succeeds anyways. 
+
+References hpgs\_\-device\_\-vtable\_\-st::setrop3, and hpgs\_\-device\_\-st::vtable.\index{device@{device}!hpgs\_\-showpage@{hpgs\_\-showpage}}
+\index{hpgs\_\-showpage@{hpgs\_\-showpage}!device@{device}}
+\subsubsection[hpgs\_\-showpage]{\setlength{\rightskip}{0pt plus 5cm}HPGS\_\-API int hpgs\_\-showpage ({\bf hpgs\_\-device} $\ast$ {\em \_\-this}, \/  int {\em i})}\label{group__device_gb5845cf069a5d4ca79dfd845e44a0534}
+
+
+Finishes the output of a page to the device. If the function returns 2, the interpretation of the file is interrupted immediately without error. This is the case for device, which are not capable of displaying multiple pages.
+
+The integer argument is the number of the page begin finished. This argument is intended as a hint for devices, which write a file for each page.
+
+If this argument is less than or equal to 0, this is the only page written to the device. In this case, devices which write a file for each page may omit a page counter from the filename of the written file. 
+
+References hpgs\_\-device\_\-vtable\_\-st::showpage, and hpgs\_\-device\_\-st::vtable.\index{device@{device}!hpgs\_\-stroke@{hpgs\_\-stroke}}
+\index{hpgs\_\-stroke@{hpgs\_\-stroke}!device@{device}}
+\subsubsection[hpgs\_\-stroke]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-inline\_\-\_\- int hpgs\_\-stroke ({\bf hpgs\_\-device} $\ast$ {\em \_\-this})\hspace{0.3cm}{\tt  [static]}}\label{group__device_g446e8ce0815e9a34c92b87c76c9e1236}
+
+
+PostScript stroke on the device. 
+
+References hpgs\_\-device\_\-vtable\_\-st::stroke, and hpgs\_\-device\_\-st::vtable.

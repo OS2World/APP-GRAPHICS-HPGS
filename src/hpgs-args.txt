@@ -1,0 +1,103 @@
+
+ hpgs v1.1.5 - HPGl Script, a hpgl/2 interpreter/renderer.
+
+ (C) 2004-2009 ev-i Informationstechnologie GmbH (http://www.ev-i.at)
+     published under the LGPL (http://www.fsf.org/licenses/lgpl.html).
+
+usage: hpgs [-i] [-v] [-q] [-d <dev>] [options...] [-o <out>] <in1> <in2>...
+       -i ... Ignore plotsize from PS and determine
+              the plotsize from the file content.
+       --linewidth-size ... Account for linewidths in the plotsize
+              calculation for -i (default behaviour).
+       --no-linewidth-size ... Ignore linewidths in the plotsize
+              calculation for -i.
+       -v ... Increase verbosity.
+       -q ... Decrease verbosity, be quiet.
+       -o <out> ... specifiy the output filename. If not specified, write
+                    to stdout.
+       -m ... Switch to multipage mode, if a single file is given on the.
+              command line. If not specified, only the first page of the input
+              file is processed.
+       -w ... Correct linewidth by given factor (default: 1).
+       -d ... Specifiy the output device. The default is the
+              native 'eps' device, which writes a simple eps file.
+              See section `Supported devices' below.
+       -a ... Use antialiasing when rendering to a png image.
+       --thin-alpha=<a>
+              Specifiy the minimal alpha value for thin lines.
+              allowed values lie in the interval [0.001,1.0] (default: 0.25).
+       -I ... Specifiy image interpolation.
+       --rop3 ... Use ROP3 raster operations for rendering on devices
+              with ROP3 capabilities (default).
+       --no-rop3 ... Suppress usage of ROP3 raster operations.
+       -c ... Specifiy the compression level for png writing.
+       -r ... Specifiy the device resolution in dpi.
+              If no y-resolution is given, the y-resolution
+              is set to the same value as the x-resolution.
+       -p ... Specifiy the maximum pixel size of the device.
+              This is in fact an alternate method to specify the
+              resolution of the device. If -p is given, the device
+              resolution is caclulated in a way, that the plot fits
+              into the given rectangle.
+              If no y-size is given, the size y-size
+              is set to the same value as the x-size.
+       -s<papersize> ... Specifiy the plot size in pt (1/72 inch).
+              If -s is not given, the size is calculated from
+              the contents of the hpgl file.
+              The <papersize> may be either one of the standard
+              paper sizes A0,A1,A2,A3 or A4, their landscape versions
+              A0l,A1l,A2l,A3l or A4l or a size in the format <width>x<height>
+              where <width> and <height> specify a physical length in one of the
+              formats <l>,<l>mm,<l>cm,<l>inch or <l>pt. <l> is a floating point
+              number, the default unit is PostScript pt (1/72 inch).
+       --origin=<origin> ... Specifiy the origin of the displayed content.
+              If -s is not given, the origin is calculated from
+              the contents of the hpgl file.
+              The <origin> may be in the format <width>x<height>
+              as described above for the option -s.
+       --paper=<papersize>
+              Specify a paper size of the output device. All plots
+              are scaled to this paper size respecting the given border.
+              If no fixed paper size is given, each page in the output
+              file has an individual size adapted to the size of the HPGL
+              content of the page.
+              The format of <papersize> is decribed above for -s.
+       --border=<border>
+              Specify a border for placing plots on output pages.
+       --rotation=<angle>
+              Specify an angle for placing plots on output pages.
+       --stamp=<stamp>
+              Specify a string, which is printed in the background.
+       --stamp-encoding=<enc>
+              Specify an the name of the encoding of the string, which
+              is given in --stamp. Default is iso-8859-1.
+       --stamp-size=<pt>
+              Specify the size of the stamp specified with --stamp
+              in point. Default value: 500pt.
+       --dump-png=<filename>
+              Specify a filename for dumping inline PCL images in.
+              PNG format. The actual filenames written are:
+                 <filename>0001.png
+                 <filename>0002.png
+                  .....
+              If <filename> contains an extension '.png' the counter
+              is put between the basename and the '.png' extension.
+       --help
+              Displays this usage information.
+       --version
+              Displays the version information.
+
+Supported devices (option -d):
+
+       bbox    ... writes a PostScript BoundingBox to stdout.
+       ps      ... writes a multipage PostScript file.
+       eps     ... writes an eps files.
+       png_256 ... writes an indexed 8bpp png image.
+       png_gray... writes a grayscale 8bpp png image.
+       png_rgb ... writes a rgb 24bpp png image.
+       png_gray_alpha ... writes a grayscale 16bpp png image
+                          with an alpha channel.
+       png_rgb_alpha ... writes a rgb 32bpp png image
+                         with an alpha channel.
+       cairo_png ... writes a rgb 32bpp png image using
+                     the cairo library (experimental).

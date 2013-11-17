@@ -1,0 +1,40 @@
+\section{hpgs\_\-image\_\-st Struct Reference}
+\label{structhpgs__image__st}\index{hpgs\_\-image\_\-st@{hpgs\_\-image\_\-st}}
+An abstract pixel image.  
+
+
+{\tt \#include $<$hpgs.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+{\bf hpgs\_\-image\_\-vtable} $\ast$ {\bf vtable}\label{structhpgs__image__st_0de6389c8fc6ca75b717ec62e78d5d73}
+
+\begin{CompactList}\small\item\em The virtual table. \item\end{CompactList}\item 
+int {\bf width}\label{structhpgs__image__st_dd77f1803c6ea3b4e342335d89a45ea0}
+
+\begin{CompactList}\small\item\em The number of pixel columns. \item\end{CompactList}\item 
+int {\bf height}\label{structhpgs__image__st_5f901ebe47134399a6a3790cf77a530c}
+
+\begin{CompactList}\small\item\em The number of pixel rows. \item\end{CompactList}\item 
+{\bf hpgs\_\-palette\_\-color} $\ast$ {\bf palette}\label{structhpgs__image__st_150ba16c6c1849a7d2d8e9d11bead1e2}
+
+\begin{CompactList}\small\item\em The palette for indexed images. \item\end{CompactList}\item 
+unsigned $\ast$ {\bf palette\_\-idx}\label{structhpgs__image__st_e4f27994d2e61465876786b37142353d}
+
+\begin{CompactList}\small\item\em a compacted rgb color index. \item\end{CompactList}\item 
+int {\bf palette\_\-ncolors}\label{structhpgs__image__st_0816acf72c5fc421afeefc642d13b887}
+
+\begin{CompactList}\small\item\em The number of colors in the palette. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+An abstract pixel image. 
+
+This structure has a public alias {\tt hpgs\_\-image} and represents a rectangular pixel container, which tradiationally is called an image.
+
+Nevertheless, implementations for drawing to a window system may be provided in the future. 
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf hpgs.h}\end{CompactItemize}
